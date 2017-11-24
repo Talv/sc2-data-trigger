@@ -13,6 +13,8 @@ include "TriggerLibs/GameData/GameDataAllNatives.galaxy"
 // - Animation
 // - Automation
 // - Bank
+// - Battle Report
+// - BitMask
 // - Boards
 // - Camera
 // - Campaign
@@ -539,6 +541,26 @@ native void     TriggerAddEventBattleReportPanelSelectionChanged (trigger t, int
 native int      EventBattleReportPanelMissionSelected ();
 native int      EventBattleReportPanelDifficultySelected ();
 native int      EventBattleReportPanelSceneSelected ();
+
+//--------------------------------------------------------------------------------------------------
+// BitMask
+//--------------------------------------------------------------------------------------------------
+const int       c_maxBitsInMax = 128;
+
+native void     BitMaskSetIndex (bitmask mask, int index, bool on);
+native bitmask  BitMaskMakeDefaultMask ();
+native bool     BitMaskIsEqual (bitmask lhs, bitmask rhs);
+native bool     BitMaskTrueIndex (bitmask mask, int index);
+native bool     BitMaskFalseIndex (bitmask mask, int index);
+native void     BitMaskReset (bitmask mask);
+native int      BitMaskCountOnBits (bitmask mask);
+native void     BitMaskAddBitMask (bitmask left, bitmask right);
+native void     BitMaskAndBitMask (bitmask lhs, bitmask rhs);
+native void     BitMaskOrBitMask (bitmask lhs, bitmask rhs);
+native void     BitMaskXorBitMask (bitmask lhs, bitmask rhs);
+native void     BitMaskInvert (bitmask mask);
+native void     BitMaskLeftShift (bitmask mask, int count);
+native void     BitMaskRightShift (bitmask mask, int count);
 
 //--------------------------------------------------------------------------------------------------
 // Boards
@@ -1513,8 +1535,10 @@ const int c_triggerImageTypeNineSlice                   = 5;
 const int c_triggerImageTypeCircular                    = 6;
 
 // Render Types
-const int c_triggerRenderTypeHDR = 0;
-const int c_triggerRenderTypeLDR = 1;
+const int c_triggerRenderTypeRTT         = 0;
+const int c_triggerRenderTypeHDR         = 1;
+const int c_triggerRenderTypeLDR         = 2;
+const int c_triggerRenderTypeOffscreen   = 3;
 
 // Blend Modes
 const int c_triggerBlendModeNormal            = 0;
@@ -2777,6 +2801,7 @@ native void PlayerGroupRemove (playergroup inGroup, int inPlayer);
 
 native int  PlayerGroupCount (playergroup inGroup);
 native int  PlayerGroupPlayer (playergroup inGroup, int inIndex);
+native int  PlayerGroupNextPlayer (playergroup inGroup, int inIndex);
 native bool PlayerGroupHasPlayer (playergroup inGroup, int inPlayer);
 
 //--------------------------------------------------------------------------------------------------
@@ -2818,10 +2843,9 @@ native point MidPoint (point source, point dest);
 const int c_noPortraitChannel      = -1;
 const int c_invalidPortraitId       = 0;
 
-//These need to match the ERenderType enum in CFrame.h
-const int c_portraitRenderTypeHDR = 0;
-const int c_portraitRenderTypeLDR = 1;
-    
+const int c_portraitRenderTypeHDR = 1;
+const int c_portraitRenderTypeLDR = 2;
+
 native int          PortraitCreate (
                         int offsetX,
                         int offsetY,
@@ -3387,6 +3411,9 @@ native bool     TechTreeUpgradeIsAllowed (int player, string upgradeType);
 native abilcmd  TechTreeUpgradeProducedAbilCmd (string upgradeType, int index);
 native int      TechTreeUpgradeProducedAbilCmdCount (string upgradeType);
 
+native void     TriggerAddEventUpgradeLevelChanged (trigger inTrigger, int player);
+native int		EventUpgradeLevelDelta();
+native string   EventUpgradeName();
 //--------------------------------------------------------------------------------------------------
 // Text Tags
 //--------------------------------------------------------------------------------------------------
@@ -4572,6 +4599,7 @@ const int c_unitCountDead   = 2;
 
 native int  UnitGroupCount (unitgroup inGroup, int inType);
 native unit UnitGroupUnit (unitgroup inGroup, int inIndex); // index is one-based
+native unit UnitGroupUnitFromEnd (unitgroup inGroup, int inIndex);
 native unit UnitGroupRandomUnit (unitgroup inGroup, int inType);
 native bool UnitGroupHasUnit (unitgroup inGroup, unit inUnit);
 native bool UnitGroupTestPlane (unitgroup inGroup, int inPlane);
@@ -4610,6 +4638,8 @@ native bool         UnitIsSelected (unit inUnit, int inPlayer);
 native unitgroup    UnitGroupSelected (int inPlayer);
 native unitgroup    UnitSubgroupSelected (int inPlayer);
 native int          UnitSubgroupIndexSelected (int inPlayer);
+native void         UnitSubgroupIndexNext (int inPlayer);
+native void         UnitSubgroupIndexPrevious (int inPlayer);
 
 native void         UnitFlashSelection (unit inUnit, fixed inPeriod);
 

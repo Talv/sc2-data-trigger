@@ -473,6 +473,7 @@ void libNtve_gf_WaitForTimer (timer lp_timer, fixed lp_time, bool lp_waitType);
 void libNtve_gf_ShowHideLeaderboard (int lp_board, bool lp_showHide, playergroup lp_players);
 int libNtve_gf_ArithmeticIntClamp (int lp_value, int lp_min, int lp_max);
 fixed libNtve_gf_ArithmeticRealClamp (fixed lp_value, fixed lp_min, fixed lp_max);
+fixed libNtve_gf_Log (fixed lp_x, fixed lp_x2);
 fixed libNtve_gf_RandomPercent ();
 fixed libNtve_gf_RandomAngle ();
 order libNtve_gf_ReviveOrderTargetingPoint (abilcmd lp_abilCmd, point lp_p, unit lp_reviveUnit);
@@ -484,6 +485,8 @@ void libNtve_gf_MakeAlly (int lp_sourcePlayer, int lp_targetPlayer);
 void libNtve_gf_SetAlliance (int lp_sourcePlayer, int lp_targetPlayer, int lp_alliance);
 void libNtve_gf_SetAllianceOneWay (int lp_sourcePlayer, int lp_targetPlayer, int lp_alliance);
 void libNtve_gf_SetPlayerGroupAlliance (playergroup lp_players, int lp_alliance);
+void libNtve_gf_SetAllianceBetweenTwoPlayerGroups (playergroup lp_sourcePlayers, playergroup lp_targetPlayers, int lp_alliance);
+void libNtve_gf_SetAllianceAspectForPlayerGroup (playergroup lp_players, int lp_inAllianceId, bool lp_ally);
 bool libNtve_gf_PlayerIsEnemy (int lp_sourcePlayer, int lp_targetPlayer, int lp_relation);
 void libNtve_gf_PlayerRemoveChargeRegen (int lp_inPlayer, string lp_inCharge);
 void libNtve_gf_PlayerRemoveChargeUsed (int lp_inPlayer, string lp_inCharge);
@@ -509,6 +512,7 @@ fixed libNtve_gf_HeightOfRegion (region lp_region);
 bool libNtve_gf_UnitTypeIsSelected (string lp_unitType, int lp_player);
 void libNtve_gf_StoreUnitSelection (int lp_forPlayer, int lp_storeOption);
 void libNtve_gf_RestoreUnitSelection (int lp_forPlayer);
+void libNtve_gf_CopyUnitControlGroups (unit lp_sourceUnit, unit lp_targetUnit);
 void SoundPlayScene (soundlink lp_soundLink, playergroup lp_players, unitgroup lp_units, string lp_animation);
 void SoundPlay (soundlink lp_soundLink, playergroup lp_players, fixed lp_volume, fixed lp_offset);
 void SoundPlayOnUnit (soundlink lp_soundLink, playergroup lp_players, unit lp_unit, fixed lp_height, fixed lp_volume, fixed lp_offset);
@@ -612,6 +616,7 @@ void libNtve_gf_AddUnitGroupToUnitGroup (unitgroup lp_sourceUnitGroup, unitgroup
 void libNtve_gf_RemoveUnitGroupFromUnitGroup (unitgroup lp_sourceUnitGroup, unitgroup lp_targetUnitGroup);
 unit libNtve_gf_ClosestUnitToPoint (point lp_point, unitgroup lp_group);
 point libNtve_gf_CenterOfUnitGroup (unitgroup lp_unitGroup);
+int libNtve_gf_UserDataInstanceGetIndex (string lp_userType, string lp_instance);
 void libNtve_gf_ShowHidePlacementModels (bool lp_show);
 
 // Trigger Declarations
