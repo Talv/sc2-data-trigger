@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CConsoleSkin default="1">
+        <Name value="ConsoleSkin/Name/##id##"/>
+        <Name value="ConsoleSkin/StoreName/##id##"/>
+        <StoreTypeName value="UI/StoreTypeName/ConsoleSkin"/>
+    </CConsoleSkin>
+</Catalog>

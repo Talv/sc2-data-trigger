@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CSound id="RavenShredderMissile_Travel_Loop" parent="Combat">
+        <AssetArray File="Assets\Sounds\Def_Matrix_Loop_02.ogg" FacialGroup=""/>
+        <LoopCount value="-1"/>
+    </CSound>
+    <CSound id="Raven_HunterSeekerAttackImpact">
+        <Pitch value="-1.000000,3.000000"/>
+        <VolumeRolloffFadeOut/>
+        <VolumeRolloffFadeOut Time="1000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Raven_RepairDrone_Release_Impact" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Def_MatrixDrone_SWS_01.wav" FacialGroup=""/>
+        <Pitch value="-4.000000,-3.000000"/>
+        <Volume value="-9.000000,-7.000000"/>
+    </CSound>
+    <CSound id="Raven_RepairDrone_Launch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Def_Matrix_Death_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Def_Matrix_Death_04.wav" FacialGroup=""/>
+        <Pitch value="-4.000000,-4.000000"/>
+        <Volume value="-10.000000,-8.000000"/>
+    </CSound>
+    <CSound id="Raven_RepairDrone_What" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\Def_MatrixDrone_What_01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Def_MatrixDrone_What_02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Def_MatrixDrone_What_03.ogg" FacialGroup=""/>
+        <Volume value="-12.000000,-12.000000"/>
+        <Pitch value="-3.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Raven_RepairDrone_Placement" parent="UI">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\UI_Void_Launch_Actuate_5.wav" FacialGroup=""/>
+        <Mode value="3DWorld"/>
+        <VolumeRolloffPoints Distance="100.000000"/>
+        <VolumeRolloffPoints Distance="1000.000000" Volume="-96.000000"/>
+        <Pitch value="-6.000000,-6.000000"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="Raven_RepairDrone_Death" parent="Death">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Def_MatrixDrone_Death_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Def_MatrixDrone_Death_02.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,2.000000"/>
+        <Volume value="-4.000000,-2.000000"/>
+    </CSound>
+    <CSound id="ShieldBattery_Recharge_Loop">
+        <DupeMuteCount value="5"/>
+    </CSound>
+</Catalog>
