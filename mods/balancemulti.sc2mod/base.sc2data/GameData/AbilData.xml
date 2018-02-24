@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <Catalog>
+    <CAbilEffectTarget id="AdeptPhaseShift">
+        <Flags index="TransientPreferred" value="1"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
     <CAbilResearch id="ArmoryResearch">
         <InfoArray index="Research9">
             <Resource index="Minerals" value="100"/>
@@ -29,6 +33,12 @@
             <Button DefaultButtonFace="TerranVehicleAndShipPlatingLevel3" Requirements="LearnTerranVehicleAndShipArmor3"/>
         </InfoArray>
     </CAbilResearch>
+    <CAbilMorph id="AssaultMode">
+        <Flags index="WaitUntilStopped" value="0"/>
+    </CAbilMorph>
+    <CAbilEffectTarget id="BuildAutoTurret">
+        <Range index="0" value="1"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="Corruption">
         <Flags index="AutoCast" value="1"/>
         <Flags index="AutoCastOn" value="1"/>
@@ -62,6 +72,7 @@
         <InfoArray index="Train8">
             <Button Requirements=""/>
         </InfoArray>
+        <InfoArray index="Train25" Time="30"/>
     </CAbilTrain>
     <CAbilEffectTarget id="FungalGrowth">
         <CmdButtonArray index="Execute">
@@ -75,13 +86,17 @@
             <Button DefaultButtonFace="" Requirements=""/>
         </InfoArray>
     </CAbilResearch>
-    <CAbilBehavior id="GhostCloak">
-        <CmdButtonArray index="On" Requirements=""/>
-    </CAbilBehavior>
     <CAbilResearch id="HydraliskDenResearch">
+        <InfoArray index="Research1" Time="100" Upgrade="EvolveGroovedSpines">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="EvolveGroovedSpines" State="Restricted" Requirements="LearnEvolveGroovedSpines">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
         <InfoArray index="Research2" Time="100" Upgrade="EvolveMuscularAugments">
-            <Resource index="Minerals" value="150"/>
-            <Resource index="Vespene" value="150"/>
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
             <Button DefaultButtonFace="EvolveMuscularAugments" State="Restricted" Requirements="LearnEvolveMuscularAugments">
                 <Flags index="ShowInGlossary" value="1"/>
             </Button>
@@ -309,7 +324,7 @@
         </InfoArray>
     </CAbilMorphPlacement>
     <CAbilTrain id="StargateTrain">
-        <InfoArray index="Train9" Time="60"/>
+        <InfoArray index="Train9" Time="52"/>
     </CAbilTrain>
     <CAbilResearch id="StarportTechLabResearch">
         <InfoArray index="Research1">
@@ -449,7 +464,7 @@
     <CAbilTransport id="WarpPrismTransport">
         <Range value="6"/>
         <!--UnloadCargoEffect value="WarpPrismUnloadCargoSetEffect"/-->
-        <UnloadCargoEffect value="PurificationNovaTargettedCasterRB"/>
+        <UnloadCargoEffect value="WarpPrismUnloadCargoSetEffect"/>
         <LoadCargoEffect value="WarpPrismLoadDummy"/>
         <!--LoadCargoEffect value="PurificationNovaTransportPickupSet"/>
         <UnloadCargoEffect value="PurificationNovaMorphBackFromTransport"/-->
@@ -633,15 +648,8 @@
         </CmdButtonArray>
         <Flags index="BestUnit" value="1"/>
         <Flags index="DisableAbils" value="1"/>
-        <Flags index="FastBuild" value="1"/>
         <Flags index="IgnoreFacing" value="1"/>
-        <RefundFraction>
-            <Resource index="Minerals" value="0"/>
-            <Resource index="Vespene" value="0"/>
-            <Resource index="Terrazine" value="0"/>
-            <Resource index="Custom" value="0"/>
-        </RefundFraction>
-        <InfoArray Score="1" Unit="Observer">
+        <InfoArray Unit="Observer">
             <SectionArray index="Abils">
                 <DurationArray index="Duration" value="0.75"/>
             </SectionArray>
@@ -666,15 +674,8 @@
         </CmdButtonArray>
         <Flags index="BestUnit" value="1"/>
         <Flags index="DisableAbils" value="1"/>
-        <Flags index="FastBuild" value="1"/>
         <Flags index="IgnoreFacing" value="1"/>
-        <RefundFraction>
-            <Resource index="Minerals" value="0"/>
-            <Resource index="Vespene" value="0"/>
-            <Resource index="Terrazine" value="0"/>
-            <Resource index="Custom" value="0"/>
-        </RefundFraction>
-        <InfoArray Score="1" Unit="ObserverSiegeMode">
+        <InfoArray Unit="ObserverSiegeMode">
             <SectionArray index="Abils">
                 <DurationArray index="Duration" value="0.75"/>
             </SectionArray>
@@ -693,21 +694,14 @@
         </InfoArray>
     </CAbilMorph>
     <CAbilMorph id="OverseerMorphtoOverseerSiegeMode">
-        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="MorphtoOverseerSiege">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <Flags index="BestUnit" value="1"/>
         <Flags index="DisableAbils" value="1"/>
-        <Flags index="FastBuild" value="1"/>
         <Flags index="IgnoreFacing" value="1"/>
-        <RefundFraction>
-            <Resource index="Minerals" value="0"/>
-            <Resource index="Vespene" value="0"/>
-            <Resource index="Terrazine" value="0"/>
-            <Resource index="Custom" value="0"/>
-        </RefundFraction>
-        <InfoArray Score="1" Unit="OverseerSiegeMode">
+        <InfoArray Unit="OverseerSiegeMode">
             <SectionArray index="Abils">
                 <DurationArray index="Duration" value="0.5"/>
             </SectionArray>
@@ -726,21 +720,14 @@
         </InfoArray>
     </CAbilMorph>
     <CAbilMorph id="OverseerSiegeModeMorphtoOverseer">
-        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="MorphtoOverseerNormal">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <Flags index="BestUnit" value="1"/>
         <Flags index="DisableAbils" value="1"/>
-        <Flags index="FastBuild" value="1"/>
         <Flags index="IgnoreFacing" value="1"/>
-        <RefundFraction>
-            <Resource index="Minerals" value="0"/>
-            <Resource index="Vespene" value="0"/>
-            <Resource index="Terrazine" value="0"/>
-            <Resource index="Custom" value="0"/>
-        </RefundFraction>
-        <InfoArray Score="1" Unit="Overseer">
+        <InfoArray Unit="Overseer">
             <SectionArray index="Abils">
                 <DurationArray index="Duration" value="0.5"/>
             </SectionArray>
@@ -773,8 +760,8 @@
         <Cost>
             <Vital index="Energy" value="50"/>
         </Cost>
-        <TargetFilters value="Visible;Self,Player,Ally,Neutral,Structure,Missile,Dead"/>
-        <Range value="8"/>
+        <TargetFilters value="Visible;Self,Player,Ally,Neutral,Structure,Missile,Stasis,Dead"/>
+        <Range value="9"/>
         <UninterruptibleArray index="Prep" value="1"/>
         <UninterruptibleArray index="Cast" value="1"/>
         <UninterruptibleArray index="Channel" value="1"/>
@@ -782,6 +769,7 @@
         <ValidatedArray index="Wait" value="1"/>
         <ValidatedArray index="Channel" value="0"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="RavenScramblerMissile"/>
+        <DefaultError value="MustTargetUnit,Error/MustTargetMechanicalorPsionic"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="RavenRepairDrone">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
@@ -834,7 +822,7 @@
         <Effect index="0" value="RavenShredderMissileLaunchMissile"/>
         <Flags index="AllowMovement" value="1"/>
         <Cost>
-            <Vital index="Energy" value="125"/>
+            <Vital index="Energy" value="75"/>
         </Cost>
         <TargetFilters value="Visible;Self,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="10"/>

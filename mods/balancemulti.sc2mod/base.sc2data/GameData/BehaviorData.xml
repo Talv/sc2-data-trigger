@@ -34,6 +34,15 @@
     <CBehaviorBuff id="OracleRevelation">
         <Duration value="42"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="ParasiticBomb">
+        <DisableValidatorArray value="HaveParasiticBombInitialDelay"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ParasiticBombTimer">
+        <DisableValidatorArray value="HaveParasiticBombInitialDelay"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ParasiticBombUnitKU">
+        <DisableValidatorArray index="0" value="NotHaveParasiticBombTimers"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="TerranStructuresKnockbackBehavior">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -267,6 +276,8 @@
         <RemoveValidatorArray value="CasterIsNotMothershipRecalling"/>
         <RemoveValidatorArray value="CasterDoesNotHaveScramblerMissileBehavior"/>
         <PeriodicEffect value="PurificationNovaPeriodicSet"/>
+        <PeriodCount value="47"/>
+        <Period value="0.0625"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="TimeWarpProduction">
         <Modification TimeScale="1.15" AttackSpeedMultiplier="0.85"/>
@@ -366,7 +377,7 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="DisruptorAnimationController">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <Duration value="19.9"/>
+        <Duration value="24.9"/>
         <InfoFlags index="Hidden" value="1"/>
         <DisableValidatorArray value="NotHaveScramblerMissileBehavior"/>
     </CBehaviorBuff>
@@ -423,7 +434,7 @@
         <Alignment value="Negative"/>
         <InfoIcon value="Assets\Textures\btn-upgrade-terran-interferencematrix.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Duration value="8"/>
+        <Duration value="11"/>
         <ExpireEffect value="ImmortalBarrierCDFix"/>
         <Modification>
             <ModifyFlags index="DisableAbils" value="1"/>
@@ -432,6 +443,10 @@
             <StateFlags index="SuppressCloak" value="1"/>
             <BehaviorLinkDisableArray value="ImmortalBarrierSupressed"/>
         </Modification>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="RavenRepairDroneTimedLife" parent="TimedLife">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
@@ -440,7 +455,7 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="RavenShredderMissileTimeout">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <Duration value="2.8"/>
+        <Duration value="1.9"/>
         <Modification MoveSpeedMaximum="0"/>
         <RemoveValidatorArray value="NotInLastMotionPhase"/>
     </CBehaviorBuff>
@@ -468,16 +483,16 @@
         <BehaviorCategories index="Fast" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="14"/>
-        <Modification TimeScale="2">
-            <VitalRegenArray index="Energy" value="-0.2812"/>
+        <Duration value="28"/>
+        <Modification TimeScale="1.5">
+            <VitalRegenArray index="Energy" value="-0.1406"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="NexusMassRecallWarpOut">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Duration value="5"/>
-        <ExpireEffect value="NexusMassRecallTeleport"/>
+        <ExpireEffect value="NexusMassRecallSet"/>
         <Modification>
             <ModifyFlags index="DisableAbils" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
@@ -560,7 +575,7 @@
     <CBehaviorBuff id="ParasiticBombInitialDelay">
         <Alignment value="Negative"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
-        <FinalEffect value="ParasiticBombAB"/>
+        <!--FinalEffect value="ParasiticBombAB"/-->
         <Duration value="1"/>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
@@ -584,5 +599,24 @@
         <DisableValidatorArray value="NotUnderConstruction"/>
         <DisplayDuration index="Neutral" value="1"/>
         <DisplayDuration index="Enemy" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ParasiticBombDodgeTimer">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Duration value="12"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NexusRecalled">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="1"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Uncommandable" value="1"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+            <AbilClassDisableArray index="CAbilMove" value="1"/>
+        </Modification>
     </CBehaviorBuff>
 </Catalog>

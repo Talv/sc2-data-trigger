@@ -7,10 +7,20 @@
     <CActorDoodad id="BraxisAlphaBioDome">
         <ModelFlags index="OutlineOccluder" value="1"/>
     </CActorDoodad>
+    <CActorRange id="DisruptorPurificationNovaTargettedRange">
+        <On index="1" Terms="SelectionLocalUpdate.Disruptor.Start" Send="Create"/>
+        <On index="2" Terms="SelectionLocalUpdate.Disruptor.Stop" Send="Destroy"/>
+    </CActorRange>
     <CActorUnit id="FighterMorphModel">
         <On Terms="ActorCreation; ValidateUnit HaveSmartServos" Send="AnimGroupApply Upgrade"/>
         <On Terms="Upgrade.SmartServos.Add" Send="AnimGroupApply Upgrade"/>
     </CActorUnit>
+    <CActorDoodad id="Floodlight">
+        <ModelFlags index="OutlineOccluder" value="1"/>
+    </CActorDoodad>
+    <CActorModel id="HighTemplarPsiStormImpact">
+        <On index="3" Terms="Behavior.PsiStorm.On" Send="Create"/>
+    </CActorModel>
     <CActorModel id="ProtossBuildingBirthSmall">
         <On Terms="UnitConstruction.ShieldBattery.Start" Send="Create"/>
     </CActorModel>
@@ -431,6 +441,12 @@
         <Sound value="Colossus_AttackImpact"/>
     </CActorSound>
     <CActorUnit id="Thor">
+        <On Terms="UnitBirth.ThorAP" Send="SetWireframe 0 Assets\Textures\wireframe-terran-thorhighimpact.dds"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Thor" Send="SetWireframe 0 Assets\Textures\wireframe-terran-thor.dds"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo ThorAP" Send="SetWireframe 0 Assets\Textures\wireframe-terran-thorhighimpact.dds"/>
+        <On Terms="UnitBirth.ThorAP" Send="SetGroupIcon 0 Assets\Textures\wireframe-terran-thorhighimpact.dds"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Thor" Send="SetGroupIcon 0 Assets\Textures\wireframe-terran-thor.dds"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo ThorAP" Send="SetGroupIcon 0 Assets\Textures\wireframe-terran-thorhighimpact.dds"/>
         <!-- ThorCE -->
         <!--On Terms="ActorCreation; PlayerHasReward ThorCE" Send="StatusSet CE 1"/-->
         <!--On Terms="StatusSet.*.CE; IsStatus CE 1" Send="ModelSwap ThorCE"/>
@@ -975,10 +991,12 @@
         <Remove Terms="Behavior.PurificationNova.Off" Send="ModelSwap Disruptor"/>
         <On Terms="Behavior.PurificationNovaTargettedTarget.On" Send="ModelSwap PurificationNovaModelSwap"/>
         <On Terms="Behavior.PurificationNovaTargettedCaster.On" Send="Create PurificationNovaBirth"/>
-        <On Terms="Behavior.PurificationNovaTargettedCaster.On" Send="AnimBracketStart Purification Stand,Work,Start Stand,Work Stand,Work,End"/>
+        <On Terms="Behavior.PurificationNovaTargettedCaster.On" Send="AnimBracketStart Purification {} Stand,Work Stand,Work,End"/>
         <On Terms="Behavior.PurificationNovaTargettedCaster.Off" Send="AnimBracketStop Purification"/>
-        <On Terms="Behavior.DisruptorAnimationController.Create" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
-        <On Terms="Behavior.DisruptorAnimationController.Destroy" Send="AnimBracketStop Cover"/>
+        <!--On Terms="Behavior.DisruptorAnimationController.Create" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="Behavior.DisruptorAnimationController.Destroy" Send="AnimBracketStop Cover"/-->
+        <On Terms="AbilCooldown.PurificationNovaTargeted.Spend" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="AbilCooldown.PurificationNovaTargeted.Regen" Send="AnimBracketStop Cover"/>
     </CActorUnit>
     <CActorModel id="ChannelSnipeLaunchSquib" parent="ModelAnimationStyleOneShot">
         <Flags index="SuppressCreationErrors" value="1"/>
@@ -1015,15 +1033,15 @@
     </CActorModel>
     <CActorUnit id="Zergling">
         <Macros value="PhysicsDeathsVoidGround"/>
-        <On Terms="ActorCreation; PlayerHasReward ZerglingSkin" Send="StatusSet CE 1"/>
-        <!--On Terms="StatusSet.*.CE; IsStatus CE 1" Send="ModelSwap ZerglingXPR"/>
-        <On Terms="Upgrade.zerglingmovementspeed.Add; IsStatus CE 1" Send="ModelSwap ZerglingUpgradeXPR"/-->
+        <!--On Terms="ActorCreation; PlayerHasReward ZerglingSkin" Send="StatusSet CE 1"/>
+        <On Terms="StatusSet.*.CE; IsStatus CE 1" Send="ModelSwap ZerglingXPR"/>
+        <On Terms="Upgrade.zerglingmovementspeed.Add; IsStatus CE 1" Send="ModelSwap ZerglingUpgradeXPR"/>
         <On Terms="UpgradeFinalized.zerglingmovementspeed.Add; IsStatus CE 1" Send="SetWireframe 0 Assets\Textures\Wireframe-Zerg-ZerglingEx1A.dds"/>
         <On Terms="UpgradeFinalized.zerglingmovementspeed.Add; IsStatus CE 1" Send="SetGroupIcon 0 Assets\Textures\Wireframe-Zerg-ZerglingEx1A.dds"/>
-        <!--On Terms="ActorCreation; ValidateUnit ZerglingUpgraded; IsStatus CE 1" Send="ModelSwap ZerglingUpgradeXPR"/-->
+        <On Terms="ActorCreation; ValidateUnit ZerglingUpgraded; IsStatus CE 1" Send="ModelSwap ZerglingUpgradeXPR"/>
         <On Terms="ActorCreation; ValidateUnit ZerglingUpgraded; IsStatus CE 1" Send="SetWireframe 0 Assets\Textures\Wireframe-Zerg-ZerglingEx1A.dds"/>
         <On Terms="ActorCreation; ValidateUnit ZerglingUpgraded; IsStatus CE 1" Send="SetGroupIcon 0 Assets\Textures\Wireframe-Zerg-ZerglingEx1A.dds"/>
-        <!--On Terms="UnitDeathCustomize; IsStatus CE 1" Send="DeathCustomize Variation10"/>
+        <On Terms="UnitDeathCustomize; IsStatus CE 1" Send="DeathCustomize Variation10"/>
         <On Terms="UnitDeathCustomize; ValidateUnit DeathByAcid; IsStatus CE 1" Send="DeathCustomize Variation11"/>
         <On Terms="UnitDeathCustomize; ValidateUnit DeathByFire; IsStatus CE 1" Send="DeathCustomize Variation12"/>
         <On Terms="UnitDeathCustomize; ValidateUnit DeathByEviscerate; IsStatus CE 1" Send="DeathCustomize Variation13"/>
@@ -1053,9 +1071,9 @@
     </CActorModel>
     <CActorUnit id="Marine">
         <Macros value="PhysicsDeathsVoidGround"/>
-        <On Terms="ActorCreation; PlayerHasReward MarineSkin" Send="StatusSet CE 1"/>
+        <!--On Terms="ActorCreation; PlayerHasReward MarineSkin" Send="StatusSet CE 1"/>
         <On Terms="ActorCreation; PlayerHasReward MarineCovertOps" Send="StatusSet CovertOps 1"/>
-        <!--On Terms="StatusSet.*.CE; IsStatus CE 1" Send="ModelSwap MarineXPR"/-->
+        <On Terms="StatusSet.*.CE; IsStatus CE 1" Send="ModelSwap MarineXPR"/>
         <On Terms="ActorCreation; !ValidatePlayer NoMarineShield; IsStatus CE 1" Send="SetWireframe 0 Assets\Textures\Wireframe-Terran-MarineXPReward.dds"/>
         <On Terms="ActorCreation; !ValidatePlayer NoMarineShield; IsStatus CE 1" Send="SetGroupIcon 0 Assets\Textures\Wireframe-Terran-MarineXPReward.dds"/>
         <On Terms="UpgradeFinalized.ShieldWall.Add; IsStatus CE 1" Send="SetWireframe 0 Assets\Textures\Wireframe-Terran-MarineXPReward.dds"/>
@@ -1064,7 +1082,7 @@
         <On Terms="ActorCreation; !ValidatePlayer NoMarineShield; IsStatus CovertOps 1" Send="SetGroupIcon 0 Assets\Textures\wireframe-collection-covertops-marine.dds"/>
         <On Terms="UpgradeFinalized.ShieldWall.Add; IsStatus CovertOps 1" Send="SetWireframe 0 Assets\Textures\wireframe-collection-covertops-marine.dds"/>
         <On Terms="UpgradeFinalized.ShieldWall.Add; IsStatus CovertOps 1" Send="SetGroupIcon 0 Assets\Textures\wireframe-collection-covertops-marine.dds"/>
-        <!--On Terms="UnitDeathCustomize; IsStatus CE 1" Send="DeathCustomize Variation10"/>
+        <On Terms="UnitDeathCustomize; IsStatus CE 1" Send="DeathCustomize Variation10"/>
         <On Terms="UnitDeathCustomize; ValidateUnit DeathByAcid; IsStatus CE 1" Send="DeathCustomize Variation11"/>
         <On Terms="UnitDeathCustomize; ValidateUnit DeathByFire; IsStatus CE 1" Send="DeathCustomize Variation12"/>
         <On Terms="UnitDeathCustomize; ValidateUnit DeathByEviscerate; IsStatus CE 1" Send="DeathCustomize Variation13"/>
@@ -1495,6 +1513,9 @@
         <On Terms="AbilMorph.*.Start; MorphFrom ObserverSiegeMode; MorphTo Observer" Send="AnimBracketStop Work"/>
     </CActorUnit>
     <CActorModel id="ObserverObservationMode" parent="ModelAnimationStyleContinuous">
+        <On Terms="ActorCreation" Send="Create Observer_SiegeMode_Loop_AS"/>
+        <On Terms="ActorCreation" Send="Create Observer_SiegeMode_MorphTo_AS"/>
+        <On Terms="ActorDestruction" Send="Create Observer_SiegeMode_MorphFrom_AS"/>
         <Inherits index="BaseModelScale" value="1"/>
         <Inherits index="CloakEffect" value="1"/>
         <Inherits index="Scale" value="1"/>
@@ -1503,6 +1524,15 @@
         <HostSiteOps Ops="SOpAttachCenter"/>
         <ModelFlags index="AutomateGlobalLoops" value="1"/>
     </CActorModel>
+    <CActorSound id="Observer_SiegeMode_MorphTo_AS" parent="SoundOneShot">
+        <Sound value="Observer_SiegeMode_Start"/>
+    </CActorSound>
+    <CActorSound id="Observer_SiegeMode_MorphFrom_AS" parent="SoundOneShot">
+        <Sound value="Observer_SiegeMode_Stop"/>
+    </CActorSound>
+    <CActorSound id="Observer_SiegeMode_Loop_AS" parent="SoundContinuous">
+        <Sound value="Observer_SiegeMode_Loop"/>
+    </CActorSound>
     <CActorUnit id="Overseer" parent="GenericUnitStandard" unitName="Overseer">
         <UnitFlags index="StandAnimBirthVariation" value="0"/>
         <On Terms="AbilMorph.MorphToOverseer.Finish" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
@@ -1573,7 +1603,8 @@
         <WireframeShieldColor value="255,0,128,0"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
         <Aliases value="_UnitLarge"/>
-        <AbilSoundArray AbilCmd="OverseerMorphtoOverseerSiegeMode,Execute" Sound="Overseer_OversightVox"/> <!-- doesn't always play -->
+        <AbilSoundArray AbilCmd="OverseerMorphtoOverseerSiegeMode,Execute" Sound="Overseer_OversightVox"/>
+        <!-- doesn't always play -->
         <!-- <AbilSoundArray AbilCmd="OverseerSiegeModeMorphtoOverseer,Execute" Sound="Overseer_OversightEnd"/> doesn't always play -->
     </CActorUnit>
     <CActorModel id="OverseerOversightMode" parent="ModelAnimationStyleContinuous">
@@ -1778,12 +1809,12 @@
         <IconArcLength value="3.250000"/>
     </CActorRange>
     <CActorMissile id="RavenShredderMissileAttackMissile" parent="GenericAttackMissile" unitName="RavenShredderMissileWeapon">
-        <On Terms="MotionPhaseStart; MotionPhase 1" Send="Create RavenShredderMissileTrackingBeam"/>
+        <On Terms="MotionPhaseStart; MotionPhase" Send="Create RavenShredderMissileTrackingBeam"/>
         <On Terms="MotionPhaseStart; MotionPhase" Send="Create RavenShredderMissileLaunchSound"/>
         <On Terms="MotionPhaseStart; MotionPhase 2" Target="RavenShredderMissileLaunchSound" Send="Destroy"/>
         <On Terms="UnitDeath" Target="RavenShredderMissileLaunchSound" Send="Destroy"/>
-        <On Terms="MotionPhaseStart; MotionPhase 2" Send="Create RavenShredderMissileTargetLock"/>
-        <On Terms="MotionPhaseStart; MotionPhase 2" Send="Create RavenShredderMissile_Travel_AS"/>
+        <On Terms="MotionPhaseStart; MotionPhase 1" Send="Create RavenShredderMissileTargetLock"/>
+        <On Terms="MotionPhaseStart; MotionPhase 1" Send="Create RavenShredderMissile_Travel_AS"/>
         <On Terms="UnitDeath" Target="RavenShredderMissile_Travel_AS" Send="Destroy"/>
         <Model value="HunterSeekerWeapon"/>
     </CActorMissile>
@@ -1911,16 +1942,25 @@
         <On Terms="Behavior.NexusMassRecallWarpOut.On" Send="Create"/>
         <On Terms="Behavior.NexusMassRecallWarpOut.Off" Send="AnimBracketStop BSD"/>
         <On Terms="Behavior.NeuralParasite.On" Send="Destroy"/>
-        <On Terms="ActorCreation" Target="_Unit" Send="SetOpacity 0.600000 0.250000 MassRecallOpacity"/>
+        <!--On Terms="ActorCreation" Target="_Unit" Send="SetOpacity 0.600000 0.250000 MassRecallOpacity"/>
         <On Terms="ActorCreation" Target="_Unit" Send="SetTintColor 100,100,255 0.250000 OneShot MassRecallTint"/>
         <On Terms="Behavior.NexusMassRecallWarpOut.Off" Target="_Unit" Send="ClearOpacity 0.250000 MassRecallOpacity"/>
-        <On Terms="Behavior.NexusMassRecallWarpOut.Off" Target="_Unit" Send="ClearTintColor 0.250000 MassRecallTint"/>
+        <On Terms="Behavior.NexusMassRecallWarpOut.Off" Target="_Unit" Send="ClearTintColor 0.250000 MassRecallTint"/-->
         <On Terms="ActorCreation; ValidateUnit IsCarrier" Send="SetScale 0.750000"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachCenter"/>
         <AutoScaleFactor value="0.500000"/>
         <ModelFlags index="AutomateGlobalLoops" value="1"/>
     </CActorModel>
+    <CActorSimple id="NexusRecallOpacity">
+        <On Terms="Behavior.NexusMassRecallWarpOut.On" Send="Create"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="SetOpacity 0.600000 0.250000 MassRecallOpacity"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="SetTintColor 100,100,255 0.250000 OneShot MassRecallTint"/>
+        <On Terms="Behavior.NeuralParasite.On" Send="Destroy"/>
+        <On Terms="Behavior.NexusRecalled.Off" Target="_Unit" Send="ClearOpacity 0.250000 MassRecallOpacity"/>
+        <On Terms="Behavior.NexusRecalled.Off" Target="_Unit" Send="ClearTintColor 0.250000 MassRecallTint"/>
+        <On Terms="Behavior.NexusRecalled.Off" Send="Destroy"/>
+    </CActorSimple>
     <CActorModel id="NexusMassRecallNexusCasting" parent="ModelAnimationStyleContinuous">
         <On Terms="Behavior.NexusMassRecallCasting.On" Send="Create"/>
         <On Terms="Behavior.NexusMassRecallCasting.Off" Send="AnimBracketStop BSD"/>
@@ -2067,6 +2107,7 @@
     <CActorModelMaterial id="GlazeParasiticBomb">
         <Remove Terms="Behavior.ParasiticBomb.On" Send="Create"/>
         <On Terms="Behavior.ParasiticBombInitialDelay.On" Send="Create"/>
+        <On Terms="Behavior.ParasiticBomb.Destroy" Send="AnimBracketStop BSD"/>
     </CActorModelMaterial>
     <CActorUnit id="ShieldBattery" parent="ProtossBuilding" unitName="ShieldBattery">
         <Macros value="UnpoweredAnim"/>

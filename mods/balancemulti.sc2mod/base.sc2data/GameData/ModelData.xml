@@ -19,9 +19,13 @@
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
     </CModel>
+    <CModel id="Elsecaro_Palmtree_Wrecked">
+        <Occlusion value="Hide"/>
+    </CModel>
     <CModel id="EyeStalkModel">
         <ScaleMax value="0.800000,0.800000,0.800000"/>
         <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <Model value="Assets\Effects\Zerg\Overseer_EyeStalk_MP\Overseer_EyeStalk_MP.m3"/>
     </CModel>
     <CModel id="Infestor">
         <Model value="Assets\Units\Zerg\Infestor_Ex3\Infestor_Ex3.m3"/>
@@ -60,6 +64,12 @@
     <CModel id="LurkerMPAttackSpike">
         <ScaleMax value="1.500000,1.500000,1.500000"/>
         <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="Observer_Purifier_Collection">
+        <RequiredAnims value="Assets\Units\Protoss\Observer_KaraxAnims\Observer_KaraxAnims.m3a"/>
+    </CModel>
+    <CModel id="ObserverPurifierObservationMode" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Observer_ObservationMode\Observer_ObservationMode.m3"/>
     </CModel>
     <CModel id="OverlordXPRewardTransportDeath">
         <LowQualityModel value="OverlordDeathLow"/>
@@ -394,16 +404,11 @@
         <ScaleMax value="3.000000,3.000000,3.000000"/>
         <ScaleMin value="3.000000,3.000000,3.000000"/>
     </CModel>
-    <CModel id="Aiur_Temple_GroundDoor">
-        <Flags index="ShowCreepEngulfmentEvenOnLow" value="1"/>
+    <CModel id="ZerusSwampPlantsLarge">
+        <Occlusion value="Hide"/>
     </CModel>
-    <CModel id="SnowRefinery_RockRampSmall">
-        <Flags index="ShowCreepEngulfmentEvenOnLow" value="1"/>
-    </CModel>
-    <CModel id="SnowRefinery_RockRamps">
-        <Flags index="ShowCreepEngulfmentEvenOnLow" value="1"/>
-    </CModel>
-    <CModel id="SnowRefinery_RockRamps_Medium">
-        <Flags index="ShowCreepEngulfmentEvenOnLow" value="1"/>
+    <CModel id="ZerusTree">
+        <Occlusion value="Hide"/>
+        <OccludingOpacity value="0.100000"/>
     </CModel>
 </Catalog>
