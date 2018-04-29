@@ -4,6 +4,39 @@
         <EditorCategories value="Race:Terran"/>
         <Upgrades Upgrade="##id##" Count="1"/>
     </CEffectModifyPlayer>
+    <CEffectDamage id="DrakkenLaserDrillSpotterCallForHelp">
+        <EditorCategories value=""/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <Flags index="Live" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Flags index="NoLeech" value="1"/>
+        <Flags index="NoGain" value="1"/>
+        <Flags index="NoScaledDealtBonus" value="1"/>
+        <Flags index="NoFractionDealtBonus" value="1"/>
+        <Flags index="NoUnscaledDealtBonus" value="1"/>
+        <Flags index="NoDealtMaximum" value="1"/>
+        <Flags index="NoDealtMinimum" value="1"/>
+        <Flags index="NoScaledTakenBonus" value="1"/>
+        <Flags index="NoFractionTakenBonus" value="1"/>
+        <Flags index="NoUnscaledTakenBonus" value="1"/>
+        <Flags index="NoTakenMaximum" value="1"/>
+        <Flags index="NoTakenMinimum" value="1"/>
+        <Flags index="NoBehaviorResponse" value="1"/>
+        <Flags index="NoVitalAbsorbLife" value="1"/>
+        <Flags index="NoVitalAbsorbShields" value="1"/>
+        <Flags index="NoVitalAbsorbEnergy" value="1"/>
+        <Flags index="NoVitalLeechLife" value="1"/>
+        <Flags index="NoVitalLeechShields" value="1"/>
+        <Flags index="NoVitalLeechEnergy" value="1"/>
+        <Flags index="NoVitalGainLife" value="1"/>
+        <Flags index="NoVitalGainShields" value="1"/>
+        <Flags index="NoVitalGainEnergy" value="1"/>
+        <Flags index="NoDamageTimerReset" value="1"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectDamage id="DragoonDamage">
+        <AttributeBonus index="Armored" value="14"/>
+    </CEffectDamage>
     <CEffectDamage id="FenixTalisShadeDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
         <AttributeBonus index="Light" value="10"/>
@@ -109,6 +142,9 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="Frenzy"/>
     </CEffectApplyBehavior>
+    <CEffectSet id="LockOnInitialSet">
+        <ValidatorArray index="0" removed="1"/>
+    </CEffectSet>
     <CEffectRemoveBehavior id="RemoveFrenzyCaster">
         <EditorCategories value=""/>
         <WhichUnit Value="Caster"/>
@@ -240,7 +276,6 @@
         <CreateFlags index="UseFood" value="0"/>
         <SpawnEffect value="FleetwideJumpTeleportOutABSet"/>
         <SpawnRange value="3"/>
-        <ValidatorArray value="HasVision"/>
     </CEffectCreateUnit>
     <CEffectTeleport id="FleetwideJumpTeleport">
         <EditorCategories value="Race:Terran"/>
@@ -292,9 +327,6 @@
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="HHVikingInstantMorphOrder"/>
     </CEffectSet>
-    <CEffectCreateUnit id="HyperjumpCreatePrecursor">
-        <ValidatorArray value="HasVision"/>
-    </CEffectCreateUnit>
     <CEffectApplyBehavior id="InstantMorphSelf">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Value="Caster"/>
@@ -5530,6 +5562,8 @@
     </CEffectSwitch>
     <CEffectDamage id="BurrowChargeTargetDamage">
         <DamageModifierSource Value="Caster"/>
+        <Kind value="Spell"/>
+        <KindSplash value="Spell"/>
     </CEffectDamage>
     <CEffectDamage id="ApocaliskBurrowChargeTargetDamage">
         <ValidatorArray value="TargetIsEnemy"/>
@@ -5537,8 +5571,6 @@
         <DamageModifierSource Value="Caster"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
-        <Kind value="Melee"/>
-        <KindSplash value="Melee"/>
         <Amount value="50"/>
         <SearchFilters value="Ground;Self,Player,Ally,Stasis,Dead,Hidden,Invulnerable"/>
         <SearchFlags index="CallForHelp" value="1"/>
@@ -5552,7 +5584,7 @@
     </CEffectLaunchMissile>
     <CEffectDamage id="CycloneLockOnAirDamage" parent="DU_WEAP_MISSILE">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="16.6667"/>
+        <Amount value="25"/>
         <Death value="Blast"/>
     </CEffectDamage>
     <CEffectSet id="DarkArchonMindControlSet">
@@ -5964,10 +5996,6 @@
     <CEffectModifyPlayer id="KerriganVoidCoopEconDrop5Pickup">
         <Resources index="Vespene" value="50"/>
     </CEffectModifyPlayer>
-    <CEffectCreatePersistent id="LockOnAirCP">
-        <PeriodCount value="30"/>
-        <PeriodicPeriodArray index="0" value="0.6667"/>
-    </CEffectCreatePersistent>
     <CEffectApplyBehavior id="MothershipCoreApplyPurifyAB">
         <ValidatorArray index="0" value="IsPylon"/>
     </CEffectApplyBehavior>
@@ -6278,10 +6306,6 @@
         <EffectArray index="0" value="IrradiateApplyBehavior"/>
         <EffectArray index="1" removed="1"/>
     </CEffectSet>
-    <CEffectCreatePersistent id="LockOnCP">
-        <PeriodicPeriodArray index="0" value="0.6667"/>
-        <PeriodCount value="30"/>
-    </CEffectCreatePersistent>
     <CEffectApplyBehavior id="HyperionVoidCoopTimedLifeExpireAB">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Value="Source"/>
@@ -6531,9 +6555,11 @@
     </CEffectSet>
     <CEffectSet id="CycloneWeaponLaunchMissileLeftSet">
         <EffectArray index="0" value="CycloneLockOnLaunchMissileLeft"/>
+        <EffectArray index="1" value=""/>
     </CEffectSet>
     <CEffectSet id="CycloneWeaponLaunchMissileRightSet">
         <EffectArray index="0" value="CycloneLockOnLaunchMissileRight"/>
+        <EffectArray index="1" value=""/>
     </CEffectSet>
     <CEffectApplyBehavior id="DarkPylonCloakDamageBoostAB">
         <EditorCategories value=""/>
@@ -7403,7 +7429,7 @@
     </CEffectLaunchMissile>
     <CEffectDamage id="CycloneLockOnDamage" parent="DU_WEAP_MISSILE">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="16.6667"/>
+        <Amount value="25"/>
         <Death value="Blast"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="LurkerCoop">
@@ -7498,6 +7524,7 @@
         <Flags index="NoBehaviorResponse" value="1"/>
         <Kind value="Ranged"/>
         <Death value="Blast"/>
+        <SearchFlags index="CallForHelp" value="0"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="LaserBeamDummyPersistantCoop">
         <EditorCategories value="Race:Terran"/>
@@ -7532,6 +7559,7 @@
         <TargetSorts RequestCount="1" RequestPercentage="1">
             <SortArray value="TSLifeLargestFirst"/>
         </TargetSorts>
+        <SearchFlags index="CallForHelp" value="0"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="LaserDrillTripodOverloadAB">
         <EditorCategories value="Race:Protoss"/>
@@ -8370,10 +8398,10 @@
         <EditorCategories value="Race:Terran"/>
         <WhichLocation Value="TargetUnit"/>
         <FinalEffect value="LockOnClearSet"/>
-        <PeriodCount value="30"/>
+        <PeriodCount value="20"/>
         <PeriodicValidator value="LockOnPeriodicValidators"/>
         <PeriodicEffectArray value="CycloneWeaponLaunchMissileSwitch"/>
-        <PeriodicPeriodArray value="0.6667"/>
+        <PeriodicPeriodArray value="1"/>
         <RevealRadius value="2"/>
         <RevealFlags index="Unfog" value="1"/>
     </CEffectCreatePersistent>
@@ -10195,7 +10223,6 @@
         <ValidatorArray value="Pathable"/>
     </CEffectSet>
     <CEffectCreateUnit id="SpecialDeliveryCU">
-        <ValidatorArray value="CliffLevelGE1"/>
         <WhichLocation Value="TargetPoint"/>
         <SpawnEffect value="SpecialDeliveryDropSet"/>
         <SpawnUnit value="VoidCoopARES"/>
@@ -14951,6 +14978,7 @@
     <CEffectDamage id="MasteryRaynorStartingSupplyDisplayDummy"/>
     <CEffectDamage id="MasteryRaynorResearchSpeedDisplayDummy"/>
     <CEffectDamage id="MasteryRaynorBuildingHealthDisplayDummy"/>
+    <CEffectDamage id="MasteryRaynorResearchCostDisplayDummy"/>
     <CEffectDamage id="MasteryKerriganEnergyRegenDisplayDummy"/>
     <CEffectDamage id="MasteryKerriganAutoAttackDamageDisplayDummy"/>
     <CEffectDamage id="MasteryKerriganArmyGasCostDisplayDummy"/>
@@ -16433,7 +16461,7 @@
         <SearchFilters value="Ground,Visible;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Arc="180" Radius="3" Effect="ApocaliskBladesDamageSecondary"/>
         <ImpactLocation Value="TargetUnit"/>
-        <ExcludeArray Effect="ApocaliskBladesDamage" Value="Target"/>
+        <ExcludeArray Effect="ApocaliskBlades" Value="Target"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
     </CEffectEnumArea>
     <CEffectDamage id="ApocaliskBladesDamageSecondary" parent="DU_WEAP">
@@ -27687,9 +27715,50 @@
         <Behavior value="NoScrapDrop"/>
     </CEffectApplyBehavior>
     <CEffectSet id="HHMercStarportLaunchDummy"/>
+    <CEffectCreatePersistent id="LegionnairePsiBladesBurst">
+        <EditorCategories value="Race:Protoss"/>
+        <PeriodCount value="2"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodicEffectArray value="LegionnairePsiBlades"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.28"/>
+    </CEffectCreatePersistent>
     <CEffectDamage id="LegionnairePsiBlades" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
         <Amount value="16"/>
         <Death value="Eviscerate"/>
     </CEffectDamage>
+    <CEffectCreatePersistent id="ArtanisIonCannons">
+        <EditorCategories value="Race:Protoss"/>
+        <PeriodCount value="2"/>
+        <WhichLocation Value="TargetUnit"/>
+        <PeriodicEffectArray value="ArtanisIonCannonsLMLeft"/>
+        <PeriodicEffectArray value="ArtanisIonCannonsLMRight"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="ArtanisIonCannonsLMLeft" parent="IonCannonsLM">
+        <Movers Link="MissileDefault" IfRangeLTE="1"/>
+        <Movers Link="IonCannonsWeaponLeft" IfRangeLTE="6"/>
+        <ImpactEffect value="ArtanisIonCannonsULeft"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="ArtanisIonCannonsLMRight" parent="IonCannonsLM">
+        <Movers Link="MissileDefault" IfRangeLTE="1"/>
+        <Movers Link="IonCannonsWeaponRight" IfRangeLTE="6"/>
+        <ImpactEffect value="ArtanisIonCannonsURight"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="ArtanisIonCannonsU" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Protoss"/>
+        <Visibility value="Visible"/>
+        <Amount value="7"/>
+        <AttributeBonus index="Light" value="5"/>
+        <Death value="Blast"/>
+        <SearchFilters value="Air;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <ExcludeArray Value="Target"/>
+    </CEffectDamage>
+    <CEffectDamage id="ArtanisIonCannonsULeft" parent="ArtanisIonCannonsU"/>
+    <CEffectDamage id="ArtanisIonCannonsURight" parent="ArtanisIonCannonsU"/>
+    <CEffectModifyUnit id="HHWidowMineTargetingBeamDummy"/>
 </Catalog>

@@ -21,8 +21,38 @@
         <MinScanRange value="6.5"/>
         <Arc value="360"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="ATALaserBattery_Raynor">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
+        <DisplayEffect value="ATALaserBatteryU"/>
+        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquirePrioritization value="ByAngle"/>
+        <MinScanRange value="6.5"/>
+        <Range value="6"/>
+        <Arc value="360"/>
+        <Period value="0.225"/>
+        <Effect value="ATALaserBatteryLM"/>
+        <AllowedMovement value="Moving"/>
+        <RandomDelayMax value="0.1875"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="ATSLaserBattery">
         <MinScanRange value="6.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ATSLaserBattery_Raynor">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
+        <DisplayEffect value="ATSLaserBatteryU"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquirePrioritization value="ByAngle"/>
+        <MinScanRange value="6.5"/>
+        <Range value="6"/>
+        <Arc value="360"/>
+        <Period value="0.225"/>
+        <Effect value="ATSLaserBatteryLM"/>
+        <AllowedMovement value="Moving"/>
+        <RandomDelayMax value="0.1875"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AcidSpew">
         <MinScanRange value="7.5"/>
@@ -575,8 +605,8 @@
         <MinScanRange value="6.5"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="Dragoon">
-        <Range value="5"/>
-        <MinScanRange value="5.5"/>
+        <Range value="6"/>
+        <MinScanRange value="6.5"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="DuskWingBanshee">
         <MinScanRange value="6.5"/>
@@ -2000,9 +2030,14 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="WraithA">
         <MinScanRange value="5.5"/>
+        <Arc value="90"/>
+        <DamagePoint value="0.0446"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="WraithG">
         <MinScanRange value="5.5"/>
+        <Arc value="90"/>
+        <Period value="1.25"/>
+        <DamagePoint value="0.0446"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="WreckingCrewAssault">
         <MinScanRange value="6.5"/>
@@ -3814,5 +3849,21 @@
         <Range value="10"/>
         <Arc value="360"/>
         <Period value="3"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ArtanisIonCannons">
+        <Name value="Weapon/Name/IonCannons"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Tip value="Weapon/Tip/IonCannons"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="ArtanisIonCannonsU"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="5.5"/>
+        <Arc value="4.9987"/>
+        <ArcSlop value="0"/>
+        <Period value="1.1"/>
+        <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
 </Catalog>

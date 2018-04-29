@@ -549,6 +549,58 @@
         <SpeakerMix index="SideRight" value="0.000000"/>
         <Volume value="-6.000000,-6.000000"/>
     </CSound>
+    <CSound id="NationWarsV_Audience_Amb" parent="CutScene">
+        <AssetArray index="0">
+            <File value="Assets\Sounds\UI_WC_MainEvent_Hover_CrowdReax.wav"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Crowd_Reax_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Crowd_Reax_03.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,0.000000"/>
+        <SpeakerMix index="Center" value="0.350000"/>
+        <Volume value="-14.000000,-12.000000"/>
+    </CSound>
+    <CSound id="NationWarsV_MainTheme_End_Piano_Only" parent="CutScene">
+        <AssetArray index="0">
+            <File value="Music\NationWarsV_MainTheme_End_Piano_Mx.ogg"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <Category value="Music"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.125000"/>
+        <SpeakerMix index="SideRight" value="0.125000"/>
+    </CSound>
+    <CSound id="NationWarsV_ScreenGlitch_Sfx_01" parent="CutScene">
+        <AssetArray index="0">
+            <File value="Music\NationWarsV_GlitchSet_Sfx_01.ogg"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_01a.ogg" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_01b.ogg" Volume="4.000000,4.000000" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_01c.ogg" Volume="4.000000,4.000000" FacialGroup=""/>
+        <SpeakerMix index="FrontLeft" value="0.500000"/>
+        <SpeakerMix index="FrontRight" value="0.500000"/>
+        <SpeakerMix index="BackLeft" value="0.125000"/>
+        <SpeakerMix index="BackRight" value="0.125000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Pitch value="-1.000000,0.000000"/>
+        <Volume value="-8.000000,-6.000000"/>
+    </CSound>
     <CSound id="CS_MainMenu_Horner_Foley_LCR_Chain" parent="Foley">
         <AssetArray index="0" File="Assets\Sounds\Horner_MM_Horner_Mv_ChainFlick.ogg" FacialGroup=""/>
         <Mode value="2D"/>
@@ -4187,6 +4239,23 @@
         <SpeakerMix index="SideLeft" value="0.125000"/>
         <SpeakerMix index="SideRight" value="0.125000"/>
     </CSound>
+    <CSound id="NationWarsV_MM_TO_Mx_Fx_MIX" parent="CutScene">
+        <AssetArray index="0">
+            <File value="Music\NationWarsV_MM_TO_Mx_Fx_MIX_A.ogg"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <Category value="Music"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.125000"/>
+        <SpeakerMix index="SideRight" value="0.125000"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
     <CSound id="Music_TO_Horner_SpaceCut" parent="CutScene">
         <AssetArray index="0">
             <File value="Assets\Sounds\Horner_MM_Open_MX_Romantic_Gtr_SpaceCut.ogg"/>
@@ -4407,6 +4476,113 @@
         <SpeakerMix index="SideLeft" value="0.125000"/>
         <SpeakerMix index="SideRight" value="0.125000"/>
         <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="NationWarsV_Playlist_Music_Loop" parent="CutScene">
+        <AssetArray index="0">
+            <File value="Music\NationWarsV_MainTheme_Loop_Piano_End_Mx.ogg"/>
+            <Volume value="1.000000,1.000000"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <AssetArray File="Music\NationWarsV_TheSpearOfAdun_Mx.ogg" Volume="-2.000000,-2.000000" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_P03CinePart03_Mx.ogg" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_P05CinePart05_Mx.ogg" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_FireAndFury_Edit02_Mx.ogg" FacialGroup=""/>
+        <Category value="Music"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.125000"/>
+        <SpeakerMix index="SideRight" value="0.125000"/>
+        <Select value="Sequential"/>
+        <PlayDelay value="120,120"/>
+    </CSound>
+    <CSound id="NationWarsV_ScreenGlitch_Sfx_02" parent="CutScene">
+        <AssetArray index="0">
+            <File value="Music\NationWarsV_GlitchSet_Sfx_02.ogg"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_02a.ogg" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_02b.ogg" Volume="4.000000,4.000000" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_02c.ogg" Volume="6.000000,6.000000" FacialGroup=""/>
+        <SpeakerMix index="FrontLeft" value="0.500000"/>
+        <SpeakerMix index="FrontRight" value="0.500000"/>
+        <SpeakerMix index="BackLeft" value="0.125000"/>
+        <SpeakerMix index="BackRight" value="0.125000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Pitch value="-2.000000,-1.000000"/>
+        <Volume value="-10.000000,-8.000000"/>
+    </CSound>
+    <CSound id="NationWarsV_ScreenGlitch_Sfx_03" parent="CutScene">
+        <AssetArray index="0">
+            <File value="Music\NationWarsV_GlitchSet_Sfx_03.ogg"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_03a.ogg" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_03b.ogg" Volume="3.000000,3.000000" FacialGroup=""/>
+        <SpeakerMix index="FrontLeft" value="0.500000"/>
+        <SpeakerMix index="FrontRight" value="0.500000"/>
+        <SpeakerMix index="BackLeft" value="0.125000"/>
+        <SpeakerMix index="BackRight" value="0.125000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Pitch value="-1.000000,0.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="NationWarsV_ScreenGlitch_Sfx_04" parent="CutScene">
+        <AssetArray index="0">
+            <File value="Music\NationWarsV_GlitchSet_Sfx_04.ogg"/>
+            <Volume value="-3.000000,-3.000000"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_04a.ogg" Volume="4.000000,4.000000" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_04b.ogg" Volume="4.000000,4.000000" FacialGroup=""/>
+        <SpeakerMix index="FrontLeft" value="0.500000"/>
+        <SpeakerMix index="FrontRight" value="0.500000"/>
+        <SpeakerMix index="BackLeft" value="0.125000"/>
+        <SpeakerMix index="BackRight" value="0.125000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Pitch value="-1.000000,0.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="NationWarsV_ScreenGlitch_Sfx_05" parent="CutScene">
+        <AssetArray index="0">
+            <File value="Music\NationWarsV_GlitchSet_Sfx_05.ogg"/>
+            <Volume value="-2.000000,-2.000000"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_05a.ogg" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_05b.ogg" Volume="4.000000,4.000000" FacialGroup=""/>
+        <AssetArray File="Music\NationWarsV_GlitchSet_Sfx_05c.ogg" Volume="4.000000,4.000000" FacialGroup=""/>
+        <SpeakerMix index="FrontLeft" value="0.500000"/>
+        <SpeakerMix index="FrontRight" value="0.500000"/>
+        <SpeakerMix index="BackLeft" value="0.125000"/>
+        <SpeakerMix index="BackRight" value="0.125000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
     </CSound>
     <CSound id="ProtossTarmacDoodad_RobotArms_loop" parent="Ambience_Object">
         <EditorCategories value="Race:Zerg"/>
@@ -16981,11 +17157,11 @@
         <SpeakerMix index="BackRight" value="0.000000"/>
         <SpeakerMix index="SideLeft" value="0.000000"/>
         <SpeakerMix index="SideRight" value="0.000000"/>
-        <Volume value="-30.000000,-18.000000"/>
+        <Volume value="-32.000000,-30.000000"/>
         <DupeDestroyCount value="2"/>
         <DupeMuteCount value="1"/>
         <SustainFade index="1" Time="500" Volume="-96.000000"/>
-        <Category value="User23"/>
+        <Category value="Ambient"/>
     </CSound>
     <CSound id="UI_MP_HydraliskVox" parent="SetPiece">
         <AssetArray File="Assets\Sounds\UI_MP_HydraliskVox01.wav" FacialGroup=""/>
@@ -16995,7 +17171,7 @@
         <SpeakerMix index="BackRight" value="0.000000"/>
         <SpeakerMix index="SideLeft" value="0.000000"/>
         <SpeakerMix index="SideRight" value="0.000000"/>
-        <Volume value="-7.000000,-7.000000"/>
+        <Volume value="-12.000000,-12.000000"/>
         <Pitch value="-0.100000,0.100000"/>
         <SustainFade index="1" Time="500" Volume="-96.000000"/>
         <Category value="User23"/>
@@ -17010,7 +17186,7 @@
         <SpeakerMix index="SideRight" value="0.000000"/>
         <Pitch value="-0.100000,0.100000"/>
         <SustainFade index="1" Time="1000" Volume="-96.000000"/>
-        <Volume value="-4.000000,-4.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
         <Category value="User23"/>
     </CSound>
     <CSound id="UI_MP_Tourny_NextRoundNotice" parent="SetPiece">
@@ -17163,11 +17339,11 @@
         <SpeakerMix index="BackRight" value="0.000000"/>
         <SpeakerMix index="SideLeft" value="0.000000"/>
         <SpeakerMix index="SideRight" value="0.000000"/>
-        <Volume value="-19.000000,-19.000000"/>
+        <Volume value="-28.000000,-26.000000"/>
         <DupeDestroyCount value="2"/>
         <DupeMuteCount value="1"/>
         <SustainFade index="1" Time="500" Volume="-96.000000"/>
-        <Category value="User23"/>
+        <Category value="Ambient"/>
     </CSound>
     <CSound id="UI_MP_HydraliskFoleyLoop01" parent="SetPiece">
         <AssetArray File="Assets\Sounds\UI_MP_HydraliskFoley01.wav" FacialGroup=""/>
@@ -17183,11 +17359,11 @@
         <SpeakerMix index="BackRight" value="0.000000"/>
         <SpeakerMix index="SideLeft" value="0.000000"/>
         <SpeakerMix index="SideRight" value="0.000000"/>
-        <Volume value="-30.000000,-18.000000"/>
+        <Volume value="-34.000000,-30.000000"/>
         <DupeDestroyCount value="2"/>
         <DupeMuteCount value="1"/>
         <SustainFade index="1" Time="500" Volume="-96.000000"/>
-        <Category value="User23"/>
+        <Category value="Ambient"/>
     </CSound>
     <CSound id="UI_MP_MarineSquelch01" parent="SetPiece">
         <AssetArray File="Assets\Sounds\UI_MP_MarineRadioSquelch01.wav" FacialGroup=""/>
@@ -17198,7 +17374,7 @@
         <SpeakerMix index="BackRight" value="0.000000"/>
         <SpeakerMix index="SideLeft" value="0.000000"/>
         <SpeakerMix index="SideRight" value="0.000000"/>
-        <Volume value="-10.000000,-10.000000"/>
+        <Volume value="-14.000000,-14.000000"/>
         <Chance value="50"/>
         <SustainFade index="1" Time="500" Volume="-96.000000"/>
         <Category value="User23"/>
@@ -17212,7 +17388,7 @@
         <SpeakerMix index="BackRight" value="0.000000"/>
         <SpeakerMix index="SideLeft" value="0.000000"/>
         <SpeakerMix index="SideRight" value="0.000000"/>
-        <Volume value="-10.000000,-10.000000"/>
+        <Volume value="-12.000000,-12.000000"/>
         <Chance value="50"/>
         <SustainFade index="1" Time="500" Volume="-96.000000"/>
         <Category value="User23"/>
@@ -17227,7 +17403,7 @@
         <SpeakerMix index="SideRight" value="0.000000"/>
         <Pitch value="-0.100000,0.100000"/>
         <SustainFade index="1" Time="500" Volume="-96.000000"/>
-        <Volume value="-5.000000,-5.000000"/>
+        <Volume value="-10.000000,-10.000000"/>
         <Category value="User23"/>
     </CSound>
     <CSound id="UI_MP_MarineFoley" parent="SetPiece">
@@ -17240,7 +17416,7 @@
         <SpeakerMix index="SideRight" value="0.000000"/>
         <Pitch value="-0.100000,0.100000"/>
         <SustainFade index="1" Time="500" Volume="-96.000000"/>
-        <Volume value="-5.500000,-5.500000"/>
+        <Volume value="-10.500000,-10.500000"/>
         <Category value="User23"/>
     </CSound>
     <CSound id="UI_MP_ZealotPsiBladeMove" parent="SetPiece">
@@ -17255,9 +17431,9 @@
         <SpeakerMix index="BackRight" value="0.000000"/>
         <SpeakerMix index="SideLeft" value="0.000000"/>
         <SpeakerMix index="SideRight" value="0.000000"/>
-        <Volume value="-16.000000,-16.000000"/>
+        <Volume value="-20.000000,-18.000000"/>
         <SustainFade index="1" Time="500" Volume="-96.000000"/>
-        <Category value="User23"/>
+        <Category value="Ambient"/>
     </CSound>
     <CSound id="UI_MainMenu_Hyperion" parent="UI">
         <AssetArray File="Assets\Sounds\MainMenu_Hyperion_02.ogg" FacialGroup=""/>

@@ -16078,6 +16078,7 @@ PresetValue/Name/lib_Ntve_05F14142=Disabled
 PresetValue/Name/lib_Ntve_06067E90=Minerals
 PresetValue/Name/lib_Ntve_06588939=Any Precision
 PresetValue/Name/lib_Ntve_066FFB12=Normal
+PresetValue/Name/lib_Ntve_0686F818=Arcade - Desert Strike
 PresetValue/Name/lib_Ntve_0687DBEA=Remaining Count
 PresetValue/Name/lib_Ntve_0693AEE6=Hit 04
 PresetValue/Name/lib_Ntve_06961F8D=Beacon Rally
@@ -16320,6 +16321,7 @@ PresetValue/Name/lib_Ntve_1DD2722D=Achievement Terms
 PresetValue/Name/lib_Ntve_1E6C206D=Protoss
 PresetValue/Name/lib_Ntve_1E6F5A33=Pylon Button
 PresetValue/Name/lib_Ntve_1E7A4625===
+PresetValue/Name/lib_Ntve_1EED2D9C=Arcade - Ark Star
 PresetValue/Name/lib_Ntve_1EF3C4D1=Supplies Made
 PresetValue/Name/lib_Ntve_1EF438A0=Weapon 18
 PresetValue/Name/lib_Ntve_1F002FB8=Pos - Set Location 11

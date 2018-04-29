@@ -398,9 +398,9 @@
         <?token id="unitAlter" value="Archon"?>
         <Camera value="Star2CameraMid06"/>
         <ReplacementArray Catalog="Model" From="##unit##Shadow" To="##unit##_Purifier_Shadow"/>
-        <ReplacementArray Catalog="Model" From="##unitAlter##" To="##unitAlter##_Purifier"/>
-        <ReplacementArray Catalog="Model" From="##unitAlter##Death" To="##unitAlter##_Purifier_Death"/>
-        <ReplacementArray Catalog="Model" From="##unitAlter##Portrait" To="##unitAlter##_Purifier_Portrait"/>
+        <ReplacementArray Catalog="Model" From="##unitAlter##" To="##unitAlter##_##collection##"/>
+        <ReplacementArray Catalog="Model" From="##unitAlter##Death" To="##unitAlter##_##collection##_Death"/>
+        <ReplacementArray Catalog="Model" From="##unitAlter##Portrait" To="##unitAlter##_##collection##_Portrait"/>
         <CollectionDisplayModelAlternate value="##unitAlter##_##collection##"/>
         <CollectionDisplayUnitAlternate value="##unitAlter##"/>
     </CSkin>

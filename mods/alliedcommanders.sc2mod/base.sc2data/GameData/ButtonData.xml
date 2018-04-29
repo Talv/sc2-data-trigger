@@ -14,6 +14,22 @@
         <Icon value="Assets\Textures\sc2_ui_ingame_storymode_panel_faction_lock.dds"/>
         <AlertIcon value="Assets\Textures\sc2_ui_ingame_storymode_panel_faction_lock.dds"/>
     </CButton>
+    <CButton id="CloakOnBanshee_Raynor">
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeyAlias value="CloakOnBanshee"/>
+        <HotkeySet value="Cloak"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="CloakOnDustWing">
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeyAlias value="CloakOnBanshee"/>
+        <HotkeySet value="Cloak"/>
+        <Universal value="1"/>
+    </CButton>
     <CButton id="GreaterSpireViper">
         <HotkeyAlias value="GreaterSpireBroodlord"/>
     </CButton>
@@ -130,6 +146,12 @@
         <Icon value="Assets\Textures\btn-ability-hornerhan-raven-radar.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-hornerhan-raven-radar.dds"/>
         <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="ResearchBansheeCloak_Raynor">
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeyAlias value="ResearchBansheeCloak"/>
     </CButton>
     <CButton id="ResearchHHMultiLock">
         <Icon value="Assets\Textures\btn-ability-hornerhan-raven-analyzetargetmultilock.dds"/>

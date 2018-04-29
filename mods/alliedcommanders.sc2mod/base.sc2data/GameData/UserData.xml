@@ -1867,6 +1867,9 @@
             <Upgrade Upgrade="RaynorCommanderTerranWeaponAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
+            <Upgrade Upgrade="RaynorCommanderTerranWeaponAttackSpeedTrigger">
+                <Field Id="Upgrade" Index="1"/>
+            </Upgrade>
             <User Type="PlayerCommanders" Instance="TerranRaynor">
                 <Field Id="Commander"/>
             </User>
@@ -16530,7 +16533,7 @@
             <Fixed Fixed="2">
                 <Field Id="PointIncrement"/>
             </Fixed>
-            <GameLink GameLink="MasteryRaynorStimDuration">
+            <GameLink GameLink="MasteryRaynorResearchCost">
                 <Field Id="TalentData"/>
             </GameLink>
             <Int Int="1">
@@ -16542,7 +16545,7 @@
             <Text Text="UserData/MasteryUpgrades/RaynorMastery1_ValueFormat">
                 <Field Id="ValueFormat"/>
             </Text>
-            <Upgrade Upgrade="MasteryRaynorStimDuration">
+            <Upgrade Upgrade="MasteryRaynorResearchCost">
                 <Field Id="Upgrade"/>
             </Upgrade>
             <User Type="PlayerCommanders" Instance="TerranRaynor">
@@ -16573,7 +16576,7 @@
             </User>
         </Instances>
         <Instances Id="RaynorMastery3">
-            <Fixed Fixed="3">
+            <Fixed Fixed="4">
                 <Field Id="PointIncrement"/>
             </Fixed>
             <GameLink GameLink="MasteryRaynorHyperionCooldown">
@@ -16642,10 +16645,10 @@
             </User>
         </Instances>
         <Instances Id="RaynorMastery6">
-            <Fixed Fixed="0.5">
+            <Fixed Fixed="1">
                 <Field Id="PointIncrement"/>
             </Fixed>
-            <GameLink GameLink="MasteryRaynorImprovedSafeguard">
+            <GameLink GameLink="MasteryRaynorMechAttackSpeed">
                 <Field Id="TalentData"/>
             </GameLink>
             <Int Int="3">
@@ -16657,7 +16660,7 @@
             <Text Text="UserData/MasteryUpgrades/RaynorMastery6_ValueFormat">
                 <Field Id="ValueFormat"/>
             </Text>
-            <Upgrade Upgrade="MasteryRaynorImprovedSafeguard">
+            <Upgrade Upgrade="MasteryRaynorMechAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
             <User Type="PlayerCommanders" Instance="TerranRaynor">
@@ -16717,7 +16720,7 @@
             </User>
         </Instances>
         <Instances Id="SwannMastery3">
-            <Fixed Fixed="-2">
+            <Fixed Fixed="2">
                 <Field Id="PointIncrement"/>
             </Fixed>
             <GameLink GameLink="MasterySwannImmortalityProtocol">
@@ -16786,8 +16789,11 @@
             </User>
         </Instances>
         <Instances Id="SwannMastery6">
-            <Fixed Fixed="2">
+            <Fixed Fixed="1.5">
                 <Field Id="PointIncrement"/>
+            </Fixed>
+            <Fixed Fixed="1">
+                <Field Id="PointIncrement" Index="1"/>
             </Fixed>
             <GameLink GameLink="MasterySwannLaserDrillBuildTime">
                 <Field Id="TalentData"/>
@@ -17223,10 +17229,10 @@
             </User>
         </Instances>
         <Instances Id="ArtanisMastery1">
-            <Fixed Fixed="2">
+            <Fixed Fixed="3">
                 <Field Id="PointIncrement"/>
             </Fixed>
-            <GameLink GameLink="MasteryArtanisShieldOverchargeCDR">
+            <GameLink GameLink="MasteryArtanisShieldOvercharge">
                 <Field Id="TalentData"/>
             </GameLink>
             <Int Int="1">
@@ -17238,7 +17244,7 @@
             <Text Text="UserData/MasteryUpgrades/ArtanisMastery1_ValueFormat">
                 <Field Id="ValueFormat"/>
             </Text>
-            <Upgrade Upgrade="MasteryArtanisShieldOverchargeCDR">
+            <Upgrade Upgrade="MasteryArtanisShieldOvercharge">
                 <Field Id="Upgrade"/>
             </Upgrade>
             <User Type="PlayerCommanders" Instance="ProtossArtanis">
@@ -17246,7 +17252,7 @@
             </User>
         </Instances>
         <Instances Id="ArtanisMastery2">
-            <Fixed Fixed="1">
+            <Fixed Fixed="0.5">
                 <Field Id="PointIncrement"/>
             </Fixed>
             <GameLink GameLink="MasteryArtanisGuardianShellHeal">
@@ -17269,10 +17275,10 @@
             </User>
         </Instances>
         <Instances Id="ArtanisMastery3">
-            <Fixed Fixed="2">
+            <Fixed Fixed="1.5">
                 <Field Id="PointIncrement"/>
             </Fixed>
-            <GameLink GameLink="MasteryArtanisWarpChargeCooldown">
+            <GameLink GameLink="MasteryArtanisEnergyRegenCooldown">
                 <Field Id="TalentData"/>
             </GameLink>
             <Int Int="2">
@@ -17284,7 +17290,7 @@
             <Text Text="UserData/MasteryUpgrades/ArtanisMastery3_Name">
                 <Field Id="Name"/>
             </Text>
-            <Upgrade Upgrade="MasteryArtanisWarpChargeCooldown">
+            <Upgrade Upgrade="MasteryArtanisEnergyRegenCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
             <User Type="PlayerCommanders" Instance="ProtossArtanis">
@@ -17499,7 +17505,7 @@
             </User>
         </Instances>
         <Instances Id="KaraxMastery1">
-            <Fixed Fixed="1">
+            <Fixed Fixed="0.75">
                 <Field Id="PointIncrement"/>
             </Fixed>
             <GameLink GameLink="MasteryKaraxUnitCost">
@@ -24902,6 +24908,9 @@
             <GameLink GameLink="Raynor">
                 <Field Id="CommanderData"/>
             </GameLink>
+            <GameLink GameLink="Raynor_COOP">
+                <Field Id="CommanderSkin"/>
+            </GameLink>
             <Image Image="Assets\Textures\ui_ingame_custommutators_playercard_commander_raynor.dds">
                 <Field Id="CustomImage"/>
             </Image>
@@ -26314,9 +26323,6 @@
             </Text>
             <Upgrade Upgrade="AlarakCommander">
                 <Field Id="DefaultUpgrades"/>
-            </Upgrade>
-            <Upgrade Upgrade="DarkProtoss">
-                <Field Id="DefaultUpgrades" Index="1"/>
             </Upgrade>
             <Upgrade Upgrade="HaveMonitor">
                 <Field Id="DefaultUpgrades" Index="2"/>

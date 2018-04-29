@@ -194,6 +194,10 @@
         <Find value="1"/>
         <Value value="HaveHHMultiLock"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HavePulseAmplifier">
+        <Find value="1"/>
+        <Value value="HaveWraithImprovedBurstLaser"/>
+    </CValidatorPlayerRequirement>
     <CValidatorUnitType id="IsAssaultGalleon">
         <Value value="HHMercStarportUpgraded"/>
         <Type value="SelectAlias"/>
@@ -686,6 +690,10 @@
     <CValidatorUnitCompareBehaviorCount id="TorrasqueCantRevive">
         <WhichUnit Value="Source"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="UnderConstructionOrDead">
+        <CombineArray value="TargetIsUnderConstruction"/>
+        <CombineArray value="IsDead"/>
+    </CValidatorCombine>
     <CValidatorUnitOrderQueue id="UnitHasMoveOrder">
         <AbilLink value="move"/>
         <Find value="0"/>

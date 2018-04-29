@@ -71,6 +71,8 @@
         <GameContentArray value="EmoticonPack,WarChest2Terran"/>
         <GameContentArray value="EmoticonPack,WarChest2Zerg"/>
         <GameContentArray value="EmoticonPack,WarChest2Protoss"/>
+        <GameContentArray value="EmoticonPack,Twitch20thAnniversary"/>
+        <GameContentArray value="EmoticonPack,NationWars"/>
         <GameContentArray value="VoicePack,Default"/>
         <GameContentArray value="VoicePack,Day9"/>
         <GameContentArray value="VoicePack,Dehaka"/>
@@ -227,6 +229,8 @@
         <GameContentArray value="Bundle,WarChestSeason1TerranSkinsBundle"/>
         <GameContentArray value="Bundle,WarChestSeason1ZergSkinsBundle"/>
         <GameContentArray value="Bundle,WarChestSeason1ProtossSkinsBundle"/>
+        <GameContentArray value="Bundle,PremiumMapARKStar"/>
+        <GameContentArray value="Bundle,PremiumMapDirectStrike"/>
         <GameContentArray value="Bundle,UltimateSkinsBundle"/>
         <GameContentArray value="Bundle,Day9AnnouncerBundle"/>
         <GameContentArray value="Bundle,iNcontrolAnnouncerBundle"/>
@@ -241,6 +245,12 @@
         <GameContentArray value="ConsoleSkin,ConsoleProtoss_Fenix"/>
         <GameContentArray value="ConsoleSkin,ConsoleTerran_Horner"/>
         <GameContentArray value="ConsoleSkin,ConsoleZerg_Dehaka"/>
+        <GameContentArray value="ConsoleSkin,ConsoleTerran_Classic"/>
+        <GameContentArray value="ConsoleSkin,ConsoleProtoss_Classic"/>
+        <GameContentArray value="ConsoleSkin,ConsoleZerg_Classic"/>
+        <GameContentArray value="ConsoleSkin,ConsoleTerran_XelNaga"/>
+        <GameContentArray value="ConsoleSkin,ConsoleProtoss_XelNaga"/>
+        <GameContentArray value="ConsoleSkin,ConsoleZerg_XelNaga"/>
         <GameContentArray value="WarChest,WarChestSeason1Terran"/>
         <GameContentArray value="WarChest,WarChestSeason1Zerg"/>
         <GameContentArray value="WarChest,WarChestSeason1Protoss"/>

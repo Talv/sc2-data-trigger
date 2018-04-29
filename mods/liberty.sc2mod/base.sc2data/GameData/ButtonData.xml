@@ -2978,6 +2978,7 @@
     <CButton id="MasteryArtanisStartingAndMaxSoAEnergy"/>
     <CButton id="MasteryArtanisStartingResources"/>
     <CButton id="MasteryArtanisWarpChargeCooldown"/>
+    <CButton id="MasteryArtanisEnergyRegenCooldown"/>
     <CButton id="MasteryKaraxBuildingVital"/>
     <CButton id="MasteryKaraxChronoBoostSpeed"/>
     <CButton id="MasteryKaraxMaxEnergy"/>
@@ -3004,6 +3005,7 @@
     <CButton id="MasteryRaynorMechAttackSpeed"/>
     <CButton id="MasteryRaynorMedicSecondaryHeal"/>
     <CButton id="MasteryRaynorResearchSpeed"/>
+    <CButton id="MasteryRaynorResearchCost"/>
     <CButton id="MasteryRaynorStimDuration"/>
     <CButton id="MasterySwannBuildingHealth"/>
     <CButton id="MasterySwannCombatDrop"/>

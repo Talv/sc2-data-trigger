@@ -746,6 +746,7 @@
         <!-- Need to kill all the extra models that the snapshot may have created under
              the covers. -->
         <On Terms="ActorDestruction" Target="_Snapshot" Send="Destroy"/>
+        <On Terms="ActorDestruction" Target="_SnapshotExtra" Send="Destroy"/>
     </CActorSnapshot>
     <!--                                                                                         -->
     <!--                                                                                         -->

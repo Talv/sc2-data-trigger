@@ -367,6 +367,9 @@
     <CModel id="CapturePointTeamColorDeath" parent="BuildingDeath" Race="Terran">
         <Model value="Assets\Buildings\Terran\SensorTowerDeath\SensorTowerDeath.m3"/>
     </CModel>
+    <CModel id="Confetti_Explosion_Large">
+        <AnimAliases Anim="Death" Alias="Stand,Work,End"/>
+    </CModel>
     <CModel id="CreeperHostSpawn_Primal_Collection_DeathAcid" parent="UnitDeath" Race="Zerg">
         <LowQualityModel value="ZergSmallUnitDeathLow"/>
         <Occlusion value="Show"/>
@@ -784,6 +787,76 @@
             <Time value="1.831000"/>
             <Payload value="Repair_Bot_Beam_01"/>
         </Events>
+    </CModel>
+    <CModel id="HybridNemesisDeath">
+        <LowQualityModel value="ZergLargeUnitDeathLow"/>
+    </CModel>
+    <CModel id="KerriganVoidDeath" parent="Unit" Race="Zerg">
+        <Model value="Assets\Units\Zerg\KerriganInfested\KerriganInfested.m3"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganInfested_Death_KneeDown"/>
+            <Type value="Sound"/>
+            <Time value="1.900000"/>
+            <Payload value="KerriganInfested_Death_KneeDown"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganInfested_Death_WingFoley"/>
+            <Type value="Sound"/>
+            <Time value="2.017000"/>
+            <Payload value="KerriganInfested_Death_WingFoley"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganInfested_Death_Bodyfall"/>
+            <Type value="Sound"/>
+            <Time value="3.180000"/>
+            <Payload value="KerriganInfested_Death_Bodyfall"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganInfested_Death_WingStabGround"/>
+            <Type value="Sound"/>
+            <Time value="3.674000"/>
+            <Payload value="KerriganInfested_Death_WingStabGround"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="KerriganAttackLaunch"/>
+            <Type value="Sound"/>
+            <Time value="0.200000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="KerriganAttackLaunch"/>
+            <Type value="Sound"/>
+            <Time value="0.480000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="KerriganAttackImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.250000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="KerriganAttackImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.530000"/>
+        </Events>
+        <Lighting value="KerriganVoid"/>
+        <PlanetPanelCamera value="Star2CameraMid05"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionRadius value="0.531200"/>
+        <ShadowRadius value="0.531200"/>
+        <TechPurchaseCamera value="Star2CameraMid05"/>
+        <UnitGlossaryCamera value="Star2CameraMid05"/>
+    </CModel>
+    <CModel id="LeviathanDeath">
+        <LowQualityModel value="ZergLargeUnitDeathLow"/>
     </CModel>
     <CModel id="MiraHorner_Bomber_Coop_Cursor" parent="UI">
         <Model value="Assets\UI\Cursors\MiraHorner_Bomber_Coop_Cursor\MiraHorner_Bomber_Coop_Cursor.m3"/>
@@ -1365,7 +1438,7 @@
         <ScaleMin value="0.500000,0.500000,0.500000"/>
     </CModel>
     <CModel id="Aleksander_Stukov_Coop_Death" parent="UnitDeath" Race="Zerg">
-        <LowQualityModel value="TerranMediumBuildingDeathLowAndSound"/>
+        <LowQualityModel value="TerranLargeUnitDeathLow"/>
         <Events>
             <Anim value="Death,00"/>
             <Name value="SMModelEventSound"/>
@@ -1780,6 +1853,58 @@
         <ShadowRadius value="2.500000"/>
         <SquibTypeDefault value="Metal"/>
     </CModel>
+    <CModel id="StukovAleksanderCrashedDeath" parent="Unit" Race="Zerg">
+        <Model value="Assets\Units\Zerg\Aleksander_Stukov_Coop_Spawn\Aleksander_Stukov_Coop_Spawn.m3"/>
+        <LowQualityModel value="TerranLargeUnitDeathLow"/>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="SMModelEventSound"/>
+            <Type value="Sound"/>
+            <Time value="0.150000"/>
+            <Payload value="StukovAleksanderCrash_Explosion_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="SMModelEventSound"/>
+            <Type value="Sound"/>
+            <Time value="0.620000"/>
+            <Payload value="StukovAleksanderCrash_Explosion_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="SMModelEventSound"/>
+            <Type value="Sound"/>
+            <Time value="1.000000"/>
+            <Payload value="StukovAleksanderCrash_Explosion_Medium"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="SMModelEventSound"/>
+            <Type value="Sound"/>
+            <Time value="1.330000"/>
+            <Payload value="StukovAleksanderCrash_Explosion_Large"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="SMModelEventSound"/>
+            <Type value="Sound"/>
+            <Time value="1.920000"/>
+            <Payload value="StukovAleksanderCrash_Explosion_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="SMModelEventSound"/>
+            <Type value="Sound"/>
+            <Payload value="StukovAleksanderCrash_Explosion_Large"/>
+        </Events>
+        <Radius value="2.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.950000"/>
+        <SelectionRadius value="1.666200"/>
+        <ShadowRadius value="1.666200"/>
+        <SquibTypeDefault value="Flesh"/>
+    </CModel>
     <CModel id="SwarmHostEgg_Primal_Collection" parent="Unit" Race="Zerg">
         <Events>
             <Anim value="Death"/>
@@ -1962,6 +2087,7 @@
             <Time value="0.328000"/>
             <Payload value="Coop_Ares_ExploImpact_Death"/>
         </Events>
+        <LowQualityModel value="TerranLargeUnitDeathLow"/>
     </CModel>
     <CModel id="WarbotDeathB">
         <Events>
@@ -1992,6 +2118,7 @@
             <Time value="1.431000"/>
             <Payload value="Coop_Ares_ExploImpact_Death"/>
         </Events>
+        <LowQualityModel value="TerranLargeUnitDeathLow"/>
     </CModel>
     <CModel id="WarbotDeathC">
         <Events>
@@ -2022,6 +2149,7 @@
             <Time value="0.241000"/>
             <Payload value="Coop_Ares_DieExplo_Death"/>
         </Events>
+        <LowQualityModel value="TerranLargeUnitDeathLow"/>
     </CModel>
     <CModel id="Wraith_Junker_Collection" parent="Unit" Race="Terran">
         <AttachProps Id="Ref_Weapon Left">
@@ -8721,6 +8849,7 @@
             <Time value="0.292000"/>
             <Payload value="Brutalisk_Blood_Spary"/>
         </Events>
+        <LowQualityModel value="ZergLargeUnitDeathLow"/>
     </CModel>
     <CModel id="GuardianMPPortrait">
         <Image value="Assets\Textures\primalguardianportrait_static.dds"/>
@@ -9998,6 +10127,9 @@
         <ScaleMax value="1.750000,1.750000,1.750000"/>
         <ScaleMin value="1.750000,1.750000,1.750000"/>
         <AttachProps Id="Ref_Center" RadiusShield="0.750000"/>
+    </CModel>
+    <CModel id="InfestedKerriganDeath" parent="InfestedKerrigan">
+        <LowQualityModel value="ZergMediumUnitDeathLow"/>
     </CModel>
     <CModel id="KerriganMaelstromAttachment" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Zerg\AggressiveMutation_State\AggressiveMutation_State.m3"/>
@@ -36599,5 +36731,32 @@
     <CModel id="UndergroundHybridReaver" parent="Doodad">
         <Model value="Assets\Units\Zerg\HybridZerg\HybridZerg.m3"/>
         <Flags index="VariationFallback" value="0"/>
+    </CModel>
+    <CModel id="Probe_Taldarim_Alarak" parent="ProbeBase">
+        <Model value="Assets\Units\Protoss\Probe_Taldarim\Probe_Taldarim.m3"/>
+    </CModel>
+    <CModel id="Probe_Taldarim_Collection_Death_Alarak">
+        <Model value="Assets\Units\Protoss\Probe_Taldarim_Death\Probe_Taldarim_Death.m3"/>
+    </CModel>
+    <CModel id="RoboticsSupportBay_Taldarim_Alarak" parent="RoboticsSupportBay">
+        <Model value="Assets\Buildings\Protoss\RoboticsSupportBay_Taldarim\RoboticsSupportBay_Taldarim.m3"/>
+    </CModel>
+    <CModel id="RoboticsSupportBay_Taldarim_Death_Alarak" parent="RoboticsSupportBayDeath">
+        <Model value="Assets\Buildings\Protoss\RoboticsSupportBay_Taldarim_Death\RoboticsSupportBay_Taldarim_Death.m3"/>
+    </CModel>
+    <CModel id="Stalker_Taldarim_Alarak" parent="StalkerBase">
+        <Model value="Assets\Units\Protoss\Stalker_TalDarim\Stalker_TalDarim.m3"/>
+    </CModel>
+    <CModel id="Stalker_Taldarim_Death_Alarak" parent="StalkerDeathBase">
+        <Model value="Assets\Units\Protoss\Stalker_TalDarim_Death\Stalker_TalDarim_Death.m3"/>
+    </CModel>
+    <CModel id="WarpPrism_Taldarim_Alarak" parent="WarpPrismBase">
+        <Model value="Assets\Units\Protoss\WarpPrism_Taldarim\WarpPrism_Taldarim.m3"/>
+    </CModel>
+    <CModel id="WarpPrism_Taldarim_Death_Alarak" parent="WarpPrismDeathBase">
+        <Model value="Assets\Units\Protoss\WarpPrism_Taldarim_Death\WarpPrism_Taldarim_Death.m3"/>
+    </CModel>
+    <CModel id="WarpPrism_Taldarim_Phasing_Death_Alarak" parent="WarpPrismOpenDeathBase">
+        <Model value="Assets\Units\Protoss\WarpPrism_Taldarim_OpenDeath\WarpPrism_Taldarim_OpenDeath.m3"/>
     </CModel>
 </Catalog>

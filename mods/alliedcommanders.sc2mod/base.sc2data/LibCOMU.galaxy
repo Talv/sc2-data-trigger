@@ -9272,7 +9272,6 @@ bool libCOMU_gt_CT_UnitDamage_Func (bool testConds, bool runActions) {
     libCOMU_gf_CT_ApplyConcussiveAttacks(EventUnit(), EventUnitDamageSourceUnit());
     libCOMU_gf_CT_ApplyBarrier(EventUnit(), EventUnitDamageSourceUnit());
     libCOMU_gf_CT_ApplySideStep(EventUnit(), EventUnitDamageSourceUnit());
-    libCOMU_gf_CT_ApplyFear(EventUnit(), EventUnitDamageSourceUnit());
     libCOMU_gf_CT_ApplyPhotonOverload(EventUnit(), EventUnitDamageSourceUnit());
     libCOMU_gf_CT_ApplyLifeLeech(EventUnit(), EventUnitDamageSourceUnit(), EventUnitDamageAmount());
     libCOMU_gf_CT_ApplyFoodHuntAggro(EventUnit(), EventUnitDamageSourceUnit());
@@ -9282,6 +9281,7 @@ bool libCOMU_gt_CT_UnitDamage_Func (bool testConds, bool runActions) {
         libCOMU_gf_CT_ApplyEvolve(EventUnitDamageSourceUnit(), EventUnit());
     }
 
+    libCOMU_gf_CT_ApplyFear(EventUnit(), EventUnitDamageSourceUnit());
     return true;
 }
 

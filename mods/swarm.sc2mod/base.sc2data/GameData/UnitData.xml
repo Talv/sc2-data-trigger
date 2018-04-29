@@ -1261,12 +1261,17 @@
         <AbilArray Link="que1"/>
         <AbilArray Link="SwarmHostSpawnLocusts"/>
         <AbilArray Link="Rally"/>
+        <AbilArray Link="move"/>
         <CardLayouts>
             <LayoutButtons Face="SwarmHostBurrowUp" Type="AbilCmd" AbilCmd="MorphToSwarmHostMP,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="SwarmHost" Type="AbilCmd" AbilCmd="SwarmHostSpawnLocusts,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="SetRallyPointSwarmHost" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="3"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <Radius value="0.8125"/>
         <SeparationRadius value="0"/>
@@ -2199,10 +2204,14 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="BurrowLurkerMPUp"/>
         <AbilArray Link="BurrowLurkerMPDown"/>
+        <AbilArray Link="move"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="LurkerBurrowUp" Type="AbilCmd" AbilCmd="BurrowLurkerMPUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <Attributes index="Armored" value="1"/>
         <Attributes index="Biological" value="1"/>

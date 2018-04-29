@@ -107,6 +107,22 @@
         <GameContentArray value="Commander,Abathur"/>
     </CBundle>
     <!-- Featured Bundles -->
+    <CBundle id="PremiumMapARKStar">
+        <ProductId value="35755"/>
+        <Flags index="IsFeatured" value="1"/>
+        <TileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_small_premiummap_arkstar.dds"/>
+        <ReleaseDate Month="4" Year="2018"/>
+        <GameContentArray value="PremiumMap,ARKStar"/>
+        <SuppressCountryArray value="CHN"/>
+    </CBundle>
+    <CBundle id="PremiumMapDirectStrike">
+        <ProductId value="35770"/>
+        <Flags index="IsFeatured" value="1"/>
+        <TileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_small_premiummap_directstrike.dds"/>
+        <ReleaseDate Month="4" Year="2018"/>
+        <GameContentArray value="PremiumMap,DirectStrike"/>
+        <SuppressCountryArray value="CHN"/>
+    </CBundle>
     <CBundle id="HornerBundle">
         <ProductId value="32731"/>
         <Flags index="ShowDynamicProductContent" value="1"/>

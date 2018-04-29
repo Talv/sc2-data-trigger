@@ -307,6 +307,9 @@
         <EffectArray Reference="Weapon,TwinGatlingCannon,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,LanzerTorpedoes,MinScanRange" Value="2"/>
     </CUpgrade>
+    <CUpgrade id="Charge">
+        <ScoreAmount value="0"/>
+    </CUpgrade>
     <CUpgrade id="CoopNPCPlayer">
         <LeaderAlias value=""/>
     </CUpgrade>
@@ -487,7 +490,7 @@
         <EffectArray Reference="Unit,ZealotPurifier,ShieldsMax" Value="50"/>
         <EffectArray Reference="Unit,ZealotPurifier,ShieldsStart" Value="50"/>
         <EffectArray Operation="Subtract" Reference="Unit,ZealotPurifier,Food" Value="1"/>
-        <EffectArray Operation="Set" Reference="Effect,ZealotPsiBladesCleaveSet,EffectArray[0]" Value="LegionnairePsiBlades"/>
+        <EffectArray Operation="Set" Reference="Effect,ZealotPsiBladesCleaveSet,EffectArray[0]" Value="LegionnairePsiBladesBurst"/>
         <EffectArray Operation="Set" Reference="Weapon,PsiBlades,DisplayEffect" Value="LegionnairePsiBlades"/>
         <!--EffectArray Reference="Effect,PsiBlades,Amount" Value="8"/-->
         <EffectArray Operation="Set" Reference="Weapon,DisruptorPsiBlast,Options[Hidden]" Value="0"/>
@@ -1280,6 +1283,9 @@
         <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="SOAHeroicShield">
+        <EffectArray Reference="Effect,MasteryArtanisGuardianShellHealDisplayDummy,Amount" Value="15"/>
+        <EffectArray Reference="Effect,MasteryArtanisGuardianShellHeal,VitalArray[Life].ChangeFraction" Value="0.15"/>
+        <EffectArray Reference="Effect,MasteryArtanisGuardianShellHeal,VitalArray[Shields].ChangeFraction" Value="0.15"/>
         <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="SOAOrbitalStrike">
@@ -2083,6 +2089,8 @@
         <EffectArray Reference="Behavior,MasteryArtanisSoAPowerFieldHaste_Target,Modification.AccelerationMultiplier" Value="0.02"/>
         <EffectArray Reference="Behavior,MasteryArtanisSoAPowerFieldHaste_Target,Modification.MoveSpeedMultiplier" Value="0.02"/>
         <EffectArray Reference="Behavior,MasteryArtanisSoAPowerFieldHaste_Target,Modification.AttackSpeedMultiplier" Value="0.02"/>
+        <EffectArray Reference="Behavior,MasteryArtanisSoAPowerFieldHaste_Target,Modification.VitalRegenMultiplier[Energy]" Value="0.02"/>
+        <EffectArray Reference="Behavior,MasteryArtanisSoAPowerFieldHaste_Target,Modification.RateMultiplierArray[Cooldown]" Value="0.02"/>
         <EffectArray Operation="Set" Reference="Behavior,PowerUserWarpable,PowerStageArray[1].LevelLossEffect" Value="MasteryArtanisSoAPowerFieldHaste_Target"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Protoss"/>
@@ -3515,6 +3523,13 @@
         <EffectArray Operation="Set" Reference="Weapon,FenixClolarionPrismaticBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,FenixClolarionPrismaticBeamDummy,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,FenixClolarionInterceptorsDummy,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,TempestDamage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,TempestDamageGround,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,ArtanisIonCannons,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ArtanisIonCannons,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,ArtanisIonCannonsU,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ArtanisIonCannonsULeft,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ArtanisIonCannonsURight,Amount" Value="1"/>
     </CUpgrade>
     <CUpgrade id="ProtossAirWeaponsLevel2">
         <ScoreAmount value="0"/>
@@ -3565,6 +3580,11 @@
         <EffectArray Operation="Set" Reference="Weapon,FenixClolarionBomber,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Reference="Effect,TempestDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,TempestDamageGround,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,ArtanisIonCannons,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ArtanisIonCannons,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,ArtanisIonCannonsU,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ArtanisIonCannonsULeft,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ArtanisIonCannonsURight,Amount" Value="1"/>
     </CUpgrade>
     <CUpgrade id="ProtossAirWeaponsLevel3">
         <ScoreAmount value="0"/>
@@ -3615,6 +3635,11 @@
         <EffectArray Operation="Set" Reference="Weapon,FenixClolarionBomber,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Reference="Effect,TempestDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,TempestDamageGround,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,ArtanisIonCannons,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ArtanisIonCannons,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,ArtanisIonCannonsU,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ArtanisIonCannonsULeft,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ArtanisIonCannonsURight,Amount" Value="1"/>
     </CUpgrade>
     <!-- These should be copies of the standard upgrades except with no leader alias so they dont show in the list -->
     <!-- If there are entries in the EffectArray/Affect Unit please remove them, it probably means someone edited the parent and didnt update these guys -->
@@ -3819,6 +3844,8 @@
         <EffectArray Operation="Set" Reference="Weapon,FenixWarbringerColossusThermalLance,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel1.dds"/>
         <EffectArray Reference="Effect,FenixAdeptShadeDamage,Amount" Value="1"/>
         <EffectArray Reference="Effect,LegionnairePsiBlades,Amount" Value="2"/>
+        <EffectArray Operation="Subtract" Reference="Effect,DragoonDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,DragoonDamage,AttributeBonus[Armored]" Value="2.000000"/>
         <ScoreAmount value="0"/>
     </CUpgrade>
     <CUpgrade id="ProtossGroundWeaponsLevel2">
@@ -3882,6 +3909,8 @@
         <EffectArray Operation="Set" Reference="Weapon,FenixWarbringerColossusThermalLance,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel2.dds"/>
         <EffectArray Reference="Effect,FenixAdeptShadeDamage,Amount" Value="1"/>
         <EffectArray Reference="Effect,LegionnairePsiBlades,Amount" Value="2"/>
+        <EffectArray Operation="Subtract" Reference="Effect,DragoonDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,DragoonDamage,AttributeBonus[Armored]" Value="2.000000"/>
         <ScoreAmount value="0"/>
     </CUpgrade>
     <CUpgrade id="ProtossGroundWeaponsLevel3">
@@ -3945,6 +3974,8 @@
         <EffectArray Operation="Set" Reference="Weapon,FenixWarbringerColossusThermalLance,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
         <EffectArray Reference="Effect,FenixAdeptShadeDamage,Amount" Value="1"/>
         <EffectArray Reference="Effect,LegionnairePsiBlades,Amount" Value="2"/>
+        <EffectArray Operation="Subtract" Reference="Effect,DragoonDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,DragoonDamage,AttributeBonus[Armored]" Value="2.000000"/>
         <ScoreAmount value="0"/>
     </CUpgrade>
     <CUpgrade id="ProtossShieldsLevel1">
@@ -4285,12 +4316,12 @@
     </CUpgrade>
     <CUpgrade id="SwannTurretIncreasedAttackSpeed">
         <Icon value="Assets\Textures\btn-upgrade-swann-kmcautoloaders.dds"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,PerditionTurretFlamethrower,Period" Value="0.250000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,PerditionTurretBurrowed,Period" Value="0.250000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,KelMorianRocketTurretWeapon,Period" Value="0.375000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,LongboltMissile,Period" Value="0.215200"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,KelMorianHailstormMissilePods,Period" Value="0.445000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,TwinIbiksCannon,Period" Value="0.500000"/>
+        <EffectArray Operation="Subtract" Reference="Weapon,PerditionTurretFlamethrower,Period" Value="0.200000"/>
+        <EffectArray Operation="Subtract" Reference="Weapon,PerditionTurretBurrowed,Period" Value="0.200000"/>
+        <EffectArray Operation="Subtract" Reference="Weapon,KelMorianRocketTurretWeapon,Period" Value="0.300000"/>
+        <EffectArray Operation="Subtract" Reference="Weapon,LongboltMissile,Period" Value="0.172000"/>
+        <EffectArray Operation="Subtract" Reference="Weapon,KelMorianHailstormMissilePods,Period" Value="0.356000"/>
+        <EffectArray Operation="Subtract" Reference="Weapon,TwinIbiksCannon,Period" Value="0.400000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="PerditionTurret"/>
         <AffectedUnitArray value="PerditionTurretUnderground"/>
@@ -5279,7 +5310,6 @@
     </CUpgrade>
     <CUpgrade id="WraithImprovedBurstLaser">
         <Flags index="UpgradeCheat" value="0"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,WraithG,Period" Value="0.847000"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <AffectedUnitArray value="Wraith"/>
         <Icon value="Assets\Textures\btn-upgrade-swann-improvedburstlaser.dds"/>
@@ -5356,7 +5386,7 @@
         <EffectArray Reference="Unit,SentryPurifier,CostResource[Minerals]" Value="15"/>
         <EffectArray Reference="Unit,SentryPurifier,CostResource[Vespene]" Value="30"/>
         <EffectArray Reference="Unit,SentryPhasing,CostResource[Minerals]" Value="15"/>
-        <EffectArray Reference="Unit,SentryPhasing,CostResource[Vespene]" Value="15"/>
+        <EffectArray Reference="Unit,SentryPhasing,CostResource[Vespene]" Value="30"/>
         <EffectArray Reference="Unit,ImmortalAiur,CostResource[Minerals]" Value="87"/>
         <EffectArray Reference="Unit,ImmortalAiur,CostResource[Vespene]" Value="30"/>
         <EffectArray Reference="Unit,Colossus,CostResource[Minerals]" Value="90"/>
@@ -5366,9 +5396,9 @@
         <EffectArray Reference="Unit,PhoenixPurifier,CostResource[Minerals]" Value="45"/>
         <EffectArray Reference="Unit,PhoenixPurifier,CostResource[Vespene]" Value="30"/>
         <EffectArray Reference="Unit,Carrier,CostResource[Minerals]" Value="105"/>
-        <EffectArray Reference="Unit,Carrier,CostResource[Vespene]" Value="87"/>
+        <EffectArray Reference="Unit,Carrier,CostResource[Vespene]" Value="75"/>
         <EffectArray Reference="Unit,CarrierAiur,CostResource[Minerals]" Value="105"/>
-        <EffectArray Reference="Unit,CarrierAiur,CostResource[Vespene]" Value="87"/>
+        <EffectArray Reference="Unit,CarrierAiur,CostResource[Vespene]" Value="75"/>
         <EffectArray Operation="Set" Reference="Button,Immortal,Tooltip" Value="Button/Tooltip/ImmortalAiurKarax"/>
         <EffectArray Operation="Set" Reference="Button,Observer,Tooltip" Value="Button/Tooltip/ObserverKarax"/>
         <EffectArray Operation="Set" Reference="Button,PhotonCannon,Tooltip" Value="Button/Tooltip/PhotonCannonKarax"/>
@@ -6380,14 +6410,38 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="RegenerativeBioSteel">
+        <EffectArray index="1" Operation="Set" Reference="Unit,Hellion,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="3" Operation="Set" Reference="Unit,SiegeTank,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="5" Operation="Set" Reference="Unit,SiegeTankSieged,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="7" Operation="Set" Reference="Unit,Thor,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="9" Operation="Set" Reference="Unit,Diamondback,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="11" Operation="Set" Reference="Unit,Vulture,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="13" Operation="Set" Reference="Unit,Goliath,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="15" Operation="Set" Reference="Unit,Predator,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="17" Operation="Set" Reference="Unit,SiegeBreaker,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="19" Operation="Set" Reference="Unit,SiegeBreakerSieged,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="21" Operation="Set" Reference="Unit,VikingAssault,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="23" Operation="Set" Reference="Unit,VikingFighter,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="25" Operation="Set" Reference="Unit,Banshee,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="27" Operation="Set" Reference="Unit,Medivac,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="29" Operation="Set" Reference="Unit,Battlecruiser,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="31" Operation="Set" Reference="Unit,Raven,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="33" Operation="Set" Reference="Unit,ScienceVessel,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="35" Operation="Set" Reference="Unit,Hercules,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="37" Operation="Set" Reference="Unit,SpartanCompany,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="39" Operation="Set" Reference="Unit,HelsAngelAssault,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="41" Operation="Set" Reference="Unit,HelsAngelFighter,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="43" Operation="Set" Reference="Unit,DukesRevenge,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="45" Operation="Set" Reference="Unit,DuskWing,LifeRegenRate" Value="2.000000"/>
+        <EffectArray index="47" Operation="Set" Reference="Unit,Wraith,LifeRegenRate" Value="2.000000"/>
         <EffectArray Operation="Set" Reference="Unit,Cyclone,LifeRegenDelay" Value="3.000000"/>
-        <EffectArray Operation="Set" Reference="Unit,Cyclone,LifeRegenRate" Value="0.601500"/>
+        <EffectArray Operation="Set" Reference="Unit,Cyclone,LifeRegenRate" Value="2.000000"/>
         <EffectArray Operation="Set" Reference="Unit,HellionTank,LifeRegenDelay" Value="3.000000"/>
-        <EffectArray Operation="Set" Reference="Unit,HellionTank,LifeRegenRate" Value="0.601500"/>
+        <EffectArray Operation="Set" Reference="Unit,HellionTank,LifeRegenRate" Value="2.000000"/>
         <EffectArray Operation="Set" Reference="Unit,ThorAP,LifeRegenDelay" Value="3.000000"/>
-        <EffectArray Operation="Set" Reference="Unit,ThorAP,LifeRegenRate" Value="0.601500"/>
+        <EffectArray Operation="Set" Reference="Unit,ThorAP,LifeRegenRate" Value="2.000000"/>
         <EffectArray Operation="Set" Reference="Unit,VoidCoopARES,LifeRegenDelay" Value="3.000000"/>
-        <EffectArray Operation="Set" Reference="Unit,VoidCoopARES,LifeRegenRate" Value="0.601500"/>
+        <EffectArray Operation="Set" Reference="Unit,VoidCoopARES,LifeRegenRate" Value="2.000000"/>
         <Icon value="Assets\Textures\btn-research-zerg-regenerativebio-steel.dds"/>
     </CUpgrade>
     <CUpgrade id="RaynorCommanderStimUpgrade">
@@ -7099,6 +7153,11 @@
     </CUpgrade>
     <CUpgrade id="SwannCommander">
         <Flags index="UpgradeCheat" value="0"/>
+        <EffectArray Reference="Unit,HellionTank,LifeMax" Value="100"/>
+        <EffectArray Reference="Unit,HellionTank,LifeStart" Value="100"/>
+        <EffectArray Reference="Unit,HellbatWreckage,LifeMax" Value="100"/>
+        <EffectArray Reference="Unit,HellbatWreckage,LifeStart" Value="100"/>
+        <EffectArray Operation="Subtract" Reference="Unit,Cyclone,CostResource[Vespene]" Value="50"/>
         <EffectArray Operation="Subtract" Reference="Unit,Factory,CostResource[Vespene]" Value="100"/>
         <EffectArray Operation="Subtract" Reference="Unit,FactoryFlying,CostResource[Vespene]" Value="100"/>
         <EffectArray Operation="Subtract" Reference="Unit,Wraith,CostResource[Vespene]" Value="100"/>
@@ -7129,6 +7188,7 @@
         <EffectArray Operation="Subtract" Reference="Abil,StarportTrain,InfoArray[Train6].Time" Value="8"/>
         <EffectArray Operation="Subtract" Reference="Abil,StarportTrain,InfoArray[Train8].Time" Value="10"/>
         <EffectArray Operation="Subtract" Reference="Abil,StarportTrain,InfoArray[Train9].Time" Value="12"/>
+        <EffectArray Operation="Subtract" Reference="Abil,CommandCenterTrain,InfoArray[Train1].Time" Value="3.400000"/>
         <EffectArray Operation="Set" Reference="Button,Armory,AlertTooltip" Value="Button/Tooltip/ACSwannArmory"/>
         <EffectArray Reference="Unit,Cyclone,SubgroupPriorityDelta" Value="1"/>
         <EffectArray Reference="Unit,SiegeTank,SubgroupPriorityDelta" Value="3"/>
@@ -7198,23 +7258,31 @@
         <EffectArray Operation="Subtract" Reference="Abil,StarportTrain,InfoArray[Train4].Time" Value="45.000000"/>
         <EffectArray Operation="Subtract" Reference="Abil,StarportTrain,InfoArray[Train5].Time" Value="21.000000"/>
         <EffectArray Operation="Subtract" Reference="Abil,TerranBuild,InfoArray[Build4].Time" Value="32.000000"/>
-        <EffectArray Operation="Subtract" Reference="Unit,SiegeTank,CostResource[Minerals]" Value="30"/>
-        <EffectArray Operation="Subtract" Reference="Unit,SiegeTankSieged,CostResource[Minerals]" Value="30"/>
-        <EffectArray Operation="Subtract" Reference="Unit,Vulture,CostResource[Minerals]" Value="15"/>
-        <EffectArray Operation="Subtract" Reference="Unit,SpiderMine,CostResource[Minerals]" Value="3"/>
-        <EffectArray Operation="Subtract" Reference="Unit,SpiderMineBurrowed,CostResource[Minerals]" Value="3"/>
-        <EffectArray Operation="Subtract" Reference="Unit,VikingAssault,CostResource[Minerals]" Value="30"/>
-        <EffectArray Operation="Subtract" Reference="Unit,VikingFighter,CostResource[Minerals]" Value="30"/>
-        <EffectArray Operation="Subtract" Reference="Unit,Banshee,CostResource[Minerals]" Value="30"/>
-        <EffectArray Operation="Subtract" Reference="Unit,Battlecruiser,CostResource[Minerals]" Value="80"/>
+        <EffectArray Operation="Subtract" Reference="Unit,SiegeTank,CostResource[Vespene]" Value="25"/>
+        <EffectArray Operation="Subtract" Reference="Unit,SiegeTankSieged,CostResource[Vespene]" Value="25"/>
+        <EffectArray Operation="Subtract" Reference="Unit,VikingAssault,CostResource[Vespene]" Value="15"/>
+        <EffectArray Operation="Subtract" Reference="Unit,VikingFighter,CostResource[Vespene]" Value="15"/>
+        <EffectArray Operation="Subtract" Reference="Unit,Banshee,CostResource[Vespene]" Value="20"/>
+        <EffectArray Operation="Subtract" Reference="Unit,Battlecruiser,CostResource[Vespene]" Value="60"/>
         <EffectArray Operation="Set" Reference="Unit,Battlecruiser,EnergyStart" Value="0"/>
         <EffectArray Operation="Set" Reference="Unit,Battlecruiser,EnergyMax" Value="0"/>
-        <EffectArray Operation="Set" Reference="Abil,Yamato,Cost[0].Cooldown.TimeUse" Value="100"/>
+        <EffectArray Operation="Set" Reference="Abil,Yamato,Cost[0].Cooldown.TimeUse" Value="60"/>
         <EffectArray Operation="Set" Reference="Abil,Yamato,Cost[0].Vital[Energy]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Button,ResearchBansheeCloak,Tooltip" Value="Button/Tooltip/ResearchBansheeCloak_Raynor"/>
+        <EffectArray Operation="Set" Reference="Button,ResearchBansheeCloak,AlertTooltip" Value="Button/Tooltip/ResearchBansheeCloak_Raynor"/>
+        <EffectArray Operation="Set" Reference="Button,CloakOnBanshee,Tooltip" Value="Button/Tooltip/CloakOnBanshee_Raynor"/>
+        <EffectArray Operation="Set" Reference="Button,CloakOnBanshee,AlertTooltip" Value="Button/Tooltip/CloakOnBanshee_Raynor"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBattery,AllowedMovement" Value="Moving"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBattery,Options[OnlyFireWhileInAttackOrder]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBattery,Options[OnlyFireAtAttackOrderTarget]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBattery,AllowedMovement" Value="Moving"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBattery,Options[OnlyFireWhileInAttackOrder]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBattery,Options[OnlyFireAtAttackOrderTarget]" Value="0"/>
         <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="SwannCommanderVehicleHealth">
         <Flags index="UpgradeCheat" value="0"/>
+        <AffectedUnitArray value="SCV"/>
         <AffectedUnitArray value="Cyclone"/>
         <AffectedUnitArray value="Diamondback"/>
         <AffectedUnitArray value="Goliath"/>
@@ -7228,14 +7296,16 @@
         <AffectedUnitArray value="Wraith"/>
         <AffectedUnitArray value="ScienceVessel"/>
         <AffectedUnitArray value="VoidCoopARES"/>
+        <EffectArray Reference="Unit,SCV,LifeMax" Value="9"/>
+        <EffectArray Reference="Unit,SCV,LifeStart" Value="9"/>
         <EffectArray Reference="Unit,Hellion,LifeMax" Value="18"/>
         <EffectArray Reference="Unit,Hellion,LifeStart" Value="18"/>
         <EffectArray Reference="Unit,HellionWreckage,LifeMax" Value="18"/>
         <EffectArray Reference="Unit,HellionWreckage,LifeStart" Value="18"/>
-        <EffectArray Reference="Unit,HellionTank,LifeMax" Value="27"/>
-        <EffectArray Reference="Unit,HellionTank,LifeStart" Value="27"/>
-        <EffectArray Reference="Unit,HellbatWreckage,LifeMax" Value="27"/>
-        <EffectArray Reference="Unit,HellbatWreckage,LifeStart" Value="27"/>
+        <EffectArray Reference="Unit,HellionTank,LifeMax" Value="47"/>
+        <EffectArray Reference="Unit,HellionTank,LifeStart" Value="47"/>
+        <EffectArray Reference="Unit,HellbatWreckage,LifeMax" Value="47"/>
+        <EffectArray Reference="Unit,HellbatWreckage,LifeStart" Value="47"/>
         <EffectArray Reference="Unit,Diamondback,LifeMax" Value="40"/>
         <EffectArray Reference="Unit,Diamondback,LifeStart" Value="40"/>
         <EffectArray Reference="Unit,DiamondbackWreckage,LifeMax" Value="40"/>
@@ -8564,6 +8634,8 @@
         <EffectArray Operation="Set" Reference="Actor,Zealot,UnitIcon" Value="Assets\Textures\btn-unit-protoss-zealotnocord.dds"/>
         <EffectArray Operation="Set" Reference="Button,Zealot,Icon" Value="Assets\Textures\btn-unit-protoss-zealotnocord.dds"/>
         <EffectArray Operation="Set" Reference="Button,Zealot,AlertIcon" Value="Assets\Textures\btn-unit-protoss-zealotnocord.dds"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SOAOrbitalStrikeActivate,Cost[0].Cooldown.TimeUse" Value="30.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SOAOrbitalStrikeActivate,Cost[0].Vital[Energy]" Value="25"/>
         <AffectedUnitArray value="Zealot"/>
         <AffectedUnitArray value="HighTemplar"/>
         <AffectedUnitArray value="ZealotAiur"/>
@@ -10774,10 +10846,10 @@
     </CUpgrade>
     <CUpgrade id="CycloneLockOnDamageUpgrade">
         <Icon value="Assets\Textures\btn-upgrade-terran-magfieldaccelerator.dds"/>
-        <EffectArray Reference="Effect,LockOnCP,PeriodCount" Value="15"/>
-        <EffectArray Operation="Subtract" Reference="Effect,LockOnCP,PeriodicPeriodArray[0]" Value="0.22222222"/>
-        <EffectArray Reference="Effect,LockOnAirCP,PeriodCount" Value="15"/>
-        <EffectArray Operation="Subtract" Reference="Effect,LockOnAirCP,PeriodicPeriodArray[0]" Value="0.22222222"/>
+        <EffectArray Reference="Effect,LockOnCP,PeriodCount" Value="10"/>
+        <EffectArray Operation="Subtract" Reference="Effect,LockOnCP,PeriodicPeriodArray[0]" Value="0.333300"/>
+        <EffectArray Reference="Effect,LockOnAirCP,PeriodCount" Value="10"/>
+        <EffectArray Operation="Subtract" Reference="Effect,LockOnAirCP,PeriodicPeriodArray[0]" Value="0.333300"/>
         <AffectedUnitArray value="Cyclone"/>
     </CUpgrade>
     <CUpgrade id="LockOnTargetAddUpgrade">
@@ -10852,36 +10924,31 @@
         <AffectedUnitArray value="HammerSecurity"/>
         <AffectedUnitArray value="DevilDog"/>
     </CUpgrade>
+    <CUpgrade id="RaynorCommanderTerranWeaponAttackSpeedTrigger">
+        <Race value="Terr"/>
+        <AffectedUnitArray value="GuassRifle"/>
+        <AffectedUnitArray value="PunisherGrenades"/>
+        <AffectedUnitArray value="Firebat"/>
+        <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
     <CUpgrade id="RaynorCommanderTerranWeaponAttackSpeed">
         <Race value="Terr"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,GuassRifle,Period" Value="0.112"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,PunisherGrenades,Period" Value="0.196"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,P38ScytheGuassPistol,Period" Value="0.196"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,D8Charge,Period" Value="0.143"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,Firebat,Period" Value="0.183"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,Vulture,Period" Value="0.254100"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,90mmCannons,Period" Value="0.156000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,CrucioShockCannon,Period" Value="0.450000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,TwinGatlingCannon,Period" Value="0.150000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,LanzerTorpedoes,Period" Value="0.300000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,BacklashRockets,Period" Value="0.187500"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,ATALaserBattery,Period" Value="0.033750"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,ATSLaserBattery,Period" Value="0.033800"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,DuskWingBanshee,Period" Value="0.187500"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,HyperionVoidCoopAir,Period" Value="0.045000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,HyperionVoidCoopGround,Period" Value="0.045000"/>
-        <!--EffectArray Operation="Subtract" Reference="Weapon,CommandoWeapon,Period" Value="0.209"/-->
-        <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
-        <AffectedUnitArray value="Marine"/>
-        <AffectedUnitArray value="Marauder"/>
-        <AffectedUnitArray value="Reaper"/>
+        <AffectedUnitArray value="GuassRifle"/>
+        <AffectedUnitArray value="PunisherGrenades"/>
         <AffectedUnitArray value="Firebat"/>
-        <!--AffectedUnitArray value="Commando"/-->
-        <AffectedUnitArray value="Ghost"/>
-        <AffectedUnitArray value="Spectre"/>
-        <AffectedUnitArray value="WarPig"/>
-        <AffectedUnitArray value="HammerSecurity"/>
-        <AffectedUnitArray value="DevilDog"/>
+        <AffectedUnitArray value="Vulture"/>
+        <AffectedUnitArray value="90mmCannons"/>
+        <AffectedUnitArray value="CrucioShockCannon"/>
+        <AffectedUnitArray value="TwinGatlingCannon"/>
+        <AffectedUnitArray value="LanzerTorpedoes"/>
+        <AffectedUnitArray value="BacklashRockets"/>
+        <AffectedUnitArray value="ATALaserBattery"/>
+        <AffectedUnitArray value="ATSLaserBattery"/>
+        <AffectedUnitArray value="DuskWingBanshee"/>
+        <AffectedUnitArray value="HyperionVoidCoopAir"/>
+        <AffectedUnitArray value="HyperionVoidCoopGround"/>
+        <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="SwannHellionBuildTime">
@@ -11408,10 +11475,10 @@
     </CUpgrade>
     <CUpgrade id="MasteryArtanisShieldOvercharge">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasteryArtanisShieldOverchargeAmountDisplayDummy,Amount" Value="4"/>
-        <EffectArray Reference="Effect,MasteryArtanisShieldOverchargeTimeDisplayDummy,Amount" Value=".4"/>
-        <EffectArray Reference="Behavior,SOASuperShield,DamageResponse.ModifyLimit" Value="4"/>
-        <EffectArray Reference="Behavior,SOASuperShield,Duration" Value="0.400000"/>
+        <EffectArray Reference="Effect,MasteryArtanisShieldOverchargeAmountDisplayDummy,Amount" Value="6"/>
+        <EffectArray Reference="Effect,MasteryArtanisShieldOverchargeTimeDisplayDummy,Amount" Value=".6"/>
+        <EffectArray Reference="Behavior,SOASuperShield,DamageResponse.ModifyLimit" Value="6"/>
+        <EffectArray Reference="Behavior,SOASuperShield,Duration" Value="0.600000"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Protoss"/>
         <MaxLevel value="30"/>
@@ -11608,7 +11675,7 @@
     </CUpgrade>
     <CUpgrade id="MasteryArtanisGuardianShell">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasteryArtanisGuardianShellDisplayDummy,Amount" Value="1"/>
+        <EffectArray Reference="Effect,MasteryArtanisGuardianShellDisplayDummy,Amount" Value="0.1"/>
         <EffectArray Reference="Behavior,SOAHeroicShield,Modification.AttackSpeedMultiplier" Value="0.01"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Protoss"/>
@@ -11617,9 +11684,9 @@
     </CUpgrade>
     <CUpgrade id="MasteryArtanisGuardianShellHeal">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasteryArtanisGuardianShellHealDisplayDummy,Amount" Value="1"/>
-        <EffectArray Reference="Effect,MasteryArtanisGuardianShellHeal,VitalArray[Life].ChangeFraction" Value="0.01"/>
-        <EffectArray Reference="Effect,MasteryArtanisGuardianShellHeal,VitalArray[Shields].ChangeFraction" Value="0.01"/>
+        <EffectArray Reference="Effect,MasteryArtanisGuardianShellHealDisplayDummy,Amount" Value="0.5"/>
+        <EffectArray Reference="Effect,MasteryArtanisGuardianShellHeal,VitalArray[Life].ChangeFraction" Value="0.005"/>
+        <EffectArray Reference="Effect,MasteryArtanisGuardianShellHeal,VitalArray[Shields].ChangeFraction" Value="0.005"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Protoss"/>
         <MaxLevel value="30"/>
@@ -11638,6 +11705,22 @@
         <EffectArray Reference="Effect,MasteryArtanisStartingAndMaxSoAEnergyDisplayDummy,Amount" Value="3"/>
         <EffectArray Reference="Unit,SoACasterArtanis,EnergyStart" Value="3"/>
         <EffectArray Reference="Unit,SoACasterArtanis,EnergyMax" Value="3"/>
+        <Flags index="UpgradeCheat" value="0"/>
+        <EditorCategories value="Race:Protoss"/>
+        <MaxLevel value="30"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="MasteryArtanisEnergyRegenCooldown">
+        <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
+        <EffectArray Reference="Unit,Archon,EnergyRegenRate" Value="0.0084375"/>
+        <EffectArray Reference="Unit,HighTemplar,EnergyRegenRate" Value="0.0084375"/>
+        <EffectArray Operation="Subtract" Reference="Abil,Charge,Cost.Cooldown.TimeUse" Value="0.150000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,VoidZealotWhirlwind,Cost[0].Cooldown.TimeUse" Value="0.150000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,GravitonBeam,Cost[0].Cooldown.TimeUse" Value="0.450000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,GravitonBeamVoidCampaign,Cost[0].Cooldown.TimeUse" Value="0.450000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,LightningBomb,Cost[0].Cooldown.TimeUse" Value="1.350000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,ReaverHangar,InfoArray[Ammo1].Time" Value="0.120000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,ImmortalBarrierBase,Cost[0].Cooldown.TimeUse" Value="0.900000"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Protoss"/>
         <MaxLevel value="30"/>
@@ -11835,19 +11918,23 @@
     </CUpgrade>
     <CUpgrade id="MasterySwannLaserDrillBuildTime">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasterySwannLaserDrillBuildTimeDisplayDummy,Amount" Value="2"/>
-        <EffectArray Operation="Subtract" Reference="Abil,ConstructDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Abils].DurationArray[Delay]" Value="2.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,ConstructDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Actor].DurationArray[Delay]" Value="2.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,ConstructDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Collide].DurationArray[Duration]" Value="2.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,ConstructDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="2.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,RepairDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Abils].DurationArray[Delay]" Value="2"/>
-        <EffectArray Operation="Subtract" Reference="Abil,RepairDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Actor].DurationArray[Delay]" Value="2"/>
-        <EffectArray Operation="Subtract" Reference="Abil,RepairDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Collide].DurationArray[Duration]" Value="2.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,RepairDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="2.000000"/>
-        <EffectArray Operation="Subtract" Reference="Unit,UnfinishedDrakkenLaserDrillCoop,RepairTime" Value="2.000000"/>
-        <EffectArray Operation="Subtract" Reference="Unit,DamagedDrakkenLaserDrillCoop,RepairTime" Value="2.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research1].Time" Value="2"/>
-        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research2].Time" Value="2"/>
+        <EffectArray Reference="Effect,MasterySwannLaserDrillBuildTimeDisplayDummy,Amount" Value="1.5"/>
+        <EffectArray Operation="Subtract" Reference="Abil,ConstructDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Abils].DurationArray[Delay]" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,ConstructDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Actor].DurationArray[Delay]" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,ConstructDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Collide].DurationArray[Duration]" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,ConstructDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,RepairDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Abils].DurationArray[Delay]" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,RepairDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Actor].DurationArray[Delay]" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,RepairDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Collide].DurationArray[Duration]" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,RepairDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Unit,UnfinishedDrakkenLaserDrillCoop,RepairTime" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Unit,DamagedDrakkenLaserDrillCoop,RepairTime" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research1].Time" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research2].Time" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research1].Resource[Minerals]" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research1].Resource[Vespene]" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research2].Resource[Minerals]" Value="5"/>
+        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research2].Resource[Vespene]" Value="5"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Protoss"/>
         <MaxLevel value="30"/>
@@ -11877,11 +11964,11 @@
     <CUpgrade id="MasteryRaynorImprovedSafeguard">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
         <EffectArray Reference="Effect,MasteryRaynorImprovedSafeguardDisplayDummy,Amount" Value="0.05"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,RaynorMedicSafeguardMastery,Modification.DamageTakenFraction[Melee]" Value="0.005"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,RaynorMedicSafeguardMastery,Modification.DamageTakenFraction[NoProc]" Value="0.005"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,RaynorMedicSafeguardMastery,Modification.DamageTakenFraction[Ranged]" Value="0.005"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,RaynorMedicSafeguardMastery,Modification.DamageTakenFraction[Spell]" Value="0.005"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,RaynorMedicSafeguardMastery,Modification.DamageTakenFraction[Splash]" Value="0.005"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,RaynorMedicSafeguardMastery,Modification.DamageTakenFraction[Melee]" Value="0.01"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,RaynorMedicSafeguardMastery,Modification.DamageTakenFraction[NoProc]" Value="0.01"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,RaynorMedicSafeguardMastery,Modification.DamageTakenFraction[Ranged]" Value="0.01"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,RaynorMedicSafeguardMastery,Modification.DamageTakenFraction[Spell]" Value="0.01"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,RaynorMedicSafeguardMastery,Modification.DamageTakenFraction[Splash]" Value="0.01"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Terran"/>
         <MaxLevel value="30"/>
@@ -11890,33 +11977,23 @@
     <CUpgrade id="MasteryRaynorMechAttackSpeed">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
         <EffectArray Reference="Effect,MasteryRaynorMechAttackSpeedDisplayDummy,Amount" Value="1"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,BacklashRockets,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,TwinGatlingCannon,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,LanzerTorpedoes,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,CrucioShockCannon,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,90mmCannons,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,ATALaserBattery,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,ATSLaserBattery,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,HyperionVoidCoopAir,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,HyperionVoidCoopGround,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,DuskWingBanshee,Period" Value="0.990000"/>
-        <EditorCategories value="Race:Terran"/>
         <Flags index="UpgradeCheat" value="0"/>
-        <AffectedUnitArray value="Banshee"/>
-        <AffectedUnitArray value="VikingAssault"/>
-        <AffectedUnitArray value="VikingFighter"/>
-        <AffectedUnitArray value="SiegeTank"/>
-        <AffectedUnitArray value="SiegeTankSieged"/>
-        <AffectedUnitArray value="Battlecruiser"/>
-        <AffectedUnitArray value="HyperionVoidCoop"/>
-        <AffectedUnitArray value="DuskWing"/>
+        <AffectedUnitArray value="BacklashRockets"/>
+        <AffectedUnitArray value="TwinGatlingCannon"/>
+        <AffectedUnitArray value="LanzerTorpedoes"/>
+        <AffectedUnitArray value="CrucioShockCannon"/>
+        <AffectedUnitArray value="90mmCannons"/>
+        <AffectedUnitArray value="ATALaserBattery"/>
+        <AffectedUnitArray value="ATSLaserBattery"/>
+        <AffectedUnitArray value="Vulture"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="30"/>
         <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="MasteryRaynorHyperionCooldown">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasteryRaynorHyperionCooldownDisplayDummy,Amount" Value="3"/>
-        <EffectArray Operation="Subtract" Reference="Abil,VoidCoopSummonHyperion,Cost[0].Cooldown.TimeUse" Value="3.000000"/>
+        <EffectArray Reference="Effect,MasteryRaynorHyperionCooldownDisplayDummy,Amount" Value="4"/>
+        <EffectArray Operation="Subtract" Reference="Abil,VoidCoopSummonHyperion,Cost[0].Cooldown.TimeUse" Value="4.000000"/>
         <EditorCategories value="Race:Terran"/>
         <Flags index="UpgradeCheat" value="0"/>
         <MaxLevel value="30"/>
@@ -11937,6 +12014,8 @@
         <EffectArray Reference="Behavior,DropPodHaste,Modification.AccelerationMultiplier" Value="0.02"/>
         <EffectArray Reference="Behavior,DropPodHaste,Modification.MoveSpeedMultiplier" Value="0.02"/>
         <EffectArray Reference="Behavior,DropPodHaste,Modification.AttackSpeedMultiplier" Value="0.02"/>
+        <EffectArray Reference="Behavior,DropPodHaste,Modification.VitalRegenMultiplier[Energy]" Value="0.02"/>
+        <EffectArray Reference="Behavior,DropPodHaste,Modification.RateMultiplierArray[Cooldown]" Value="0.02"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Terran"/>
         <MaxLevel value="30"/>
@@ -11995,6 +12074,21 @@
         <EditorCategories value="Race:Terran"/>
         <MaxLevel value="30"/>
         <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="MasteryRaynorResearchCost">
+        <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
+        <EffectArray Reference="Effect,MasteryRaynorResearchCostDisplayDummy,Amount" Value="2"/>
+        <!--Done By Trigger-->
+        <Flags index="UpgradeCheat" value="0"/>
+        <EditorCategories value="Race:Terran"/>
+        <MaxLevel value="30"/>
+        <LeaderAlias value=""/>
+        <AffectedUnitArray value="FusionCoreResearch"/>
+        <AffectedUnitArray value="ArmoryResearchVoidCoop"/>
+        <AffectedUnitArray value="EngineeringBayResearch"/>
+        <AffectedUnitArray value="BarracksTechLabResearch"/>
+        <AffectedUnitArray value="FactoryTechLabResearch"/>
+        <AffectedUnitArray value="StarportTechLabResearch"/>
     </CUpgrade>
     <CUpgrade id="MasteryRaynorBuildingHealth">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
@@ -12137,14 +12231,14 @@
         <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research3].Resource[Minerals]" Value="4"/>
         <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research3].Resource[Vespene]" Value="4"/>
         <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research4].Time" Value="3.200000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research4].Resource[Minerals]" Value="3"/>
-        <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research4].Resource[Vespene]" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research4].Resource[Minerals]" Value="2"/>
+        <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research4].Resource[Vespene]" Value="2"/>
         <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research5].Time" Value="3.800000"/>
         <!--EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research5].Resource[Minerals]" Value="5"/>
         <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research5].Resource[Vespene]" Value="5"/-->
         <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research6].Time" Value="4.400000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research6].Resource[Minerals]" Value="6"/>
-        <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research6].Resource[Vespene]" Value="6"/>
+        <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research6].Resource[Minerals]" Value="5"/>
+        <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research6].Resource[Vespene]" Value="5"/>
         <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research7].Time" Value="3.200000"/>
         <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research7].Resource[Minerals]" Value="2"/>
         <EffectArray Operation="Subtract" Reference="Abil,evolutionchamberresearch,InfoArray[Research7].Resource[Vespene]" Value="2"/>
@@ -12190,14 +12284,14 @@
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research3].Resource[Minerals]" Value="5"/>
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research3].Resource[Vespene]" Value="5"/>
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research4].Time" Value="3.200000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research4].Resource[Minerals]" Value="3"/>
-        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research4].Resource[Vespene]" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research4].Resource[Minerals]" Value="2"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research4].Resource[Vespene]" Value="2"/>
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research5].Time" Value="3.800000"/>
         <!--EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research5].Resource[Minerals]" Value="5"/>
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research5].Resource[Vespene]" Value="5"/-->
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research6].Time" Value="4.400000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research6].Resource[Minerals]" Value="6"/>
-        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research6].Resource[Vespene]" Value="6"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research6].Resource[Minerals]" Value="5"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research6].Resource[Vespene]" Value="5"/>
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research7].Time" Value="1.800000"/>
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research7].Resource[Minerals]" Value="3"/>
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research7].Resource[Vespene]" Value="3"/>
@@ -12549,7 +12643,7 @@
     </CUpgrade>
     <CUpgrade id="MasteryKaraxUnitCost">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasteryKaraxUnitCostDisplayDummy,Amount" Value="1"/>
+        <EffectArray Reference="Effect,MasteryKaraxUnitCostDisplayDummy,Amount" Value="0.75"/>
         <!--This is now handled in the trigger CM_MasteryKaraxArmyCostList-->
         <!--EffectArray Operation="Subtract" Reference="Unit,Zealot,CostResource[Minerals]" Value="1"/>
         <EffectArray Operation="Subtract" Reference="Unit,ZealotPurifier,CostResource[Minerals]" Value="1"/>
@@ -14380,6 +14474,7 @@
         <AffectedUnitArray value="HHWidowMine"/>
         <AffectedUnitArray value="HHWidowMineBurrowed"/>
         <AffectedUnitArray value="HHRaven"/>
+        <AffectedUnitArray value="HHRavenSiegeMode"/>
         <AffectedUnitArray value="HHWraith"/>
         <AffectedUnitArray value="HHVikingFighter"/>
         <AffectedUnitArray value="HHVikingAssault"/>
@@ -14404,6 +14499,8 @@
         <EffectArray Operation="Set" Reference="Actor,HHReaperFlying,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
         <EffectArray Reference="Unit,HHWidowMine,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHWidowMine,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HHWidowMineBurrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HHWidowMineBurrowed,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,HHWidowMine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
         <EffectArray Reference="Unit,HHWraith,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHWraith,LifeArmor" Value="1"/>
@@ -14416,6 +14513,8 @@
         <EffectArray Operation="Set" Reference="Actor,HHVikingAssault,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel1.dds"/>
         <EffectArray Reference="Unit,HHRaven,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHRaven,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HHRavenSiegeMode,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HHRavenSiegeMode,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,HHRaven,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel1.dds"/>
         <EffectArray Reference="Unit,HHBattlecruiser,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHBattlecruiser,LifeArmor" Value="1"/>
@@ -14445,6 +14544,7 @@
         <AffectedUnitArray value="HHWidowMine"/>
         <AffectedUnitArray value="HHWidowMineBurrowed"/>
         <AffectedUnitArray value="HHRaven"/>
+        <AffectedUnitArray value="HHRavenSiegeMode"/>
         <AffectedUnitArray value="HHWraith"/>
         <AffectedUnitArray value="HHVikingFighter"/>
         <AffectedUnitArray value="HHVikingAssault"/>
@@ -14469,6 +14569,8 @@
         <EffectArray Operation="Set" Reference="Actor,HHReaperFlying,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
         <EffectArray Reference="Unit,HHWidowMine,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHWidowMine,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HHWidowMineBurrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HHWidowMineBurrowed,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,HHWidowMine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
         <EffectArray Reference="Unit,HHWraith,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHWraith,LifeArmor" Value="1"/>
@@ -14481,6 +14583,8 @@
         <EffectArray Operation="Set" Reference="Actor,HHVikingAssault,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel2.dds"/>
         <EffectArray Reference="Unit,HHRaven,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHRaven,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HHRavenSiegeMode,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HHRavenSiegeMode,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,HHRaven,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel2.dds"/>
         <EffectArray Reference="Unit,HHBattlecruiser,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHBattlecruiser,LifeArmor" Value="1"/>
@@ -14510,6 +14614,7 @@
         <AffectedUnitArray value="HHWidowMine"/>
         <AffectedUnitArray value="HHWidowMineBurrowed"/>
         <AffectedUnitArray value="HHRaven"/>
+        <AffectedUnitArray value="HHRavenSiegeMode"/>
         <AffectedUnitArray value="HHWraith"/>
         <AffectedUnitArray value="HHVikingFighter"/>
         <AffectedUnitArray value="HHVikingAssault"/>
@@ -14534,6 +14639,8 @@
         <EffectArray Operation="Set" Reference="Actor,HHReaperFlying,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
         <EffectArray Reference="Unit,HHWidowMine,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHWidowMine,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HHWidowMineBurrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HHWidowMineBurrowed,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,HHWidowMine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
         <EffectArray Reference="Unit,HHWraith,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHWraith,LifeArmor" Value="1"/>
@@ -14546,6 +14653,8 @@
         <EffectArray Operation="Set" Reference="Actor,HHVikingAssault,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel3.dds"/>
         <EffectArray Reference="Unit,HHRaven,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHRaven,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HHRavenSiegeMode,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HHRavenSiegeMode,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,HHRaven,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel3.dds"/>
         <EffectArray Reference="Unit,HHBattlecruiser,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,HHBattlecruiser,LifeArmor" Value="1"/>

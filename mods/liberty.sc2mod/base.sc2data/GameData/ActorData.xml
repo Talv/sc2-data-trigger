@@ -5775,6 +5775,11 @@
         <EditorFlags index="NoAutoRotate" value="1"/>
         <RandomScaleRange value="1.000000,1.000000"/>
     </CActorDoodad>
+    <CActorDoodad id="RedStorm_TarPits">
+        <EditorCategories value="DoodadType:Environment"/>
+        <EditorFlags index="NoAutoRotate" value="1"/>
+        <RandomScaleRange value="1.000000,1.000000"/>
+    </CActorDoodad>
     <CActorDoodad id="Reentry_Fire">
         <Aliases value="_EditorHelper"/>
         <DoodadFlags index="PauseAnimsWhileFogged" value="0"/>
@@ -7921,6 +7926,11 @@
         <TexSets value="CharEx1"/>
         <TexSets value="Char2"/>
         <TexSets value="CharDunes"/>
+    </CActorDoodad>
+    <CActorDoodad id="TarSludge_BakedSplat">
+        <EditorCategories value="DoodadType:Debris"/>
+        <EditorFlags index="NoAutoRotate" value="1"/>
+        <RandomScaleRange value="1.000000,1.000000"/>
     </CActorDoodad>
     <CActorDoodad id="Tarsonis_Banner">
         <EditorCategories value="DoodadType:Environment"/>
@@ -12870,8 +12880,7 @@
         <DeathArray index="Silentkill" SoundLink="Uni_DeathFXSilentKill"/>
         <DeathArray index="Squish" SoundLink="Marine_DeathFXBloodSpray"/>
         <DeathCustoms ModelLink="TerranSmallBiologicalUnitDeathLow" Name="AntiGravTerran"/>
-        <DeathCustoms ActorModel="MarineDeathRagdoll" ModelLink="MarineDeathRagdoll" Name="RagdollBasic">
-            <!-- Reducing blood on Terran units, for now... -->
+        <DeathCustoms ModelLink="MarineDeathRagdoll" Name="RagdollBasic">
             <BodySquibs Name="None"/>
         </DeathCustoms>
         <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
@@ -14112,7 +14121,7 @@
         <!-- Set to default instead of small, b/c it is positioned off the ground.  So we need
              to treat it like a building that is as tall a building that'd end up with the roof
              at the same height off the ground. -->
-        <Aliases value="_Snapshot"/>
+        <Aliases value="_SnapshotExtra"/>
         <Inherits index="CastShadows" value="1"/>
         <Inherits index="CloakEffect" value="1"/>
         <Inherits index="CreepEngulfment" value="1"/>
@@ -14132,7 +14141,9 @@
         <On Terms="TimerExpired; TimerName DelayDropSupply" Send="Create OrbitalCommand_CalldownExtraSuppliesImpact"/>
         <On Terms="TimerExpired; TimerName DelayDropSupply" Target="OrbitalCommand_CalldownExtraSuppliesDrop" Send="Destroy"/>
         <On Terms="AnimDone; AnimName Birth" Send="$Stand PlayForever"/>
+        <On Terms="AnimDone; AnimName Birth" Send="AliasAdd _Snapshot"/>
         <On Terms="AnimDone; AnimName Spell" Send="$Stand PlayForever"/>
+        <On Terms="AnimDone; AnimName Spell" Send="AliasAdd _Snapshot"/>
         <On Terms="AnimDone; AnimName Spell" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull,Instant"/>
         <On Terms="AbilMorph.*.Start; MorphTo SupplyDepotLowered; !AnimPlaying Birth" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull"/>
         <On Terms="AbilMorph.*.Start; MorphTo SupplyDepotLowered; !AnimPlaying Birth" Send="StatusSet Raised 0"/>
@@ -17940,16 +17951,18 @@
         <On Terms="UnitBirth" Send="AnimClear MorphEnd"/>
         <On Terms="UnitBirth" Send="AnimPlay Cover Cover PlayForever 0.000000 0.000000"/>
         <On Terms="UnitBirth" Send="AnimPlay CoverStart Cover,Start 0 0.000000"/>
-        <On Terms="Abil.CreepTumorBuild.WorkerStart" Send="AnimClear Cover"/>
+        <!--On Terms="Abil.CreepTumorBuild.WorkerStart" Send="AnimClear Cover"/-->
         <On Terms="Abil.CreepTumorBuild.WorkerStart" Send="AnimPlay SpellStart Cover,Spell,Start"/>
         <On Terms="AnimDone.*.Complete; AnimName SpellStart" Send="AnimPlay Spell Cover,Spell PlayForever,NonLooping -1.000000 -1.000000 15.000000 AsDuration"/>
         <On Terms="Abil.CreepTumorBuild.WorkerStop" Send="AnimClear SpellStart"/>
         <On Terms="Abil.CreepTumorBuild.WorkerStop" Send="AnimClear Spell"/>
         <On Terms="Abil.CreepTumorBuild.WorkerCancel" Send="AnimClear SpellStart"/>
         <On Terms="Abil.CreepTumorBuild.WorkerCancel" Send="AnimClear Spell"/>
-        <On Terms="Abil.CreepTumorBuild.WorkerCancel" Send="AnimPlay Cover Cover PlayForever"/>
+        <!--On Terms="Abil.CreepTumorBuild.WorkerCancel" Send="AnimPlay Cover Cover PlayForever"/-->
         <On Terms="UnitConstruction.CreepTumorQueen.Start" Send="Create"/>
         <On Terms="UnitConstruction.CreepTumorQueen.Finish" Send="AnimPlay ConstructionDeath Stand,Birth,Death FullMatch"/>
+        <On Terms="AbilCharge.CreepTumorBuild.Regen" Send="AnimPlay Cover Cover PlayForever"/>
+        <On Terms="AbilCharge.CreepTumorBuild.Spend" Send="AnimClear Cover"/>
         <DeathActorModel value="UnitDeathModelUnscaled"/>
         <DeathArray index="Normal" ModelLink="CreepTumorDeath" SoundLink="CreepTumor_Explode"/>
         <DeathArray index="UnderConstruction" ModelLink="ZergSmallBuildingDeath" SoundLink="CreepTumor_Explode"/>

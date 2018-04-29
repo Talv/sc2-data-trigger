@@ -573,4 +573,28 @@
         <Image TextureSheet="EmoticonsSheet2" Index="68"/>
         <RequiredReward value="Emoticon_RaynorSkull"/>
     </CEmoticon>
+    <CEmoticon id="twitch">
+        <Image TextureSheet="EmoticonsSheet2" Index="69"/>
+        <RequiredReward value="Emoticon_Twitch"/>
+    </CEmoticon>
+    <CEmoticon id="nwace">
+        <Image TextureSheet="EmoticonsSheet2" Index="70"/>
+        <RequiredReward value="Emoticon_NationWarsAce"/>
+    </CEmoticon>
+    <CEmoticon id="nwallkill">
+        <Image TextureSheet="EmoticonsSheet2" Index="71"/>
+        <RequiredReward value="Emoticon_NationWarsAllKill"/>
+    </CEmoticon>
+    <CEmoticon id="nwezpz">
+        <Image TextureSheet="EmoticonsSheet2" Index="72"/>
+        <RequiredReward value="Emoticon_NationWarsEZPZ"/>
+    </CEmoticon>
+    <CEmoticon id="nwwallez">
+        <Image TextureSheet="EmoticonsSheet2" Index="73"/>
+        <RequiredReward value="Emoticon_NationWarsWallez"/>
+    </CEmoticon>
+    <CEmoticon id="gameheart">
+        <Image TextureSheet="EmoticonsSheet2" Index="74"/>
+        <Hidden value="1"/>
+    </CEmoticon>
 </Catalog>

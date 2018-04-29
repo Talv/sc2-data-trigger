@@ -176,6 +176,7 @@ Abil/Name/HybridDominatorCoopBossBlink=Blink
 Abil/Name/HybridStasisChamberARelease=HybridStasisChamberARelease
 Abil/Name/HybridStasisChamberBRelease=HybridStasisChamberBRelease
 Abil/Name/HyperionAdvancedPDD=Point Defense Drone
+Abil/Name/HyperjumpNoVision=Tactical Jump
 Abil/Name/ImpalerDenResearch=Impaler Den Research
 Abil/Name/InfestationPitResearch=Infestation Pit Research
 Abil/Name/InfestedStukovCoopBurrow=InfestedStukovCoopBurrow
@@ -750,6 +751,7 @@ Behavior/Name/ArchAngelRepair=Rapid Repairs
 Behavior/Name/AscendantSacrificeSelfBuff=Power Overwhelming
 Behavior/Name/BanelingExplodeSimple=Explode
 Behavior/Name/BansheeBlackOpsPermanentCloak=Permanent Cloak
+Behavior/Name/BansheeCloak_Raynor=Cloak
 Behavior/Name/BiomassTargetMark=Biomass Collector
 Behavior/Name/ButtonDisablerDummy=Button Disabler Dummy
 Behavior/Name/CarrierRepairDroneDisabler=Carrier Repair Drone Disabler
@@ -798,6 +800,7 @@ Behavior/Name/DehakaUltraliskBashStun=Stun
 Behavior/Name/DisableRallyFor1Second=Disable Rally For 1 Second
 Behavior/Name/DrakkenLaserDrillPowerUp=Drakken Laser Drill Power Up
 Behavior/Name/DropPodHaste=Drop Pod Haste
+Behavior/Name/DuskWingBansheeCloak=Cloak
 Behavior/Name/FenixArbiterCloakingFieldTarget=Cloaking Field
 Behavior/Name/FenixArbiterStasisField=Stasis Field
 Behavior/Name/FenixChampionSwapBoost=Avenging Protocol
@@ -1016,6 +1019,7 @@ Behavior/Tooltip/ArchAngelCoopRepelHeightAndStun=This unit is flying through the
 Behavior/Tooltip/ArchAngelRepair=The Archangel is repairing itself rapidly.
 Behavior/Tooltip/AscendantSacrificeSelfBuff=This unit has increased shields and its abilities deal increased damage.
 Behavior/Tooltip/BansheeBlackOpsPermanentCloak=This unit is cloaked and will only be revealed by detectors or effects.
+Behavior/Tooltip/BansheeCloak_Raynor=This unit is cloaked and will only be revealed by detectors or effects. Its weapon range is also increased by 2.
 Behavior/Tooltip/BiomassTargetMark=[ph] This unit will collect Biomass, other units without this mark will no longer collect Biomass
 Behavior/Tooltip/Charging=This unit is charging, allowing it to quickly close the distance with its target.
 Behavior/Tooltip/Choked=This unit is stunned and is taking damage.
@@ -1056,6 +1060,7 @@ Behavior/Tooltip/DehakaMutaliskTimerBehavior=This unit has been recently reconst
 Behavior/Tooltip/DehakaTyrannozorArmorAuraTarget=This unit's armor is increased.
 Behavior/Tooltip/DehakaUltraliskBashStun=Stunned.
 Behavior/Tooltip/DropPodHaste=Increases attack speed, movement speed, cooldown reduction and energy regeneration by <d ref="Effect,MasteryRaynorDropPodHasteDisplayDummy,Amount"/>%.
+Behavior/Tooltip/DuskWingBansheeCloak=This unit is cloaked and will only be revealed by detectors or effects.
 Behavior/Tooltip/FenixArbiterCloakingFieldTarget=This unit is cloaked.
 Behavior/Tooltip/FenixArbiterStasisField=This unit cannot move, attack, or be damaged.
 Behavior/Tooltip/FenixChampionSwapBoost=Moving and Attacking faster.
@@ -1339,6 +1344,8 @@ Button/Name/CaduceusReactorLocked=Caduceus Reactor
 Button/Name/CalldownMULEDoubleDown=Calldown MULEDouble Down
 Button/Name/CarrierPhotonBombs=Photon Bombs
 Button/Name/CarrierTaldarimMothership=Warp In Mothership
+Button/Name/CloakOnBanshee_Raynor=Cloak
+Button/Name/CloakOnDustWing=Cloak
 Button/Name/ColarionDragoonBattleShout=Battle Shout
 Button/Name/ColossusIceBeam=Chronal Distortion
 Button/Name/ColossusTaldarim=Warp In Wrathwalker
@@ -2090,6 +2097,7 @@ Button/Name/ResearchAlarakZealotFrenziedOverload=Research Frenzied Overload
 Button/Name/ResearchAresClassTargetingSystem=Research Ares-Class Targeting System
 Button/Name/ResearchAresClassTargetingSystemNova=Research Ares-Class Targeting System
 Button/Name/ResearchAutoCreateInfestedCivilianAmmo=Research Automated Mitosis
+Button/Name/ResearchBansheeCloak_Raynor=Research Cloaking Field
 Button/Name/ResearchBanshee_BlackOpsAirstrike=Research Rocket Barrage
 Button/Name/ResearchBarrier=Research Improved Barrier
 Button/Name/ResearchBeamBounce=Research Beam Bounce
@@ -2930,6 +2938,8 @@ Button/Tooltip/CarrierTaldarimMothership=Ultimate Protoss vessel. Can use Mass R
 Button/Tooltip/Choker=Special infested that can pull in enemy ground and air units and stun them.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/Civilian=Male civilian.
 Button/Tooltip/CivilianFemale=Female civilian.
+Button/Tooltip/CloakOnBanshee_Raynor=Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects. Cloaked Banshees also have their range increased by 2. <n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,BansheeCloak,Modification.VitalRegenArray[2] + Unit,Banshee,EnergyRegenRate)" precision="1"/> energy per second.</c>
+Button/Tooltip/CloakOnDustWing=[PH] Cloaks the unit, preventing enemy units from seeing or attacking it, also increase its weapon range by  2. A cloaked unit will only be revealed by detectors or effects.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,BansheeCloak,Modification.VitalRegenArray[2] + Unit,Banshee,EnergyRegenRate)" precision="1"/> energy per second.</c>
 Button/Tooltip/ColarionDragoonBattleShout=Grants all friendly within range <d ref="(Behavior,ColarionDragoonBattleShoutTarget,Modification.AttackSpeedMultiplier - 1) * 100" precision="2"/>% attack speed for <d ref="Behavior,ColarionDragoonBattleShoutTarget,Duration"/> seconds.
 Button/Tooltip/ColossusAiur=Area-damage siege unit. Shoots Scarabs for high burst damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/ColossusIceBeam=Attacks debilitate enemy units, slowing attack and movement speeds by <d ref="(1 - Behavior,ColossusIceFlatAmount,Modification.MoveSpeedMultiplier) * 100"/>%. Heroic units are slowed by <d ref="(1 - Behavior,ColossusIceFlatAmountHeroic,Modification.MoveSpeedMultiplier) * 100"/>%.
@@ -3096,7 +3106,7 @@ Button/Tooltip/DevourerPassive=Greater Spire enables you to morph Devourers from
 Button/Tooltip/DiamondbackSnailTrail=Infested Diamondbacks leave behind a trail of acid when moving that deals <d ref="Effect,StukovInfestedDiamondSlimePuddleDamage,Amount*(1/Behavior,StukovInfestedDiamondSlimePuddleDamageDebuff,Period)"/> damage per second to enemy units.
 Button/Tooltip/DisableBuildingAttackScourge=Prevents Scourge from automatically targeting structures. Scourge can still be explicitly ordered to attack structures.<n/><n/>Scourge deal <d ref="(Effect,SuicideDamage,Amount)"/> damage to structures.
 Button/Tooltip/DisableBuildingAttackVolatileInfested=Prevents Volatile Infested units from automatically targeting structures. Volatile Infested units can still be explicitly ordered to attack structures.<n/><n/>Volatile Infested units deal <d ref="(Effect,HotSBanelingExplodeLargeDirect,Amount) + (Effect,HotSBanelingExplodeLargeDirect,AttributeBonus[Structure])"/> damage to structures.
-Button/Tooltip/DisplacementField=Detected Wraiths evade 20% of incoming attacks while cloaked.
+Button/Tooltip/DisplacementField=Wraiths move <d ref="(Behavior,CloakDistortionField,Modification.MoveSpeedMultiplier-1)*100"/>% faster and evade <d ref="Behavior,CloakDistortionField,DamageResponse.Chance*100"/>% of incoming attacks while cloaked.
 Button/Tooltip/DisruptorCloakPassive=Permanently cloaks the Disruptor.
 Button/Tooltip/DisruptorFenix=Purifier Faction<n/>Robotic disruption unit. Can use Purification Nova to deal heavy area damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/DisruptorSecondExplosion=Purification Nova explodes again after <d ref="Effect,FenixPurificationNovaUpgradedPersistent,PeriodicPeriodArray[0]"/> seconds, dealing <d ref="Effect,PurificationNovaUpgradedDamage,Amount"/> damage in a larger area.
@@ -3387,7 +3397,7 @@ Button/Tooltip/HaveShieldWall=Marines gain +10 life.
 Button/Tooltip/Haveoverlordspeed=Increases the movement speed of Overlords and Overseers.
 Button/Tooltip/HavocPermanentCloak=Permanently cloaks the Havoc.
 Button/Tooltip/Headbutt=Deals massive damage to structures.
-Button/Tooltip/HealingDrone=[PH] Heals all nearby allies.
+Button/Tooltip/HealingDrone=Heals nearby biological and mechanical units. Lasts for <d ref="Behavior,HealingDroneTimedLife,Duration"/> seconds.
 Button/Tooltip/HealingPsionicStorm=Psionic Storm's radius is increased by 50%, range increased by 2, and restores <d ref="((Effect,HighArchonPsiStormPersistent,PeriodCount+1)*(Effect,HighArchonPsiStormHeal,RechargeVitalRate))/2"/> shields to friendly units in the target area.<c/>
 Button/Tooltip/HellArmor=Increases Hellbat and Hellion armor by 2.
 Button/Tooltip/HellbatBlackOps=Elite close-range combat unit. Deals damage in a small frontal cone. Can transform into a fast scout unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
@@ -3427,7 +3437,7 @@ Button/Tooltip/ImmortalBarrierBase=Absorbs up to <d ref="Behavior,ImmortalBarrie
 Button/Tooltip/ImmortalTaldarim=Assault Strider. Attacks deal damage in an area around target enemy unit.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/ImpalerDehaka=Long-range anti-armor ambusher. Must burrow to attack.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/ImpalerDehakaBurrowed=Long-range anti-armor ambusher. Must burrow to attack.<n/><n/><c val="ffff8a">Can attack ground units.</c>
-Button/Tooltip/ImprovedBurstLaser=Increases the attack speed of the Wraith's Burst Lasers by 100%.
+Button/Tooltip/ImprovedBurstLaser=Increases the damage of Gemini Missiles by <d ref="(Behavior,SwannGeminiMissileMovementBuff,DamageResponse.ModifyFraction-1)*100"/>% and Burst Lasers by <d ref="(Behavior,SwannBurstLaserMovementBuff,DamageResponse.ModifyFraction-1)*100"/>% while the Wraith is moving.
 Button/Tooltip/ImprovedConsumption=Returns +50% more energy per life taken.
 Button/Tooltip/ImprovedNanoRepair=Science Vessel's Nano-Repair no longer costs energy.
 Button/Tooltip/ImprovedOverchargeAppend=<n/><n/>Structures under this effect gain a Barrier that absorbs up to <d ref="Behavior,AlarakStructureOverchargeShield,DamageResponse.ModifyLimit" player="current"/> damage.
@@ -3517,7 +3527,7 @@ Button/Tooltip/MasteryAlarakEmpowerMeDurationAppend=<n/><n/><c val="FFFF8A">Mast
 Button/Tooltip/MasteryAlarakOverchargeShieldsDamageAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Increases damage absorbed by <c val="FFFF8A"><d ref="Effect,MasteryAlarakStructureOverchargeDamageDisplayDummy,Amount" player="Current"/></c> and attack speed by <c val="FFFF8A"><d ref="Effect,MasteryAlarakStructureOverchargeDamageDisplayDummyPercent,Amount" player="Current"/></c>%.
 Button/Tooltip/MasteryAlarakWarpInTimeAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Reduces warp in time by <c val="FFFF8A"><d ref="Effect,MasteryAlarakCocoonTimerDisplayDummy,Amount" precision="1"/></c> seconds.
 Button/Tooltip/MasteryArtanisChronoBoostAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Increases structures’ production speed by <c val="FFFF8A"><d ref="Effect,MasteryArtanisChronoBoostDisplayDummy,Amount"/></c>%.
-Button/Tooltip/MasteryArtanisGuardianShellHealAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Restores <c val="FFFF8A"><d ref="Effect,MasteryArtanisGuardianShellHealDisplayDummy,Amount" player="Current"/></c>% life and shields for units when triggered.
+Button/Tooltip/MasteryArtanisGuardianShellHealAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Restores <c val="FFFF8A"><d ref="Effect,MasteryArtanisGuardianShellHealDisplayDummy,Amount" player="Current" precision="2"/></c>% life and shields for units when triggered.
 Button/Tooltip/MasteryArtanisSOAPowerFieldWarpInHasteAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Your units gain <c val="FFFF8A"><d ref="Effect,MasteryArtanisSOAWarpInHasteDisplayDummy,Amount" player="current"/></c>% increased attack speed, movement speed, cooldown reduction, and energy regeneration for 30 seconds after warping in.
 Button/Tooltip/MasteryArtanisShieldOverChargeCDRAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Reduces cooldown by <c val="FFFF8A"><d ref="Effect,MasteryArtanisShieldOverchargeCDRDisplayDummy,Amount" player="Current" precision="1"/></c> <lang rule="plural">second,seconds</lang>.
 Button/Tooltip/MasteryArtanisShieldOverChargeDurationandStrenthAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Increases the amount of damage absorbed by <c val="FFFF8A"><d ref="Effect,MasteryArtanisShieldOverchargeAmountDisplayDummy,Amount" player="Current"/></c> and effect duration by <c val="FFFF8A"><d ref="Effect,MasteryArtanisShieldOverchargeTimeDisplayDummy,Amount" player="current" precision="1"/></c> <lang rule="plural">second,seconds</lang>.
@@ -3590,7 +3600,7 @@ Button/Tooltip/MasterySwannConcentratedBeamDamageandAreaAppend=<n/><n/><c val="F
 Button/Tooltip/MasterySwannImmortalityProtocolBaseAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Reduces resource cost and production time by <c val="FFFF8A"><d ref="Effect,MasterySwannImmortalityProtocolPercentDisplayDummy,Amount"/></c>%.
 Button/Tooltip/MasterySwannImmortalityProtocolSiegeTankAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Reduces resource cost by <c val="FFFF8A"><d ref="Effect,MasterySwannImmortalityProtocolSiegeTankCostDisplayDummy,Amount"/></c> and production time by <c val="FFFF8A"><d ref="Effect,MasterySwannImmortalityProtocolSiegeTankDurationDisplayDummy,Amount" precision="1"/></c> seconds.
 Button/Tooltip/MasterySwannImmortalityProtocolThorAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Reduces resource cost by <c val="FFFF8A"><d ref="Effect,MasterySwannImmortalityProtocolThorCostDisplayDummy,Amount"/></c> and production time by <c val="FFFF8A"><d ref="Effect,MasterySwannImmortalityProtocolThorDurationDisplayDummy,Amount" precision="1"/></c> seconds.
-Button/Tooltip/MasterySwannLaserDrillBuildTimeAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Reduces production and rebuilding time by <c val="FFFF8A"><d ref="Effect,MasterySwannLaserDrillBuildTimeDisplayDummy,Amount" precision="1" player="current"/></c> seconds.
+Button/Tooltip/MasterySwannLaserDrillBuildTimeAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Reduces initial build time, upgrade time and upgrade cost by <c val="FFFF8A"><d ref="Effect,MasterySwannLaserDrillBuildTimeDisplayDummy,Amount" precision="2" player="current"/>%</c>.
 Button/Tooltip/MasterySwannVespeneDroneCostAppended=<n/><n/><c val="FFFF8A">Mastery:</c> Reduces resource cost by <c val="FFFF8A"><d ref="Effect,MasterySwannVespeneHarvesterCostDisplayDummy,Amount"/></c>.
 Button/Tooltip/MasteryVorazunBlackHoleDurationAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Increases duration by <c val="FFFF8A"><d ref="Effect,MasteryVorazunBlackHoleDurationDisplayDummy,Amount" precision="1" player="current"/></c> seconds.
 Button/Tooltip/MasteryVorazunChronoBoostAppend=<n/><n/><c val="FFFF8A">Mastery:</c> Increases structures’ production speed by <c val="FFFF8A"><d ref="Effect,MasteryVorazunChronoBoostSpeedDisplayDummy,Amount"/></c>%.
@@ -3804,6 +3814,7 @@ Button/Tooltip/ResearchAlarakZealotFrenziedOverload=Allows Zealots to attack ene
 Button/Tooltip/ResearchAresClassTargetingSystem=Increases the <c val="ffff8a">Goliath's</c> anti-air weapon range by 3 and its ground weapon range by 1.
 Button/Tooltip/ResearchAresClassTargetingSystemNova=Increases the <c val="ffff8a">Strike Goliath's</c> anti-air weapon range by 3 and its ground weapon range by 1.
 Button/Tooltip/ResearchAutoCreateInfestedCivilianAmmo=<c val="ffff8a">Infested Siege Tanks</c> automatically spawn 1 round of Volatile Biomass every 30 seconds.
+Button/Tooltip/ResearchBansheeCloak_Raynor=Enables <c val="ffff8a">Banshees</c> to use the Cloak ability. Cloak renders the <c val="ffff8a">Banshee</c> invisible to enemies unless the unit is revealed by detectors or effects. Cloaked <c val="ffff8a">Banshees</c> also have their range increased by 2. 
 Button/Tooltip/ResearchBanshee_BlackOpsAirstrike=Allows <c val="ffff8a">Covert Banshees</c> to use Rocket Barrage, which deals <d ref="Effect,Banshee_BlackOpsAirstrikeDamage,Amount"/> damage to enemy ground units in the target area.
 Button/Tooltip/ResearchBarrier=Increases the amount of damage absorbed by the <c val="ffff8a">Immortal's</c> Barrier by 100%.
 Button/Tooltip/ResearchBlinkShieldRestore=Teleports the <c val="ffff8a">Stalker</c> to a nearby target location. Ability can only be used once every <d ref="Abil,BlinkShieldRestore,Cost[0].Cooldown.TimeUse"/> seconds.
@@ -3833,7 +3844,7 @@ Button/Tooltip/ResearchDehakaUltraliskBash=<c val ="ffff8a">Primal Ultralisk</c>
 Button/Tooltip/ResearchDehakaUltraliskCrashingCharge=<c val ="ffff8a">Primal Ultralisks</c> can charge to a target location, knocking back units in the area and dealing <d ref="Effect,DehakaUltraliskCrashingChargeDamage,Amount"/> damage.
 Button/Tooltip/ResearchDehakaUltraliskRegen=<c val ="ffff8a">Primal Ultralisks</c> regenerate life quickly when out of combat.
 Button/Tooltip/ResearchDeploySpiderMines=Allows <c val="ffff8a">Heavy Siege Tanks</c> to deploy Spider Mines, which pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy detectors.
-Button/Tooltip/ResearchDisplacementField=Detected <c val="ffff8a">Wraiths</c> evade 20% of incoming attacks while cloaked.
+Button/Tooltip/ResearchDisplacementField=<c val="ffff8a">Wraiths</c> move <d ref="(Behavior,CloakDistortionField,Modification.MoveSpeedMultiplier-1)*100"/>% faster and evade <d ref="Behavior,CloakDistortionField,DamageResponse.Chance*100"/>% of incoming attacks while cloaked.
 Button/Tooltip/ResearchDisruptorCloak=Permanently cloaks all <c val="ffff8a">Disruptors</c>.
 Button/Tooltip/ResearchDisruptorSecondExplosion=The <c val="ffff8a">Disruptor's</c> Purification Nova explodes again after <d ref="Effect,FenixPurificationNovaUpgradedPersistent,PeriodicPeriodArray[0]"/> seconds, dealing <d ref="Effect,PurificationNovaUpgradedDamage,Amount"/> damage in a larger area.
 Button/Tooltip/ResearchDoubleGravitonBeam=Allows <c val="ffff8a">Phoenixes</c> to cast Graviton Beam on two enemies at once.
@@ -3883,7 +3894,7 @@ Button/Tooltip/ResearchHHWraithFury=<c val="FFFF8A">Wraith</c> attack speed incr
 Button/Tooltip/ResearchHHWraithPermaCloak=Allows <c val="ffff8a">Wraiths</c> to remain permanently cloaked.
 Button/Tooltip/ResearchHHYamatoShots=<c val="FFFF8A">Battlecruiser</c> weapons systems are upgraded to a powerful particle cannon that deals <d ref="Effect,HHLaserBatteryU,Amount"/> damage per attack.
 Button/Tooltip/ResearchHavocPermanentCloak=Allows <c val="ffff8a">Havocs</c> to remain permanently cloaked.
-Button/Tooltip/ResearchHealingPsionicStorm=The <c val="ffff8a">High Templar's</c> Psionic Storm's radius is increased by 50%, ranged increased by 2, and restores <d ref="((Effect,HighArchonPsiStormPersistent,PeriodCount+1)*(Effect,HighArchonPsiStormHeal,RechargeVitalRate))/2"/> shields to friendly units in the target area.<c/>
+Button/Tooltip/ResearchHealingPsionicStorm=The <c val="ffff8a">High Templar's</c> Psionic Storm's radius is increased by 50%, range increased by 2, and restores <d ref="((Effect,HighArchonPsiStormPersistent,PeriodCount+1)*(Effect,HighArchonPsiStormHeal,RechargeVitalRate))/2"/> shields to friendly units in the target area.<c/>
 Button/Tooltip/ResearchHealingPsionicStormHighArchon=The <c val="ffff8a">High Templar's</c> and <c val="ffff8a">Archon's</c> Psionic Storm restores <d ref="((Effect,HighArchonPsiStormPersistent,PeriodCount+1)*(Effect,HighArchonPsiStormHeal,RechargeVitalRate))/2"/> shields to friendly units in the target area.<c/>
 Button/Tooltip/ResearchHeavyInfestation=Increases the number of Broodlings spawned by Infest Structure by 50%.
 Button/Tooltip/ResearchHellbatHellArmor=<c val="ffff8a">Hellions</c> and <c val="ffff8a">Hellbats</c> gain +2 armor.
@@ -4013,7 +4024,7 @@ Button/Tooltip/ResearchVoidRayVoidPrismaticRange=Increases the range of the <c v
 Button/Tooltip/ResearchVoidStasis=Grants <c val="ffff8a">Dark Templar</c> an ability to phase a target unit or structure out of existence for <d ref="Behavior,DarkTemplarVoidStasis,Duration"/> seconds. This disables it entirely and prevents it from being attacked by units or abilities.<n/><n/><c val="#ColorAttackInfo">Can target structures or ground units.</c>
 Button/Tooltip/ResearchWarpGateCharges=Grants <c val="ffff8a">Gateways</c> 2 additional warp charges.
 Button/Tooltip/ResearchWhirlwind=Enables <c val="ffff8a">Zealots</c> to use the Whirlwind ability. Whirlwind damages all nearby enemy units while active.
-Button/Tooltip/ResearchWraithImprovedBurstLaser=Increases the attack speed of the <c val="ffff8a">Wraith's</c> Burst Lasers by 100%.
+Button/Tooltip/ResearchWraithImprovedBurstLaser=Increases the damage of Gemini Missiles by <d ref="(Behavior,SwannGeminiMissileMovementBuff,DamageResponse.ModifyFraction-1)*100"/>% and Burst Lasers by <d ref="(Behavior,SwannBurstLaserMovementBuff,DamageResponse.ModifyFraction-1)*100"/>% while the <c val="ffff8a">Wraith</c> is moving.
 Button/Tooltip/ResearchXN51CloakTechnology=Allows <c val="ffff8a">Covert Banshees</c> to remain permanently cloaked.
 Button/Tooltip/Roach=Assault unit. Regenerates life quickly when burrowed.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/RoboticsBayKarax=Contains upgrades for Observers, Immortals and Colossi.<n/><n/><c val="ffff8a">Enables:</c><n/>- Colossi at the Robotics Facility
@@ -4089,7 +4100,7 @@ Button/Tooltip/SOAChronoPassive=Increases the production speeds of all friendly 
 Button/Tooltip/SOACloakingField=All friendly units and structures are cloaked for <d time="20"/>.
 Button/Tooltip/SOADarkPylon=Warps in a Dark Pylon granting supply and power. Dark Pylons also cloak nearby friendly units and structures.
 Button/Tooltip/SOADarkPylonCloakedDamage=Warps in a Dark Pylon granting supply and power. Dark Pylons also cloak nearby friendly units and structures. Friendly units cloaked by a Dark Pylon deal <d ref="Behavior,VorazunCloakDamageBoost,Modification.DamageDealtFraction[Melee] * 100"/>% more attack damage.
-Button/Tooltip/SOAHeroicShield=Friendly units become invulnerable for <d time="5"/>, preventing death. Each unit can be shielded only once every <d time="240"/>.<n/><n/><c val="ffff8a">Passive ability.</c>
+Button/Tooltip/SOAHeroicShield=Friendly units become invulnerable for <d time="5"/>, preventing death. Also restores <d ref="Effect,MasteryArtanisGuardianShellHealDisplayDummy,Amount" player="Current" precision="2"/>% life and shields. Each unit can be shielded only once every <d time="240"/>.<n/><n/><c val="ffff8a">Passive ability.</c>
 Button/Tooltip/SOAMapWideChrono=Increases the production speeds of all friendly structures to <d ref="Behavior,SOAMapWideChrono,Modification.RateMultiplierArray[Progress] * 100" player="current"/>% for <d ref="Behavior,SOAMapWideChrono,Duration"/> seconds.
 Button/Tooltip/SOAOrbitalStrike=Fire 5 lasers onto the battlefield from orbit, each of them dealing <d ref="Effect,SOAOrbitalStrikeDamage,Amount"/> (<d ref="Effect,SOAOrbitalStrikeDamage,AttributeBonus[Armored]+Effect,SOAOrbitalStrikeDamage,Amount"/> vs armored units) area damage.
 Button/Tooltip/SOAOrbitalStrikeKarax=Fire lasers onto the battlefield from orbit, each of them dealing <d ref="Effect,SOAOrbitalStrikeDamage,Amount"/> (<d ref="Effect,SOAOrbitalStrikeDamage,AttributeBonus[Armored]+Effect,SOAOrbitalStrikeDamage,Amount"/> vs armored units) area damage.
@@ -4753,6 +4764,7 @@ Effect/Name/DrakkenLaserDrillNukeSearch=Drakken Laser Drill Nuke Search
 Effect/Name/DrakkenLaserDrillRBSet=Drakken Laser Drill RB Set
 Effect/Name/DrakkenLaserDrillResetTurretFacingCP=Drakken Laser Drill Reset Turret Facing CP
 Effect/Name/DrakkenLaserDrillResetTurretFacingMU=Drakken Laser Drill Reset Turret Facing MU
+Effect/Name/DrakkenLaserDrillSpotterCallForHelp=Drakken Laser Drill Spotter Call For Help
 Effect/Name/DropPodHasteAB=Drop Pod Haste AB
 Effect/Name/DropPodSlowAB=Drop-Pod Slow AB
 Effect/Name/DropPodStunAB=Drop-Pod Stun AB
@@ -6812,6 +6824,7 @@ Skin/Name/HHBomberJunker=HHBomberJunker
 Skin/Name/HHRavenJunker=HHRavenJunker
 Skin/Name/HHVikingJunker=HHVikingJunker
 Skin/Name/HHWraithJunker=HHWraithJunker
+Skin/Name/Raynor_COOP=Raynor_COOP
 Sound/Name/DaySound=DaySound
 Subtitle/FenixNameChange=I am honored to choose my own name. It will be Talandar.
 Torrasque=
@@ -7015,7 +7028,6 @@ Unit/Name/DehakaConsumeMissile=Dehaka Consume Missile
 Unit/Name/DehakaCoop=Dehaka
 Unit/Name/DehakaCoopBurrowed=Dehaka
 Unit/Name/DehakaCoopReviveCocoon=Dehaka's Den
-Unit/Name/DehakaCoopReviveCocoonFootPrint=DehakaCoopReviveCocoonFootPrint
 Unit/Name/DehakaCreeper=Creeper
 Unit/Name/DehakaCreeperFlying=Explosive Creeper
 Unit/Name/DehakaDakrun=Dakrun
@@ -7182,7 +7194,6 @@ Unit/Name/ImpalerAbathurEgg=Impaler Egg
 Unit/Name/ImpalerDehaka=Impaler
 Unit/Name/ImpalerDehakaBurrowed=Impaler
 Unit/Name/IndustrialShip=Industrial Ship
-Unit/Name/InfestedCivilianPlaceholder=Infested Civilian Placeholder
 Unit/Name/InfestedExploder=Volatile Infested
 Unit/Name/InfestedIndustrialShip=Infested Industrial Ship
 Unit/Name/InfestedSiegeTankImpalerTentacle=InfestedSiegeTankImpalerTentacle
@@ -8331,13 +8342,13 @@ UserData/MasteryUpgrades/AlarakMastery5_Name=Structure Overcharge Extra Shields 
 UserData/MasteryUpgrades/AlarakMastery5_ValueFormat=+~A~%
 UserData/MasteryUpgrades/AlarakMastery6_Name=Chrono Boost Efficiency
 UserData/MasteryUpgrades/AlarakMastery6_ValueFormat=+ ~A~%
-UserData/MasteryUpgrades/ArtanisMastery1_Name=Shield Overcharge CDR
-UserData/MasteryUpgrades/ArtanisMastery1_ValueFormat=-~A~ Seconds
+UserData/MasteryUpgrades/ArtanisMastery1_Name=Shield Overcharge Duration and Strength
+UserData/MasteryUpgrades/ArtanisMastery1_ValueFormat=+~A~ Percent
 UserData/MasteryUpgrades/ArtanisMastery1_ValueSuffix=%
 UserData/MasteryUpgrades/ArtanisMastery2_Name=Guardian Shell Instant Heal
 UserData/MasteryUpgrades/ArtanisMastery2_ValueFormat=+~A~%
 UserData/MasteryUpgrades/ArtanisMastery2_ValueSuffix=%
-UserData/MasteryUpgrades/ArtanisMastery3_Name=Warp in Charges Cooldown
+UserData/MasteryUpgrades/ArtanisMastery3_Name=Energy Regen and Cooldown Reduction
 UserData/MasteryUpgrades/ArtanisMastery3_ValueFormat=+~A~%
 UserData/MasteryUpgrades/ArtanisMastery3_ValueSuffix=%
 UserData/MasteryUpgrades/ArtanisMastery4_Name=Units Warped in Gain Starting Haste
@@ -8419,8 +8430,8 @@ UserData/MasteryUpgrades/NovaMastery5_Name=Nova Revive Reduction
 UserData/MasteryUpgrades/NovaMastery5_ValueFormat=+~A~%
 UserData/MasteryUpgrades/NovaMastery6_Name=Army Units life out of combat life regen
 UserData/MasteryUpgrades/NovaMastery6_ValueFormat=+~A~
-UserData/MasteryUpgrades/RaynorMastery1_Name=Stim Duration
-UserData/MasteryUpgrades/RaynorMastery1_ValueFormat=~A~% Duration
+UserData/MasteryUpgrades/RaynorMastery1_Name=Resource Cost
+UserData/MasteryUpgrades/RaynorMastery1_ValueFormat=-~A~%
 UserData/MasteryUpgrades/RaynorMastery2_Name=Drop Pod Haste
 UserData/MasteryUpgrades/RaynorMastery2_ValueFormat=+~A~% Haste
 UserData/MasteryUpgrades/RaynorMastery3_Name=Hyperion CD
@@ -8429,7 +8440,7 @@ UserData/MasteryUpgrades/RaynorMastery4_Name=Banshee Cooldown
 UserData/MasteryUpgrades/RaynorMastery4_ValueFormat=-~A~ Seconds
 UserData/MasteryUpgrades/RaynorMastery5_Name=Medic Additional Target Heal
 UserData/MasteryUpgrades/RaynorMastery5_ValueFormat=~A~% Percent of Base Heal
-UserData/MasteryUpgrades/RaynorMastery6_Name=Improved Safeguard
+UserData/MasteryUpgrades/RaynorMastery6_Name=Mech Attack Speed
 UserData/MasteryUpgrades/RaynorMastery6_ValueFormat=+~A~% Percent
 UserData/MasteryUpgrades/StukovMastery1_Name=Civ % chance to spawn a volitile instead
 UserData/MasteryUpgrades/StukovMastery1_ValueFormat=~A~%
@@ -8453,8 +8464,8 @@ UserData/MasteryUpgrades/SwannMastery4_Name=Building Health
 UserData/MasteryUpgrades/SwannMastery4_ValueFormat=+~A~%
 UserData/MasteryUpgrades/SwannMastery5_Name=Reduced Vespene Harvester Cost
 UserData/MasteryUpgrades/SwannMastery5_ValueFormat=-~A~% Cost
-UserData/MasteryUpgrades/SwannMastery6_Name=Laser Drill Build, Rebuild and Research Time
-UserData/MasteryUpgrades/SwannMastery6_ValueFormat=-~A~ Seconds
+UserData/MasteryUpgrades/SwannMastery6_Name=Laser Drill Build Time, Upgrade Time and Upgrade Cost
+UserData/MasteryUpgrades/SwannMastery6_ValueFormat=-~A~%
 UserData/MasteryUpgrades/VorazunMastery1_Name=Dark Pylon Radius
 UserData/MasteryUpgrades/VorazunMastery1_ValueFormat=+~A~% radius
 UserData/MasteryUpgrades/VorazunMastery2_Name=Black Hole Duration
@@ -10395,6 +10406,8 @@ Variant010/Name=Co-op Hard
 VoidStasisCooldown=Cannot target units that have recently been affected by Void Stasis
 Weapon/Name/ACPirateCapitalShip=Pirate Capital Ship
 Weapon/Name/ACVirophageVileStream=Vile Stream
+Weapon/Name/ATALaserBattery_Raynor=ATA Laser Battery
+Weapon/Name/ATSLaserBattery_Raynor=ATS Laser Battery
 Weapon/Name/AlarakAA=Psionic Lightning
 Weapon/Name/AlarakStructureOvercharge=Structure Overcharge
 Weapon/Name/ApocaliskAirAttack=Apocalisk Air Attack

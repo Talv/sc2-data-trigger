@@ -28,6 +28,30 @@
         </InfoArray>
         <Name value="Abil/Name/SITerranAddOns"/>
     </CAbilBuild>
+    <CAbilEffectTarget id="HyperjumpNoVision">
+        <AbilSetId value="FleetwideJump"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="HyperjumpCreatePrecursor"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Cooldown TimeUse="60"/>
+        </Cost>
+        <Range value="500"/>
+        <CastIntroTime value="0"/>
+        <CastOutroTime value="1.2624"/>
+        <ShowProgressArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <ProgressButtonArray index="Channel" value="Hyperjump"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Hyperjump">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="LockOn">
+        <Effect index="0" value="LockOnInitialSet"/>
+    </CAbilEffectTarget>
     <CAbilMorph id="MorphToHellion">
         <CmdButtonArray index="Execute" Requirements=""/>
     </CAbilMorph>
@@ -46,6 +70,7 @@
         <Flags index="AllowMovement" value="1"/>
         <Flags index="BestUnit" value="0"/>
         <Flags index="NoDeceleration" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
         <Cost>
             <Charge Link="Abil/FleetwideJump"/>
             <Cooldown Link="Abil/FleetwideJump" TimeUse="60"/>
@@ -88,6 +113,7 @@
         <Flags index="AllowMovement" value="1"/>
         <Flags index="BestUnit" value="0"/>
         <Flags index="NoDeceleration" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
         <Cost>
             <Cooldown TimeUse="60"/>
         </Cost>
@@ -124,7 +150,7 @@
         <AutoCastValidatorArray value="NotHaveTargetLock"/>
         <AutoCastValidatorArray value="NotInterceptor"/>
         <CastOutroTime value="0.5"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="TargetLock"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HHNomadTargetLock"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="ObserverTargetLock">
         <AbilSetId value="TargetLock"/>
@@ -951,6 +977,9 @@
             <Cooldown TimeUse="90"/>
         </Cost>
         <CmdButtonArray index="Execute" State="Restricted" Requirements="Use330mmBarrageCannons"/>
+        <Range index="0" value="10"/>
+        <CastIntroTime index="0" value="0.5"/>
+        <FinishTime index="0" value="0.5"/>
     </CAbilEffectTarget>
     <CAbilInteract id="ACGlobalShareUnit">
         <Flags index="AutoCast" value="1"/>
@@ -2679,6 +2708,7 @@
     <CAbilBehavior id="DuskWingBansheeCloakingField">
         <Flags index="ToggledOn" value="1"/>
         <CmdButtonArray index="On" Requirements="NotNovaCommander"/>
+        <BehaviorArray index="0" value="DuskWingBansheeCloak"/>
     </CAbilBehavior>
     <CAbilEffectTarget id="EnterWormhole">
         <CmdButtonArray index="Execute" State="Restricted" Requirements="HaveOracleWormhole"/>
@@ -2746,7 +2776,6 @@
         <CmdButtonArray index="Execute">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
-        <Flags index="RequireTargetVision" value="1"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="LightningBomb">
         <CmdButtonArray index="Execute" State="Restricted" Requirements="HaveTempestDisintegration"/>
@@ -3184,17 +3213,17 @@
     </CAbilTransport>
     <CAbilResearch id="TemplarArchivesResearch">
         <InfoArray index="Research5" Time="60">
-            <Resource index="Minerals" value="150"/>
-            <Resource index="Vespene" value="150"/>
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
         </InfoArray>
-        <InfoArray index="Research6" Time="90" Upgrade="HighTemplarKhaydarinAmulet">
-            <Resource index="Minerals" value="150"/>
-            <Resource index="Vespene" value="150"/>
+        <InfoArray index="Research6" Time="60" Upgrade="HighTemplarKhaydarinAmulet">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
             <Button DefaultButtonFace="ResearchHighTemplarEnergyUpgrade" State="Restricted" Requirements="LearnHighTemplarEnergyUpgrade"/>
         </InfoArray>
-        <InfoArray index="Research7" Time="120" Upgrade="HealingPsionicStorm">
-            <Resource index="Minerals" value="200"/>
-            <Resource index="Vespene" value="200"/>
+        <InfoArray index="Research7" Time="90" Upgrade="HealingPsionicStorm">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
             <Button DefaultButtonFace="ResearchHealingPsionicStorm" State="Restricted" Requirements="LearnHealingPsionicStorm2"/>
         </InfoArray>
         <InfoArray index="Research8" Time="60" Upgrade="AlarakHighTemplarPsionicOrbTravelDistance">
@@ -3367,7 +3396,9 @@
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="50"/>
         </InfoArray>
-        <InfoArray index="Research6" Time="90">
+        <InfoArray index="Research6" Time="60">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
             <Button State="Restricted"/>
         </InfoArray>
         <InfoArray index="Research7" Time="60">
@@ -3418,9 +3449,9 @@
             <Resource index="Vespene" value="150"/>
             <Button DefaultButtonFace="ResearchImprovedSiegeMode" State="Restricted" Requirements="LearnImprovedSiegeMode"/>
         </InfoArray>
-        <InfoArray index="Research17" Time="120" Upgrade="CycloneLockOnDamageUpgrade">
-            <Resource index="Minerals" value="200"/>
-            <Resource index="Vespene" value="200"/>
+        <InfoArray index="Research17" Time="90" Upgrade="CycloneLockOnDamageUpgrade">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
             <Button DefaultButtonFace="ResearchCycloneLockOnDamageUpgrade" State="Restricted" Requirements="LearnCycloneLockOnDamageUpgrade"/>
         </InfoArray>
         <InfoArray index="Research18" Time="90" Upgrade="NovaUnitLockdown">
@@ -4219,12 +4250,6 @@
     </CAbilEffectInstant>
     <CAbilEffectInstant id="SelfRepair">
         <CmdButtonArray index="Execute" Requirements="HaveThorSelfRepair"/>
-    </CAbilEffectInstant>
-    <CAbilEffectInstant id="SoASuperShield">
-        <Cost index="0">
-            <Vital index="Energy" value="50"/>
-            <Cooldown TimeStart="300" TimeUse="300"/>
-        </Cost>
     </CAbilEffectInstant>
     <CAbilResearch id="SpawningPoolResearch">
         <InfoArray index="Research1" Time="60">
@@ -16093,6 +16118,7 @@
             <Cooldown Link="Abil/HHWidowMineAttack" Location="Unit" TimeUse="40"/>
         </Cost>
         <Effect index="0" value="HHWidowMineAttack"/>
+        <PrepEffect value="HHWidowMineTargetingBeamDummy"/>
     </CAbilEffectTarget>
     <CAbilMorph id="HHWidowMineBurrow">
         <AbilSetId value="BrwD"/>

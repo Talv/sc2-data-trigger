@@ -70,12 +70,12 @@
         <Behavior value="VoidShade"/>
     </CEffectApplyBehavior>
     <CEffectDamage id="BurrowChargeMPTargetDamage">
-        <Kind value="Melee"/>
-        <KindSplash value="Melee"/>
+        <Kind value="Spell"/>
+        <KindSplash value="Spell"/>
     </CEffectDamage>
     <CEffectDamage id="BurrowChargeTargetDamage">
-        <Kind value="Melee"/>
-        <KindSplash value="Melee"/>
+        <Kind value="Spell"/>
+        <KindSplash value="Spell"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="CarrierRepairDroneRecall">
         <EditorCategories value=""/>

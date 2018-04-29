@@ -6,6 +6,39 @@
     <CActorMissile id="AdeptAttackMissile">
         <On Terms="ActorCreation; ValidateUnit AdeptGlaivesUpgraded" Send="ModelSwap Adept_Missile_Upgrade"/>
     </CActorMissile>
+    <CActorBeamSimple id="ColossusAttackBeam">
+        <On Terms="ActorCreation; ValidateCreationEffect ColossusRangeUpgraded" Send="ModelSwap ColossusAttackBeam_Upgrade"/>
+    </CActorBeamSimple>
+    <CActorModel id="ColossusAttackBeamImpact">
+        <On Terms="ActorCreation; ValidateCreationEffect ColossusRangeUpgraded" Send="ModelSwap ColossusAttackBeamImpact_Upgrade"/>
+    </CActorModel>
+    <CActorModel id="ColossusAttackBeamImpactReverse">
+        <On Terms="ActorCreation; ValidateCreationEffect ColossusRangeUpgraded" Send="ModelSwap ColossusAttackBeamImpact_Upgrade"/>
+    </CActorModel>
+    <CActorBeamSimple id="ColossusAttackBeamReverse">
+        <On Terms="ActorCreation; ValidateCreationEffect ColossusRangeUpgraded" Send="ModelSwap ColossusAttackBeam_Upgrade"/>
+    </CActorBeamSimple>
+    <CActorModel id="LiberatorAGBirthSearchIndicatorModel">
+        <On Terms="ActorCreation; ValidateUnit LiberatorAGRangeUpgraded" Send="ModelSwap LiberatorAGSearchIndicator_Upgrade"/>
+    </CActorModel>
+    <CActorSplat id="LiberatorAGTargetCursorSplat">
+        <On Terms="ActorCreation; ValidatePlayer LiberatorAGRangeUpgraded" Send="Destroy"/>
+    </CActorSplat>
+    <CActorSplat id="LiberatorAGTargetCursorSplat_Upgrade" parent="CursorSplat" abil="LiberatorAGTarget">
+        <On Terms="ActorCreation; !ValidatePlayer LiberatorAGRangeUpgraded" Send="Destroy"/>
+    </CActorSplat>
+    <CActorUnit id="ParasiticBombRelayDummy" parent="GenericUnitStandardNoAutoSoundLinks" unitName="ParasiticBombRelayDummy">
+        <Model value="Invisible"/>
+        <EditorModel value="Sphere"/>
+        <WalkAnimMoveSpeed value="0"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+    </CActorUnit>
     <CActorUnit id="AssaultMorphModel">
         <On Terms="ActorCreation; ValidateUnit HaveSmartServos" Send="AnimGroupApply Upgrade"/>
         <On Terms="Upgrade.SmartServos.Add" Send="AnimGroupApply Upgrade"/>
@@ -20,8 +53,21 @@
     <CActorModel id="AdeptAttackImpactModel" parent="GenericAttackModel">
         <On Terms="ActorCreation; ValidateCreationEffect AdeptGlaivesUpgraded" Send="ModelSwap Adept_Missile_Impact_Upgrade"/>
     </CActorModel>
+    <CActorAction id="PhoenixAirAttackLeft">
+        <ImpactModel value="PhoenixAttackImpactModel"/>
+    </CActorAction>
+    <CActorAction id="PhoenixAirAttackRight">
+        <ImpactModel value="PhoenixAttackImpactModel"/>
+    </CActorAction>
+    <CActorModel id="PhoenixAttackImpactModel" parent="GenericAttackModel">
+        <On Terms="ActorCreation; ValidateCreationEffect PhoenixRangeUpgraded" Send="ModelSwap PhoenixAirAttackImpact_Upgrade"/>
+    </CActorModel>
     <CActorMissile id="HydraliskAttackMissile">
         <On Terms="ActorCreation; ValidateUnit HydraliskRangeUpgraded" Send="ModelSwap HydraliskMissile_Upgrade"/>
+    </CActorMissile>
+    <!-- Attack                                                                                  -->
+    <CActorMissile id="PhoenixAirAttackMissile">
+        <On Terms="ActorCreation; ValidateUnit PhoenixRangeUpgraded" Send="ModelSwap IonCannonsWeapon_Upgrade"/>
     </CActorMissile>
     <CActorModel id="ProtossBuildingBirthSmall">
         <On Terms="UnitConstruction.ShieldBattery.Start" Send="Create"/>
@@ -35,6 +81,9 @@
         <Sound value="ShieldBattery_RechargeEnd"/>
     </CActorSound>
     <CActorDoodad id="Tarsonis_Building_Top">
+        <ModelFlags index="OutlineOccluder" value="1"/>
+    </CActorDoodad>
+    <CActorDoodad id="TempleMonolythLarge">
         <ModelFlags index="OutlineOccluder" value="1"/>
     </CActorDoodad>
     <!-- for more visible burrowed roaches and infestors -->
@@ -248,6 +297,7 @@
     <CActorModel id="LiberatorAGSearchIndicatorModel">
         <Remove Terms="Effect.LiberatorTargetMorphPersistent.Start" Send="Create"/>
         <Remove Terms="Effect.LiberatorTargetMorphPersistent.Start" Send="AnimBracketStart BSD {} Stand Death"/>
+        <On Terms="ActorCreation; ValidateCreationEffect LiberatorAGRangeUpgraded" Send="ModelSwap LiberatorAGSearchIndicator_Upgrade"/>
     </CActorModel>
     <CActorRange id="LiberatorAGSearchRange">
         <Host Subject="::Creator"/>
@@ -300,7 +350,6 @@
         <On Terms="UnitCreation.PylonOvercharged" Send="Create"/>
         <DeathCustoms ModelLink="PylonXPRDeath" Name="Variation10"/>
         <DeathCustoms ModelLink="ProtossWarpInDeath" SoundLink="Pylon_Explode" Name="Variation11"/>
-        <PlaceholderActorModel value="PylonPlaceholderModel"/>
     </CActorUnit>
     <CActorModel id="PylonPlacementModel">
         <On Terms="ActorCreation; ModelName PylonPlacement" Send="TimerSet 0.062500 PylonPowerSearch"/>
@@ -948,10 +997,10 @@
         <UnitIcon value="Assets\Textures\btn-unit-zerg-overlordtransport.dds"/>
         <HeroIcon value="Assets\Textures\btn-unit-zerg-overlordtransport.dds"/>
         <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Zerg-Overlord.dds"/>
+            <Image value="Assets\Textures\wireframe-zerg-overlordtransport.dds"/>
         </GroupIcon>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Zerg-Overlord.dds"/>
+            <Image value="Assets\Textures\wireframe-zerg-overlordtransport.dds"/>
         </Wireframe>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level0.dds"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
@@ -1096,9 +1145,6 @@
         <DeathCustoms ModelLink="MarineXPRDeathFire" Name="Variation12"/>
         <DeathCustoms ModelLink="MarineXPRDeathEviscerate" Name="Variation13"/-->
     </CActorUnit>
-    <CActorModel id="MarineDeathRagdoll">
-        <!--On Terms="ActorCreation; PlayerHasReward MarineSkin" Send="ModelSwap MarineXPRDeathRagdoll"/-->
-    </CActorModel>
     <CActorUnit id="SupplyDepot">
         <Macros value="SnowVisualUnitMacroMP"/>
         <On Terms="ActorCreation; PlayerHasReward SupplyDepotSkin" Send="StatusSet CE 1"/>
@@ -1945,7 +1991,6 @@
         <On Terms="Behavior.NexusMassRecallTargetPhased.On" Send="Create"/>
         <On Terms="ActorCreation" Target="_Unit" Send="SetOpacity 0.600000 0.250000 MassRecallOpacity"/>
         <On Terms="ActorCreation" Target="_Unit" Send="SetTintColor 100,100,255 0.250000 OneShot MassRecallTint"/>
-        <On Terms="Behavior.NeuralParasite.On" Send="Destroy"/>
         <On Terms="Behavior.NexusMassRecallTargetPhased.Off" Target="_Unit" Send="ClearOpacity 0.250000 MassRecallOpacity"/>
         <On Terms="Behavior.NexusMassRecallTargetPhased.Off" Target="_Unit" Send="ClearTintColor 0.250000 MassRecallTint"/>
         <On Terms="Behavior.NexusMassRecallTargetPhased.Off" Send="Destroy"/>
@@ -2095,8 +2140,9 @@
     </CActorRange>
     <CActorModelMaterial id="GlazeParasiticBomb">
         <Remove Terms="Behavior.ParasiticBomb.On" Send="Create"/>
-        <On Terms="Behavior.ParasiticBombInitialDelay.On" Send="Create"/>
-        <On Terms="Behavior.ParasiticBomb.Destroy" Send="AnimBracketStop BSD"/>
+        <Remove Terms="Behavior.ParasiticBomb.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.ParasiticBombGlazeMarker.On" Send="Create"/>
+        <On Terms="Behavior.ParasiticBombGlazeMarker.Off" Send="AnimBracketStop BSD"/>
     </CActorModelMaterial>
     <CActorUnit id="ShieldBattery" parent="ProtossBuilding" unitName="ShieldBattery">
         <Macros value="UnpoweredAnim"/>

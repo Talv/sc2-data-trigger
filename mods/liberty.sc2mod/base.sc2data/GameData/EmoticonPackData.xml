@@ -58,6 +58,7 @@
         <EmoticonArray value="jthursday"/>
         <EmoticonArray value="myheart"/>
         <EmoticonArray value="uhaveapackage"/>
+        <EmoticonArray value="gameheart"/>
     </CEmoticonPack>
     <CEmoticonPack id="WingsOfLiberty">
         <ReleaseDate value="7/27/2010"/>
@@ -224,6 +225,14 @@
         <RequiredCommander value="Fenix"/>
         <EmoticonArray value="purifier"/>
         <EmoticonArray value="fenix"/>
+    </CEmoticonPack>
+    <CEmoticonPack id="Twitch20thAnniversary">
+        <Name value="Emoticon/Description/twitch"/>
+        <ShortName value="Emoticon/Description/twitch"/>
+        <ReleaseDate value="3/6/2018"/>
+        <Image Index="19"/>
+        <RequiredRewardArray value="Emoticon_Twitch"/>
+        <EmoticonArray value="twitch"/>
     </CEmoticonPack>
     <!-- War Chest Season 1 -->
     <CEmoticonPack id="WarChestTerran_FeelsGoodMarine">
@@ -635,5 +644,18 @@
         <RequiredCommander value="Horner"/>
         <EmoticonArray value="smooch"/>
         <EmoticonArray value="brokenheart"/>
+    </CEmoticonPack>
+    <CEmoticonPack id="NationWars">
+        <ReleaseDate value="3/27/2018"/>
+        <Image Index="20"/>
+        <RequiredRewardArray value="Emoticon_NationWarsAce"/>
+        <RequiredRewardArray value="Emoticon_NationWarsAllKill"/>
+        <RequiredRewardArray value="Emoticon_NationWarsEZPZ"/>
+        <RequiredRewardArray value="Emoticon_NationWarsWallez"/>
+        <EmoticonArray value="nwace"/>
+        <EmoticonArray value="nwallkill"/>
+        <EmoticonArray value="nwezpz"/>
+        <EmoticonArray value="nwwallez"/>
+        <HideAchievement value="1"/>
     </CEmoticonPack>
 </Catalog>

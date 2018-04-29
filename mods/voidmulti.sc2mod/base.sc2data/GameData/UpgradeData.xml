@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <Catalog>
     <CUpgrade id="AdeptPiercingAttack">
-        <Icon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives.dds"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives-orange.dds"/>
         <ScoreAmount value="200"/>
         <ScoreResult value="BuildOrder"/>
     </CUpgrade>

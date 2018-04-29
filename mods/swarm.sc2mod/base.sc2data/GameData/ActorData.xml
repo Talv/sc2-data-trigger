@@ -10021,12 +10021,6 @@
     <CActorUnit id="XelNaga_Caverns_Floating_BridgeV12Out" parent="XelNaga_Caverns_Floating_BridgeOut" unitNameAlt="XelNaga_Caverns_Floating_BridgeV12" unitName="XelNaga_Caverns_Floating_BridgeV12Out">
         <MinimapIcon value=""/>
     </CActorUnit>
-    <CActorModel id="PylonPlacementModel" parent="PlacementModel">
-        <On Terms="ActorCreation; PlayerHasReward PylonSkin; ModelIsLowQuality" Send="ModelSwap PylonXPR"/>
-    </CActorModel>
-    <CActorModel id="PylonPlaceholderModel" parent="PlaceholderModel">
-        <On Terms="ActorCreation; PlayerHasReward PylonSkin; ModelIsLowQuality" Send="ModelSwap PylonXPR"/>
-    </CActorModel>
     <CActorUnit id="LabMineralField750" parent="MineralBase" unitName="LabMineralField750">
         <On Terms="BehaviorLevel.MineralFieldMinerals750.Start; Level 0" Send="AnimGroupApply A"/>
         <On Terms="BehaviorLevel.MineralFieldMinerals750.Stop; Level 0" Send="AnimGroupRemove A"/>

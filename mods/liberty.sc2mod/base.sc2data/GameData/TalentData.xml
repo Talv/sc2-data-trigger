@@ -256,6 +256,7 @@
     <CTalent id="MasteryArtanisStartingAndMaxSoAEnergy" parent="CommanderDefaultSettings"/>
     <CTalent id="MasteryArtanisStartingResources" parent="CommanderDefaultSettings"/>
     <CTalent id="MasteryArtanisWarpChargeCooldown" parent="CommanderDefaultSettings"/>
+    <CTalent id="MasteryArtanisEnergyRegenCooldown" parent="CommanderDefaultSettings"/>
     <CTalent id="MasteryKaraxBuildingVital" parent="CommanderDefaultSettings"/>
     <CTalent id="MasteryKaraxChronoBoostSpeed" parent="CommanderDefaultSettings"/>
     <CTalent id="MasteryKaraxMaxEnergy" parent="CommanderDefaultSettings"/>
@@ -282,6 +283,7 @@
     <CTalent id="MasteryRaynorMechAttackSpeed" parent="CommanderDefaultSettings"/>
     <CTalent id="MasteryRaynorMedicSecondaryHeal" parent="CommanderDefaultSettings"/>
     <CTalent id="MasteryRaynorResearchSpeed" parent="CommanderDefaultSettings"/>
+    <CTalent id="MasteryRaynorResearchCost" parent="CommanderDefaultSettings"/>
     <CTalent id="MasteryRaynorStimDuration" parent="CommanderDefaultSettings"/>
     <CTalent id="MasterySwannBuildingHealth" parent="CommanderDefaultSettings"/>
     <CTalent id="MasterySwannCombatDrop" parent="CommanderDefaultSettings"/>

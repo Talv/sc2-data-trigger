@@ -234,6 +234,38 @@
     <CUnit id="InfestorTerranBurrowed">
         <SubgroupPriority value="66"/>
     </CUnit>
+    <CUnit id="ParasiticBombRelayDummy">
+        <DeathRevealRadius value="0"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="NoDraw" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="KillCredit" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="NoDeathEvent" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="Unstoppable" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <LifeStart value="1000"/>
+        <LifeMax value="1000"/>
+        <LifeArmor value="10"/>
+        <LifeRegenRate value="10"/>
+        <Mover value="Fly"/>
+        <TurningRate value="2879.8242"/>
+        <AbilArray Link="ViperParasiticBombRelay"/>
+        <AbilArray Link="ParasiticBombRelayDodge"/>
+        <BehaviorArray Link="ImmuneToDamage"/>
+        <CardLayouts>
+            <LayoutButtons Face="ParasiticBomb" Type="AbilCmd" AbilCmd="ViperParasiticBombRelay,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="ParasiticBomb" Type="AbilCmd" AbilCmd="ParasiticBombRelayDodge,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="0"/>
+        <SeparationRadius value="0"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectFamily:Campaign,ObjectType:Other"/>
+        <LeaderAlias value=""/>
+    </CUnit>
     <CUnit id="KD8Charge">
         <FlagArray index="Invulnerable" value="1"/>
     </CUnit>
@@ -551,6 +583,7 @@
         </CardLayouts>
     </CUnit>
     <CUnit id="LocustMPFlying">
+        <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="ArmySelect" value="1"/>
         <CostCategory value="Army"/>
         <AbilArray Link="LocustMPFlyingSwoopAttack"/>
@@ -692,6 +725,7 @@
         </CardLayouts>
         <SubgroupPriority value="36"/>
         <GlossaryStrongArray index="1" value="LurkerMP"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
     </CUnit>
     <CUnit id="ObserverSiegeMode" parent="Observer">
         <Speed value="0"/>
@@ -706,6 +740,8 @@
         </CardLayouts>
         <AbilArray index="2" Link="ObserverSiegeMorphtoObserver"/>
         <GlossaryCategory value=""/>
+        <ScoreMake value="0"/>
+        <ScoreResult value=""/>
     </CUnit>
     <CUnit id="Oracle">
         <SubgroupPriority value="84"/>
@@ -718,6 +754,7 @@
         <GlossaryWeakArray value="Raven"/>
         <GlossaryWeakArray value="Overseer"/>
         <GlossaryWeakArray value="Observer"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
     </CUnit>
     <CUnit id="OrbitalCommand">
         <Food value="15"/>
@@ -756,6 +793,7 @@
             <LayoutButtons Face="MorphtoOverseerSiege" Type="AbilCmd" AbilCmd="OverseerMorphtoOverseerSiegeMode,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <GlossaryStrongArray index="1" value="LurkerMP"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
     </CUnit>
     <CUnit id="OverseerSiegeMode" parent="Overseer">
         <Name value="Unit/Name/OverseerSiegeMode"/>
@@ -781,6 +819,8 @@
         <GlossaryWeakArray index="0" removed="1"/>
         <GlossaryWeakArray index="1" removed="1"/>
         <GlossaryWeakArray index="2" removed="1"/>
+        <ScoreMake value="0"/>
+        <ScoreResult value=""/>
     </CUnit>
     <CUnit id="Phoenix">
         <SubgroupPriority value="81"/>
@@ -802,6 +842,7 @@
     <CUnit id="PointDefenseDrone">
         <GlossaryCategory value=""/>
         <HotkeyCategory value=""/>
+        <FlagArray index="UseLineOfSight" value="1"/>
     </CUnit>
     <CUnit id="Probe">
         <Collide index="Locust" value="1"/>
@@ -1031,9 +1072,10 @@
         <SubgroupPriority value="28"/>
     </CUnit>
     <CUnit id="SwarmHostBurrowedMP">
-        <AbilArray index="1" Link="SpawnLocustsTargeted"/>
-        <AbilArray index="2" removed="1"/>
-        <AbilArray index="3" removed="1"/>
+        <AbilArray index="1" Link=""/>
+        <AbilArray index="2" Link=""/>
+        <AbilArray index="3" Link=""/>
+        <AbilArray Link="SpawnLocustsTargeted"/>
         <BehaviorArray index="0" removed="1"/>
         <BehaviorArray index="1" removed="1"/>
         <CardLayouts index="0">
@@ -1272,6 +1314,7 @@
         <GlossaryWeakArray index="0" value="Ghost"/>
         <GlossaryWeakArray index="1" value="Corruptor"/>
         <GlossaryWeakArray index="2" value="HighTemplar"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
     </CUnit>
     <CUnit id="VoidRay">
         <SubgroupPriority value="78"/>
@@ -1722,8 +1765,6 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <AIEvalFactor value="0"/>
         <HotkeyAlias value="Overlord"/>
-        <SelectAlias value="Overlord"/>
-        <SubgroupAlias value="Overlord"/>
         <HotkeyCategory value="Unit/Category/ZergUnits"/>
         <BehaviorArray Link="IsTransportOverlord"/>
     </CUnit>
@@ -1783,6 +1824,7 @@
         <Attributes index="Light" value="1"/>
         <Attributes index="Mechanical" value="1"/>
         <Attributes index="Structure" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="NoScore" value="1"/>
         <FlagArray index="NoPortraitTalk" value="1"/>
         <LifeStart value="80"/>
@@ -1848,6 +1890,7 @@
         <GlossaryWeakArray index="1" value="Mutalisk"/>
         <GlossaryWeakArray index="2" value="HighTemplar"/>
         <GlossaryStrongArray index="1" value="LurkerMP"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
     </CUnit>
     <CUnit id="RavenScramblerMissile" parent="MISSILE_INVULNERABLE">
         <Race value="Terr"/>
@@ -1857,6 +1900,7 @@
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
         <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="NoScore" value="1"/>
         <FlagArray index="NoPortraitTalk" value="1"/>
         <FlagArray index="AILifetime" value="1"/>

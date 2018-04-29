@@ -2631,6 +2631,8 @@ const int c_playerLicenseLibertyFull        = 162;
 const int c_playerLicenseNovaPack1          = 16515;
 const int c_playerLicenseNovaPack2          = 16533;
 const int c_playerLicenseNovaPack3          = 16534;
+const int c_playerLicenseArcadeArkStar      = 27856;
+const int c_playerLicenseArcadeDesertStrike = 27827;
 
 native void     PlayerSetColorIndex (int inPlayer, int inIndex, bool inChangeUnits);
 native int      PlayerGetColorIndex (int inPlayer, bool inDefault);

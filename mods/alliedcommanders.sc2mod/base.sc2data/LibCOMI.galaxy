@@ -3683,13 +3683,13 @@ void libCOMI_gf_CM_MasteryKerriganResearchSpeedCost (int lp_player) {
 
     // Implementation
     lv_upgradeCount = TechTreeUpgradeCount(lp_player, "MasteryKerriganResearchSpeedandCost", c_techCountCompleteOnly);
-    lv_costReduction = ((225.0 * ((30.0 - lv_upgradeCount) + 20.0)) / 50.0);
+    lv_costReduction = ((175.0 * ((30.0 - lv_upgradeCount) + 20.0)) / 50.0);
     CatalogFieldValueSet(c_gameCatalogAbil, "evolutionchamberresearch", "InfoArray[" + IntToString(4) + "].Resource[" + IntToString(0) + "]", lp_player, IntToString(FixedToInt(lv_costReduction)));
     CatalogFieldValueSet(c_gameCatalogAbil, "evolutionchamberresearch", "InfoArray[" + IntToString(4) + "].Resource[" + IntToString(1) + "]", lp_player, IntToString(FixedToInt(lv_costReduction)));
     lv_costReduction = ((175.0 * ((30.0 - lv_upgradeCount) + 20.0)) / 50.0);
     CatalogFieldValueSet(c_gameCatalogAbil, "SpireResearch", "InfoArray[" + IntToString(1) + "].Resource[" + IntToString(0) + "]", lp_player, IntToString(FixedToInt(lv_costReduction)));
     CatalogFieldValueSet(c_gameCatalogAbil, "SpireResearch", "InfoArray[" + IntToString(1) + "].Resource[" + IntToString(1) + "]", lp_player, IntToString(FixedToInt(lv_costReduction)));
-    lv_costReduction = ((225.0 * ((30.0 - lv_upgradeCount) + 20.0)) / 50.0);
+    lv_costReduction = ((175.0 * ((30.0 - lv_upgradeCount) + 20.0)) / 50.0);
     CatalogFieldValueSet(c_gameCatalogAbil, "SpireResearch", "InfoArray[" + IntToString(4) + "].Resource[" + IntToString(0) + "]", lp_player, IntToString(FixedToInt(lv_costReduction)));
     CatalogFieldValueSet(c_gameCatalogAbil, "SpireResearch", "InfoArray[" + IntToString(4) + "].Resource[" + IntToString(1) + "]", lp_player, IntToString(FixedToInt(lv_costReduction)));
 }
@@ -3808,6 +3808,8 @@ void libCOMI_gf_CM_DataUtilInit () {
         }
         else if (autoCF24B7F2_val == "TerranRaynor") {
             TriggerEnable(libCOMI_gt_CM_HyperionMinimapIconDynamicFacingDisplay, true);
+            TriggerEnable(libCOMI_gt_CM_RaynorAttackSpeedUpgrade, true);
+            TriggerEnable(libCOMI_gt_CM_RaynorAttackSpeedMastery, true);
         }
         else if (autoCF24B7F2_val == "ZergKerrigan") {
             TriggerEnable(libCOMI_gt_CM_MasteryKerriganInstantReviveCooldown, true);
@@ -3821,6 +3823,7 @@ void libCOMI_gf_CM_DataUtilInit () {
             TriggerEnable(libCOMI_gt_SwannVespeneDroneTrigger, true);
             TriggerEnable(libCOMI_gt_SwannSiegeTankRebuildController, true);
             TriggerEnable(libCOMI_gt_SwannThorRebuildController, true);
+            TriggerEnable(libCOMI_gt_SwannLaserDrillCallForHelp, true);
             TriggerEnable(libCOMI_gt_CM_LaserDrillBFGActivate, true);
             TriggerEnable(libCOMI_gt_CM_LaserDrillNukeActivate, true);
             TriggerEnable(libCOMI_gt_CM_LaserDrillBFG, true);
@@ -4947,6 +4950,51 @@ void libCOMI_gf_CM_ModifyCooldown (string lp_cooldownName, int lp_player) {
     lv_r2 = PlayerGetChargeUsed(lp_player, lp_cooldownName);
     PlayerAddChargeRegenRemaining(lp_player, lp_cooldownName, (300.0 - lv_r));
     PlayerAddChargeUsed(lp_player, lp_cooldownName, (4.0 - lv_r2));
+}
+
+void libCOMI_gf_CM_RaynorUpgradeResearchCost (int lp_player, int lp_level) {
+    // Variable Declarations
+    fixed lv_changedFactor;
+    const string lv_upgrade = "MasteryRaynorResearchCost";
+    int lv_researchCount;
+    int lv_itResearchIndex;
+    string lv_itResearch;
+    int lv_abilCmdCount;
+    const int lv_resourceTypeCount = 4;
+    int lv_itResearchCmd;
+    int lv_itResourceType;
+    fixed lv_default;
+
+    // Automatic Variable Declarations
+    int autoA6390321_ae;
+    const int autoA6390321_ai = 1;
+    int auto6BD5CD32_ae;
+    const int auto6BD5CD32_ai = 1;
+    int auto063B4A4F_ae;
+    const int auto063B4A4F_ai = 1;
+
+    // Variable Initialization
+    lv_changedFactor = (1-(IntToFixed(lp_level)*0.02));
+    lv_researchCount = CatalogFieldValueCount(c_gameCatalogUpgrade, lv_upgrade, "AffectedUnitArray", lp_player);
+    lv_itResearch = "";
+    lv_abilCmdCount = CatalogFieldValueCount(c_gameCatalogAbil, "ArmoryResearch", "InfoArray", c_playerAny);
+
+    // Implementation
+    autoA6390321_ae = (lv_researchCount-1);
+    lv_itResearchIndex = 0;
+    for ( ; ( (autoA6390321_ai >= 0 && lv_itResearchIndex <= autoA6390321_ae) || (autoA6390321_ai < 0 && lv_itResearchIndex >= autoA6390321_ae) ) ; lv_itResearchIndex += autoA6390321_ai ) {
+        lv_itResearch = CatalogFieldValueGet(c_gameCatalogUpgrade, lv_upgrade, "AffectedUnitArray[" + IntToString(lv_itResearchIndex) + "]", lp_player);
+        auto6BD5CD32_ae = (lv_abilCmdCount-1);
+        lv_itResearchCmd = 0;
+        for ( ; ( (auto6BD5CD32_ai >= 0 && lv_itResearchCmd <= auto6BD5CD32_ae) || (auto6BD5CD32_ai < 0 && lv_itResearchCmd >= auto6BD5CD32_ae) ) ; lv_itResearchCmd += auto6BD5CD32_ai ) {
+            auto063B4A4F_ae = (lv_resourceTypeCount-1);
+            lv_itResourceType = 0;
+            for ( ; ( (auto063B4A4F_ai >= 0 && lv_itResourceType <= auto063B4A4F_ae) || (auto063B4A4F_ai < 0 && lv_itResourceType >= auto063B4A4F_ae) ) ; lv_itResourceType += auto063B4A4F_ai ) {
+                lv_default = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogAbil, lv_itResearch, "InfoArray[" + IntToString(lv_itResearchCmd) + "].Resource[" + IntToString(lv_itResourceType) + "]", c_playerAny);
+                libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogAbil, lv_itResearch, "InfoArray[" + IntToString(lv_itResearchCmd) + "].Resource[" + IntToString(lv_itResourceType) + "]", lp_player, CeilingI((lv_default*lv_changedFactor)));
+            }
+        }
+    }
 }
 
 void libCOMI_gf_CM_Stukov_SingleUnitGoToRally (unit lp_rallyingUnit, bool lp_overrideExistingOrders) {
@@ -16066,6 +16114,8 @@ void libCOMI_gt_CM_Fenix_ChampionDies_Init () {
 bool libCOMI_gt_CM_Fenix_NetworkedUnitDies_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv_player;
+    int lv_avengingprotocolindex;
+    int lv_avengingprotocolstacks;
 
     // Automatic Variable Declarations
     string auto0E65C66C_val;
@@ -16090,40 +16140,50 @@ bool libCOMI_gt_CM_Fenix_NetworkedUnitDies_Func (bool testConds, bool runActions
         UnitGroupRemove(libCOMI_gv_cM_Fenix_ChampionVolunteerUnitGroup[1][lv_player], EventUnit());
         libCOMI_gf_CM_Fenix_UpdateNetworkValues(1, lv_player);
         libCOMI_gf_CM_Fenix_UpdateFenixChampionShellCountValues(1, lv_player);
-        libCOMI_gf_CM_Fenix_AvengingProtocol(1, lv_player, 3);
+        lv_avengingprotocolindex = 1;
+        lv_avengingprotocolstacks = 3;
     }
     else if (auto0E65C66C_val == libCOMI_gv_cM_Fenix_ChampionUnitReplaceType[2]) {
         UnitGroupRemove(libCOMI_gv_cM_Fenix_ChampionVolunteerUnitGroup[2][lv_player], EventUnit());
         libCOMI_gf_CM_Fenix_UpdateNetworkValues(2, lv_player);
         libCOMI_gf_CM_Fenix_UpdateFenixChampionShellCountValues(2, lv_player);
-        libCOMI_gf_CM_Fenix_AvengingProtocol(2, lv_player, 2);
+        lv_avengingprotocolindex = 2;
+        lv_avengingprotocolstacks = 2;
     }
     else if (auto0E65C66C_val == libCOMI_gv_cM_Fenix_ChampionUnitReplaceType[3]) {
         UnitGroupRemove(libCOMI_gv_cM_Fenix_ChampionVolunteerUnitGroup[3][lv_player], EventUnit());
         libCOMI_gf_CM_Fenix_UpdateNetworkValues(3, lv_player);
         libCOMI_gf_CM_Fenix_UpdateFenixChampionShellCountValues(3, lv_player);
-        libCOMI_gf_CM_Fenix_AvengingProtocol(3, lv_player, 3);
+        lv_avengingprotocolindex = 3;
+        lv_avengingprotocolstacks = 3;
     }
     else if (auto0E65C66C_val == libCOMI_gv_cM_Fenix_ChampionUnitReplaceType[4]) {
         UnitGroupRemove(libCOMI_gv_cM_Fenix_ChampionVolunteerUnitGroup[4][lv_player], EventUnit());
         libCOMI_gf_CM_Fenix_UpdateNetworkValues(4, lv_player);
         libCOMI_gf_CM_Fenix_UpdateFenixChampionShellCountValues(4, lv_player);
-        libCOMI_gf_CM_Fenix_AvengingProtocol(4, lv_player, 4);
+        lv_avengingprotocolindex = 4;
+        lv_avengingprotocolstacks = 4;
     }
     else if (auto0E65C66C_val == libCOMI_gv_cM_Fenix_ChampionUnitReplaceType[5]) {
         UnitGroupRemove(libCOMI_gv_cM_Fenix_ChampionVolunteerUnitGroup[5][lv_player], EventUnit());
         libCOMI_gf_CM_Fenix_UpdateNetworkValues(5, lv_player);
         libCOMI_gf_CM_Fenix_UpdateFenixChampionShellCountValues(5, lv_player);
-        libCOMI_gf_CM_Fenix_AvengingProtocol(5, lv_player, 6);
+        lv_avengingprotocolindex = 5;
+        lv_avengingprotocolstacks = 6;
     }
     else if (auto0E65C66C_val == libCOMI_gv_cM_Fenix_ChampionUnitReplaceType[6]) {
         UnitGroupRemove(libCOMI_gv_cM_Fenix_ChampionVolunteerUnitGroup[6][lv_player], EventUnit());
         libCOMI_gf_CM_Fenix_UpdateNetworkValues(6, lv_player);
         libCOMI_gf_CM_Fenix_UpdateFenixChampionShellCountValues(6, lv_player);
-        libCOMI_gf_CM_Fenix_AvengingProtocol(6, lv_player, 6);
+        lv_avengingprotocolindex = 6;
+        lv_avengingprotocolstacks = 6;
     }
     else {
     }
+    if ((lv_avengingprotocolindex > 0) && (lv_avengingprotocolstacks > 0) && (UnitHasBehavior2(EventUnit(), "FenixSuppressAvengingProtocol") == false)) {
+        libCOMI_gf_CM_Fenix_AvengingProtocol(lv_avengingprotocolindex, lv_player, lv_avengingprotocolstacks);
+    }
+
     return true;
 }
 
@@ -19206,6 +19266,164 @@ void libCOMI_gt_CM_Nova_BuildingCompletedTrigger_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: CM_RaynorTriggeringResearch
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_RaynorTriggeringResearch_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_upgrade;
+    int lv_player;
+    int lv_level;
+
+    // Automatic Variable Declarations
+    string autoC8B01DC2_val;
+
+    // Variable Initialization
+    lv_upgrade = EventUpgradeName();
+    lv_player = EventPlayer();
+    lv_level = TechTreeUpgradeCount(lv_player, lv_upgrade, c_techCountCompleteOnly);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoC8B01DC2_val = lv_upgrade;
+    if (autoC8B01DC2_val == "MasteryRaynorResearchCost") {
+        libCOMI_gf_CM_RaynorUpgradeResearchCost(lv_player, lv_level);
+    }
+    else {
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_RaynorTriggeringResearch_Init () {
+    libCOMI_gt_CM_RaynorTriggeringResearch = TriggerCreate("libCOMI_gt_CM_RaynorTriggeringResearch_Func");
+    TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_RaynorTriggeringResearch, c_playerAny);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_RaynorAttackSpeedUpgrade
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_RaynorAttackSpeedUpgrade_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_upgrade;
+    int lv_player;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_upgrade = "RaynorCommanderTerranWeaponAttackSpeed";
+    lv_player = libCOOC_gf_CC_PlayerOfCommanderInGroupFirst("TerranRaynor", libCOOC_gf_CC_PlayersOfCommander("TerranRaynor"));
+
+    // Conditions
+    if (testConds) {
+        if (!((EventUpgradeName() == lv_upgrade))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((TechTreeUpgradeCount(lv_player, "MasteryRaynorMechAttackSpeed", c_techCountCompleteOnly) == 0)) {
+        libCOMI_gf_CM_MasteryWeaponListFromUpgradeAttackSpeedBonus(lv_player, lv_upgrade, 0.15);
+        TriggerEnable(TriggerGetCurrent(), false);
+    }
+    else {
+        libCOMI_gf_CM_MasteryWeaponListFromUpgradeAttackSpeedBonus(lv_player, "RaynorCommanderTerranWeaponAttackSpeedTrigger", 0.15);
+        TriggerEnable(TriggerGetCurrent(), false);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_RaynorAttackSpeedUpgrade_Init () {
+    libCOMI_gt_CM_RaynorAttackSpeedUpgrade = TriggerCreate("libCOMI_gt_CM_RaynorAttackSpeedUpgrade_Func");
+    TriggerEnable(libCOMI_gt_CM_RaynorAttackSpeedUpgrade, false);
+    TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_RaynorAttackSpeedUpgrade, c_playerAny);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_RaynorAttackSpeedMastery
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_RaynorAttackSpeedMastery_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_level;
+    string lv_entry;
+    int lv_index;
+    int lv_count;
+    fixed lv_val;
+    fixed lv_period;
+    fixed lv_addition;
+    int lv_catalog;
+    string lv_path;
+    string lv_ref;
+    int lv_player;
+    string lv_upgrade;
+    fixed lv_percentMultiplierPerPoint;
+
+    // Automatic Variable Declarations
+    int auto53821942_ae;
+    const int auto53821942_ai = 1;
+
+    // Variable Initialization
+    lv_level = TechTreeUpgradeCount(libCOOC_gf_CC_PlayerOfCommanderInGroupFirst("TerranRaynor", libCOOC_gf_CC_PlayersOfCommander("TerranRaynor")), "MasteryRaynorMechAttackSpeed", c_techCountCompleteOnly);
+    lv_catalog = c_gameCatalogWeapon;
+    lv_path = "";
+    lv_player = libCOOC_gf_CC_PlayerOfCommanderInGroupFirst("TerranRaynor", libCOOC_gf_CC_PlayersOfCommander("TerranRaynor"));
+    lv_upgrade = "MasteryRaynorMechAttackSpeed";
+    lv_percentMultiplierPerPoint = 0.01;
+
+    // Conditions
+    if (testConds) {
+        if (!((TechTreeUpgradeCount(lv_player, "MasteryRaynorMechAttackSpeed", c_techCountCompleteOnly) >= 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((lv_level < 1)) {
+        return true;
+    }
+
+    lv_count = CatalogFieldValueCount(c_gameCatalogUpgrade, lv_upgrade, "AffectedUnitArray", lv_player);
+    auto53821942_ae = (lv_count-1);
+    lv_index = 0;
+    for ( ; ( (auto53821942_ai >= 0 && lv_index <= auto53821942_ae) || (auto53821942_ai < 0 && lv_index >= auto53821942_ae) ) ; lv_index += auto53821942_ai ) {
+        lv_path = CatalogFieldValueGet(c_gameCatalogUpgrade, lv_upgrade, "AffectedUnitArray[" + IntToString(lv_index) + "]", lv_player);
+        if ((StringContains(lv_path, ",", c_stringAnywhere, c_stringCase) == false)) {
+            lv_path = ("Weapon," + lv_path + ",Period");
+        }
+
+        lv_ref = ((lv_path));
+        lv_entry = (lv_path);
+        lv_period = StringToFixed(CatalogReferenceGet(lv_ref, c_playerAny));
+        if ((lv_period != 0.0)) {
+            lv_addition = (lv_level*lv_percentMultiplierPerPoint);
+            lv_addition = (lv_addition + 0.15);
+            lv_val = (lv_period-1/((1/lv_period)*(1+lv_addition)));
+            CatalogReferenceModify(lv_ref, lv_player, FixedToString(lv_val, c_fixedPrecisionAny), c_upgradeOperationSubtract);
+        }
+
+    }
+    TriggerEnable(TriggerGetCurrent(), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_RaynorAttackSpeedMastery_Init () {
+    libCOMI_gt_CM_RaynorAttackSpeedMastery = TriggerCreate("libCOMI_gt_CM_RaynorAttackSpeedMastery_Func");
+    TriggerEnable(libCOMI_gt_CM_RaynorAttackSpeedMastery, false);
+    TriggerAddEventUpgradeLevelChanged(libCOMI_gt_CM_RaynorAttackSpeedMastery, c_playerAny);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CM_HyperionMinimapIconDynamicFacingDisplay
 //--------------------------------------------------------------------------------------------------
 bool libCOMI_gt_CM_HyperionMinimapIconDynamicFacingDisplay_Func (bool testConds, bool runActions) {
@@ -19498,6 +19716,49 @@ void libCOMI_gt_SwannThorRebuildController_Init () {
     libCOMI_gt_SwannThorRebuildController = TriggerCreate("libCOMI_gt_SwannThorRebuildController_Func");
     TriggerEnable(libCOMI_gt_SwannThorRebuildController, false);
     TriggerAddEventUnitAbility(libCOMI_gt_SwannThorRebuildController, null, AbilityCommand("ThorRebornSwann", 0), c_abilMorphStageActorStart, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Swann Laser Drill Call For Help
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_SwannLaserDrillCallForHelp_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_laserdrillowner;
+    unit lv_laserdrilltarget;
+    region lv_laserdrilltargetvicinity;
+    unitgroup lv_laserdrillspotters;
+    unit lv_laserdrillspotter;
+
+    // Automatic Variable Declarations
+    unitgroup autoDEBD017A_g;
+    int autoDEBD017A_u;
+
+    // Variable Initialization
+    lv_laserdrillowner = UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster));
+    lv_laserdrilltarget = EventPlayerEffectUsedUnit(c_effectUnitTarget);
+    lv_laserdrilltargetvicinity = RegionCircle(UnitGetPosition(lv_laserdrilltarget), 12.0);
+    lv_laserdrillspotters = UnitGroupAlliance(lv_laserdrillowner, c_unitAllianceAlly, lv_laserdrilltargetvicinity, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32))), 0);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoDEBD017A_g = lv_laserdrillspotters;
+    autoDEBD017A_u = UnitGroupCount(autoDEBD017A_g, c_unitCountAll);
+    for (;; autoDEBD017A_u -= 1) {
+        lv_laserdrillspotter = UnitGroupUnitFromEnd(autoDEBD017A_g, autoDEBD017A_u);
+        if (lv_laserdrillspotter == null) { break; }
+        UnitCreateEffectUnit(lv_laserdrillspotter, "DrakkenLaserDrillSpotterCallForHelp", lv_laserdrilltarget);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_SwannLaserDrillCallForHelp_Init () {
+    libCOMI_gt_SwannLaserDrillCallForHelp = TriggerCreate("libCOMI_gt_SwannLaserDrillCallForHelp_Func");
+    TriggerEnable(libCOMI_gt_SwannLaserDrillCallForHelp, false);
+    TriggerAddEventPlayerEffectUsed(libCOMI_gt_SwannLaserDrillCallForHelp, c_playerAny, "LaserDrillTripodDamageCoop");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -24433,12 +24694,16 @@ void libCOMI_InitTriggers () {
     libCOMI_gt_CM_NovaSiegeModeProgressiveRangeIncreaseApply_Init();
     libCOMI_gt_CM_NovaPsiStrike_Init();
     libCOMI_gt_CM_Nova_BuildingCompletedTrigger_Init();
+    libCOMI_gt_CM_RaynorTriggeringResearch_Init();
+    libCOMI_gt_CM_RaynorAttackSpeedUpgrade_Init();
+    libCOMI_gt_CM_RaynorAttackSpeedMastery_Init();
     libCOMI_gt_CM_HyperionMinimapIconDynamicFacingDisplay_Init();
     libCOMI_gt_AdvancedConstructionAutoUser_Init();
     libCOMI_gt_AdvancedConstructionAutoAutoCast_Init();
     libCOMI_gt_SwannVespeneDroneTrigger_Init();
     libCOMI_gt_SwannSiegeTankRebuildController_Init();
     libCOMI_gt_SwannThorRebuildController_Init();
+    libCOMI_gt_SwannLaserDrillCallForHelp_Init();
     libCOMI_gt_CM_Stukov_FullSupplyCheat_Init();
     libCOMI_gt_CM_Stukov_AutoCreepTumor_Init();
     libCOMI_gt_CM_Stukov_InfestedStructureInitialSpawn_Init();

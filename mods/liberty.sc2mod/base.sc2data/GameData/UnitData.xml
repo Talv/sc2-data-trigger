@@ -7553,7 +7553,7 @@
         </CardLayouts>
         <CostCategory value="Technology"/>
         <CostResource index="Minerals" value="150"/>
-        <LeaderAlias value=""/>
+        <LeaderAlias value="SpineCrawler"/>
         <HotkeyAlias value="SpineCrawler"/>
         <WeaponArray Turret="SpineCrawlerUprooted"/>
     </CUnit>
@@ -7688,7 +7688,7 @@
         </CardLayouts>
         <CostCategory value="Technology"/>
         <CostResource index="Minerals" value="125"/>
-        <LeaderAlias value=""/>
+        <LeaderAlias value="SporeCrawler"/>
         <HotkeyAlias value="SporeCrawler"/>
         <WeaponArray Turret="SporeCrawlerUprooted"/>
     </CUnit>

@@ -18,6 +18,7 @@
     <const id="$Portraits9" value="ui_wol_achievementportraits_sheet9.dds"/>
     <const id="$Portraits10" value="ui_wol_achievementportraits_sheet10.dds"/>
     <const id="$Portraits11" value="ui_wol_achievementportraits_sheet11.dds"/>
+    <const id="$Portraits12" value="ui_wol_achievementportraits_sheet12.dds"/>
     <const id="$Achievements1" value="ui_wol_achievementicons_sheet1.dds"/>
     <const id="$Achievements2" value="ui_wol_achievementicons_sheet2.dds"/>
     <const id="$Achievements3" value="ui_wol_achievementicons_sheet3.dds"/>
@@ -36,6 +37,9 @@
     <const id="$Icons10" value="ui_wol_achievementicons_sheetA.dds"/>
     <const id="$Icons11" value="ui_wol_achievementicons_sheetB.dds"/>
     <const id="$Sprays1" value="ui_wol_achievementsprays_sheet1.dds"/>
+    <const id="$Consoles1" value="ui_wol_achievementconsoles_sheet1.dds"/>
+    <const id="$Skins1" value="ui_wol_unitskinicons_sheet1.dds"/>
+    <const id="$Skins2" value="ui_wol_unitskinicons_sheet2.dds"/>
     <!-- Dont let the editor change the order of the constants -->
     <CRewardDecal default="1" id="DECALPROTOSS">
         <Category File="S2ProtossDecal" Tag="PCAL"/>
@@ -54,9 +58,10 @@
     </CRewardIcon>
     <CRewardModel default="1" id="MODELDEFAULT">
         <Category File="S2Model"/>
-        <IconFile value="$Decals1"/>
-        <IconCols value="8"/>
-        <IconRows value="8"/>
+        <IconFile value="$Skins1"/>
+        <IconCols value="10"/>
+        <IconRows value="10"/>
+        <IconSlot value="0"/>
         <Flags index="ExcludeInLargeFormatGame" value="1"/>
     </CRewardModel>
     <CRewardModel default="1" id="ANIMATIONDEFAULT">
@@ -155,17 +160,21 @@
     <!-- Console Skins -->
     <CRewardConsoleSkin default="1" id="GENERICCONSOLESKINREWARD">
         <Category File="GenericConsoleSkin" Tag="GCSK"/>
-        <Flags index="Cloaked" value="1"/>
-        <Flags index="Hidden" value="1"/>
         <License value="##id##"/>
         <ConsoleSkin value="##id##"/>
+        <IconFile value="$Consoles1"/>
+        <IconSlot value="0"/>
+        <IconCols value="8"/>
+        <IconRows value="8"/>
     </CRewardConsoleSkin>
     <CRewardConsoleSkin default="1" id="TERRANCONSOLESKIN">
         <Category File="TerranConsoleSkin" Tag="TCSK"/>
         <License value="##id##"/>
         <Race value="Terr"/>
-        <Flags index="Cloaked" value="1"/>
-        <Flags index="Hidden" value="1"/>
+        <IconFile value="$Consoles1"/>
+        <IconSlot value="0"/>
+        <IconCols value="8"/>
+        <IconRows value="8"/>
     </CRewardConsoleSkin>
     <CRewardConsoleSkin default="1" id="TERRANCONSOLESKINREWARD" parent="TERRANCONSOLESKIN">
         <ConsoleSkin value="##id##"/>
@@ -174,8 +183,10 @@
         <Category File="ZergConsoleSkin" Tag="ZCSK"/>
         <License value="##id##"/>
         <Race value="Zerg"/>
-        <Flags index="Cloaked" value="1"/>
-        <Flags index="Hidden" value="1"/>
+        <IconFile value="$Consoles1"/>
+        <IconSlot value="0"/>
+        <IconCols value="8"/>
+        <IconRows value="8"/>
     </CRewardConsoleSkin>
     <CRewardConsoleSkin default="1" id="ZERGCONSOLESKINREWARD" parent="ZERGCONSOLESKIN">
         <ConsoleSkin value="##id##"/>
@@ -184,8 +195,10 @@
         <Category File="ProtossConsoleSkin" Tag="PCSK"/>
         <License value="##id##"/>
         <Race value="Prot"/>
-        <Flags index="Cloaked" value="1"/>
-        <Flags index="Hidden" value="1"/>
+        <IconFile value="$Consoles1"/>
+        <IconSlot value="0"/>
+        <IconCols value="8"/>
+        <IconRows value="8"/>
     </CRewardConsoleSkin>
     <CRewardConsoleSkin default="1" id="PROTOSSCONSOLESKINREWARD" parent="PROTOSSCONSOLESKIN">
         <ConsoleSkin value="##id##"/>
@@ -253,35 +266,43 @@
         <Category File="BroodLordSkin" Tag="ZBro"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="19"/>
         <Race value="Zerg"/>
         <Skin value="BroodLord"/>
     </CRewardModel>
     <CRewardModel id="BroodLord_PremiumSkin_Aquatic" parent="MODELDEFAULT">
         <Category File="BroodLordSkin" Tag="ZBro"/>
         <Race value="Zerg"/>
+        <IconSlot value="71"/>
         <Skin value="BroodLord_PremiumSkin_Aquatic"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="BroodLordWebby" parent="MODELDEFAULT">
         <Category File="BroodLordSkin" Tag="ZBro"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="8"/>
         <Race value="Zerg"/>
         <Skin value="BroodLordWebby"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="BroodLordPrimal" parent="MODELDEFAULT">
         <Category File="BroodLordSkin" Tag="ZBro"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="59"/>
         <Race value="Zerg"/>
         <Skin value="BroodLordPrimal"/>
     </CRewardModel>
     <CRewardModel id="HydraliskNoxious" parent="MODELDEFAULT">
         <Category File="HydraliskSkin" Tag="ZHyd"/>
         <Race value="Zerg"/>
+        <IconSlot value="70"/>
         <Skin value="HydraliskNoxious"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="SiegeTankMerc" parent="MODELDEFAULT">
         <Category File="SiegeTankSkin" Tag="TTnk"/>
         <Skin value="SiegeTankMerc"/>
+        <IconSlot value="65"/>
         <Race value="Terr"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
@@ -289,12 +310,14 @@
         <Category File="VikingSkin" Tag="TVik"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="3"/>
         <Race value="Terr"/>
         <Skin value="Viking"/>
     </CRewardModel>
     <CRewardModel id="VikingMecha" parent="MODELDEFAULT">
         <Category File="VikingSkin" Tag="TVik"/>
         <Race value="Terr"/>
+        <IconSlot value="64"/>
         <Skin value="VikingMecha"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
@@ -3181,6 +3204,22 @@
     <CRewardConsoleSkin id="ConsoleSkinZergDehaka" parent="ZERGCONSOLESKIN">
         <ConsoleSkin value="ConsoleZerg_Dehaka"/>
     </CRewardConsoleSkin>
+    <CRewardConsoleSkin id="ConsoleProtoss_Classic" parent="PROTOSSCONSOLESKINREWARD">
+        <IconSlot value="2"/>
+    </CRewardConsoleSkin>
+    <CRewardConsoleSkin id="ConsoleTerran_Classic" parent="TERRANCONSOLESKINREWARD"/>
+    <CRewardConsoleSkin id="ConsoleZerg_Classic" parent="ZERGCONSOLESKINREWARD">
+        <IconSlot value="1"/>
+    </CRewardConsoleSkin>
+    <CRewardConsoleSkin id="ConsoleProtoss_XelNaga" parent="PROTOSSCONSOLESKINREWARD">
+        <IconSlot value="3"/>
+    </CRewardConsoleSkin>
+    <CRewardConsoleSkin id="ConsoleTerran_XelNaga" parent="TERRANCONSOLESKINREWARD">
+        <IconSlot value="3"/>
+    </CRewardConsoleSkin>
+    <CRewardConsoleSkin id="ConsoleZerg_XelNaga" parent="ZERGCONSOLESKINREWARD">
+        <IconSlot value="3"/>
+    </CRewardConsoleSkin>
     <!-- Decal Defaults -->
     <CRewardDecal id="Decal_Terran_0009_01" parent="DECALTERRAN">
         <Flags index="Allowed" value="1"/>
@@ -3301,6 +3340,31 @@
         <Flags index="Cloaked" value="1"/>
         <Flags index="Hidden" value="1"/>
         <Texture value="Decal_Zerg_0039_01"/>
+    </CRewardDecal>
+    <!-- 20th Anniversary Decals -->
+    <CRewardDecal id="Decal_20YearsTerran" parent="DECALTERRAN">
+        <Flags index="Cloaked" value="1"/>
+        <Texture value="Decal_Terran_0077_01"/>
+        <IconFile value="$Decals4"/>
+        <IconSlot value="35"/>
+        <Description value="Reward/Description/Decal_20YearsTerran"/>
+        <DescriptionUnearned value="Reward/DescriptionUnearned/Decal_20YearsTerran"/>
+    </CRewardDecal>
+    <CRewardDecal id="Decal_20YearsProtoss" parent="DECALPROTOSS">
+        <Flags index="Cloaked" value="1"/>
+        <Texture value="Decal_Protoss_0077_01"/>
+        <IconFile value="$Decals4"/>
+        <IconSlot value="36"/>
+        <Description value="Reward/Description/Decal_20YearsProtoss"/>
+        <DescriptionUnearned value="Reward/DescriptionUnearned/Decal_20YearsProtoss"/>
+    </CRewardDecal>
+    <CRewardDecal id="Decal_20YearsZerg" parent="DECALZERG">
+        <Flags index="Cloaked" value="1"/>
+        <Texture value="Decal_Zerg_0077_01"/>
+        <IconFile value="$Decals4"/>
+        <IconSlot value="37"/>
+        <Description value="Reward/Description/Decal_20YearsZerg"/>
+        <DescriptionUnearned value="Reward/DescriptionUnearned/Decal_20YearsZerg"/>
     </CRewardDecal>
     <!-- CE Decals -->
     <CRewardDecal id="Decal_BWC_2012_Terran" parent="DECALTERRAN">
@@ -5683,25 +5747,19 @@
         <Category File="MarineSkin" Tag="TMar"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconSlot value="15"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
         <Skin value="Marine"/>
         <Race value="Terr"/>
     </CRewardModel>
     <CRewardModel id="MarineSkin" parent="MODELDEFAULT">
         <Category File="MarineSkin" Tag="TMar"/>
         <!--Upgrades value="MarineSkin"/-->
-        <IconSlot value="23"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="53"/>
         <Skin value="MarineXPR"/>
         <Race value="Terr"/>
     </CRewardModel>
     <CRewardModel id="MarineCovertOps" parent="MODELDEFAULT">
         <Category File="MarineSkin" Tag="TMar"/>
+        <IconSlot value="90"/>
         <Skin value="MarineCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
@@ -5710,18 +5768,21 @@
         <Category File="MarauderSkin" Tag="TMrd"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="11"/>
         <Race value="Terr"/>
         <Skin value="Marauder"/>
     </CRewardModel>
     <CRewardModel id="MarauderSkinDeluxe" parent="MODELDEFAULT">
         <Category File="MarauderSkin" Tag="TMrd"/>
         <Skin value="MarauderDeluxe"/>
+        <IconSlot value="66"/>
         <License value="SC2SkinMarauderDeluxe"/>
         <Race value="Terr"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="MarauderCovertOps" parent="MODELDEFAULT">
         <Category File="MarauderSkin" Tag="TMrd"/>
+        <IconSlot value="84"/>
         <Race value="Terr"/>
         <Skin value="MarauderCovertOps"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
@@ -5730,11 +5791,13 @@
         <Category File="ReaperSkin" Tag="TRpr"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="8"/>
         <Race value="Terr"/>
         <Skin value="Reaper"/>
     </CRewardModel>
     <CRewardModel id="ReaperCovertOps" parent="MODELDEFAULT">
         <Category File="ReaperSkin" Tag="TRpr"/>
+        <IconSlot value="81"/>
         <Skin value="ReaperCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
@@ -5743,19 +5806,14 @@
         <Category File="GhostSkin" Tag="TGht"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="64"/>
+        <IconSlot value="1"/>
         <Race value="Terr"/>
         <Skin value="Ghost"/>
     </CRewardModel>
     <CRewardModel id="GhostSkinNova" parent="MODELDEFAULT">
         <Category File="GhostSkin" Tag="TGht"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="65"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="82"/>
         <Upgrades value="GhostAlternate"/>
         <Model value="Nova"/>
         <Skin value="GhostNova"/>
@@ -5764,10 +5822,8 @@
     <CRewardModel id="GhostEidolon" parent="MODELDEFAULT">
         <Category File="GhostSkin" Tag="TGht"/>
         <Flags index="Cloaked" value="1"/>
-        <IconFile value="$Icons11"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="20"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="27"/>
         <Skin value="GhostEidolon"/>
         <Race value="Terr"/>
     </CRewardModel>
@@ -5775,11 +5831,13 @@
         <Category File="SCVSkin" Tag="TScv"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="7"/>
         <Race value="Terr"/>
         <Skin value="SCV"/>
     </CRewardModel>
     <CRewardModel id="SCVCovertOps" parent="MODELDEFAULT">
         <Category File="SCVSkin" Tag="TScv"/>
+        <IconSlot value="80"/>
         <Skin value="SCVCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
@@ -5787,10 +5845,8 @@
     <CRewardModel id="SCVBlizzcon17" parent="MODELDEFAULT">
         <Category File="SCVSkin" Tag="TScv"/>
         <Flags index="Cloaked" value="1"/>
-        <IconFile value="$Icons11"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="19"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="79"/>
         <Race value="Terr"/>
         <Skin value="SCVBlizzcon17"/>
     </CRewardModel>
@@ -5798,12 +5854,14 @@
         <Category File="HellionSkin" Tag="THel"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="13"/>
         <Race value="Terr"/>
         <Skin value="Hellion"/>
     </CRewardModel>
     <CRewardModel id="HellionSkinJunker" parent="MODELDEFAULT">
         <Category File="HellionSkin" Tag="THel"/>
         <Skin value="HellionJunker"/>
+        <IconSlot value="67"/>
         <License value="SC2SkinJunkerHellion"/>
         <Race value="Terr"/>
         <ParentBundle value="UltimateSkinsBundle"/>
@@ -5815,6 +5873,7 @@
     </CRewardModel>
     <CRewardModel id="HellionCovertOps" parent="MODELDEFAULT">
         <Category File="HellionSkin" Tag="THel"/>
+        <IconSlot value="86"/>
         <Race value="Terr"/>
         <Skin value="HellionCovertOps"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
@@ -5823,15 +5882,13 @@
         <Category File="SiegeTankSkin" Tag="TTnk"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="64"/>
+        <IconSlot value="6"/>
         <Race value="Terr"/>
         <Skin value="SiegeTank"/>
     </CRewardModel>
     <CRewardModel id="SiegeTankCovertOps" parent="MODELDEFAULT">
         <Category File="SiegeTankSkin" Tag="TTnk"/>
+        <IconSlot value="79"/>
         <Skin value="SiegeTankCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
@@ -5840,19 +5897,13 @@
         <Category File="ThorSkin" Tag="THOR"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconSlot value="18"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="4"/>
         <Skin value="Thor"/>
         <Race value="Terr"/>
     </CRewardModel>
     <CRewardModel id="ThorCE" parent="MODELDEFAULT">
         <Category File="ThorSkin" Tag="THOR"/>
-        <IconSlot value="26"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="60"/>
         <Skin value="ThorCE"/>
         <Race value="Terr"/>
     </CRewardModel>
@@ -5860,21 +5911,21 @@
         <Category File="BansheeSkin" Tag="TBsh"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="64"/>
+        <IconSlot value="16"/>
         <Race value="Terr"/>
         <Skin value="Banshee"/>
     </CRewardModel>
     <CRewardModel id="BansheeCovertOps" parent="MODELDEFAULT">
         <Category File="BansheeSkin" Tag="TBsh"/>
+        <IconSlot value="89"/>
         <Skin value="BansheeCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="BansheeJunker" parent="MODELDEFAULT">
         <Category File="BansheeSkin" Tag="TBsh"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="41"/>
         <Race value="Terr"/>
         <Skin value="BansheeJunker"/>
     </CRewardModel>
@@ -5882,17 +5933,21 @@
         <Category File="LiberatorSkin" Tag="TLib"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="12"/>
         <Race value="Terr"/>
         <Skin value="Liberator"/>
     </CRewardModel>
     <CRewardModel id="LiberatorCovertOps" parent="MODELDEFAULT">
         <Category File="LiberatorSkin" Tag="TLib"/>
+        <IconSlot value="85"/>
         <Skin value="LiberatorCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="LiberatorJunker" parent="MODELDEFAULT">
         <Category File="LiberatorSkin" Tag="TLib"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="37"/>
         <Race value="Terr"/>
         <Skin value="LiberatorJunker"/>
     </CRewardModel>
@@ -5900,11 +5955,13 @@
         <Category File="RavenSkin" Tag="TRvn"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="9"/>
         <Race value="Terr"/>
         <Skin value="Raven"/>
     </CRewardModel>
     <CRewardModel id="RavenCovertOps" parent="MODELDEFAULT">
         <Category File="RavenSkin" Tag="TRvn"/>
+        <IconSlot value="82"/>
         <Skin value="RavenCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
@@ -5913,22 +5970,27 @@
         <Category File="BattlecruiserSkin" Tag="TBat"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="15"/>
         <Race value="Terr"/>
         <Skin value="Battlecruiser"/>
     </CRewardModel>
     <CRewardModel id="BattlecruiserCovertOps" parent="MODELDEFAULT">
         <Category File="BattlecruiserSkin" Tag="TBat"/>
+        <IconSlot value="88"/>
         <Skin value="BattlecruiserCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="CycloneJunker" parent="MODELDEFAULT">
         <Category File="CycloneSkin" Tag="TCyc"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="39"/>
         <Race value="Terr"/>
         <Skin value="CycloneJunker"/>
     </CRewardModel>
     <CRewardModel id="CycloneCovertOps" parent="MODELDEFAULT">
         <Category File="CycloneSkin" Tag="TCyc"/>
+        <IconSlot value="87"/>
         <Skin value="CycloneCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
@@ -5937,22 +5999,27 @@
         <Category File="CycloneSkin" Tag="TCyc"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="14"/>
         <Race value="Terr"/>
         <Skin value="Cyclone"/>
     </CRewardModel>
     <CRewardModel id="GhostCovertOps" parent="MODELDEFAULT">
         <Category File="GhostSkin" Tag="TGht"/>
+        <IconSlot value="91"/>
         <Skin value="GhostCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="MedivacJunker" parent="MODELDEFAULT">
         <Category File="MedivacSkin" Tag="TMed"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="35"/>
         <Race value="Terr"/>
         <Skin value="MedivacJunker"/>
     </CRewardModel>
     <CRewardModel id="MedivacCovertOps" parent="MODELDEFAULT">
         <Category File="MedivacSkin" Tag="TMed"/>
+        <IconSlot value="83"/>
         <Skin value="MedivacCovertOps"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
@@ -5961,36 +6028,45 @@
         <Category File="MedivacSkin" Tag="TMed"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="10"/>
         <Race value="Terr"/>
         <Skin value="Medivac"/>
     </CRewardModel>
     <CRewardModel id="ThorCovertOps" parent="MODELDEFAULT">
         <Category File="ThorSkin" Tag="THOR"/>
         <Skin value="ThorCovertOps"/>
+        <IconSlot value="78"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="ThorJunker" parent="MODELDEFAULT">
         <Category File="ThorSkin" Tag="THOR"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="30"/>
         <Race value="Terr"/>
         <Skin value="ThorJunker"/>
     </CRewardModel>
     <CRewardModel id="VikingCovertOps" parent="MODELDEFAULT">
         <Category File="VikingSkin" Tag="TVik"/>
         <Skin value="VikingCovertOps"/>
+        <IconSlot value="77"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="WarpPrismNerazim" parent="WarpPrismSkinBase">
         <Skin value="WarpPrismNerazim"/>
+        <IconSlot value="72"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="WarpPrismPurifier" parent="WarpPrismSkinBase">
+        <IconFile value="$Skins2"/>
+        <IconSlot value="62"/>
         <Skin value="WarpPrismPurifier"/>
     </CRewardModel>
     <CRewardModel id="WidowMineCovertOps" parent="MODELDEFAULT">
         <Category File="WidowMineSkin" Tag="TWid"/>
         <Skin value="WidowMineCovertOps"/>
+        <IconSlot value="76"/>
         <Race value="Terr"/>
         <ParentBundle value="WarChestSeason1TerranSkinsBundle"/>
     </CRewardModel>
@@ -5998,6 +6074,7 @@
         <Category File="WidowMineSkin" Tag="TWid"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="2"/>
         <Race value="Terr"/>
         <Skin value="WidowMine"/>
     </CRewardModel>
@@ -6005,20 +6082,14 @@
         <Category File="SupplyDepotSkin" Tag="TDpt"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconSlot value="12"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="5"/>
         <Skin value="SupplyDepot"/>
         <Race value="Terr"/>
     </CRewardModel>
     <CRewardModel id="SupplyDepotSkin" parent="MODELDEFAULT">
         <Category File="SupplyDepotSkin" Tag="TDpt"/>
         <!--Upgrades value="SupplyDepotSkin"/-->
-        <IconSlot value="20"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="54"/>
         <Skin value="SupplyDepotXPR"/>
         <Race value="Terr"/>
     </CRewardModel>
@@ -6026,27 +6097,30 @@
         <Category File="DroneSkin" Tag="ZDrn"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="17"/>
         <Race value="Zerg"/>
         <Skin value="Drone"/>
     </CRewardModel>
     <CRewardModel id="DroneWebby" parent="MODELDEFAULT">
         <Category File="DroneSkin" Tag="ZDrn"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="6"/>
         <Skin value="DroneWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="DronePrimal" parent="MODELDEFAULT">
         <Category File="DroneSkin" Tag="ZDrn"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="57"/>
         <Race value="Zerg"/>
         <Skin value="DronePrimal"/>
     </CRewardModel>
     <CRewardModel id="DroneBlizzcon17" parent="MODELDEFAULT">
         <Category File="DroneSkin" Tag="ZDrn"/>
         <Flags index="Cloaked" value="1"/>
-        <IconFile value="$Icons11"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="18"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="80"/>
         <Race value="Zerg"/>
         <Skin value="DroneBlizzcon17"/>
     </CRewardModel>
@@ -6054,30 +6128,27 @@
         <Category File="ZerglingSkin" Tag="ZLng"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconSlot value="17"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="21"/>
         <Skin value="Zergling"/>
         <Race value="Zerg"/>
     </CRewardModel>
     <CRewardModel id="ZerglingSkin" parent="MODELDEFAULT">
         <Category File="ZerglingSkin" Tag="ZLng"/>
-        <IconSlot value="25"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="55"/>
         <Skin value="ZerglingXPR"/>
         <Race value="Zerg"/>
     </CRewardModel>
     <CRewardModel id="ZerglingWebby" parent="MODELDEFAULT">
         <Category File="ZerglingSkin" Tag="ZLng"/>
+        <IconSlot value="93"/>
         <Skin value="ZerglingWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="ZerglingPrimal" parent="MODELDEFAULT">
         <Category File="ZerglingSkin" Tag="ZLng"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="44"/>
         <Skin value="ZerglingPrimal"/>
         <Race value="Zerg"/>
     </CRewardModel>
@@ -6085,17 +6156,21 @@
         <Category File="BanelingSkin" Tag="ZBnl"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="20"/>
         <Race value="Zerg"/>
         <Skin value="Baneling"/>
     </CRewardModel>
     <CRewardModel id="BanelingWebby" parent="MODELDEFAULT">
         <Category File="BanelingSkin" Tag="ZBnl"/>
+        <IconSlot value="92"/>
         <Skin value="BanelingWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="BanelingPrimal" parent="MODELDEFAULT">
         <Category File="BanelingSkin" Tag="ZBnl"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="60"/>
         <Race value="Zerg"/>
         <Skin value="BanelingPrimal"/>
     </CRewardModel>
@@ -6103,24 +6178,29 @@
         <Category File="RoachSkin" Tag="ZRch"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="25"/>
         <Race value="Zerg"/>
         <Skin value="Roach"/>
     </CRewardModel>
     <CRewardModel id="RoachSkinDeluxe" parent="MODELDEFAULT">
         <Category File="RoachSkin" Tag="ZRch"/>
         <Skin value="RoachDeluxe"/>
+        <IconSlot value="68"/>
         <License value="SC2SkinRoachDeluxe"/>
         <Race value="Zerg"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="RoachWebby" parent="MODELDEFAULT">
         <Category File="RoachSkin" Tag="ZRch"/>
+        <IconSlot value="97"/>
         <Race value="Zerg"/>
         <Skin value="RoachWebby"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="RoachPrimal" parent="MODELDEFAULT">
         <Category File="RoachSkin" Tag="ZRch"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="48"/>
         <Race value="Zerg"/>
         <Skin value="RoachPrimal"/>
     </CRewardModel>
@@ -6128,21 +6208,22 @@
         <Category File="HydraliskSkin" Tag="ZHyd"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="64"/>
+        <IconSlot value="33"/>
         <Race value="Zerg"/>
         <Skin value="Hydralisk"/>
     </CRewardModel>
     <CRewardModel id="HydraliskWebby" parent="MODELDEFAULT">
         <Category File="HydraliskSkin" Tag="ZHyd"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="5"/>
         <Skin value="HydraliskWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="HydraliskPrimal" parent="MODELDEFAULT">
         <Category File="HydraliskSkin" Tag="ZHyd"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="56"/>
         <Race value="Zerg"/>
         <Skin value="HydraliskPrimal"/>
     </CRewardModel>
@@ -6150,17 +6231,22 @@
         <Category File="LurkerSkin" Tag="ZLkr"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="31"/>
         <Race value="Zerg"/>
         <Skin value="Lurker"/>
     </CRewardModel>
     <CRewardModel id="LurkerWebby" parent="MODELDEFAULT">
         <Category File="LurkerSkin" Tag="ZLkr"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="3"/>
         <Skin value="LurkerWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="LurkerPrimal" parent="MODELDEFAULT">
         <Category File="LurkerSkin" Tag="ZLkr"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="54"/>
         <Race value="Zerg"/>
         <Skin value="LurkerPrimal"/>
     </CRewardModel>
@@ -6168,24 +6254,29 @@
         <Category File="RavagerSkin" Tag="ZRvg"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="26"/>
         <Skin value="Ravager"/>
         <Race value="Zerg"/>
     </CRewardModel>
     <CRewardModel id="RavagerSkinBone" parent="MODELDEFAULT">
         <Category File="RavagerSkin" Tag="ZRvg"/>
         <Skin value="RavagerBone"/>
+        <IconSlot value="69"/>
         <License value="SC2SkinBoneRavager"/>
         <Race value="Zerg"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="RavagerWebby" parent="MODELDEFAULT">
         <Category File="RavagerSkin" Tag="ZRvg"/>
+        <IconSlot value="98"/>
         <Skin value="RavagerWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="RavagerPrimal" parent="MODELDEFAULT">
         <Category File="RavagerSkin" Tag="ZRvg"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="49"/>
         <Race value="Zerg"/>
         <Skin value="RavagerPrimal"/>
     </CRewardModel>
@@ -6193,30 +6284,27 @@
         <Category File="UltraliskSkin" Tag="ZUlt"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconSlot value="19"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="23"/>
         <Skin value="Ultralisk"/>
         <Race value="Zerg"/>
     </CRewardModel>
     <CRewardModel id="UltraliskCE" parent="MODELDEFAULT">
         <Category File="UltraliskSkin" Tag="ZUlt"/>
-        <IconSlot value="27"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="61"/>
         <Skin value="UltraliskCE"/>
         <Race value="Zerg"/>
     </CRewardModel>
     <CRewardModel id="UltraliskWebby" parent="MODELDEFAULT">
         <Category File="UltraliskSkin" Tag="ZUlt"/>
+        <IconSlot value="95"/>
         <Skin value="UltraliskWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="UltraliskPrimal" parent="MODELDEFAULT">
         <Category File="UltraliskSkin" Tag="ZUlt"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="46"/>
         <Race value="Zerg"/>
         <Skin value="UltraliskPrimal"/>
     </CRewardModel>
@@ -6224,17 +6312,21 @@
         <Category File="QueenSkin" Tag="ZQun"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="27"/>
         <Race value="Zerg"/>
         <Skin value="Queen"/>
     </CRewardModel>
     <CRewardModel id="QueenWebby" parent="MODELDEFAULT">
         <Category File="QueenSkin" Tag="ZQun"/>
+        <IconSlot value="99"/>
         <Skin value="QueenWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="QueenPrimal" parent="MODELDEFAULT">
         <Category File="QueenSkin" Tag="ZQun"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="50"/>
         <Race value="Zerg"/>
         <Skin value="QueenPrimal"/>
     </CRewardModel>
@@ -6242,17 +6334,22 @@
         <Category File="InfestorSkin" Tag="ZInf"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="32"/>
         <Race value="Zerg"/>
         <Skin value="Infestor"/>
     </CRewardModel>
     <CRewardModel id="InfestorWebby" parent="MODELDEFAULT">
         <Category File="InfestorSkin" Tag="ZInf"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="4"/>
         <Skin value="InfestorWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="InfestorPrimal" parent="MODELDEFAULT">
         <Category File="InfestorSkin" Tag="ZInf"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="55"/>
         <Skin value="InfestorPrimal"/>
         <Race value="Zerg"/>
     </CRewardModel>
@@ -6260,17 +6357,21 @@
         <Category File="SwarmHostSkin" Tag="ZSwH"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="24"/>
         <Race value="Zerg"/>
         <Skin value="SwarmHost"/>
     </CRewardModel>
     <CRewardModel id="SwarmHostWebby" parent="MODELDEFAULT">
         <Category File="SwarmHostSkin" Tag="ZSwH"/>
+        <IconSlot value="96"/>
         <Skin value="SwarmHostWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="SwarmHostPrimal" parent="MODELDEFAULT">
         <Category File="SwarmHostSkin" Tag="ZSwH"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="47"/>
         <Race value="Zerg"/>
         <Skin value="SwarmHostPrimal"/>
     </CRewardModel>
@@ -6278,17 +6379,22 @@
         <Category File="MutaliskSkin" Tag="ZMut"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="30"/>
         <Race value="Zerg"/>
         <Skin value="Mutalisk"/>
     </CRewardModel>
     <CRewardModel id="MutaliskWebby" parent="MODELDEFAULT">
         <Category File="MutaliskSkin" Tag="ZMut"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="2"/>
         <Skin value="MutaliskWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="MutaliskPrimal" parent="MODELDEFAULT">
         <Category File="MutaliskSkin" Tag="ZMut"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="53"/>
         <Race value="Zerg"/>
         <Skin value="MutaliskPrimal"/>
     </CRewardModel>
@@ -6296,17 +6402,22 @@
         <Category File="CorruptorSkin" Tag="ZCor"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="18"/>
         <Race value="Zerg"/>
         <Skin value="Corruptor"/>
     </CRewardModel>
     <CRewardModel id="CorruptorWebby" parent="MODELDEFAULT">
         <Category File="CorruptorSkin" Tag="ZCor"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="7"/>
         <Skin value="CorruptorWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="CorruptorPrimal" parent="MODELDEFAULT">
         <Category File="CorruptorSkin" Tag="ZCor"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="58"/>
         <Race value="Zerg"/>
         <Skin value="CorruptorPrimal"/>
     </CRewardModel>
@@ -6314,17 +6425,21 @@
         <Category File="ViperSkin" Tag="ZVpr"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="22"/>
         <Race value="Zerg"/>
         <Skin value="Viper"/>
     </CRewardModel>
     <CRewardModel id="ViperWebby" parent="MODELDEFAULT">
         <Category File="ViperSkin" Tag="ZVpr"/>
+        <IconSlot value="94"/>
         <Skin value="ViperWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="ViperPrimal" parent="MODELDEFAULT">
         <Category File="ViperSkin" Tag="ZVpr"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="45"/>
         <Race value="Zerg"/>
         <Skin value="ViperPrimal"/>
     </CRewardModel>
@@ -6332,30 +6447,28 @@
         <Category File="OverlordSkin" Tag="ZOvl"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconSlot value="14"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="29"/>
         <Skin value="Overlord"/>
         <Race value="Zerg"/>
     </CRewardModel>
     <CRewardModel id="OverlordSkin" parent="MODELDEFAULT">
         <Category File="OverlordSkin" Tag="ZOvl"/>
-        <IconSlot value="22"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="56"/>
         <Skin value="OverlordXPR"/>
         <Race value="Zerg"/>
     </CRewardModel>
     <CRewardModel id="OverlordWebby" parent="MODELDEFAULT">
         <Category File="OverlordSkin" Tag="ZOvl"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="1"/>
         <Skin value="OverlordWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="OverlordPrimal" parent="MODELDEFAULT">
         <Category File="OverlordSkin" Tag="ZOvl"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="52"/>
         <Race value="Zerg"/>
         <Skin value="OverlordPrimal"/>
     </CRewardModel>
@@ -6363,17 +6476,22 @@
         <Category File="OverseerSkin" Tag="ZOvs"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="28"/>
         <Race value="Zerg"/>
         <Skin value="Overseer"/>
     </CRewardModel>
     <CRewardModel id="OverSeerWebby" parent="MODELDEFAULT">
         <Category File="OverseerSkin" Tag="ZOvs"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="0"/>
         <Skin value="OverSeerWebby"/>
         <Race value="Zerg"/>
         <ParentBundle value="WarChestSeason1ZergSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="OverseerPrimal" parent="MODELDEFAULT">
         <Category File="OverseerSkin" Tag="ZOvs"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="51"/>
         <Race value="Zerg"/>
         <Skin value="OverseerPrimal"/>
     </CRewardModel>
@@ -6381,27 +6499,30 @@
         <Category File="ProbeSkin" Tag="PPrb"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="45"/>
         <Race value="Prot"/>
         <Skin value="Probe"/>
     </CRewardModel>
     <CRewardModel id="ProbeTaldarim" parent="MODELDEFAULT">
         <Category File="ProbeSkin" Tag="PPrb"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="15"/>
         <Skin value="ProbeTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="ProbePurifier" parent="MODELDEFAULT">
         <Category File="ProbeSkin" Tag="PPrb"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="67"/>
         <Race value="Prot"/>
         <Skin value="ProbePurifier"/>
     </CRewardModel>
     <CRewardModel id="ProbeBlizzcon17" parent="MODELDEFAULT">
         <Category File="ProbeSkin" Tag="PPrb"/>
         <Flags index="Cloaked" value="1"/>
-        <IconFile value="$Icons11"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="17"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="81"/>
         <Race value="Prot"/>
         <Skin value="ProbeBlizzcon17"/>
     </CRewardModel>
@@ -6409,31 +6530,29 @@
         <Category File="ZealotSkin" Tag="PZlt"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconSlot value="16"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="38"/>
         <Skin value="Zealot"/>
         <Race value="Prot"/>
     </CRewardModel>
     <CRewardModel id="ZealotSkin" parent="MODELDEFAULT">
         <Category File="ZealotSkin" Tag="PZlt"/>
         <!--Upgrades value="ZealotSkin"/-->
-        <IconSlot value="24"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="57"/>
         <Skin value="ZealotXPR"/>
         <Race value="Prot"/>
     </CRewardModel>
     <CRewardModel id="ZealotTaldarim" parent="MODELDEFAULT">
         <Category File="ZealotSkin" Tag="PZlt"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="9"/>
         <Skin value="ZealotTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="ZealotPurifier" parent="MODELDEFAULT">
         <Category File="ZealotSkin" Tag="PZlt"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="61"/>
         <Race value="Prot"/>
         <Skin value="ZealotPurifier"/>
     </CRewardModel>
@@ -6441,26 +6560,24 @@
         <Category File="AdeptSkin" Tag="PAdp"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="51"/>
+        <IconSlot value="37"/>
         <Skin value="Adept"/>
         <Race value="Prot"/>
     </CRewardModel>
     <CRewardModel id="AdeptCE" parent="MODELDEFAULT">
         <Category File="AdeptSkin" Tag="PAdp"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="52"/>
+        <IconSlot value="62"/>
         <!--Upgrades value="AdeptSkin"/-->
+        <IconFile value="$Skins2"/>
+        <IconSlot value="78"/>
         <Model value="AdeptPurifier"/>
         <Skin value="AdeptCE"/>
         <Race value="Prot"/>
     </CRewardModel>
     <CRewardModel id="AdeptTaldarim" parent="MODELDEFAULT">
         <Category File="AdeptSkin" Tag="PAdp"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="26"/>
         <Race value="Prot"/>
         <Skin value="AdeptTaldarim"/>
         <Model value="Adept_Taldarim_Collection"/>
@@ -6476,17 +6593,22 @@
         <Category File="SentrySkin" Tag="PSnt"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="43"/>
         <Race value="Prot"/>
         <Skin value="Sentry"/>
     </CRewardModel>
     <CRewardModel id="SentryTaldarim" parent="MODELDEFAULT">
         <Category File="SentrySkin" Tag="PSnt"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="14"/>
         <Skin value="SentryTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="SentryPurifier" parent="MODELDEFAULT">
         <Category File="SentrySkin" Tag="PSnt"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="66"/>
         <Race value="Prot"/>
         <Skin value="SentryPurifier"/>
     </CRewardModel>
@@ -6494,11 +6616,14 @@
         <Category File="HighTemplarSkin" Tag="PHTm"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="51"/>
         <Race value="Prot"/>
         <Skin value="HighTemplar"/>
     </CRewardModel>
     <CRewardModel id="HighTemplarTaldarim" parent="MODELDEFAULT">
         <Category File="HighTemplarSkin" Tag="PHTm"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="21"/>
         <Skin value="HighTemplarTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
@@ -6506,17 +6631,22 @@
     <CRewardModel id="HighTemplarPurifier" parent="MODELDEFAULT">
         <Category File="HighTemplarSkin" Tag="PHTm"/>
         <Race value="Prot"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="73"/>
         <Skin value="HighTemplarPurifier"/>
     </CRewardModel>
     <CRewardModel id="DarkTemplarSkinOff" parent="MODELDEFAULT">
         <Category File="DarkTemplarSkin" Tag="PDTm"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="34"/>
         <Race value="Prot"/>
         <Skin value="DarkTemplar"/>
     </CRewardModel>
     <CRewardModel id="DarkTemplarTaldarim" parent="MODELDEFAULT">
         <Category File="DarkTemplarSkin" Tag="PDTm"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="23"/>
         <Skin value="DarkTemplarTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
@@ -6525,29 +6655,37 @@
         <Category File="DarkTemplarSkin" Tag="PDTm"/>
         <Skin value="DarkTemplarPurifier"/>
         <Race value="Prot"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="75"/>
     </CRewardModel>
     <CRewardModel id="StalkerSkinOff" parent="MODELDEFAULT">
         <Category File="StalkerSkin" Tag="PStk"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="42"/>
         <Race value="Prot"/>
         <Skin value="Stalker"/>
     </CRewardModel>
     <CRewardModel id="StalkerSkinDeluxe" parent="MODELDEFAULT">
         <Category File="StalkerSkin" Tag="PStk"/>
         <Skin value="StalkerDeluxe"/>
+        <IconSlot value="73"/>
         <License value="SC2SkinStalkerDeluxe"/>
         <Race value="Prot"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="StalkerTaldarim" parent="MODELDEFAULT">
         <Category File="StalkerSkin" Tag="PStk"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="13"/>
         <Skin value="StalkerTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="StalkerPurifier" parent="MODELDEFAULT">
         <Category File="StalkerSkin" Tag="PStk"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="65"/>
         <Race value="Prot"/>
         <Skin value="StalkerPurifier"/>
     </CRewardModel>
@@ -6555,18 +6693,22 @@
         <Category File="ImmortalSkin" Tag="PImm"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="50"/>
         <Race value="Prot"/>
         <Skin value="Immortal"/>
     </CRewardModel>
     <CRewardModel id="ImmortalSkinAdun" parent="MODELDEFAULT">
         <Category File="ImmortalSkin" Tag="PImm"/>
         <Skin value="ImmortalAdun"/>
+        <IconSlot value="74"/>
         <License value="SC2SkinAdunImmortal"/>
         <Race value="Prot"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="ImmortalTaldarim" parent="MODELDEFAULT">
         <Category File="ImmortalSkin" Tag="PImm"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="20"/>
         <Skin value="ImmortalTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
@@ -6574,39 +6716,34 @@
     <CRewardModel id="ImmortalPurifier" parent="MODELDEFAULT">
         <Category File="ImmortalSkin" Tag="PImm"/>
         <Race value="Prot"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="72"/>
         <Skin value="ImmortalPurifier"/>
     </CRewardModel>
     <CRewardModel id="ColossusCEOff" parent="MODELDEFAULT">
         <Category File="ColossusSkin" Tag="PCls"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="53"/>
+        <IconSlot value="35"/>
         <Skin value="Colossus"/>
         <Race value="Prot"/>
     </CRewardModel>
     <CRewardModel id="ColossusCE" parent="MODELDEFAULT">
         <Category File="ColossusSkin" Tag="PCls"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="54"/>
+        <IconSlot value="63"/>
         <Skin value="ColossusCE"/>
         <Race value="Prot"/>
     </CRewardModel>
     <CRewardModel id="ColossusTal" parent="MODELDEFAULT">
         <Category File="ColossusSkin" Tag="PCls"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
         <IconSlot value="59"/>
         <Skin value="ColossusTal"/>
         <Race value="Prot"/>
     </CRewardModel>
     <CRewardModel id="ColossusTaldarim" parent="MODELDEFAULT">
         <Category File="ColossusSkin" Tag="PCls"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="24"/>
         <Race value="Prot"/>
         <Skin value="ColossusTaldarim"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
@@ -6614,23 +6751,30 @@
     <CRewardModel id="ColossusPurifier" parent="MODELDEFAULT">
         <Category File="ColossusSkin" Tag="PCls"/>
         <Race value="Prot"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="76"/>
         <Skin value="ColossusPurifier"/>
     </CRewardModel>
     <CRewardModel id="PhoenixSkinOff" parent="MODELDEFAULT">
         <Category File="PhoenixSkin" Tag="PPhx"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="46"/>
         <Race value="Prot"/>
         <Skin value="Phoenix"/>
     </CRewardModel>
     <CRewardModel id="PhoenixTaldarim" parent="MODELDEFAULT">
         <Category File="PhoenixSkin" Tag="PPhx"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="16"/>
         <Skin value="PhoenixTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="PhoenixPurifier" parent="MODELDEFAULT">
         <Category File="PhoenixSkin" Tag="PPhx"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="68"/>
         <Race value="Prot"/>
         <Skin value="PhoenixPurifier"/>
     </CRewardModel>
@@ -6638,21 +6782,22 @@
         <Category File="VoidRaySkin" Tag="PVry"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
-        <IconSlot value="64"/>
+        <IconSlot value="40"/>
         <Race value="Prot"/>
         <Skin value="VoidRay"/>
     </CRewardModel>
     <CRewardModel id="VoidRayTaldarim" parent="MODELDEFAULT">
         <Category File="VoidRaySkin" Tag="PVry"/>
         <Skin value="VoidRayTaldarim"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="11"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="VoidRayPurifier" parent="MODELDEFAULT">
         <Category File="VoidRaySkin" Tag="PVry"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="63"/>
         <Race value="Prot"/>
         <Skin value="VoidRayPurifier"/>
     </CRewardModel>
@@ -6660,17 +6805,21 @@
         <Category File="CarrierSkin" Tag="PCar"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="36"/>
         <Race value="Prot"/>
         <Skin value="Carrier"/>
     </CRewardModel>
     <CRewardModel id="Carrier_AmonBrood_Collection" parent="MODELDEFAULT">
         <Category File="CarrierSkin" Tag="PCar"/>
         <Race value="Prot"/>
+        <IconSlot value="75"/>
         <Skin value="Carrier_AmonBrood_Collection"/>
         <ParentBundle value="UltimateSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="CarrierTaldarim" parent="MODELDEFAULT">
         <Category File="CarrierSkin" Tag="PCar"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="25"/>
         <Skin value="CarrierTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
@@ -6678,17 +6827,22 @@
     <CRewardModel id="CarrierPurifier" parent="MODELDEFAULT">
         <Category File="CarrierSkin" Tag="PCar"/>
         <Race value="Prot"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="77"/>
         <Skin value="CarrierPurifier"/>
     </CRewardModel>
     <CRewardModel id="MothershipSkinOff" parent="MODELDEFAULT">
         <Category File="MothershipSkin" Tag="PMth"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="49"/>
         <Race value="Prot"/>
         <Skin value="Mothership"/>
     </CRewardModel>
     <CRewardModel id="MothershipTaldarim" parent="MODELDEFAULT">
         <Category File="MothershipSkin" Tag="PMth"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="19"/>
         <Skin value="MothershipTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
@@ -6696,6 +6850,8 @@
     <CRewardModel id="MothershipPurifier" parent="MODELDEFAULT">
         <Category File="MothershipSkin" Tag="PMth"/>
         <Race value="Prot"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="71"/>
         <Skin value="MothershipPurifier"/>
     </CRewardModel>
     <CRewardModel id="MothershipCoreTaldarim" parent="MODELDEFAULT">
@@ -6706,11 +6862,14 @@
         <Category File="ObserverSkin" Tag="PObs"/>
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="48"/>
         <Race value="Prot"/>
         <Skin value="Observer"/>
     </CRewardModel>
     <CRewardModel id="ObserverTaldarim" parent="MODELDEFAULT">
         <Category File="ObserverSkin" Tag="PObs"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="18"/>
         <Skin value="ObserverTaldarim"/>
         <Race value="Prot"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
@@ -6718,24 +6877,20 @@
     <CRewardModel id="ObserverPurifier" parent="MODELDEFAULT">
         <Category File="ObserverSkin" Tag="PObs"/>
         <Race value="Prot"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="70"/>
         <Skin value="ObserverPurifier"/>
     </CRewardModel>
     <CRewardModel id="PylonSkinOff" parent="PylonSkinBase">
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
-        <IconSlot value="13"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="44"/>
         <Skin value="Pylon"/>
     </CRewardModel>
     <CRewardModel id="PylonSkin" parent="MODELDEFAULT">
         <Category File="PylonSkin" Tag="PPyl"/>
         <!--Upgrades value="PylonSkin"/-->
-        <IconSlot value="21"/>
-        <IconFile value="$Icons10"/>
-        <IconCols value="9"/>
-        <IconRows value="9"/>
+        <IconSlot value="58"/>
         <Skin value="PylonXPR"/>
         <Race value="Prot"/>
     </CRewardModel>
@@ -9109,6 +9264,17 @@
         <IconFile value="$Portraits11"/>
         <IconSlot value="10"/>
     </CRewardPortrait>
+    <!-- 20th Anniversary Portraits -->
+    <CRewardPortrait id="Portrait_Twitch20th" parent="PORTRAITDEFAULT">
+        <Flags index="Cloaked" value="1"/>
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="19"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_StarCraft_20thAnniversary" parent="PORTRAITDEFAULT">
+        <Flags index="Cloaked" value="1"/>
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="20"/>
+    </CRewardPortrait>
     <!-- Carbot Rewards -->
     <CRewardPortrait id="Portrait_CarbotReaper" parent="PORTRAITDEFAULT">
         <IconFile value="$Portraits8"/>
@@ -9790,15 +9956,20 @@
         <Skin value="PhotonCannon"/>
     </CRewardModel>
     <CRewardModel id="DisruptorPurifier" parent="DisruptorSkinBase">
+        <IconFile value="$Skins2"/>
+        <IconSlot value="74"/>
         <Skin value="DisruptorPurifier"/>
     </CRewardModel>
     <CRewardModel id="DisruptorTaldarim" parent="DisruptorSkinBase">
+        <IconFile value="$Skins2"/>
+        <IconSlot value="22"/>
         <Skin value="DisruptorTaldarim"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="DisruptorSkinOff" parent="DisruptorSkinBase">
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="52"/>
         <Skin value="Disruptor"/>
     </CRewardModel>
     <CRewardModel id="ArchonTaldarim" parent="ArchonSkinBase">
@@ -9837,20 +10008,25 @@
         <Skin value="Gateway"/>
     </CRewardModel>
     <CRewardModel id="OraclePurifier" parent="OracleSkinBase">
+        <IconFile value="$Skins2"/>
+        <IconSlot value="69"/>
         <Skin value="OraclePurifier"/>
     </CRewardModel>
     <CRewardModel id="OracleTaldarim" parent="OracleSkinBase">
+        <IconFile value="$Skins2"/>
+        <IconSlot value="17"/>
         <Skin value="OracleTaldarim"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="OracleSkinOff" parent="OracleSkinBase">
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="47"/>
         <Skin value="Oracle"/>
     </CRewardModel>
-    <CRewardModel id="PylonTaldarim" parent="PylonSkinBase">
+    <!--CRewardModel id="PylonTaldarim" parent="PylonSkinBase">
         <Skin value="PylonTaldarim"/>
-    </CRewardModel>
+    </CRewardModel-->
     <CRewardModel id="RoboticsFacilityTaldarim" parent="RoboticsFacilitySkinBase">
         <Skin value="RoboticsFacilityTaldarim"/>
     </CRewardModel>
@@ -9876,24 +10052,32 @@
         <Skin value="Stargate"/>
     </CRewardModel>
     <CRewardModel id="TempestPurifier" parent="TempestSkinBase">
+        <IconFile value="$Skins2"/>
+        <IconSlot value="64"/>
         <Skin value="TempestPurifier"/>
     </CRewardModel>
     <CRewardModel id="TempestTaldarim" parent="TempestSkinBase">
         <Skin value="TempestTaldarim"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="12"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="TempestSkinOff" parent="TempestSkinBase">
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="41"/>
         <Skin value="Tempest"/>
     </CRewardModel>
     <CRewardModel id="WarpPrismTaldarim" parent="WarpPrismSkinBase">
         <Skin value="WarpPrismTaldarim"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="10"/>
         <ParentBundle value="WarChestSeason1ProtossSkinsBundle"/>
     </CRewardModel>
     <CRewardModel id="WarpPrismSkinOff" parent="WarpPrismSkinBase">
         <Flags index="Allowed" value="1"/>
         <Flags index="Default" value="1"/>
+        <IconSlot value="39"/>
         <Skin value="WarpPrism"/>
     </CRewardModel>
     <!-- Race Levels -->
@@ -12810,6 +12994,12 @@
         <Emoticon value="prestige1000"/>
         <IconSlot value="79"/>
     </CRewardEmoticon>
+    <!-- Twitch Emoticon -->
+    <CRewardEmoticon id="Emoticon_Twitch" parent="EMOTICON">
+        <Flags index="Cloaked" value="1"/>
+        <Emoticon value="twitch"/>
+        <IconSlot value="83"/>
+    </CRewardEmoticon>
     <!-- Sprays -->
     <CRewardSpray id="Decal_Spray_0001_01" parent="SPRAYDEFAULT">
         <Flags index="Allowed" value="1"/>
@@ -13020,6 +13210,17 @@
     <CRewardSpray id="Decal_Spray_0042_01" parent="SPRAYDEFAULT">
         <IconFile value="$Sprays1"/>
         <IconSlot value="41"/>
+    </CRewardSpray>
+    <!-- 20th Anniversary Sprays -->
+    <CRewardSpray id="Decal_Spray_0043_01" parent="SPRAYDEFAULT">
+        <Flags index="Cloaked" value="1"/>
+        <IconFile value="$Sprays1"/>
+        <IconSlot value="42"/>
+    </CRewardSpray>
+    <CRewardSpray id="Decal_Spray_0044_01" parent="SPRAYDEFAULT">
+        <Flags index="Cloaked" value="1"/>
+        <IconFile value="$Sprays1"/>
+        <IconSlot value="43"/>
     </CRewardSpray>
     <!-- Spray Defaults -->
     <CRewardSprayUseDecal id="SprayUseDecal_Off" parent="SPRAYUSEDECAL"/>
@@ -13262,8 +13463,8 @@
         <IconSlot value="32"/>
     </CRewardPortrait>
     <CRewardPortrait id="Portrait_WarChest1_Winner_Rogue" parent="PORTRAITDEFAULT">
-        <IconFile value="$Portraits11"/>
-        <IconSlot value="10"/>
+        <IconFile value="$Portraits10"/>
+        <IconSlot value="33"/>
     </CRewardPortrait>
     <CRewardPortrait id="Portrait_WarChest1_Winner_Serral" parent="PORTRAITDEFAULT">
         <IconFile value="$Portraits10"/>
@@ -14009,6 +14210,28 @@
         <IconFile value="$Achievements15"/>
         <IconSlot value="66"/>
     </CRewardIcon>
+    <!-- 20th Anniversary FoS icons -->
+    <CRewardIcon id="FeatOfStrength_20thAnniversaryLogin" parent="ICONDEFAULT">
+        <IconFile value="$Achievements15"/>
+        <IconSlot value="67"/>
+    </CRewardIcon>
+    <CRewardIcon id="FeatOfStrength_20thAnniversaryPermanent" parent="ICONDEFAULT">
+        <IconFile value="$Achievements15"/>
+        <IconSlot value="68"/>
+    </CRewardIcon>
+    <CRewardIcon id="FeatOfStrength_20thAnniversaryTwitch" parent="ICONDEFAULT">
+        <IconFile value="$Achievements15"/>
+        <IconSlot value="69"/>
+    </CRewardIcon>
+    <!-- Premium Arcade FoS icons -->
+    <CRewardIcon id="FeatOfStrength_PremiumArcade_ARKStar" parent="ICONDEFAULT">
+        <IconFile value="$Achievements15"/>
+        <IconSlot value="70"/>
+    </CRewardIcon>
+    <CRewardIcon id="FeatOfStrength_PremiumArcade_DirectStrike" parent="ICONDEFAULT">
+        <IconFile value="$Achievements15"/>
+        <IconSlot value="71"/>
+    </CRewardIcon>
     <!-- Ascension achievements -->
     <CRewardIcon id="Coop_AscensionLevel_91" parent="ICONDEFAULT">
         <IconFile value="$Achievements15"/>
@@ -14093,56 +14316,78 @@
     <!-- Junker Skins -->
     <CRewardModel id="SCVJunkerMM" parent="MODELDEFAULT">
         <Category File="SCVSkin" Tag="TScv"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="32"/>
         <Race value="Terr"/>
         <Skin value="SCVJunker"/>
     </CRewardModel>
     <CRewardModel id="MarineJunker" parent="MODELDEFAULT">
         <Category File="MarineSkin" Tag="TMar"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="42"/>
         <Race value="Terr"/>
         <Skin value="MarineJunker"/>
     </CRewardModel>
     <CRewardModel id="MarauderJunker" parent="MODELDEFAULT">
         <Category File="MarauderSkin" Tag="TMrd"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="36"/>
         <Race value="Terr"/>
         <Skin value="MarauderJunker"/>
     </CRewardModel>
     <CRewardModel id="ReaperJunker" parent="MODELDEFAULT">
         <Category File="ReaperSkin" Tag="TRpr"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="33"/>
         <Race value="Terr"/>
         <Skin value="ReaperJunker"/>
     </CRewardModel>
     <CRewardModel id="GhostJunker" parent="MODELDEFAULT">
         <Category File="GhostSkin" Tag="TGht"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="43"/>
         <Race value="Terr"/>
         <Skin value="GhostJunker"/>
     </CRewardModel>
     <CRewardModel id="HellionJunkerMM" parent="MODELDEFAULT">
         <Category File="HellionSkin" Tag="THel"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="38"/>
         <Race value="Terr"/>
         <Skin value="HellionJunkerMM"/>
     </CRewardModel>
     <CRewardModel id="WidowMineJunker" parent="MODELDEFAULT">
         <Category File="WidowMineSkin" Tag="TWid"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="28"/>
         <Race value="Terr"/>
         <Skin value="WidowMineJunker"/>
     </CRewardModel>
     <CRewardModel id="SiegeTankJunker" parent="MODELDEFAULT">
         <Category File="SiegeTankSkin" Tag="TTnk"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="31"/>
         <Race value="Terr"/>
         <Skin value="SiegeTankJunker"/>
     </CRewardModel>
     <CRewardModel id="VikingJunker" parent="MODELDEFAULT">
         <Category File="VikingSkin" Tag="TVik"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="29"/>
         <Race value="Terr"/>
         <Skin value="VikingJunker"/>
     </CRewardModel>
     <CRewardModel id="RavenJunker" parent="MODELDEFAULT">
         <Category File="RavenSkin" Tag="TRvn"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="34"/>
         <Race value="Terr"/>
         <Skin value="RavenJunker"/>
     </CRewardModel>
     <CRewardModel id="BattlecruiserJunker" parent="MODELDEFAULT">
         <Category File="BattlecruiserSkin" Tag="TBat"/>
+        <IconFile value="$Skins2"/>
+        <IconSlot value="40"/>
         <Race value="Terr"/>
         <Skin value="BattlecruiserJunker"/>
     </CRewardModel>
@@ -14158,4 +14403,265 @@
         <Flags index="Cloaked" value="1"/>
         <Flags index="Hidden" value="1"/>
     </CRewardIcon>
+    <!-- Nation Wars Emoticons -->
+    <CRewardEmoticon id="Emoticon_NationWarsAce" parent="EMOTICON">
+        <Emoticon value="nwace"/>
+    </CRewardEmoticon>
+    <CRewardEmoticon id="Emoticon_NationWarsAllKill" parent="EMOTICON">
+        <Emoticon value="nwallkill"/>
+    </CRewardEmoticon>
+    <CRewardEmoticon id="Emoticon_NationWarsEZPZ" parent="EMOTICON">
+        <Emoticon value="nwezpz"/>
+    </CRewardEmoticon>
+    <CRewardEmoticon id="Emoticon_NationWarsWallez" parent="EMOTICON">
+        <Emoticon value="nwwallez"/>
+    </CRewardEmoticon>
+    <!-- Nation Wars Sprays -->
+    <CRewardSpray id="Decal_Spray_0045_01" parent="SPRAYDEFAULT">
+        <IconFile value="$Sprays1"/>
+        <IconSlot value="44"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardSpray>
+    <CRewardSpray id="Decal_Spray_0046_01" parent="SPRAYDEFAULT">
+        <IconFile value="$Sprays1"/>
+        <IconSlot value="45"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardSpray>
+    <CRewardSpray id="Decal_Spray_0047_01" parent="SPRAYDEFAULT">
+        <IconFile value="$Sprays1"/>
+        <IconSlot value="46"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardSpray>
+    <!-- Nation Wars Portraits -->
+    <CRewardPortrait id="Portrait_NationWars_Australia" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="21"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Brazil" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="22"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Canada" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="23"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_China" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="24"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_ChineseTaipei" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="25"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Finland" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="26"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_France" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="27"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Germany" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="28"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Italy" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="29"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Mexico" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="30"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Netherlands" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="31"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Norway" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="32"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Poland" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="33"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Russia" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="34"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_SouthKorea" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits11"/>
+        <IconSlot value="35"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Ukraine" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="0"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_UnitedKingdom" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="1"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_UnitedStates" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="2"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Austria" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="3"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Bolivia" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="4"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Bulgaria" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="5"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Chile" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="6"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Croatia" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="7"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_CzechRepublic" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="8"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Denmark" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="9"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Hungary" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="10"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Peru" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="11"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Spain" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="12"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Sweden" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="13"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Switzerland" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="14"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Vietnam" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="15"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_NationWars_Belgium" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="16"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <!-- BaseTrade TV Starleague Portraits -->
+    <CRewardPortrait id="Portrait_BaseTradeTV_Rifkin" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="17"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_BaseTradeTV_Zombiegrub" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="18"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_BaseTradeTV_Maynarde" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="19"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_BaseTradeTV_Wardi" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="20"/>
+        <Flags index="Cloaked" value="1"/>
+        <Flags index="Hidden" value="1"/>
+    </CRewardPortrait>
+    <!-- Premium Arcade Portraits -->
+    <CRewardPortrait id="Portrait_PremiumArcade_ARKStar" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="21"/>
+        <Flags index="Cloaked" value="1"/>
+    </CRewardPortrait>
+    <CRewardPortrait id="Portrait_PremiumArcade_DirectStrike" parent="PORTRAITDEFAULT">
+        <IconFile value="$Portraits12"/>
+        <IconSlot value="22"/>
+        <Flags index="Cloaked" value="1"/>
+    </CRewardPortrait>
 </Catalog>
