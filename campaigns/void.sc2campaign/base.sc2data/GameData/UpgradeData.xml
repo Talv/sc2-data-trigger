@@ -1906,12 +1906,12 @@
         <AffectedUnitArray value="HyperionVoidCoop"/>
         <!--  Hyperion (Anti Ground) -->
         <EffectArray Reference="Weapon,HyperionVoidCoopGround,Level" Value="1"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,HyperionVoidCoopGround,Period" Value="0.950000"/>
+        <EffectArray Reference="Weapon,HyperionVoidCoopGround,RateMultiplier" Value="0.5"/>
         <EffectArray Reference="Effect,HyperionVoidCoopGroundDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,HyperionVoidCoopGround,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
         <!--  Hyperion (Anti Air) -->
         <EffectArray Reference="Weapon,HyperionVoidCoopAir,Level" Value="1"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,HyperionVoidCoopAir,Period" Value="0.950000"/>
+        <EffectArray Reference="Weapon,HyperionVoidCoopAir,RateMultiplier" Value="0.5"/>
         <EffectArray Reference="Effect,HyperionVoidCoopAirDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,HyperionVoidCoopAir,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
     </CUpgrade>
@@ -1919,12 +1919,12 @@
         <AffectedUnitArray value="HyperionVoidCoop"/>
         <!--  Hyperion (Anti Ground) -->
         <EffectArray Reference="Weapon,HyperionVoidCoopGround,Level" Value="1"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,HyperionVoidCoopGround,Period" Value="0.947368"/>
+        <EffectArray Reference="Weapon,HyperionVoidCoopGround,RateMultiplier" Value="0.5"/>
         <EffectArray Reference="Effect,HyperionVoidCoopGroundDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,HyperionVoidCoopGround,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
         <!--  Hyperion (Anti Air) -->
         <EffectArray Reference="Weapon,HyperionVoidCoopAir,Level" Value="1"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,HyperionVoidCoopAir,Period" Value="0.947368"/>
+        <EffectArray Reference="Weapon,HyperionVoidCoopAir,RateMultiplier" Value="0.5"/>
         <EffectArray Reference="Effect,HyperionVoidCoopAirDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,HyperionVoidCoopAir,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
     </CUpgrade>
@@ -1932,12 +1932,12 @@
         <AffectedUnitArray value="HyperionVoidCoop"/>
         <!--  Hyperion (Anti Ground) -->
         <EffectArray Reference="Weapon,HyperionVoidCoopGround,Level" Value="1"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,HyperionVoidCoopGround,Period" Value="0.944444"/>
+        <EffectArray Reference="Weapon,HyperionVoidCoopGround,RateMultiplier" Value="0.5"/>
         <EffectArray Reference="Effect,HyperionVoidCoopGroundDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,HyperionVoidCoopGround,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
         <!--  Hyperion (Anti Air) -->
         <EffectArray Reference="Weapon,HyperionVoidCoopAir,Level" Value="1"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,HyperionVoidCoopAir,Period" Value="0.944444"/>
+        <EffectArray Reference="Weapon,HyperionVoidCoopAir,RateMultiplier" Value="0.5"/>
         <EffectArray Reference="Effect,HyperionVoidCoopAirDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,HyperionVoidCoopAir,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
     </CUpgrade>
@@ -3522,7 +3522,7 @@
         <AffectedUnitArray value="ArtanisVoid"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EffectArray Reference="Effect,ArtanisVoidDamage,Amount" Value="10"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,ArtanisVoid,Period" Value="0.150000"/>
+        <EffectArray Reference="Weapon,ArtanisVoid,RateMultiplier" Value="0.1"/>
     </CUpgrade>
     <CUpgrade id="ArtanisSuperPsiStormVortex">
         <AffectedUnitArray value="ArtanisVoid"/>

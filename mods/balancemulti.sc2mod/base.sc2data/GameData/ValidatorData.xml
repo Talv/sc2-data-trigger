@@ -7,7 +7,6 @@
         <CombineArray value="NotRavagerCocoon"/>
         <CombineArray value="NotLurkerCocoon"/>
         <CombineArray value="IsNotInfestedTerransEgg"/>
-        <CombineArray value="IsNotNexusMassRecallWarpingOut"/>
     </CValidatorCombine>
     <CValidatorPlayerRequirement id="AdeptGlaivesUpgraded">
         <ResultNoPlayer value="Error"/>
@@ -133,31 +132,9 @@
         <CombineArray value="CasterNotDead"/>
         <CombineArray value="TargetNotDeadBypassArmor"/>
     </CValidatorCombine>
-    <CValidatorUnitCompareOrderCount id="ParasiticBombBattlecruiserHyperjumping">
-        <WhichUnit Effect=""/>
-    </CValidatorUnitCompareOrderCount>
-    <CValidatorUnitCompareOrderCount id="ParasiticBombFlyingLocustNotMorphing">
-        <WhichUnit Effect=""/>
-    </CValidatorUnitCompareOrderCount>
-    <!--CValidatorUnitFlying id="ParasiticBombFlyingValidator">-->
-    <!--        <Find value="0"/>-->
-    <!--        <WhichUnit Effect="ParasiticBombLM" Value="Target"/>-->
-    <!--    </CValidatorUnitFlying-->
-    <CValidatorUnitCompareField id="ParasiticBombFlyingValidator">
-        <WhichUnit Effect=""/>
-    </CValidatorUnitCompareField>
-    <CValidatorUnitCompareBehaviorCount id="ParasiticBombNotMassRecalling">
-        <WhichUnit Effect=""/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="ParasiticBombTargetHasGraviton">
-        <WhichUnit Effect=""/>
-    </CValidatorUnitCompareBehaviorCount>
     <CValidatorCombine id="ParasiticBombValidatorSetB">
         <CombineArray value="ParasiticBombNotMassRecallingMothershipCore"/>
     </CValidatorCombine>
-    <CValidatorUnitCompareOrderCount id="ParasiticBombVikingFighterNotMorphing">
-        <WhichUnit Effect=""/>
-    </CValidatorUnitCompareOrderCount>
     <CValidatorCombine id="PointDefenseDroneUnitFilter">
         <CombineArray value="IsNotTempestDisruptionSphereWeapon"/>
     </CValidatorCombine>
@@ -350,6 +327,7 @@
         <Compare value="GT"/>
     </CValidatorLocationComparePower>
     <CValidatorUnitCompareBehaviorCount id="ParasiticBombNotMassRecallingMothershipCore">
+        <WhichUnit Effect="ParasiticBombLM"/>
         <Behavior value="MothershipCoreRecalling"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitType id="TargetIsInfestorBurrowed">
@@ -544,7 +522,4 @@
         <CombineArray value="IsNexusMassRecallWarpingOut"/>
         <CombineArray value="IsNexusMassRecallRecalled"/>
     </CValidatorCombine>
-    <CValidatorUnitCompareBehaviorCount id="IsNotNexusMassRecallWarpingOut">
-        <Behavior value="NexusMassRecallWarpOut"/>
-    </CValidatorUnitCompareBehaviorCount>
 </Catalog>

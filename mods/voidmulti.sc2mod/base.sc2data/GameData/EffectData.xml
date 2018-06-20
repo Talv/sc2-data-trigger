@@ -29,6 +29,9 @@
     <CEffectDamage id="InfestedGuassRifle">
         <Amount value="6"/>
     </CEffectDamage>
+    <CEffectCreateUnit id="KD8Charge">
+        <SpawnRange value="3"/>
+    </CEffectCreateUnit>
     <CEffectDamage id="KD8ChargeExplodeDamage">
         <Amount value="5"/>
     </CEffectDamage>
@@ -321,10 +324,6 @@
         <EffectArray value="PunisherGrenadesLMLeft"/>
         <EffectArray value="PunisherGrenadesLMRight"/>
     </CEffectSet>
-    <CEffectDamage id="PunisherGrenadesU">
-        <AttributeBonus index="Armored" value="5"/>
-        <Amount value="5"/>
-    </CEffectDamage>
     <CEffectEnumArea id="PurificationNovaSearch">
         <AreaArray index="0" Radius="1.5" Effect="PurificationNovaDamage"/>
         <ImpactLocation Value="SourceUnitOrPoint"/>
@@ -1161,7 +1160,7 @@
     </CEffectSet>
     <CEffectDamage id="RavenShredderMissileDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="30"/>
+        <Amount value="15"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
         <Flags index="Notification" value="1"/>
@@ -1218,6 +1217,7 @@
         <ValidatorArray value="NotLarvaEgg"/>
         <ValidatorArray value="NotLarva"/>
         <ValidatorArray value="NotAbducted"/>
+        <ValidatorArray value="IsNotWarpingIn"/>
     </CEffectSet>
     <CEffectApplyBehavior id="NexusMassRecallWarpOutAB">
         <ValidatorArray index="0" removed="1"/>

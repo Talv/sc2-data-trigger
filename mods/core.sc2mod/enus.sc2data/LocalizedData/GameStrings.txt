@@ -6918,7 +6918,7 @@ UI/ProductPurchase/RefundPolicy=I accept the <a name="Nydus" href="refundpolicy"
 UI/ProductPurchase/RefundPolicyExpires=This item is immediately applied to your account after the purchase and will not be refundable. I accept the <a name="Nydus" href="refundpolicy">[Refund Policy]</a>
 UI/ProductPurchase/RetryButton=TRY AGAIN
 UI/ProductPurchase/RiskError=Invalid information entered.  Please try again.
-UI/ProductPurchase/SkinWarning=You do not own the Hero that uses this skin. Until you purchase the Hero, you can only use this skin when the Hero is periodically free to play.
+UI/ProductPurchase/SkinWarning=Skins cannot be used in Co-op or Campaign modes.
 UI/ProductPurchase/TaxesExcluded=plus any applicable taxes
 UI/ProductPurchase/TaxesIncluded=including any applicable taxes
 UI/ProductPurchase/TermsOfSale=By clicking Pay Now you accept the <a name="Nydus" href="termsofsale">[Terms of Sale]</a>

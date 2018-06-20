@@ -2546,9 +2546,9 @@
         <Tipability value="0.050000"/>
         <SquibTypeDefault value="Flesh"/>
         <Radius value="0.800000"/>
-        <TechPurchaseCamera value="Star2CameraLow09"/>
-        <UnitGlossaryCamera value="Star2CameraLow09"/>
-        <PlanetPanelCamera value="Star2CameraLow09"/>
+        <TechPurchaseCamera value="Star2CameraLow05"/>
+        <UnitGlossaryCamera value="Star2CameraLow05"/>
+        <PlanetPanelCamera value="Star2CameraLow05"/>
         <ShadowRadius value="0.874700"/>
     </CModel>
     <CModel default="1" id="OverseerBase" parent="Unit">
@@ -4621,9 +4621,9 @@
         <Tipability value="0.050000"/>
         <SquibTypeDefault value="Flesh"/>
         <Radius value="0.800000"/>
-        <TechPurchaseCamera value="Star2CameraLow09"/>
-        <UnitGlossaryCamera value="Star2CameraLow09"/>
-        <PlanetPanelCamera value="Star2CameraLow09"/>
+        <TechPurchaseCamera value="Star2CameraLow05"/>
+        <UnitGlossaryCamera value="Star2CameraLow05"/>
+        <PlanetPanelCamera value="Star2CameraLow05"/>
         <ShadowRadius value="0.874700"/>
         <RequiredAnims value="Assets\Units\Zerg\Overlord_SwarmAnims\Overlord_SwarmAnims.m3a"/>
     </CModel>
@@ -4931,9 +4931,6 @@
             <Payload value="Debris_RuinsRockAmbient"/>
         </Events>
     </CModel>
-    <CModel id="Aiur_Building_Spinning" parent="Doodad">
-        <VariationCount value="2"/>
-    </CModel>
     <CModel id="Aiur_ChiseledRock_Brown" parent="Doodad">
         <VariationCount value="5"/>
     </CModel>
@@ -4944,7 +4941,8 @@
         <VariationCount value="5"/>
     </CModel>
     <CModel id="Aiur_CityBuilding_Floating_Temple_Abandoned" parent="Doodad">
-        <VariationCount value="5"/>
+        <VariationCount value="4"/>
+        <Model value="Assets\Doodads\Aiur_City_Building_Floating_Abandoned\Aiur_City_Building_Floating_Abandoned.m3"/>
     </CModel>
     <CModel id="Aiur_CityBuilding_Spire" parent="Doodad"/>
     <CModel id="Aiur_CityBuilding_Spire_Abandoned" parent="Doodad">
@@ -4955,6 +4953,7 @@
     </CModel>
     <CModel id="Aiur_CityBuilding_Temple_Abandoned" parent="Doodad">
         <VariationCount value="3"/>
+        <Model value="Assets\Doodads\Aiur_CityBuilding_TempleDestroyed\Aiur_CityBuilding_TempleDestroyed.m3"/>
     </CModel>
     <CModel id="Aiur_CityBuilding_Temple_Destroyed" parent="Doodad">
         <VariationCount value="4"/>
@@ -5005,12 +5004,15 @@
     </CModel>
     <CModel id="Aiur_City_Debris_Pile" parent="Doodad">
         <VariationCount value="2"/>
+        <Model value="Assets\Doodads\Aiur_City_Debris\Aiur_City_Debris.m3"/>
     </CModel>
     <CModel id="Aiur_City_Decals" parent="Doodad">
         <VariationCount value="26"/>
     </CModel>
     <CModel id="Aiur_City_Destroyed_Hole" parent="Doodad"/>
-    <CModel id="Aiur_City_Embers" parent="Doodad"/>
+    <CModel id="Aiur_City_Embers" parent="Doodad">
+        <Model value="Assets\Doodads\Slayn_Brazier_Embers\Slayn_Brazier_Embers_03.m3"/>
+    </CModel>
     <CModel id="Aiur_City_Floating_Platform" parent="Doodad">
         <VariationCount value="2"/>
     </CModel>
@@ -5881,6 +5883,7 @@
         <Occlusion value="Show"/>
     </CModel>
     <CModel id="BarrelPhysics" parent="Doodad"/>
+    <CModel id="BattleStation_Platform" parent="Doodad"/>
     <CModel id="BattlecruiserYamatoHyperjumpPlacement" parent="BattlecruiserYamatoHyperjumpPlacementBase">
         <Model value="Assets\Effects\Terran\BattleCruiserTacticalJumpYamato_Placement_TC\BattleCruiserTacticalJumpYamato_Placement_TC.m3"/>
     </CModel>
@@ -5961,7 +5964,7 @@
     </CModel>
     <CModel id="BattleStation_RefuelingPiping" parent="Doodad">
         <Flags index="VariationFallback" value="0"/>
-        <VariationCount value="16"/>
+        <VariationCount value="15"/>
     </CModel>
     <CModel id="BattleStation_RefuelingStation" parent="Doodad">
         <Flags index="VariationFallback" value="0"/>
@@ -7135,6 +7138,10 @@
         <VariationCount value="5"/>
     </CModel>
     <CModel id="ConstructionCrane" parent="Doodad"/>
+    <CModel id="CradleofDeath_BlastRadius_Decal" parent="Doodad">
+        <VariationCount value="2"/>
+        <Flags index="VariationFallback" value="0"/>
+    </CModel>
     <CModel id="CratorLarge" parent="Doodad">
         <Model value="Assets\Doodads\CraterLarge\CraterLarge.m3"/>
         <VariationCount value="3"/>
@@ -10469,6 +10476,10 @@
     <CModel id="LoSBlockerColumn" parent="Curtain">
         <Model value="Assets\Doodads\ShakurasHexColumns\ShakurasHexColumns_05.m3"/>
     </CModel>
+    <CModel id="RenegadeLongboltMissileWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\MissileTurretMissile\MissileTurretMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
     <CModel id="LurkerDoodad" parent="Doodad">
         <Events>
             <Anim value="Stand,03"/>
@@ -10523,6 +10534,69 @@
     <CModel id="MineLift_EX3" parent="Doodad"/>
     <CModel id="MissileSiloDoodad" parent="Doodad">
         <Model value="Assets\Buildings\Terran\MissileSilo\MissileSilo.m3"/>
+    </CModel>
+    <CModel id="RenegadeMissileTurret" parent="Building" Race="Terran">
+        <Model value="Assets\Units\Terran\MissileTurret_HornerHan_COOP\MissileTurret_HornerHan_COOP.m3"/>
+        <AttachProps Id="Ref_Hardpoint">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 01">
+            <Keys index="SetA" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 02">
+            <Keys index="SetA" value="1"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 03">
+            <Keys index="SetA" value="2"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 04">
+            <Keys index="SetA" value="3"/>
+        </AttachProps>
+        <PlanetPanelCamera value="Star2CameraHigh05"/>
+        <Radius value="0.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="TechPurchaseMissileTurret"/>
+        <UnitGlossaryCamera value="Star2CameraHigh05"/>
+    </CModel>
+    <CModel id="RenegadeMissileTurretAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\MissileTurretMissileImpact\MissileTurretMissileImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="RenegadeMissileTurretDeath" parent="BuildingDeath" Race="Terran">
+        <Model value="Assets\Units\Terran\MissileTurret_HornerHan_COOP_Death\MissileTurret_HornerHan_COOP_Death.m3"/>
+        <LowQualityModel value="MissileTurretDeathLow"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="TerranExplosionMedium"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="TerranExplosionMedium"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,02"/>
+            <Name value="TerranExplosionMedium"/>
+            <Type value="Sound"/>
+            <Time value="0.666000"/>
+        </Events>
+    </CModel>
+    <CModel id="RenegadeMissileTurretPlacement" parent="Placement" Race="Terran">
+        <Model value="Assets\Units\Terran\MissileTurret_HornerHan_COOP_Placement\MissileTurret_HornerHan_COOP_Placement.m3"/>
+        <LowQualityModel value="MissileTurret"/>
+        <Lighting value="MissileTurret"/>
+        <SelectionRadius value="0.000000"/>
+        <ShadowRadius value="0.000000"/>
+    </CModel>
+    <CModel id="RenegadeMissileTurretSplat" parent="Splat">
+        <Model value="Assets\Splats\Splat_MissileTurret\Splat_MissileTurret.m3"/>
+        <EditorCategories value="Race:Terran"/>
     </CModel>
     <CModel id="MoebiusLabArmoredGenerator" parent="Doodad">
         <Model value="Assets\Units\Terran\MoebiusLabArmoredGenerator\MoebiusLabArmoredGenerator.m3"/>
@@ -15606,7 +15680,9 @@
     </CModel>
     <CModel id="Thor_CollectorEdition" parent="ThorBase">
         <Model value="Assets\Units\Terran\ThorCE\ThorCE.m3"/>
-        <RequiredAnims index="0" value="Assets\Units\Terran\ThorCE_SwarmAnims\ThorCE_SwarmAnims.m3a"/>
+        <RequiredAnimsEx FilePath="Assets\Units\Terran\ThorCE_SwarmAnims\ThorCE_SwarmAnims.m3a">
+            <Flags index="Override" value="1"/>
+        </RequiredAnimsEx>
         <RequiredAnims index="1" removed="1"/>
         <AttachProps Id="Ref_Weapon 01">
             <Keys index="SetA" value="2"/>
@@ -16199,7 +16275,80 @@
         <Flags index="VariationFallback" value="0"/>
         <VariationCount value="3"/>
     </CModel>
-    <CModel id="UmojanLabHoloProjector" parent="Doodad"/>
+    <CModel id="UmojanLabHoloProjector" parent="Doodad">
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="PowerOn"/>
+            <Type value="Custom"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="PowerLoop"/>
+            <Type value="Custom"/>
+            <Time value="0.600000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="PowerOff"/>
+            <Type value="Custom"/>
+            <Time value="10.330000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,01"/>
+            <Name value="PowerOn"/>
+            <Type value="Custom"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,01"/>
+            <Name value="PowerLoop"/>
+            <Type value="Custom"/>
+            <Time value="0.600000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,01"/>
+            <Name value="PowerOff"/>
+            <Type value="Custom"/>
+            <Time value="2.950000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,02"/>
+            <Name value="PowerOn"/>
+            <Type value="Custom"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,02"/>
+            <Name value="PowerLoop"/>
+            <Type value="Custom"/>
+            <Time value="0.600000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,02"/>
+            <Name value="PowerOff"/>
+            <Type value="Custom"/>
+            <Time value="3.740000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,03"/>
+            <Name value="PowerOn"/>
+            <Type value="Custom"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,03"/>
+            <Name value="PowerLoop"/>
+            <Type value="Custom"/>
+            <Time value="0.600000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,03"/>
+            <Name value="PowerOff"/>
+            <Type value="Custom"/>
+            <Time value="4.660000"/>
+        </Events>
+    </CModel>
     <CModel id="UmojanLabHoloProjectorDeath" parent="Doodad">
         <LowQualityModel value="TerranSmallUnitDeathLow"/>
     </CModel>
@@ -22728,6 +22877,8 @@
     <CModel id="GhostPortrait" parent="GhostPortraitBase">
         <Model value="Assets\Portraits\Terran\GhostPortraitEx3\GhostPortraitEx3.m3"/>
         <Image value="Assets\Textures\ghostportraitex3_static.dds"/>
+        <Flags index="Download" value="1"/>
+        <Flags index="VariationFallback" value="0"/>
     </CModel>
     <CModel id="ThorCE" parent="ThorBase">
         <RequiredAnimsEx FilePath="Assets\Units\Terran\ThorCE_SwarmAnims\ThorCE_SwarmAnims.m3a">
@@ -24121,12 +24272,13 @@
         <SelectionRadius value="0.375000"/>
         <ShadowRadius value="0.375000"/>
     </CModel>
-    <CModel id="Invisible">
+    <CModel id="Invisible" Race="Neutral">
         <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
-        <SelectionRadius value="0.000000"/>
         <EditorCategories value="Race:Neutral"/>
-        <ShadowRadius value="0.000000"/>
         <Flags index="TeenSafe" value="1"/>
+        <Radius value="-1.000000"/>
+        <SelectionRadius value="0.000000"/>
+        <ShadowRadius value="0.000000"/>
     </CModel>
     <CModel id="SentryPlacement" parent="Placement" Race="Protoss">
         <Model value="Assets\Units\Protoss\SentryPlacement\SentryPlacement.m3"/>
@@ -25613,7 +25765,7 @@
         <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="BraxisAlphaSatelliteUnit" parent="Doodad">
-        <Model value="Assets\Doodads\SpacePlaformSatellite\SpacePlatformSatellite.m3"/>
+        <Model value="Assets\Doodads\SpacePlatformSatellite\SpacePlatformSatellite.m3"/>
     </CModel>
     <CModel id="BraxisAlphaTallSign" parent="Doodad">
         <Model value="Assets\Doodads\SpacePlatformSignLarge\SpacePlatformSignLarge.m3"/>
@@ -26594,9 +26746,11 @@
     </CModel>
     <CModel id="BridgeCardinalFootprint" parent="Doodad">
         <Flags index="AdjustTerrain" value="1"/>
+        <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
     </CModel>
     <CModel id="BridgeOrdinalFootprint" parent="Doodad">
         <Flags index="AdjustTerrain" value="1"/>
+        <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
     </CModel>
     <CModel id="MarSaraBridge" parent="Doodad">
         <Flags index="AdjustTerrain" value="1"/>
@@ -33918,10 +34072,7 @@
         <Model value="Assets\Buildings\Zerg\LurkerDenDeath\LurkerDenDeath.m3"/>
         <LowQualityModel value="ZergLargeBuildingDeathLow"/>
     </CModel>
-    <CModel id="LurkerDenMPBuild" parent="Building">
-        <Model value="Assets\Buildings\Zerg\MorphZergDen\MorphZergDen.m3"/>
-        <EditorCategories value="Race:Zerg"/>
-    </CModel>
+    <CModel id="LurkerDenMPBuild" parent="ZergBuildingBuild3x3"/>
     <CModel id="MULEDeathRagdoll" parent="UnitDeathRagdoll" Race="Terran">
         <!-- Looks more spectacular with a little extra forward momentum. -->
         <PhysicsDeathMotionFactor value="1.200000,0.200000"/>
@@ -42701,7 +42852,7 @@
         <EditorCategories value="Race:Protoss"/>
     </CModel>
     <CModel id="ArbiterMPWeaponLaunch" parent="LaunchFX">
-        <Model value="Assets\Effects\Protoss\ArbiterWeaponLaunch\ArbiterWeaponLaunch.m3"/>
+        <Model value="Assets\Effects\Protoss\Arbiter_Purifier_Coop_Missile_Launch\Arbiter_Purifier_Coop_Missile_Launch.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
     <CModel id="ArbiterMPWeaponMissile" parent="MissileFX">
@@ -42712,6 +42863,7 @@
     </CModel>
     <CModel id="ArbiterMPPortrait" parent="Portrait" Race="Protoss">
         <Model value="Assets\Portraits\Protoss\ArbiterEx2Portrait\ArbiterEx2Portrait.m3"/>
+        <Image value="Assets\Textures\arbiterportrait_static.dds"/>
     </CModel>
     <CModel id="ArbiterMPRecalledImpact" parent="OneShotSpellFX">
         <Model value="Assets\Effects\Protoss\RecallImpactIn\RecallImpactIn.m3"/>

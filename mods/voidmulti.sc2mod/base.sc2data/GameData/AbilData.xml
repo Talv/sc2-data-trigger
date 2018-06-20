@@ -33,7 +33,7 @@
         <Flags index="WaitUntilStopped" value="0"/>
     </CAbilMorph>
     <CAbilEffectTarget id="BuildAutoTurret">
-        <Range index="0" value="1"/>
+        <Range index="0" value="2"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="Corruption">
         <Flags index="AutoCast" value="1"/>
@@ -246,6 +246,30 @@
     <CAbilTransport id="OverlordTransport">
         <CmdButtonArray index="Load" Requirements="UseSingleOverlordTransport"/>
         <!--UnloadCargoEffect value="DisruptorTransportUnloadPurificationNovaCooldownReset"/-->
+    </CAbilTransport>
+    <CAbilTransport id="OverlordSingleTransport">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <MaxCargoCount value="8"/>
+        <MaxCargoSize value="8"/>
+        <TotalCargoSpace value="8"/>
+        <LoadTransportBehavior value="OverlordTransport"/>
+        <UnloadPeriod value="1"/>
+        <CmdButtonArray index="Load" DefaultButtonFace="OverlordTransportLoad"/>
+        <CmdButtonArray index="UnloadAll">
+            <Flags index="Hidden" value="1"/>
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="UnloadAt" DefaultButtonFace="OverlordTransportUnload"/>
+        <CmdButtonArray index="UnloadUnit">
+            <Flags index="Hidden" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="LoadAll">
+            <Flags index="Hidden" value="1"/>
+        </CmdButtonArray>
+        <Flags index="CargoDeath" value="1"/>
+        <AbilSetId value="ULdM"/>
+        <TargetFilters value="Visible;Ally,Neutral,Enemy,Buried,UnderConstruction,Dead,Hidden"/>
+        <LoadValidatorArray value="NotWidowMineTarget"/>
     </CAbilTransport>
     <CAbilEffectTarget id="ParasiticBomb">
         <Cost index="0">
@@ -656,7 +680,6 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="MorphtoObserver">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
-        <Flags index="DisableAbils" value="1"/>
         <Flags index="IgnoreFacing" value="1"/>
         <InfoArray Unit="Observer">
             <SectionArray index="Abils">
@@ -733,7 +756,6 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="MorphtoOverseerNormal">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
-        <Flags index="DisableAbils" value="1"/>
         <Flags index="IgnoreFacing" value="1"/>
         <InfoArray Unit="Overseer">
             <SectionArray index="Abils">

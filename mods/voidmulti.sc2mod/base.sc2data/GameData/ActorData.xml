@@ -808,12 +808,6 @@
         <On Terms="Effect.TemporalFieldGrowingBubbleCreatePersistent.Start" Send="Create"/>
         <Sound value="Mothership_TimeWarpLaunch3"/>
     </CActorSound>
-    <CActorUnit id="Marauder">
-        <Remove Terms="Effect.PunisherGrenadesLM.Start; At Caster; IsStatus WeaponNext 0" Send="AnimPlay AttackLeft Attack,Left"/>
-        <Remove Terms="Effect.PunisherGrenadesLM.Start; At Caster; IsStatus WeaponNext 1" Send="AnimPlay AttackRight Attack,Right"/>
-        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
-        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
-    </CActorUnit>
     <CActorBeamSimple id="WidowMineTargetingBeam" parent="BeamSimpleAnimationStyleContinuous">
         <On Terms="Effect.WidowMineTargetingBeamDummy.Start; At Caster" Send="Create"/>
         <On Terms="Abil.WidowMineAttack.SourcePrepStop" Send="Destroy"/>

@@ -1458,6 +1458,7 @@
     <CActorDoodad id="BattleStation_CommandCenter">
         <EditorFlags index="NoAutoRotate" value="1"/>
         <RandomScaleRange value="1.000000,1.000000"/>
+        <ModelFlags index="OutlineOccluder" value="1"/>
     </CActorDoodad>
     <CActorDoodad id="BattleStation_ConstructionRobot">
         <EditorCategories value="DoodadType:Environment"/>
@@ -1514,6 +1515,11 @@
     </CActorDoodad>
     <CActorDoodad id="BattleStation_Number_Decals">
         <Aliases value="_EditorHelper"/>
+        <EditorFlags index="NoAutoRotate" value="1"/>
+        <RandomScaleRange value="1.000000,1.000000"/>
+    </CActorDoodad>
+    <CActorDoodad id="BattleStation_Platform">
+        <EditorCategories value="DoodadType:Environment"/>
         <EditorFlags index="NoAutoRotate" value="1"/>
         <RandomScaleRange value="1.000000,1.000000"/>
     </CActorDoodad>
@@ -2046,6 +2052,10 @@
     <CActorDoodad id="ConstructionCrane">
         <EditorCategories value="DoodadType:Environment"/>
         <Footprint value="Footprint4x4Contour"/>
+        <RandomScaleRange value="1.000000,1.000000"/>
+    </CActorDoodad>
+    <CActorDoodad id="CradleofDeath_BlastRadius_Decal">
+        <EditorFlags index="NoAutoRotate" value="1"/>
         <RandomScaleRange value="1.000000,1.000000"/>
     </CActorDoodad>
     <CActorDoodad id="CratorLarge">
@@ -4501,6 +4511,44 @@
         <EditorCategories value="DoodadType:Structures"/>
         <RandomScaleRange value="1.000000,1.000000"/>
     </CActorDoodad>
+    <CActorUnit id="RenegadeMissileTurret" parent="TerranBuilding" unitName="RenegadeMissileTurret">
+        <Aliases value="_UnitHuge"/>
+        <CreepHeightClass value="Small"/>
+        <DeathArray index="Normal" ModelLink="RenegadeMissileTurretDeath" SoundLink=""/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="MissileTurret_Explode"/>
+        <PlacementModel value="RenegadeMissileTurretPlacement"/>
+        <PlacementSound value="Terran_BuildingPlacementSmall"/>
+        <PlacementActorModel value="MissileTurretPlacementModel"/>
+        <PortraitModel value="AdjutantPortrait"/>
+        <BarOffset value="90"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-MissileTurret.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-building-terran-missileturret.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <SoundArray index="Ready" value="MissileTurret_Ready"/>
+        <SoundArray index="What" value="MissileTurret_What"/>
+        <SoundArray index="Construction" value="Terran_ConstructionWhat"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-terran-missileturret.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-MissileTurret.dds"/>
+        </Wireframe>
+        <HighlightTooltip value="Actor/HighlightTooltip/RenegadeMissileTurret"/>
+        <MinimapIcon value="Assets\Textures\ui_minimap_icon_alert.dds"/>
+    </CActorUnit>
+    <CActorAction id="RenegadeMissileTurretAttack" parent="GenericAttack" effectImpact="RenegadeLongboltMissileU" effectLaunch="RenegadeLongboltMissileLM">
+        <LaunchAttachQuery Methods="AMPatternRenegadeMissileTurret"/>
+        <LaunchAssets Sound="MissileTurret_AttackLaunch"/>
+        <ImpactAttachQuery Methods="AMFilterTarget AMRandomUniform"/>
+        <ImpactMap index="None" Sound="MissileTurret_AttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+    </CActorAction>
+    <CActorMissile id="RenegadeMissileTurretAttackMissile" parent="GenericAttackMissile" unitName="RenegadeLongboltMissileWeapon">
+        <On Terms="ActorCreation" Send="AnimPlay Phase1 Stand PlayForever"/>
+        <On Terms="MotionPhaseStart; MotionPhase 1" Send="AnimPlay Phase2 Turbo PlayForever"/>
+    </CActorMissile>
+    <CActorSplat id="RenegadeMissileTurretSplat" parent="GenericUnitSplat" unitName="RenegadeMissileTurret"/>
     <CActorDoodad id="MoebiusLabArmoredGenerator">
         <EditorFlags index="NoAutoRotate" value="1"/>
         <RandomScaleRange value="1.000000,1.000000"/>
@@ -8636,7 +8684,14 @@
         <TexSets value="DominionLab"/>
         <Footprint value="FootprintDoodad1x1"/>
         <RandomScaleRange value="1.000000,1.000000"/>
+        <On Terms="ModelEvent; ModelEventName PowerOn" Send="Create Doodad_UmojanLabHoloProjector_PowerOn"/>
+        <On Terms="ModelEvent; ModelEventName PowerLoop" Send="Create Doodad_UmojanLabHoloProjector_PowerLoop"/>
+        <On Terms="ModelEvent; ModelEventName PowerOff" Target="Doodad_UmojanLabHoloProjector_PowerLoop" Send="Destroy"/>
+        <On Terms="ModelEvent; ModelEventName PowerOff" Send="Create Doodad_UmojanLabHoloProjector_PowerOff"/>
     </CActorDoodad>
+    <CActorSound id="Doodad_UmojanLabHoloProjector_PowerOn" parent="SoundOneShot"/>
+    <CActorSound id="Doodad_UmojanLabHoloProjector_PowerOff" parent="SoundOneShot"/>
+    <CActorSound id="Doodad_UmojanLabHoloProjector_PowerLoop" parent="SoundContinuous"/>
     <CActorDoodad id="UmojanLabKerriganCell">
         <Aliases value="_EditorHelper"/>
         <TexSets value="DominionLab"/>
@@ -17673,6 +17728,7 @@
     <CActorMissile id="BroodLordAttackMissile" parent="GenericAttackMissile" unitName="BroodLordWeapon"/>
     <CActorAction id="BroodLordAttack" parent="GenericAttack" effectImpact="BroodlingEscortDamage" effectLaunch="BroodlingEscortMissile">
         <LaunchAssets Sound="BroodLord_AttackLaunch"/>
+        <ImpactMap index="None" Model=""/>
     </CActorAction>
     <CActorAction id="BroodLordAttackImpactAction" parent="GenericAttack" effectAttack="BroodlingEscortDamage">
         <ImpactMap index="None" Model="BroodLordAttackImpact" Sound="BroodLord_AttackImpact"/>
@@ -21531,7 +21587,7 @@
         <WalkAnimMoveSpeed value="2.25"/>
         <BarWidth value="36"/>
         <BarOffset value="20"/>
-        <GroupIcon>
+        <!--GroupIcon>
             <Image value="Unit/GroupTexture/Attacker1"/>
             <Image value="Unit/GroupTexture/Attacker2"/>
             <Image value="Unit/GroupTexture/Attacker3"/>
@@ -21547,7 +21603,7 @@
             <Image value="Unit/WireframeTexture/Attacker5"/>
             <Image value="Unit/WireframeTexture/Attacker6"/>
         </Wireframe>
-        <LifeArmorIcon value="Unit/LifeArmorIcon/TerranInfantryArmor"/>
+        <LifeArmorIcon value="Unit/LifeArmorIcon/TerranInfantryArmor"/-->
     </CActorUnit>
     <!--                                                                                         -->
     <!-- AutoTestAttackTargetAir ............................................................... -->
@@ -21562,13 +21618,13 @@
         <WalkAnimMoveSpeed value="2"/>
         <BarWidth value="78"/>
         <BarOffset value="60"/>
-        <GroupIcon>
+        <!--GroupIcon>
             <Image value="Unit/GroupTexture/AttackTargetAir1"/>
         </GroupIcon>
         <Wireframe>
             <Image value="Unit/WireframeTexture/AttackTargetAir1"/>
         </Wireframe>
-        <LifeArmorIcon value="Unit/LifeArmorIcon/ZergAirArmor"/>
+        <LifeArmorIcon value="Unit/LifeArmorIcon/ZergAirArmor"/-->
     </CActorUnit>
     <!--                                                                                         -->
     <!-- AutoTestAttackTargetGround ............................................................ -->
@@ -21580,7 +21636,7 @@
         <WalkAnimMoveSpeed value="2.086"/>
         <BarWidth value="48"/>
         <BarOffset value="80"/>
-        <GroupIcon>
+        <!--GroupIcon>
             <Image value="Unit/GroupTexture/AttackTargetGround1"/>
             <Image value="Unit/GroupTexture/AttackTargetGround2"/>
             <Image value="Unit/GroupTexture/AttackTargetGround3"/>
@@ -21596,7 +21652,7 @@
             <Image value="Unit/WireframeTexture/AttackTargetGround5"/>
             <Image value="Unit/WireframeTexture/AttackTargetGround6"/>
         </Wireframe>
-        <LifeArmorIcon value="Unit/LifeArmorIcon/ZergGroundArmor"/>
+        <LifeArmorIcon value="Unit/LifeArmorIcon/ZergGroundArmor"/-->
     </CActorUnit>
     <!--                                                                                         -->
     <!--                                                                                         -->
@@ -27639,7 +27695,6 @@
         <Host Subject="_Selectable"/>
         <Inherits index="CastShadows" value="1"/>
         <Inherits index="CloakEffect" value="1"/>
-        <Inherits index="CreepEngulfment" value="1"/>
         <Inherits index="Decal" value="1"/>
         <Inherits index="Opacity" value="1"/>
         <Inherits index="TeamColor" value="1"/>
@@ -27654,6 +27709,7 @@
         <On Terms="Signal.*.DestroyFlag" Send="SetOpacity 0.000000 1.000000"/>
         <On Terms="Signal.*.DestroyFlag" Send="TimerSet 1.000000 DelayDestroy"/>
         <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
+        <AcceptedHostedPropTransfers index="CreepEngulfment" value="0"/>
     </CActorModel>
     <CActorSiteOpForward id="TerranClanFlagForward">
         <Forward value="-1.000000,0.000000,0.000000"/>
@@ -27670,7 +27726,6 @@
         <Aliases value="_Snapshot"/>
         <Inherits index="CastShadows" value="1"/>
         <Inherits index="CloakEffect" value="1"/>
-        <Inherits index="CreepEngulfment" value="1"/>
         <Inherits index="Decal" value="1"/>
         <Inherits index="Opacity" value="1"/>
         <Inherits index="TeamColor" value="1"/>
@@ -27690,6 +27745,7 @@
         <Model value="ClanFlagPoleTerran"/>
         <ModelFlags index="AllowHitTest" value="0"/>
         <ModelFlags index="UseSyncSeed" value="1"/>
+        <AcceptedHostedPropTransfers index="CreepEngulfment" value="0"/>
     </CActorModel>
     <CActorSiteOpForward id="ZergClanFlagForward">
         <Forward value="-1.000000,0.000000,0.000000"/>
@@ -27711,7 +27767,6 @@
         <Host Subject="_Selectable"/>
         <Inherits index="CastShadows" value="1"/>
         <Inherits index="CloakEffect" value="1"/>
-        <Inherits index="CreepEngulfment" value="1"/>
         <Inherits index="Decal" value="1"/>
         <Inherits index="Opacity" value="1"/>
         <Inherits index="TeamColor" value="1"/>
@@ -27726,6 +27781,7 @@
         <On Terms="Signal.*.DestroyFlag" Send="SetOpacity 0.000000 1.000000"/>
         <On Terms="Signal.*.DestroyFlag" Send="TimerSet 1.000000 DelayDestroy"/>
         <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
+        <AcceptedHostedPropTransfers index="CreepEngulfment" value="0"/>
     </CActorModel>
     <CActorSiteOpForward id="TerranPlayerTrophyForward">
         <Forward value="0.766000,0.642000,0.000000"/>

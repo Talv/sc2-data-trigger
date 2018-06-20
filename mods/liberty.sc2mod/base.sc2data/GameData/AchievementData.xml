@@ -264,6 +264,7 @@
     <CAchievement id="Combat_Spells_MULE" parent="LEAGUECOMBAT"/>
     <CAchievement id="Combat_Mechanic_WatchTower" parent="LEAGUECOMBAT"/>
     <CAchievement id="Combat_Spells_Changeling" parent="LEAGUECOMBAT"/>
+    <CAchievement id="Combat_Spells_HealShield" parent="LEAGUECOMBAT"/>
     <CAchievement id="Combat_Meta_LeagueCombat" parent="LEAGUECOMBAT">
         <Category value="Achievement/Category/Multiplayer"/>
         <TermTable index="0" value="Combat_Meta_LeagueCombat_27"/>

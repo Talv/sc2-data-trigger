@@ -2103,3 +2103,4 @@
 2103=CommanderHornerMagMinesMeta
 2104=CommanderHornerUltDamageMeta
 2105=CommanderHornerBombDamageMeta
+2106=Combat_Spells_HealShield

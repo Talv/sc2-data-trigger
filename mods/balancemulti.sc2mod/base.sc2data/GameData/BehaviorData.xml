@@ -37,12 +37,6 @@
     <CBehaviorBuff id="ParasiticBomb">
         <DisableValidatorArray value="HaveParasiticBombInitialDelay"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="ParasiticBombDelayTimedLife">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Duration value="12"/>
-        <FinalEffect value="Suicide"/>
-        <KillCredit Value="Caster"/>
-    </CBehaviorBuff>
     <CBehaviorBuff id="ParasiticBombTimer">
         <DisableValidatorArray value="HaveParasiticBombInitialDelay"/>
     </CBehaviorBuff>

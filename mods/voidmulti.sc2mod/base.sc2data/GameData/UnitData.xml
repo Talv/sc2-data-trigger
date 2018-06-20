@@ -1293,12 +1293,16 @@
     <CUnit id="VikingAssault">
         <Collide index="Locust" value="1"/>
         <SubgroupPriority value="68"/>
+        <LifeStart value="135"/>
+        <LifeMax value="135"/>
     </CUnit>
     <CUnit id="VikingFighter">
         <SubgroupPriority value="68"/>
         <GlossaryStrongArray index="1" value="BroodLord"/>
         <GlossaryStrongArray index="2" value="Tempest"/>
         <GlossaryWeakArray index="1" value="Hydralisk"/>
+        <LifeStart value="135"/>
+        <LifeMax value="135"/>
     </CUnit>
     <CUnit id="Viper">
         <AbilArray Link="ParasiticBomb"/>
@@ -1737,7 +1741,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="20"/>
         <AbilArray Link="stop"/>
-        <AbilArray Link="OverlordTransport"/>
+        <AbilArray Link="OverlordSingleTransport"/>
         <AbilArray Link="move"/>
         <AbilArray Link="MorphToOverseer"/>
         <AbilArray Link="GenerateCreep"/>
@@ -1751,8 +1755,8 @@
             <LayoutButtons Face="MorphToOverseer" Type="AbilCmd" AbilCmd="MorphToOverseer,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="MorphToOverseer,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="GenerateCreep" Type="AbilCmd" AbilCmd="GenerateCreep,On" Row="2" Column="1"/>
-            <LayoutButtons Face="OverlordTransportLoad" Type="AbilCmd" AbilCmd="OverlordTransport,Load" Row="2" Column="2"/>
-            <LayoutButtons Face="OverlordTransportUnload" Type="AbilCmd" AbilCmd="OverlordTransport,UnloadAt" Row="2" Column="3"/>
+            <LayoutButtons Face="OverlordTransportLoad" Type="AbilCmd" AbilCmd="OverlordSingleTransport,Load" Row="2" Column="2"/>
+            <LayoutButtons Face="OverlordTransportUnload" Type="AbilCmd" AbilCmd="OverlordSingleTransport,UnloadAt" Row="2" Column="3"/>
             <LayoutButtons Face="StopGenerateCreep" Type="AbilCmd" AbilCmd="GenerateCreep,Off" Row="2" Column="1"/>
         </CardLayouts>
         <Radius value="1"/>
@@ -1766,7 +1770,6 @@
         <AIEvalFactor value="0"/>
         <HotkeyAlias value="Overlord"/>
         <HotkeyCategory value="Unit/Category/ZergUnits"/>
-        <BehaviorArray Link="IsTransportOverlord"/>
     </CUnit>
     <CUnit id="TransportOverlordCocoon">
         <DeathRevealRadius value="3"/>

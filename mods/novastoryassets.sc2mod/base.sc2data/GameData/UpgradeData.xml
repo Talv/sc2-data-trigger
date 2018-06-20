@@ -1448,12 +1448,12 @@
         <EffectArray Reference="Weapon,NovaXanthosCruiserGround1,Level" Value="1"/>
         <EffectArray Reference="Effect,NovaXanthosCruiserGroundDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,NovaXanthosCruiserGround1,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,NovaXanthosCruiserGround1,Period" Value="0.944444"/>
+        <EffectArray Reference="Weapon,NovaXanthosCruiserGround1,RateMultiplier" Value="0.5"/>
         <!--  Xanthos (Anti Air) -->
         <EffectArray Reference="Weapon,NovaXanthosCruiserAir1,Level" Value="1"/>
         <EffectArray Reference="Effect,NovaXanthosCruiserAirDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,NovaXanthosCruiserAir1,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,NovaXanthosCruiserAir1,Period" Value="0.944444"/>
+        <EffectArray Reference="Weapon,NovaXanthosCruiserAir1,RateMultiplier" Value="0.5"/>
     </CUpgrade>
     <CUpgrade id="TerranShipWeaponsUltraCapacitorsLevel2">
         <AffectedUnitArray value="NovaXanthosBattlecruiser"/>
@@ -1461,12 +1461,12 @@
         <EffectArray Reference="Weapon,NovaXanthosCruiserGround1,Level" Value="1"/>
         <EffectArray Reference="Effect,NovaXanthosCruiserGroundDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,NovaXanthosCruiserGround1,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,NovaXanthosCruiserGround1,Period" Value="0.944444"/>
+        <EffectArray Reference="Weapon,NovaXanthosCruiserGround1,RateMultiplier" Value="0.5"/>
         <!--  Xanthos (Anti Air) -->
         <EffectArray Reference="Weapon,NovaXanthosCruiserAir1,Level" Value="1"/>
         <EffectArray Reference="Effect,NovaXanthosCruiserAirDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,NovaXanthosCruiserAir1,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,NovaXanthosCruiserAir1,Period" Value="0.944444"/>
+        <EffectArray Reference="Weapon,NovaXanthosCruiserAir1,RateMultiplier" Value="0.5"/>
     </CUpgrade>
     <CUpgrade id="TerranShipWeaponsUltraCapacitorsLevel3">
         <AffectedUnitArray value="NovaXanthosBattlecruiser"/>
@@ -1474,12 +1474,12 @@
         <EffectArray Reference="Weapon,NovaXanthosCruiserGround1,Level" Value="1"/>
         <EffectArray Reference="Effect,NovaXanthosCruiserGroundDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,NovaXanthosCruiserGround1,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,NovaXanthosCruiserGround1,Period" Value="0.944444"/>
+        <EffectArray Reference="Weapon,NovaXanthosCruiserGround1,RateMultiplier" Value="0.5"/>
         <!--  Xanthos (Anti Air) -->
         <EffectArray Reference="Weapon,NovaXanthosCruiserAir1,Level" Value="1"/>
         <EffectArray Reference="Effect,NovaXanthosCruiserAirDamage,Amount" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,NovaXanthosCruiserAir1,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,NovaXanthosCruiserAir1,Period" Value="0.944444"/>
+        <EffectArray Reference="Weapon,NovaXanthosCruiserAir1,RateMultiplier" Value="0.5"/>
     </CUpgrade>
     <CUpgrade id="TerranShipArmorsLevel1">
         <AffectedUnitArray value="NovaXanthosBattlecruiser"/>

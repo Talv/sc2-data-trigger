@@ -332,16 +332,6 @@
             <Image value="Assets\Textures\wireframe-general-destructableice-4x4.dds"/>
         </Wireframe>
     </CActorUnit>
-    <CActorModel id="TerrainSquibHarnessContinuous">
-        <On Terms="ActorCreation" Send="StatusSet LoopingSound 0"/>
-        <On Terms="ModelEvent; ModelEventName WaterRippleSmallWalk" Send="Create WaterWalkSmall"/>
-        <On Terms="ModelEvent; ModelEventName WaterRippleMediumWalk" Send="Create WaterWalkMedium"/>
-        <On Terms="ModelEvent; ModelEventName WaterRippleLargeWalk" Send="Create WaterWalkLarge"/>
-        <On Terms="ModelEvent; ModelEventName WaterRippleVehicleWalk; IsStatus LoopingSound 0" Send="Create WaterWalkVehicle"/>
-        <On Terms="ModelEvent; ModelEventName WaterRippleVehicleWalk; IsStatus LoopingSound 0" Send="StatusSet LoopingSound 1"/>
-        <On Terms="ModelEvent; ModelEventName WaterRippleVehicleStand; IsStatus LoopingSound 1" Target="WaterWalkVehicle" Send="Destroy"/>
-        <On Terms="ModelEvent; ModelEventName WaterRippleVehicleStand; IsStatus LoopingSound 1" Send="StatusSet LoopingSound 0"/>
-    </CActorModel>
     <CActorModel id="ViperDeathAddition" parent="ModelAnimationStyleOneShot"/>
     <CActorSound id="WaterWalkSmall" parent="SoundOneShot">
         <Sound value="FS_WaterWalk"/>

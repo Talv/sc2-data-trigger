@@ -185,6 +185,11 @@
         <Compare value="LT"/>
         <Range value="7"/>
     </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareVital id="EneneryGT5">
+        <Compare value="GE"/>
+        <Value value="5"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
     <CValidatorUnitCompareBehaviorCount id="HasHHYamatoShots">
         <WhichUnit Value="Caster"/>
         <Compare value="GT"/>
@@ -193,6 +198,12 @@
     <CValidatorPlayerRequirement id="HaveHHMultiLock">
         <Find value="1"/>
         <Value value="HaveHHMultiLock"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMasteryNovaPrimaryAbilityImprovement">
+        <WhichPlayer Value="Creator"/>
+        <Find value="1"/>
+        <UnitSelectionNotRequired value="1"/>
+        <Value value="HaveMasteryNovaPrimaryAbilityImprovement"/>
     </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="HavePulseAmplifier">
         <Find value="1"/>
@@ -680,6 +691,14 @@
         <Type value="And"/>
         <CombineArray value="HaveHHMultiLock"/>
         <CombineArray value="CasterNotMaxTargetLocks4"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="TargetNotHasCODConstructDisablePermanent">
+        <Behavior value="CODConstructDisablePermanent"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="TargetNotHasOthersCODConstructDisableOrPermanent">
+        <Type value="And"/>
+        <CombineArray value="TargetNotHasOthersCODConstructDisable"/>
+        <CombineArray value="TargetNotHasCODConstructDisablePermanent"/>
     </CValidatorCombine>
     <CValidatorPlayerRequirement id="TargetisNotAnyCommander">
         <ResultFailed value="CantTargetThatUnit"/>
@@ -1772,6 +1791,10 @@
     <CValidatorPlayerRequirement id="HaveMasteryKerriganMutatingCarapaceLifeDegradation">
         <Find value="1"/>
         <Value value="HaveMasteryKerriganMutatingCarapaceLifeDegradation"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMasteryKerriganPrimarySpeedDamage">
+        <Find value="1"/>
+        <Value value="HaveMasteryKerriganPrimarySpeedDamage"/>
     </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="HaveMasteryKerriganResearchReductionCost">
         <Find value="1"/>
@@ -3564,7 +3587,7 @@
         <ResultFailed value="CantTargetThatUnit,Error/Unrepairable"/>
         <Behavior value="Unrepairable"/>
     </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="UnknownValidator">
+    <CValidatorUnitCompareBehaviorCount id="NotGasWorker">
         <Behavior value="GasWorker"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorLocationCompareRange id="VoidSentryBlackHoleForceNotInCenter">
@@ -4073,7 +4096,7 @@
     <CValidatorLocationCompareRange id="HellbatChargeMaxDistance">
         <WhichLocation Value="TargetUnit"/>
         <Compare value="LT"/>
-        <Range value="6"/>
+        <Range value="3"/>
         <ResultFailed value="TargetIsOutOfRange"/>
     </CValidatorLocationCompareRange>
     <CValidatorUnitType id="FuelCellPickupUnit">
@@ -6301,5 +6324,53 @@
         <AreaArray Radius="15" Validator="IsAlarakCoop"/>
         <LaunchLocation Value="SourcePoint"/>
         <SearchFilters value="-;Self,Ally,Neutral,Enemy,Dead,Hidden"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationCompareRange id="DistanceLessThan9">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="9"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="CODConstructDisableBeamCPPersistValidator">
+        <CombineArray value="DistanceLessThan9"/>
+        <CombineArray value="CasterNotDeadAndTargetNotDead"/>
+        <Type value="And"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="CODPayloadNotChanneling">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="CODConstructDisableBeamDummy"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="TargetNotHasOthersCODConstructDisable">
+        <Behavior value="CODConstructDisable"/>
+        <ExcludeCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="IsCODXelNagaConstruct">
+        <Value value="CODXelNagaConstruct"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="DisableBeamCPTargetHasMyCODConstructDisable">
+        <WhichUnit Effect="CODConstructDisableBeamCP"/>
+        <Compare value="GT"/>
+        <Behavior value="CODConstructDisable"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="CasterNotHaveCODConstructDisable">
+        <Behavior value="CODConstructDisable"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="CODXelNagaConstructChaseBeamValidators">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDead"/>
+        <CombineArray value="CasterNotHaveCODConstructDisable"/>
+    </CValidatorCombine>
+    <CValidatorPlayerRequirement id="HaveKerriganViciousGlaive">
+        <Value value="HaveKerriganViciousGlaive"/>
+        <Find value="1"/>
+        <WhichPlayer Value="Caster"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorLocationEnumArea id="BlackOpsAirstrikeMinimum3EnemyTargets">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichLocation Value="SourceUnit"/>
+        <AreaArray Compare="GE" Count="3" Radius="6"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,Structure,Missile,Dead,Hidden"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CValidatorLocationEnumArea>
 </Catalog>

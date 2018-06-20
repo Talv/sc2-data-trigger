@@ -17,6 +17,8 @@ native void CutsceneClearFilters(int lp_inCutscene);
 native int CutsceneCreateNoPosition(string lp_inFilePath, playergroup lp_players, bool lp_inAutoPlay);
 native void CutsceneShow(int lp_inCutscene, bool lp_inShow);
 native void CutsceneFade(bool lp_fadeIn, fixed lp_duration, color lp_color, fixed lp_amount, playergroup lp_players, bool lp_inWaitUntilDone);
+native string DateTimeToString(datetime lp_dateTime);
+native datetime StringToDateTime(string lp_string);
 native void DialogControlSetMinXVisible(int lp_graph, playergroup lp_players, fixed lp_minXValue);
 native fixed DialogControlGetMinXValue(int lp_graph, playergroup lp_players);
 native void DialogControlSetMaxXVisible(int lp_graph, playergroup lp_players, fixed lp_maxXValue);

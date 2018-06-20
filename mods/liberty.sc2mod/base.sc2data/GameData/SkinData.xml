@@ -50,6 +50,7 @@
         <ReplacementArray Catalog="Model" From="##unit##WarpInStargate" To="##unit##_##collection##_WarpInStargate"/>
     </CSkin>
     <CSkin default="1" id="CollectionSkinZergGround" parent="CollectionSkinBase">
+        <?token id="race" value="Zerg"?>
         <ReplacementArray Catalog="Model" From="##unit##DeathFire" To="##unit##_##collection##_DeathFire"/>
         <ReplacementArray Catalog="Model" From="##unit##DeathAcid" To="##unit##_##collection##_DeathAcid"/>
     </CSkin>
@@ -216,18 +217,18 @@
         <CollectionDisplayModel value="SupplyDepot"/>
     </CSkin>
     <CSkin default="1" id="DroneBase" parent="CollectionSkinZergGround">
-        <?token id="race" value="Zerg"?>
         <?token id="unit" type="CUnitLink" value="Drone"?>
         <Camera value="Star2CameraMid02"/>
     </CSkin>
     <CSkin default="1" id="ZerglingBase" parent="CollectionSkinZergGround">
-        <?token id="race" value="Protoss"?>
         <?token id="unit" type="CUnitLink" value="Zergling"?>
         <ReplacementArray Catalog="Model" From="##unit##DeathEviscerate" To="##unit##_##collection##_DeathEviscerate"/>
         <ReplacementArray Catalog="Model" From="##unit##Upgrade" To="##unit##_##collection##_Upgrade"/>
         <ReplacementArray Catalog="Model" From="##unit##UpgradeDeath" To="##unit##_##collection##_Upgrade_Death"/>
         <ReplacementArray Catalog="Model" From="##unit##UpgradeDeathEviscerate" To="##unit##_##collection##_Upgrade_DeathEviscerate"/>
         <ReplacementArray Catalog="Model" From="##unit##UpgradeDeathFire" To="##unit##_##collection##_Upgrade_DeathFire"/>
+        <CollectionDisplayModelAlternate value="##unit##_##collection##_Upgrade"/>
+        <CollectionDisplayUnitAlternate value="##unit##"/>
         <Camera value="Star2CameraMid02"/>
     </CSkin>
     <CSkin default="1" id="BanelingBase">
@@ -247,18 +248,17 @@
         <VariationIcon value="Assets\Textures\btn-unit-##race##-##unit##-##collection##.dds"/>
     </CSkin>
     <CSkin default="1" id="RoachBase" parent="CollectionSkinZergGround">
-        <?token id="race" value="Zerg"?>
         <?token id="unit" type="CUnitLink" value="Roach"?>
         <ReplacementArray Catalog="Model" From="##unit##Upgrade" To="##unit##_##collection##_Upgrade"/>
+        <CollectionDisplayModelAlternate value="##unit##_##collection##_Upgrade"/>
+        <CollectionDisplayUnitAlternate value="##unit##"/>
         <Camera value="Star2CameraMid02"/>
     </CSkin>
     <CSkin default="1" id="RavagerBase" parent="CollectionSkinZergGround">
-        <?token id="race" value="Zerg"?>
         <?token id="unit" type="CUnitLink" value="Ravager"?>
         <Camera value="Star2CameraMid08"/>
     </CSkin>
     <CSkin default="1" id="HydraliskBase" parent="CollectionSkinZergGround">
-        <?token id="race" value="Hydalisk"?>
         <?token id="unit" type="CUnitLink" value="Hydralisk"?>
         <Camera value="Star2CameraMid06"/>
     </CSkin>
@@ -285,6 +285,8 @@
         <?token id="unit" type="CUnitLink" value="Overlord"?>
         <ReplacementArray Catalog="Model" From="##unit##Transport" To="##unit##_##collection##_Transport"/>
         <ReplacementArray Catalog="Model" From="##unit##TransportDeath" To="##unit##_##collection##_Transport_Death"/>
+        <CollectionDisplayModelAlternate value="##unit##_##collection##_Transport"/>
+        <CollectionDisplayUnitAlternate value="OverlordTransport"/>
         <Camera value="Star2CameraLow05"/>
     </CSkin>
     <CSkin default="1" id="OverseerBase" parent="CollectionSkinBase">
@@ -294,12 +296,10 @@
         <ReplacementArray Catalog="Model" From="##unit##OversightAddition" To="##unit##_##collection##_Oversight_Addition"/>
     </CSkin>
     <CSkin default="1" id="QueenBase" parent="CollectionSkinZergGround">
-        <?token id="race" value="Zerg"?>
         <?token id="unit" type="CUnitLink" value="Queen"?>
         <Camera value="Star2CameraMid06"/>
     </CSkin>
     <CSkin default="1" id="InfestorBase" parent="CollectionSkinZergGround">
-        <?token id="race" value="Zerg"?>
         <?token id="unit" type="CUnitLink" value="Infestor"?>
         <Camera value="Star2CameraMid06"/>
     </CSkin>
@@ -361,7 +361,6 @@
         <Camera value="Star2CameraLow05"/>
     </CSkin>
     <CSkin default="1" id="UltraliskBase" parent="CollectionSkinZergGround">
-        <?token id="race" value="Zerg"?>
         <?token id="unit" type="CUnitLink" value="Ultralisk"?>
         <Camera value="Star2CameraMid07"/>
     </CSkin>
@@ -679,12 +678,16 @@
     </CSkin>
     <CSkin id="Overlord" parent="CollectionSkinZergDefault" unit="Overlord">
         <Camera value="Star2CameraLow05"/>
+        <CollectionDisplayUnitAlternate value="OverlordTransport"/>
+        <CollectionDisplayModelAlternate value="OverlordTransport"/>
     </CSkin>
     <CSkin id="Overseer" parent="CollectionSkinZergDefault" unit="Overseer">
         <Camera value="Star2CameraLow05"/>
     </CSkin>
     <CSkin id="Zergling" parent="CollectionSkinZergDefault" unit="Zergling">
         <Camera value="Star2CameraMid02"/>
+        <CollectionDisplayModelAlternate value="ZerglingUpgrade"/>
+        <CollectionDisplayUnitAlternate value="Zergling"/>
     </CSkin>
     <CSkin id="Baneling" parent="CollectionSkinZergDefault" unit="Baneling">
         <Camera value="Star2CameraMid02"/>
@@ -692,6 +695,8 @@
     <CSkin id="Queen" parent="CollectionSkinZergDefault" unit="Queen"/>
     <CSkin id="Roach" parent="CollectionSkinZergDefault" unit="Roach">
         <Camera value="Star2CameraMid02"/>
+        <CollectionDisplayUnitAlternate value="Roach"/>
+        <CollectionDisplayModelAlternate value="RoachUpgrade"/>
     </CSkin>
     <CSkin id="Ravager" parent="CollectionSkinZergDefault" unit="Ravager">
         <Camera value="Star2CameraMid08"/>

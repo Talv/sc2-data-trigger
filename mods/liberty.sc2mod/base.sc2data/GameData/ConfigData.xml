@@ -7,28 +7,24 @@
             <Name value="CommanderDifficultyLevel/Name/Casual"/>
             <Description value="CommanderDifficultyLevel/Description/Casual"/>
             <IsDefault value="1"/>
-            <Icon value="Assets\Textures\UI_commanderdifficulty_Recruit.dds"/>
         </CommanderDifficultyLevels>
-        <CommanderDifficultyLevels>
-            <DifficultyLevel value="2"/>
-            <Name value="CommanderDifficultyLevel/Name/Normal"/>
-            <Description value="CommanderDifficultyLevel/Description/Normal"/>
-            <Icon value="Assets\Textures\UI_commanderdifficulty_Soldier.dds"/>
-        </CommanderDifficultyLevels>
+        <!--Icon value="Assets\Textures\UI_commanderdifficulty_Recruit.dds"/-->
+        <CommanderDifficultyLevels DifficultyLevel="2" Name="CommanderDifficultyLevel/Name/Normal" Description="CommanderDifficultyLevel/Description/Normal"/>
+        <!--Icon value="Assets\Textures\UI_commanderdifficulty_Soldier.dds"/-->
         <CommanderDifficultyLevels>
             <DifficultyLevel value="3"/>
             <CommanderLevel value="7"/>
             <Name value="CommanderDifficultyLevel/Name/Hard"/>
             <Description value="CommanderDifficultyLevel/Description/Hard"/>
-            <Icon value="Assets\Textures\UI_commanderdifficulty_Veteran.dds"/>
         </CommanderDifficultyLevels>
+        <!--Icon value="Assets\Textures\UI_commanderdifficulty_Veteran.dds"/-->
         <CommanderDifficultyLevels>
             <DifficultyLevel value="4"/>
             <CommanderLevel value="15"/>
             <Name value="CommanderDifficultyLevel/Name/Brutal"/>
             <Description value="CommanderDifficultyLevel/Description/Brutal"/>
-            <Icon value="Assets\Textures\UI_commanderdifficulty_Commander.dds"/>
         </CommanderDifficultyLevels>
+        <!--Icon value="Assets\Textures\UI_commanderdifficulty_Commander.dds"/-->
         <CommanderAchievementCategoryId value="4386911"/>
         <CoopCampaignAchievementCategoryId value="4386911"/>
         <SilencePenaltyLicense value="16331"/>
@@ -82,6 +78,7 @@
         <GameContentArray value="VoicePack,Park"/>
         <GameContentArray value="VoicePack,Nathanias"/>
         <GameContentArray value="VoicePack,Tastosis"/>
+        <GameContentArray value="VoicePack,Alex007"/>
         <GameContentArray value="VoicePack,Fenix"/>
         <GameContentArray value="VoicePack,Abathur"/>
         <GameContentArray value="VoicePack,Alarak"/>
@@ -223,22 +220,26 @@
         <GameContentArray value="SkinPack,RavenJunkerSkinPack"/>
         <GameContentArray value="SkinPack,MedivacJunkerSkinPack"/>
         <GameContentArray value="SkinPack,WidowMineJunkerSkinPack"/>
-        <GameContentArray value="Bundle,HornerBundle"/>
         <GameContentArray value="Bundle,CompleteCollectionStandard"/>
         <GameContentArray value="Bundle,CompleteCollectionDeluxe"/>
+        <GameContentArray value="Bundle,AbathurBundle"/>
+        <GameContentArray value="Bundle,AlarakBundle"/>
+        <GameContentArray value="Bundle,AnnouncerBundle"/>
+        <GameContentArray value="Bundle,UltimateSkinsBundle"/>
+        <GameContentArray value="Bundle,Alex007AnnouncerBundle"/>
+		<!-- Past the scroll when War Chest is active -->
+        <GameContentArray value="Bundle,HornerBundle"/>
+		<!-- Past the scroll when War Chest isn't active -->
+        <GameContentArray value="Bundle,PremiumMapARKStar"/>
+        <GameContentArray value="Bundle,PremiumMapDirectStrike"/>
+        <GameContentArray value="Bundle,NovaCovertOpsBundle"/>
+        <GameContentArray value="Bundle,CarbotCompleteBundle"/>
+        <GameContentArray value="Bundle,WarChestSeason2TerranSkinsBundle"/>
+        <GameContentArray value="Bundle,WarChestSeason2ZergSkinsBundle"/>
+        <GameContentArray value="Bundle,WarChestSeason2ProtossSkinsBundle"/>
         <GameContentArray value="Bundle,WarChestSeason1TerranSkinsBundle"/>
         <GameContentArray value="Bundle,WarChestSeason1ZergSkinsBundle"/>
         <GameContentArray value="Bundle,WarChestSeason1ProtossSkinsBundle"/>
-        <GameContentArray value="Bundle,PremiumMapARKStar"/>
-        <GameContentArray value="Bundle,PremiumMapDirectStrike"/>
-        <GameContentArray value="Bundle,UltimateSkinsBundle"/>
-        <GameContentArray value="Bundle,Day9AnnouncerBundle"/>
-        <GameContentArray value="Bundle,iNcontrolAnnouncerBundle"/>
-        <GameContentArray value="Bundle,AnnouncerBundle"/>
-        <GameContentArray value="Bundle,NovaCovertOpsBundle"/>
-        <GameContentArray value="Bundle,DehakaBundle"/>
-        <GameContentArray value="Bundle,FenixBundle"/>
-        <GameContentArray value="Bundle,CarbotCompleteBundle"/>
         <GameContentArray value="ConsoleSkin,ConsoleProtoss_Default"/>
         <GameContentArray value="ConsoleSkin,ConsoleTerran_Default"/>
         <GameContentArray value="ConsoleSkin,ConsoleZerg_Default"/>

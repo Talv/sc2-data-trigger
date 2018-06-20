@@ -274,7 +274,7 @@
             </User>
         </Instances-->
         <Instances Id="KerriganSpireUpgrades">
-            <AbilCmd Abil="SpireResearch" Cmd="8">
+            <AbilCmd Abil="SpireResearch" Cmd="14">
                 <Field Id="AbilityCommand" Index="1"/>
             </AbilCmd>
             <AbilCmd Abil="SpireResearch" Cmd="7">
@@ -1866,9 +1866,6 @@
             </Int>
             <Upgrade Upgrade="RaynorCommanderTerranWeaponAttackSpeed">
                 <Field Id="Upgrade"/>
-            </Upgrade>
-            <Upgrade Upgrade="RaynorCommanderTerranWeaponAttackSpeedTrigger">
-                <Field Id="Upgrade" Index="1"/>
             </Upgrade>
             <User Type="PlayerCommanders" Instance="TerranRaynor">
                 <Field Id="Commander"/>
@@ -15030,6 +15027,240 @@
                 <Field Id="PhaseUnits" Index="4"/>
             </Unit>
         </Instances>
+        <Instances Id="CradleOfDeathDropAttackZerg Tier01">
+            <Fixed Fixed="0.25">
+                <Field Id="PercentOfWaveBase" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom"/>
+            </Fixed>
+            <Fixed Fixed="0.75">
+                <Field Id="PercentOfWaveBase"/>
+            </Fixed>
+            <Unit Unit="Zergling">
+                <Field Id="PhaseUnits"/>
+            </Unit>
+            <Unit Unit="Medic">
+                <Field Id="PhaseUnits" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="CradleOfDeathDropAttackZerg Tier02">
+            <Fixed Fixed="0.25">
+                <Field Id="PercentOfWaveBase" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom"/>
+            </Fixed>
+            <Fixed Fixed="0.75">
+                <Field Id="PercentOfWaveBase"/>
+            </Fixed>
+            <Unit Unit="Zergling">
+                <Field Id="PhaseUnits"/>
+            </Unit>
+            <Unit Unit="Scout">
+                <Field Id="PhaseUnits" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="CradleOfDeathDropAttackZerg Tier03">
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.25">
+                <Field Id="PercentOfWaveBase"/>
+            </Fixed>
+            <Fixed Fixed="0.25">
+                <Field Id="PercentOfWaveBase" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.25">
+                <Field Id="PercentOfWaveBase" Index="2"/>
+            </Fixed>
+            <Fixed Fixed="0.15">
+                <Field Id="PercentOfWaveBase" Index="2"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom" Index="2"/>
+            </Fixed>
+            <Fixed>
+                <Field Id="PercentOfWaveRandom" Index="3"/>
+            </Fixed>
+            <Fixed Fixed="0.0998">
+                <Field Id="PercentOfWaveBase" Index="3"/>
+            </Fixed>
+            <Int Int="3">
+                <Field Id="minDifficulty" Index="2"/>
+            </Int>
+            <Unit Unit="Zergling">
+                <Field Id="PhaseUnits"/>
+            </Unit>
+            <Unit Unit="Scout">
+                <Field Id="PhaseUnits" Index="1"/>
+            </Unit>
+            <Unit Unit="Ultralisk">
+                <Field Id="PhaseUnits" Index="2"/>
+            </Unit>
+            <Unit Unit="Medic">
+                <Field Id="PhaseUnits" Index="3"/>
+            </Unit>
+        </Instances>
+        <Instances Id="CradleOfDeathDropAttackTerr Tier01">
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom" Index="1"/>
+            </Fixed>
+            <Unit Unit="Zergling">
+                <Field Id="PhaseUnits"/>
+            </Unit>
+            <Unit Unit="Marine">
+                <Field Id="PhaseUnits" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="CradleOfDeathDropAttackTerr Tier02">
+            <Fixed Fixed="0.25">
+                <Field Id="PercentOfWaveBase" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom"/>
+            </Fixed>
+            <Fixed Fixed="0.75">
+                <Field Id="PercentOfWaveBase"/>
+            </Fixed>
+            <Unit Unit="Marine">
+                <Field Id="PhaseUnits"/>
+            </Unit>
+            <Unit Unit="Phoenix">
+                <Field Id="PhaseUnits" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="CradleOfDeathDropAttackTerr Tier03">
+            <Fixed Fixed="0.15">
+                <Field Id="PercentOfWaveRandom"/>
+            </Fixed>
+            <Fixed Fixed="0.15">
+                <Field Id="PercentOfWaveRandom" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.15">
+                <Field Id="PercentOfWaveRandom" Index="2"/>
+            </Fixed>
+            <Fixed Fixed="0.15">
+                <Field Id="PercentOfWaveRandom" Index="3"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase" Index="2"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase" Index="3"/>
+            </Fixed>
+            <Int Int="3">
+                <Field Id="minDifficulty" Index="3"/>
+            </Int>
+            <Unit Unit="Zergling">
+                <Field Id="PhaseUnits"/>
+            </Unit>
+            <Unit Unit="Phoenix">
+                <Field Id="PhaseUnits" Index="2"/>
+            </Unit>
+            <Unit Unit="Thor">
+                <Field Id="PhaseUnits" Index="3"/>
+            </Unit>
+            <Unit Unit="Marine">
+                <Field Id="PhaseUnits" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="CradleOfDeathDropAttackProt Tier01">
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom" Index="1"/>
+            </Fixed>
+            <Unit Unit="Zealot">
+                <Field Id="PhaseUnits"/>
+            </Unit>
+            <Unit Unit="Roach">
+                <Field Id="PhaseUnits" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="CradleOfDeathDropAttackProt Tier02">
+            <Fixed Fixed="0.25">
+                <Field Id="PercentOfWaveBase" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveRandom"/>
+            </Fixed>
+            <Fixed Fixed="0.75">
+                <Field Id="PercentOfWaveBase"/>
+            </Fixed>
+            <Unit Unit="Zealot">
+                <Field Id="PhaseUnits"/>
+            </Unit>
+            <Unit Unit="Goliath">
+                <Field Id="PhaseUnits" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="CradleOfDeathDropAttackProt Tier03">
+            <Fixed Fixed="0.15">
+                <Field Id="PercentOfWaveRandom"/>
+            </Fixed>
+            <Fixed Fixed="0.15">
+                <Field Id="PercentOfWaveRandom" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.15">
+                <Field Id="PercentOfWaveRandom" Index="2"/>
+            </Fixed>
+            <Fixed Fixed="0.15">
+                <Field Id="PercentOfWaveRandom" Index="3"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase" Index="2"/>
+            </Fixed>
+            <Fixed Fixed="0.5">
+                <Field Id="PercentOfWaveBase" Index="3"/>
+            </Fixed>
+            <Int Int="3">
+                <Field Id="minDifficulty" Index="3"/>
+            </Int>
+            <Unit Unit="Zealot">
+                <Field Id="PhaseUnits"/>
+            </Unit>
+            <Unit Unit="Goliath">
+                <Field Id="PhaseUnits" Index="2"/>
+            </Unit>
+            <Unit Unit="Carrier">
+                <Field Id="PhaseUnits" Index="3"/>
+            </Unit>
+            <Unit Unit="Roach">
+                <Field Id="PhaseUnits" Index="1"/>
+            </Unit>
+        </Instances>
     </CUser>
     <CUser id="CoopAICommanders">
         <Fields Id="baseRetreatThreshold" Type="Int" EditorColumn="30"/>
@@ -15875,6 +16106,48 @@
                 <Field Id="UnitTiers" Index="4"/>
             </User>
         </Instances>
+        <Instances Id="CradleOfDeath DropAttacksZerg">
+            <Int Int="1020">
+                <Field Id="UniqueIndex"/>
+            </Int>
+            <User Type="CoopAICommanderTiers" Instance="CradleOfDeathDropAttackZerg Tier01">
+                <Field Id="UnitTiers"/>
+            </User>
+            <User Type="CoopAICommanderTiers" Instance="CradleOfDeathDropAttackZerg Tier02">
+                <Field Id="UnitTiers" Index="1"/>
+            </User>
+            <User Type="CoopAICommanderTiers" Instance="CradleOfDeathDropAttackZerg Tier03">
+                <Field Id="UnitTiers" Index="2"/>
+            </User>
+        </Instances>
+        <Instances Id="CradleOfDeath DropAttacksTerr">
+            <Int Int="1021">
+                <Field Id="UniqueIndex"/>
+            </Int>
+            <User Type="CoopAICommanderTiers" Instance="CradleOfDeathDropAttackTerr Tier01">
+                <Field Id="UnitTiers"/>
+            </User>
+            <User Type="CoopAICommanderTiers" Instance="CradleOfDeathDropAttackTerr Tier02">
+                <Field Id="UnitTiers" Index="1"/>
+            </User>
+            <User Type="CoopAICommanderTiers" Instance="CradleOfDeathDropAttackTerr Tier03">
+                <Field Id="UnitTiers" Index="2"/>
+            </User>
+        </Instances>
+        <Instances Id="CradleOfDeath DropAttacksProt">
+            <Int Int="1022">
+                <Field Id="UniqueIndex"/>
+            </Int>
+            <User Type="CoopAICommanderTiers" Instance="CradleOfDeathDropAttackProt Tier01">
+                <Field Id="UnitTiers"/>
+            </User>
+            <User Type="CoopAICommanderTiers" Instance="CradleOfDeathDropAttackProt Tier02">
+                <Field Id="UnitTiers" Index="1"/>
+            </User>
+            <User Type="CoopAICommanderTiers" Instance="CradleOfDeathDropAttackProt Tier03">
+                <Field Id="UnitTiers" Index="2"/>
+            </User>
+        </Instances>
     </CUser>
     <CUser id="PresetCoopPlayerTeams">
         <Instances Id="[Default]"/>
@@ -16511,6 +16784,11 @@
                 <Field Id="ScoreStatistic"/>
             </GameLink>
         </Instances>
+        <Instances Id="AC_CradleOfDeath">
+            <GameLink GameLink="CradleOfDeathDamageDealttoConstructs">
+                <Field Id="ScoreStatistic"/>
+            </GameLink>
+        </Instances>
     </CUser>
     <CUser id="MasteryUpgrades">
         <Fields Id="Upgrade" Type="Upgrade"/>
@@ -16930,10 +17208,10 @@
             </User>
         </Instances>
         <Instances Id="KerriganMastery6">
-            <Fixed Fixed="3.3332">
+            <Fixed Fixed="1">
                 <Field Id="PointIncrement"/>
             </Fixed>
-            <GameLink GameLink="MasteryKerriganMutatingCarapaceLifeDegradation">
+            <GameLink GameLink="MasteryKerriganPrimarySpeedDamage">
                 <Field Id="TalentData"/>
             </GameLink>
             <Int Int="3">
@@ -16945,7 +17223,7 @@
             <Text Text="UserData/MasteryUpgrades/KerriganMastery6_ValueFormat">
                 <Field Id="ValueFormat"/>
             </Text>
-            <Upgrade Upgrade="MasteryKerriganMutatingCarapaceLifeDegradation">
+            <Upgrade Upgrade="MasteryKerriganPrimarySpeedDamage">
                 <Field Id="Upgrade"/>
             </Upgrade>
             <User Type="PlayerCommanders" Instance="ZergKerrigan">
@@ -17022,7 +17300,7 @@
             </User>
         </Instances>
         <Instances Id="ZagaraMastery4">
-            <Fixed Fixed="0.5">
+            <Fixed Fixed="1.5">
                 <Field Id="PointIncrement"/>
             </Fixed>
             <GameLink GameLink="MasteryZagaraZerglingDodgeChance">
@@ -17068,7 +17346,7 @@
             </User>
         </Instances>
         <Instances Id="ZagaraMastery6">
-            <Fixed Fixed="2">
+            <Fixed Fixed="1.5">
                 <Field Id="PointIncrement"/>
             </Fixed>
             <GameLink GameLink="MasteryZagaraMassFrenzySpeedBoost">
@@ -17781,7 +18059,7 @@
             </User>
         </Instances>
         <Instances Id="NovaMastery1">
-            <Fixed Fixed="1">
+            <Fixed Fixed="3">
                 <Field Id="PointIncrement"/>
             </Fixed>
             <GameLink GameLink="MasteryNovaNukeAndHoloDecoyCooldown">
@@ -17827,10 +18105,10 @@
             </User>
         </Instances>
         <Instances Id="NovaMastery3">
-            <Fixed Fixed="1">
+            <Fixed Fixed="1.67">
                 <Field Id="PointIncrement"/>
             </Fixed>
-            <GameLink GameLink="MasteryNovaWeaponAttackSpeed">
+            <GameLink GameLink="MasteryNovaPrimaryAbilityImprovement">
                 <Field Id="TalentData"/>
             </GameLink>
             <Int Int="2">
@@ -17842,7 +18120,7 @@
             <Text Text="UserData/MasteryUpgrades/NovaMastery3_ValueFormat">
                 <Field Id="ValueFormat"/>
             </Text>
-            <Upgrade Upgrade="MasteryNovaWeaponAttackSpeed">
+            <Upgrade Upgrade="MasteryNovaPrimaryAbilityImprovement">
                 <Field Id="Upgrade"/>
             </Upgrade>
             <User Type="PlayerCommanders" Instance="TerranNova">
@@ -18806,6 +19084,32 @@
         <Instances Id="AC_PartAndParcel_Primary03"/>
         <Instances Id="AC_PartAndParcel_Primary04"/>
         <Instances Id="AC_PartAndParcel_Bonus01"/>
+        <Instances Id="AC_CradleOfDeath_Primary01">
+            <Text Text="UserData/MissionObjective/AC_CradleOfDeath_Primary01_FormatText">
+                <Field Id="FormatText"/>
+            </Text>
+        </Instances>
+        <Instances Id="AC_CradleOfDeath_Primary02"/>
+        <Instances Id="AC_CradleOfDeath_Primary03"/>
+        <Instances Id="AC_CradleOfDeath_Primary04"/>
+        <Instances Id="AC_CradleOfDeath_Primary05"/>
+        <Instances Id="AC_CradleOfDeath_Primary06"/>
+        <Instances Id="AC_CradleOfDeath_Bonus01">
+            <Fixed Fixed="0.5">
+                <Field Id="XPMultiplier"/>
+            </Fixed>
+            <Text Text="UserData/MissionObjective/AC_CradleOfDeath_Bonus01_FormatText">
+                <Field Id="FormatText"/>
+            </Text>
+        </Instances>
+        <Instances Id="AC_CradleOfDeath_Bonus02">
+            <Fixed Fixed="0.5">
+                <Field Id="XPMultiplier"/>
+            </Fixed>
+            <Text Text="UserData/MissionObjective/AC_CradleOfDeath_Bonus02_FormatText">
+                <Field Id="FormatText"/>
+            </Text>
+        </Instances>
     </CUser>
     <CUser id="MissionTransmission">
         <Fields Id="PlayingNow" Type="Int">
@@ -22594,6 +22898,310 @@
                 <Field Id="Name"/>
             </Text>
         </Instances>
+        <Instances Id="Intro1CoD">
+            <Text Text="UserData/MissionTransmission/Intro1CoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/Intro1CoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Intro2CoD">
+            <Text Text="UserData/MissionTransmission/Intro2CoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/Intro2CoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Intro3CoD">
+            <Text Text="UserData/MissionTransmission/Intro3CoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/Intro3CoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveNewNorthCoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveNewNorthCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveNewNorthCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveNewSouthCoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveNewSouthCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveNewSouthCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveNewWestCoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveNewWestCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveNewWestCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveNewEastCoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveNewEastCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveNewEastCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveNewOtherCoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveNewOtherCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveNewOtherCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectivePayloadReminderCoD">
+            <Text Text="UserData/MissionTransmission/ObjectivePayloadReminderCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectivePayloadReminderCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectivePayloadSingleCoD">
+            <Text Text="UserData/MissionTransmission/ObjectivePayloadSingleCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectivePayloadSingleCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectivePayloadBothCoD">
+            <Text Text="UserData/MissionTransmission/ObjectivePayloadBothCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectivePayloadBothCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveFuseCoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveFuseCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveFuseCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveCompleteCoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveCompleteCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveCompleteCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveProgress1CoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveProgress1CoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveProgress1CoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveProgress2CoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveProgress2CoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveProgress2CoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveProgress3CoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveProgress3CoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveProgress3CoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveFailReminderCoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveFailReminderCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveFailReminderCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ObjectiveFailImminentCoD">
+            <Text Text="UserData/MissionTransmission/ObjectiveFailImminentCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ObjectiveFailImminentCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="PayloadAttackedCoD">
+            <Text Text="UserData/MissionTransmission/PayloadAttackedCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/PayloadAttackedCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="PayloadReadyCoD">
+            <Text Text="UserData/MissionTransmission/PayloadReadyCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/PayloadReadyCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="PayloadBothReadyCoD">
+            <Text Text="UserData/MissionTransmission/PayloadBothReadyCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/PayloadBothReadyCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="PayloadDeadCoD">
+            <Text Text="UserData/MissionTransmission/PayloadDeadCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/PayloadDeadCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="PayloadMoveReminderCoD">
+            <Text Text="UserData/MissionTransmission/PayloadMoveReminderCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/PayloadMoveReminderCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="PayloadAttackWaveCoD">
+            <Text Text="UserData/MissionTransmission/PayloadAttackWaveCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/PayloadAttackWaveCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="BlockingConstructsFirstCoD">
+            <Text Text="UserData/MissionTransmission/BlockingConstructsFirstCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/BlockingConstructsFirstCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BlockingConstructsRepeatCoD">
+            <Text Text="UserData/MissionTransmission/BlockingConstructsRepeatCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/BlockingConstructsRepeatCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="ConstructFirstCoD">
+            <Text Text="UserData/MissionTransmission/ConstructFirstCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ConstructFirstCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ConstructDisableReminderCoD">
+            <Text Text="UserData/MissionTransmission/ConstructDisableReminderCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ConstructDisableReminderCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="ConstructKillingStuffCoD">
+            <Text Text="UserData/MissionTransmission/ConstructKillingStuffCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ConstructKillingStuffCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ConstructDestroyedCoD">
+            <Text Text="UserData/MissionTransmission/ConstructDestroyedCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/ConstructDestroyedCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusIntro1CoD">
+            <Text Text="UserData/MissionTransmission/BonusIntro1CoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/BonusIntro1CoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusIntro2CoD">
+            <Text Text="UserData/MissionTransmission/BonusIntro2CoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/BonusIntro2CoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusIntro3CoD">
+            <Text Text="UserData/MissionTransmission/BonusIntro3CoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/BonusIntro3CoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusReminderCoD">
+            <Text Text="UserData/MissionTransmission/BonusReminderCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/BonusReminderCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusFailCoD">
+            <Text Text="UserData/MissionTransmission/BonusFailCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/BonusFailCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="VictoryCoD">
+            <Text Text="UserData/MissionTransmission/VictoryCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/VictoryCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="DefeatCoD">
+            <Text Text="UserData/MissionTransmission/DefeatCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/DefeatCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="EasterEggCoD">
+            <Text Text="UserData/MissionTransmission/EasterEggCoD_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/EasterEggCoD_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
     </CUser>
     <CUser id="MutatorChallenges">
         <Fields>
@@ -25342,21 +25950,18 @@
             <AbilCmd Abil="KerriganRevive">
                 <Field Id="ReviveAbilityCommand"/>
             </AbilCmd>
-            <AbilCmd Abil="SpireResearch" Cmd="6">
-                <Field Id="DefaultAbilityCommands"/>
-            </AbilCmd>
             <AbilCmd Abil="evolutionchamberresearch" Cmd="19">
                 <Field Id="DefaultAbilityCommands" Index="1"/>
             </AbilCmd>
             <AbilCmd Abil="evolutionchamberresearch">
                 <Field Id="DefaultAbilityCommands" Index="2"/>
             </AbilCmd>
-            <!--AbilCmd Abil="ZagaraVoidCoopNydusWorm">
-                <Field Id="DefaultAbilityCommands" Index="3"/>
-            </AbilCmd-->
             <AbilCmd Abil="evolutionchamberresearch" Cmd="1">
                 <Field Id="DefaultAbilityCommands" Index="3"/>
             </AbilCmd>
+            <!--AbilCmd Abil="ZagaraVoidCoopNydusWorm">
+                <Field Id="DefaultAbilityCommands" Index="3"/>
+            </AbilCmd-->
             <AbilCmd Abil="evolutionchamberresearch" Cmd="2">
                 <Field Id="DefaultAbilityCommands" Index="4"/>
             </AbilCmd>
@@ -25380,9 +25985,6 @@
             </GameLink>
             <GameLink GameLink="KerriganNormalReviveTimer">
                 <Field Id="HeroUnitNormalReviveBehavior"/>
-            </GameLink>
-            <GameLink GameLink="KerriganReviveCocoonExtraRegen">
-                <Field Id="HeroReviverExtraReviveBehavior"/>
             </GameLink>
             <GameLink GameLink="KerriganReviveCocoon">
                 <Field Id="HeroReviveUnit"/>
@@ -25491,13 +26093,13 @@
             <AbilCmd Abil="evolutionchamberresearch" Cmd="19">
                 <Field Id="DefaultAbilityCommands" Index="4"/>
             </AbilCmd>
-            <AbilCmd Abil="evolutionchamberresearch">
+            <AbilCmd Abil="evolutionchamberresearch" Cmd="12">
                 <Field Id="DefaultAbilityCommands" Index="5"/>
             </AbilCmd>
-            <AbilCmd Abil="evolutionchamberresearch" Cmd="1">
+            <AbilCmd Abil="evolutionchamberresearch" Cmd="13">
                 <Field Id="DefaultAbilityCommands" Index="6"/>
             </AbilCmd>
-            <AbilCmd Abil="evolutionchamberresearch" Cmd="2">
+            <AbilCmd Abil="evolutionchamberresearch" Cmd="14">
                 <Field Id="DefaultAbilityCommands" Index="7"/>
             </AbilCmd>
             <GameLink GameLink="Zerg">
@@ -25517,9 +26119,6 @@
             </GameLink>
             <GameLink GameLink="ZagaraNormalReviveTimer">
                 <Field Id="HeroUnitNormalReviveBehavior"/>
-            </GameLink>
-            <GameLink GameLink="ZagaraReviveCocoonExtraRegen">
-                <Field Id="HeroReviverExtraReviveBehavior"/>
             </GameLink>
             <GameLink GameLink="ZagaraReviveCocoon">
                 <Field Id="HeroReviveUnit"/>

@@ -764,11 +764,13 @@
     </CUpgrade>
     <CUpgrade id="HeavyInfestation">
         <Icon value="Assets\Textures\btn-ability-zerg-stukov-infeststructureupgrade.dds"/>
-        <EffectArray Operation="Set" Reference="Behavior,SIStukovInfestStructureEnemyTarget,Period" Value="0.666667"/>
-        <EffectArray Operation="Set" Reference="Behavior,SIStukovInfestStructureFriendlyTarget,Period" Value="0.666660"/>
+        <EffectArray Reference="Behavior,SIStukovInfestStructureEnemyTarget,PeriodicEffectRateMultiplier" Value="0.5"/>
+        <EffectArray Reference="Behavior,SIStukovInfestStructureFriendlyTarget,PeriodicEffectRateMultiplier" Value="0.5"/>
         <EditorCategories value="Race:InfestedTerran,UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="HotSBanelingCorrosiveBile">
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeDirect,Amount" Value="40"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeDirect,AttributeBonus[Structure]" Value="40"/>
         <Icon value="Assets\Textures\BTN-Upgrade-Zerg-CorrosiveAcid.dds"/>
     </CUpgrade>
     <CUpgrade id="HotSHaveAAEgg">
@@ -1117,13 +1119,27 @@
     <CUpgrade id="MasteryStukovMechAttackSpeed">
         <Flags index="UpgradeCheat" value="0"/>
         <Race value="InfT"/>
+        <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
         <EffectArray Reference="Effect,MasteryStukovMechAttackSpeedDisplayDummy,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,SILiberator,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,StukovInfestedBacklashRockets,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,StukovInfestedDiamondBack,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,StukovInfestedSiegeTankImpalerTentacle,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,StukovInfestedSiegeTank,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,SIQueen,RateMultiplier" Value="0.01"/>
+        <!--EffectArray Reference="Weapon,ApocaliskBlades,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,StukovAleksanderInfestedCannon,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,StukovAleksanderTentacleDisplayWeapon,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Behavior,StukovAleksanderAirMindControlDamage,PeriodicEffectRateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Behavior,StukovAleksanderAirDamage,PeriodicEffectRateMultiplier" Value="0.01"/-->
         <AffectedUnitArray value="SILiberator"/>
-        <AffectedUnitArray value="StukovInfestedBacklashRockets"/>
+        <AffectedUnitArray value="StukovInfestedBanshee"/>
         <AffectedUnitArray value="StukovInfestedDiamondBack"/>
-        <AffectedUnitArray value="StukovInfestedSiegeTankImpalerTentacle"/>
         <AffectedUnitArray value="StukovInfestedSiegeTank"/>
         <AffectedUnitArray value="SIQueen"/>
+        <!--AffectedUnitArray value="StukovAleksander"/>
+        <AffectedUnitArray value="StukovAleksanderCrashed"/>
+        <AffectedUnitArray value="StukovApocalisk"/-->
         <EditorCategories value="Race:InfestedTerran,UpgradeType:Talents"/>
         <MaxLevel value="30"/>
         <LeaderAlias value=""/>
@@ -1369,11 +1385,10 @@
     <CUpgrade id="MasteryAlarakOverchargeShieldsDamage">
         <Flags index="UpgradeCheat" value="0"/>
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <!--We Do it in Trigger, and the were actually weapons-->
         <EffectArray Reference="Effect,MasteryAlarakStructureOverchargeDamageDisplayDummy,Amount" Value="14"/>
         <EffectArray Reference="Effect,MasteryAlarakStructureOverchargeDamageDisplayDummyPercent,Amount" Value="7"/>
         <EffectArray Reference="Behavior,AlarakStructureOverchargeShield,DamageResponse.ModifyLimit" Value="14"/>
-        <!--EffectArray Operation="Subtract" Reference="Behavior,AlarakStructureOvercharge,Period" Value="0.028226"/-->
+        <EffectArray Reference="Behavior,AlarakStructureOvercharge,PeriodicEffectRateMultiplier" Value="0.07"/>
         <EditorCategories value="Race:Protoss"/>
         <MaxLevel value="30"/>
         <LeaderAlias value=""/>
@@ -1390,30 +1405,29 @@
     </CUpgrade>
     <CUpgrade id="MasteryAlarakUnitAttackSpeed">
         <Flags index="UpgradeCheat" value="0"/>
-        <EditorCategories value="Race:Protoss"/>
+        <EffectArray Reference="Effect,MasteryAlarakUnitAttackSpeedDisplayDummy,Amount" Value="0.5"/>
+        <EffectArray Reference="Weapon,WarpPrismTaldarimWeapon,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,SupplicantWeapon,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,ParticleDisruptors,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,AscendantWeapon,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,ImmortalTaldarim,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,ColossusTaldarimChargedBeamFast,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,ColossusTaldarimChargedBeam,RateMultiplier" Value="0.005"/>
+        <!--EffectArray Reference="Weapon,SOAMothershipv4Weapon,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,VoidRayChargeBeamBounce,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Effect,VoidRayChargeBeamBounce,PeriodicEffectRateMultiplier" Value="0.005"/-->
+        <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="WarpPrismTaldarim"/>
+        <AffectedUnitArray value="Supplicant"/>
+        <AffectedUnitArray value="ImmortalTaldarim"/>
+        <AffectedUnitArray value="HighTemplarTaldarim"/>
+        <AffectedUnitArray value="ImmortalTaldarim"/>
+        <AffectedUnitArray value="ColossusTaldarim"/>
+        <AffectedUnitArray value="ColossusTaldarim"/>
+        <!--AffectedUnitArray value="SOAMothershipv4"/>
+        <AffectedUnitArray value="VoidRayTaldarim"/-->
         <MaxLevel value="30"/>
         <LeaderAlias value=""/>
-        <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasteryAlarakUnitAttackSpeedDisplayDummy,Amount" Value=".5"/>
-        <!--We Do it in Trigger, and the were actually weapons-->
-        <AffectedUnitArray value="WarpPrismTaldarimWeapon"/>
-        <AffectedUnitArray value="SupplicantWeapon"/>
-        <AffectedUnitArray value="ParticleDisruptors"/>
-        <AffectedUnitArray value="AscendantWeapon"/>
-        <AffectedUnitArray value="ImmortalTaldarim"/>
-        <AffectedUnitArray value="ColossusTaldarimChargedBeamFast"/>
-        <AffectedUnitArray value="ColossusTaldarimChargedBeam"/>
-        <AffectedUnitArray value="SOAMothershipv4Weapon"/>
-        <AffectedUnitArray value="VoidRayChargeBeamBounce"/>
-        <!--EffectArray Operation="Subtract" Reference="Weapon,WarpPrismTaldarimWeapon,Period" Value="0.010000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,SupplicantWeapon,Period" Value="0.00825"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,ParticleDisruptors,Period" Value="0.0072"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,AscendantWeapon,Period" Value="0.00877"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,ImmortalTaldarim,Period" Value="0.01875"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,ColossusTaldarimChargedBeamFast,Period" Value="0.015"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,ColossusTaldarimChargedBeam,Period" Value="0.015"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,SOAMothershipv4Weapon,Period" Value="0.01105"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,VoidRayChargeBeamBounce,Period" Value="0.0025"/-->
     </CUpgrade>
     <CUpgrade id="MasteryAlarakEmpowerMeSlavesDuration">
         <Flags index="UpgradeCheat" value="0"/>
@@ -1459,7 +1473,7 @@
     </CUpgrade>
     <CUpgrade id="BansheeAirstrike">
         <Icon value="Assets\Textures\btn-upgrade-terran-nova-bansheemissilestrik.dds"/>
-        <EffectArray Reference="Unit,Banshee_BlackOps,SubgroupPriorityDelta" Value="5"/>
+        <!--EffectArray Reference="Unit,Banshee_BlackOps,SubgroupPriorityDelta" Value="5"/-->
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="Banshee_BlackOps"/>
     </CUpgrade>
@@ -1557,9 +1571,9 @@
         <EffectArray Operation="Subtract" Reference="Abil,FactoryTechLabResearch,InfoArray[Research21].Resource[Minerals]" Value="75"/>
         <EffectArray Operation="Subtract" Reference="Abil,FactoryTechLabResearch,InfoArray[Research21].Resource[Vespene]" Value="75"/>
         <EffectArray Operation="Subtract" Reference="Abil,FactoryTechLabResearch,InfoArray[Research21].Time" Value="45"/>
-        <EffectArray Operation="Subtract" Reference="Abil,FactoryTechLabResearch,InfoArray[Research22].Resource[Minerals]" Value="50"/>
-        <EffectArray Operation="Subtract" Reference="Abil,FactoryTechLabResearch,InfoArray[Research22].Resource[Vespene]" Value="50"/>
-        <EffectArray Operation="Subtract" Reference="Abil,FactoryTechLabResearch,InfoArray[Research22].Time" Value="30"/>
+        <EffectArray Operation="Subtract" Reference="Abil,FactoryTechLabResearch,InfoArray[Research22].Resource[Minerals]" Value="75"/>
+        <EffectArray Operation="Subtract" Reference="Abil,FactoryTechLabResearch,InfoArray[Research22].Resource[Vespene]" Value="75"/>
+        <EffectArray Operation="Subtract" Reference="Abil,FactoryTechLabResearch,InfoArray[Research22].Time" Value="45"/>
         <EffectArray Operation="Subtract" Reference="Abil,StarportTechLabResearch,InfoArray[Research21].Resource[Minerals]" Value="50"/>
         <EffectArray Operation="Subtract" Reference="Abil,StarportTechLabResearch,InfoArray[Research21].Resource[Vespene]" Value="50"/>
         <EffectArray Operation="Subtract" Reference="Abil,StarportTechLabResearch,InfoArray[Research21].Time" Value="30"/>
@@ -2465,7 +2479,7 @@
         <Alert value="ResearchComplete"/>
         <Race value="Zerg"/>
         <ScoreResult value="BuildOrder"/>
-        <EffectArray Operation="Subtract" Reference="Abil,BileLauncherZagaraBombardment,Cost[0].Cooldown.TimeUse" Value="2.000000"/>
+        <EffectArray Reference="Weapon,BileLauncherZagaraBombardment,RateMultiplier" Value="0.4"/>
         <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
         <AffectedUnitArray value="BileLauncherZagara"/>
     </CUpgrade>
@@ -3411,7 +3425,10 @@
     <CUpgrade id="PhoenixRangeUpgrade">
         <ScoreAmount value="0"/>
         <EffectArray Reference="Weapon,IonCannons,MinScanRange" Value="2"/>
+        <EffectArray Reference="Weapon,ArtanisIonCannons,Range" Value="2"/>
+        <EffectArray Reference="Weapon,ArtanisIonCannons,MinScanRange" Value="2"/>
         <AffectedUnitArray value="PhoenixPurifier"/>
+        <AffectedUnitArray value="PhoenixAiur"/>
     </CUpgrade>
     <CUpgrade id="ProtossAirArmorsLevel1">
         <ScoreAmount value="0"/>
@@ -4316,12 +4333,12 @@
     </CUpgrade>
     <CUpgrade id="SwannTurretIncreasedAttackSpeed">
         <Icon value="Assets\Textures\btn-upgrade-swann-kmcautoloaders.dds"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,PerditionTurretFlamethrower,Period" Value="0.200000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,PerditionTurretBurrowed,Period" Value="0.200000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,KelMorianRocketTurretWeapon,Period" Value="0.300000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,LongboltMissile,Period" Value="0.172000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,KelMorianHailstormMissilePods,Period" Value="0.356000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,TwinIbiksCannon,Period" Value="0.400000"/>
+        <EffectArray Reference="Weapon,PerditionTurretFlamethrower,RateMultiplier" Value="0.25"/>
+        <EffectArray Reference="Weapon,PerditionTurretBurrowed,RateMultiplier" Value="0.25"/>
+        <EffectArray Reference="Weapon,KelMorianRocketTurretWeapon,RateMultiplier" Value="0.25"/>
+        <EffectArray Reference="Weapon,LongboltMissile,RateMultiplier" Value="0.172000"/>
+        <EffectArray Reference="Weapon,KelMorianHailstormMissilePods,RateMultiplier" Value="0.25"/>
+        <EffectArray Reference="Weapon,TwinIbiksCannon,RateMultiplier" Value="0.25"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="PerditionTurret"/>
         <AffectedUnitArray value="PerditionTurretUnderground"/>
@@ -4329,7 +4346,6 @@
         <AffectedUnitArray value="KelMorianMissileTurret"/>
         <AffectedUnitArray value="MissileTurret"/>
         <AffectedUnitArray value="PlanetaryFortress"/>
-        <LeaderAlias value="SwannCommanderKelMorianWorkerRocketTurret"/>
     </CUpgrade>
     <CUpgrade id="TempestRangeUpgrade">
         <ScoreAmount value="0"/>
@@ -4967,12 +4983,24 @@
     </CUpgrade>
     <CUpgrade id="TerranShipWeaponsLevel1">
         <ScoreAmount value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,ATSLaserBatteryDummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,ATALaserBatteryDummy,Level" Value="1"/>
     </CUpgrade>
     <CUpgrade id="TerranShipWeaponsLevel2">
         <ScoreAmount value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,ATSLaserBatteryDummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,ATALaserBatteryDummy,Level" Value="1"/>
     </CUpgrade>
     <CUpgrade id="TerranShipWeaponsLevel3">
         <ScoreAmount value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,ATSLaserBatteryDummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,ATALaserBatteryDummy,Level" Value="1"/>
     </CUpgrade>
     <CUpgrade id="TerranShipWeaponsUltraCapacitorsLevel1">
         <ScoreAmount value="0"/>
@@ -6306,6 +6334,7 @@
     <CUpgrade id="KerriganVoidCoopBroodlordSpeed">
         <Icon value="Assets\Textures\btn-upgrade-kerrigan-broodlordspeed.dds"/>
         <EffectArray Reference="Unit,BroodLord,Speed" Value="1.406200"/>
+        <EffectArray Reference="Unit,BroodLord,Acceleration" Value="0.812500"/>
         <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
         <AffectedUnitArray value="BroodLord"/>
     </CUpgrade>
@@ -6993,22 +7022,22 @@
         <AffectedUnitArray value="OdinMKII"/>
         <EffectArray Operation="Set" Reference="Weapon,OdinMKII,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,OdinMKIIAntiAir,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,OdinMKII,Period" Value="0.950000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,OdinMKIIAntiAir,Period" Value="0.950000"/>
+        <EffectArray Reference="Weapon,OdinMKII,RateMultiplier" Value="0.05"/>
+        <EffectArray Reference="Weapon,OdinMKIIAntiAir,RateMultiplier" Value="0.05"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleWeaponsUltraCapacitorsLevel2" parent="TerranVehicleWeaponsUltraCapacitors">
         <AffectedUnitArray value="OdinMKII"/>
         <EffectArray Operation="Set" Reference="Weapon,OdinMKII,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,OdinMKIIAntiAir,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,OdinMKII,Period" Value="0.947368"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,OdinMKIIAntiAir,Period" Value="0.947368"/>
+        <EffectArray Reference="Weapon,OdinMKII,RateMultiplier" Value="0.05"/>
+        <EffectArray Reference="Weapon,OdinMKIIAntiAir,RateMultiplier" Value="0.05"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleWeaponsUltraCapacitorsLevel3" parent="TerranVehicleWeaponsUltraCapacitors">
         <AffectedUnitArray value="OdinMKII"/>
         <EffectArray Operation="Set" Reference="Weapon,OdinMKII,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,OdinMKIIAntiAir,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,OdinMKII,Period" Value="0.944444"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,OdinMKIIAntiAir,Period" Value="0.944444"/>
+        <EffectArray Reference="Weapon,OdinMKII,RateMultiplier" Value="0.05"/>
+        <EffectArray Reference="Weapon,OdinMKIIAntiAir,RateMultiplier" Value="0.05"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleArmorsLevel1">
         <AffectedUnitArray value="OdinMKII"/>
@@ -7192,6 +7221,7 @@
         <EffectArray Operation="Set" Reference="Button,Armory,AlertTooltip" Value="Button/Tooltip/ACSwannArmory"/>
         <EffectArray Reference="Unit,Cyclone,SubgroupPriorityDelta" Value="1"/>
         <EffectArray Reference="Unit,SiegeTank,SubgroupPriorityDelta" Value="3"/>
+        <EffectArray Reference="Unit,SiegeTankSieged,SubgroupPriorityDelta" Value="3"/>
         <EffectArray Reference="Unit,Hercules,SubgroupPriorityDelta" Value="5"/>
         <EffectArray Reference="Unit,Wraith,SubgroupPriorityDelta" Value="1"/>
         <EffectArray Operation="Subtract" Reference="Unit,Hellion,SubgroupPriorityDelta" Value="1"/>
@@ -7206,17 +7236,6 @@
     </CUpgrade>
     <CUpgrade id="RaynorCommander">
         <Flags index="UpgradeCheat" value="0"/>
-        <!--EffectArray Operation="Subtract" Reference="Weapon,GuassRifle,Period" Value="0.112"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,KelmorianMinerGaussRifle,Period" Value="0.112"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,PunisherGrenades,Period" Value="0.196"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,HammerSecurity,Period" Value="0.196"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,P38ScytheGuassPistol,Period" Value="0.196"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,Firebat,Period" Value="0.183"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,DevilDogFlameThrower,Period" Value="0.183"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,D8Charge,Period" Value="0.143"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,C10CanisterRifle,Period" Value="0.196"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,Specter,Period" Value="0.261"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,CommandoWeapon,Period" Value="0.209"/-->
         <EffectArray Operation="Set" Reference="Button,Barracks,Tooltip" Value="Button/Tooltip/ACRaynorBarracks"/>
         <EffectArray Operation="Set" Reference="Button,Factory,Tooltip" Value="Button/Tooltip/ACRaynorFactory"/>
         <EffectArray Operation="Set" Reference="Button,Starport,Tooltip" Value="Button/Tooltip/ACRaynorStarport"/>
@@ -7272,12 +7291,9 @@
         <EffectArray Operation="Set" Reference="Button,ResearchBansheeCloak,AlertTooltip" Value="Button/Tooltip/ResearchBansheeCloak_Raynor"/>
         <EffectArray Operation="Set" Reference="Button,CloakOnBanshee,Tooltip" Value="Button/Tooltip/CloakOnBanshee_Raynor"/>
         <EffectArray Operation="Set" Reference="Button,CloakOnBanshee,AlertTooltip" Value="Button/Tooltip/CloakOnBanshee_Raynor"/>
-        <EffectArray Operation="Set" Reference="Weapon,ATALaserBattery,AllowedMovement" Value="Moving"/>
-        <EffectArray Operation="Set" Reference="Weapon,ATALaserBattery,Options[OnlyFireWhileInAttackOrder]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Weapon,ATALaserBattery,Options[OnlyFireAtAttackOrderTarget]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBattery,AllowedMovement" Value="Moving"/>
-        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBattery,Options[OnlyFireWhileInAttackOrder]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBattery,Options[OnlyFireAtAttackOrderTarget]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBattery,Options[Disabled]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBattery,Options[Disabled]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,SwitchLaserBattery,Options[Disabled]" Value="0"/>
         <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="SwannCommanderVehicleHealth">
@@ -7376,17 +7392,17 @@
     </CUpgrade>
     <CUpgrade id="SwannCommanderVehicleAttackSpeed">
         <Flags index="UpgradeCheat" value="0"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,InfernalFlameThrower,Period" Value="0.5"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,HellionTank,Period" Value="0.4"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,Diamondback,Period" Value="0.3"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,90mmCannons,Period" Value="0.208"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,CrucioShockCannon,Period" Value="0.6"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,ThorsHammer,Period" Value="0.252"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,JavelinMissileLaunchers,Period" Value="0.6"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,LanceMissileLaunchers,Period" Value="0.4"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,GoliathA,Period" Value="0.3"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,GoliathG,Period" Value="0.3"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,TyphoonMissilePod,Period" Value="0.2"/>
+        <EffectArray Reference="Weapon,InfernalFlameThrower,RateMultiplier" Value="0.2"/>
+        <EffectArray Reference="Weapon,HellionTank,RateMultiplier" Value="0.2"/>
+        <EffectArray Reference="Weapon,Diamondback,RateMultiplier" Value="0.2"/>
+        <EffectArray Reference="Weapon,90mmCannons,RateMultiplier" Value="0.2"/>
+        <EffectArray Reference="Weapon,CrucioShockCannon,RateMultiplier" Value="0.2"/>
+        <EffectArray Reference="Weapon,ThorsHammer,RateMultiplier" Value="0.2"/>
+        <EffectArray Reference="Weapon,JavelinMissileLaunchers,RateMultiplier" Value="0.2"/>
+        <EffectArray Reference="Weapon,LanceMissileLaunchers,RateMultiplier" Value="0.2"/>
+        <EffectArray Reference="Weapon,GoliathA,RateMultiplier" Value="0.2"/>
+        <EffectArray Reference="Weapon,GoliathG,RateMultiplier" Value="0.2"/>
+        <EffectArray Reference="Weapon,TyphoonMissilePod,RateMultiplier" Value="0.2"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="Cyclone"/>
         <AffectedUnitArray value="Diamondback"/>
@@ -7454,6 +7470,7 @@
         <EffectArray Operation="Set" Reference="Unit,HotSRaptor,Description" Value="Button/Tooltip/HotSRaptorACKerrigan"/>
         <EffectArray Operation="Set" Reference="Button,Zergling,Tooltip" Value="Button/Tooltip/ZerglingACKerrigan"/>
         <EffectArray Operation="Set" Reference="Button,MorphToRaptor,Tooltip" Value="Button/Tooltip/MorphToRaptorACKerrigan"/>
+        <EffectArray Reference="Abil,BroodLordHangar,InfoArray[Ammo1].Count" Value="1"/>
         <LeaderAlias value=""/>
         <!--EffectArray Operation="Subtract" Reference="Unit,Roach,CostResource[Vespene]" Value="25"/>
         <EffectArray Operation="Subtract" Reference="Unit,RoachBurrowed,CostResource[Vespene]" Value="25"/>
@@ -8346,8 +8363,8 @@
         <EffectArray Operation="Subtract" Reference="Unit,BroodLord,CostResource[Vespene]" Value="25"/>
         <EffectArray Operation="Subtract" Reference="Unit,Viper,CostResource[Minerals]" Value="20"/>
         <EffectArray Operation="Subtract" Reference="Unit,Viper,CostResource[Vespene]" Value="20"/>
-        <EffectArray Operation="Subtract" Reference="Unit,Corruptor,CostResource[Minerals]" Value="15"/>
-        <EffectArray Operation="Subtract" Reference="Unit,Corruptor,CostResource[Vespene]" Value="10"/>
+        <EffectArray Operation="Subtract" Reference="Unit,ZagaraCorruptor,CostResource[Minerals]" Value="15"/>
+        <EffectArray Operation="Subtract" Reference="Unit,ZagaraCorruptor,CostResource[Vespene]" Value="10"/>
         <EffectArray Operation="Subtract" Reference="Abil,LarvaTrainSwarm,InfoArray[Train30].Resource[Minerals]" Value="2"/>
         <EffectArray Operation="Subtract" Reference="Abil,LarvaTrainSwarm,InfoArray[Train30].Resource[Vespene]" Value="7"/>
         <!--  OLD 20% Cost Reduction  -->
@@ -8479,6 +8496,26 @@
         <EffectArray Operation="Set" Reference="Button,EvolveKerriganHeroicFortitude,Tooltip" Value="Button/Tooltip/EvolveZagaraHeroicFortitude"/>
         <EffectArray Operation="Set" Reference="Unit,Lair,Description" Value="Button/Tooltip/LairZagara"/>
         <EffectArray Operation="Set" Reference="Button,Lair,Tooltip" Value="Button/Tooltip/LairZagara"/>
+        <EffectArray Operation="Subtract" Reference="Abil,Corruption,Cost[0].Cooldown.TimeUse" Value="30.000000"/>
+        <EffectArray Reference="Behavior,Corruption,DamageResponse.ModifyFraction" Value="0.150000"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedAbomination,Effect" Value="ZagaraInfestedAbomination"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedAbomination,DisplayEffect" Value="ZagaraInfestedAbomination"/>
+        <EffectArray Operation="Set" Reference="Effect,HotSBanelingExplodeLargeSet,EffectArray[3]" Value="ZagaraHotSBanelingExplodeLargeDirect"/>
+        <EffectArray Operation="Set" Reference="Weapon,HotSBanelingDummy,DisplayEffect" Value="ZagaraHotSBanelingExplodeLargeDirect"/>
+        <EffectArray Operation="Set" Reference="Button,EnableBuildingAttack,Tooltip" Value="Button/Tooltip/EnableBuildingAttackZagara"/>
+        <EffectArray Operation="Set" Reference="Button,DisableBuildingAttack,Tooltip" Value="Button/Tooltip/DisableBuildingAttackZagara"/>
+        <EffectArray Operation="Set" Reference="Effect,HotSBanelingExplodeLargeSearch,AreaArray[0].Effect" Value="ZagaraHotSBanelingExplodeLargeSearchDamage"/>
+        <EffectArray Operation="Set" Reference="Effect,HotSBanelingExplodeLargeSearchAll,AreaArray[0].Effect" Value="ZagaraHotSBanelingExplodeLargeSearchDamage"/>
+        <EffectArray Operation="Set" Reference="Button,EnableBuildingAttackScourge,Tooltip" Value="Button/Tooltip/EnableBuildingAttackScourgeZagara"/>
+        <EffectArray Operation="Set" Reference="Button,DisableBuildingAttackScourge,Tooltip" Value="Button/Tooltip/DisableBuildingAttackScourgeZagara"/>
+        <EffectArray Operation="Set" Reference="Weapon,Suicide,DisplayEffect" Value="ZagaraSuicideDamage"/>
+        <EffectArray Operation="Set" Reference="Weapon,SuicideBuilding,DisplayEffect" Value="ZagaraSuicideDamage"/>
+        <EffectArray Operation="Set" Reference="Effect,SuicideSet,EffectArray[0]" Value="ZagaraSuicideDamage"/>
+        <EffectArray Reference="Effect,ZagaraVoidCoopRangedSecondaryDamage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Abil,LarvaTrain,InfoArray[Train12].Unit[0]" Value="ZagaraCorruptor"/>
+        <EffectArray Reference="Unit,QueenCoop,Food" Value="1"/>
+        <EffectArray Reference="Unit,QueenCoopBurrowed,Food" Value="1"/>
+        <EffectArray Reference="Unit,Roach,Speed" Value="0.750000"/>
         <AffectedUnitArray value="ZagaraVoidCoop"/>
         <AffectedUnitArray value="ZagaraVoidCoopBurrowed"/>
         <LeaderAlias value=""/>
@@ -9082,7 +9119,7 @@
         <Alert value="ResearchComplete"/>
         <Race value="Zerg"/>
         <ScoreResult value="BuildOrder"/>
-        <EffectArray Reference="Abil,BileLauncherZagaraBombardment,Range[0]" Value="7"/>
+        <EffectArray Reference="Weapon,BileLauncherZagaraBombardment,Range" Value="9"/>
         <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
         <AffectedUnitArray value="BileLauncherZagara"/>
     </CUpgrade>
@@ -9100,6 +9137,7 @@
         <AffectedUnitArray value="OverseerSiegeMode"/>
         <AffectedUnitArray value="GuardianMP"/>
         <AffectedUnitArray value="Spotter"/>
+        <AffectedUnitArray value="ZagaraCorruptor"/>
         <EffectArray Reference="Unit,Spotter,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,Spotter,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,Spotter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level1.dds"/>
@@ -9109,12 +9147,16 @@
         <EffectArray Operation="Set" Reference="Actor,GuardianMP,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level1.dds"/>
         <EffectArray Reference="Unit,GuardianMP,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,GuardianMP,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,ZagaraCorruptor,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level1.dds"/>
+        <EffectArray Reference="Unit,ZagaraCorruptor,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ZagaraCorruptor,LifeArmor" Value="1"/>
     </CUpgrade>
     <CUpgrade id="ZergFlyerArmorsLevel2">
         <ScoreAmount value="0"/>
         <AffectedUnitArray value="OverseerSiegeMode"/>
         <AffectedUnitArray value="GuardianMP"/>
         <AffectedUnitArray value="Spotter"/>
+        <AffectedUnitArray value="ZagaraCorruptor"/>
         <EffectArray Reference="Unit,Spotter,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,Spotter,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,Spotter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level2.dds"/>
@@ -9124,12 +9166,16 @@
         <EffectArray Operation="Set" Reference="Actor,GuardianMP,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level2.dds"/>
         <EffectArray Reference="Unit,GuardianMP,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,GuardianMP,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,ZagaraCorruptor,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level2.dds"/>
+        <EffectArray Reference="Unit,ZagaraCorruptor,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ZagaraCorruptor,LifeArmor" Value="1"/>
     </CUpgrade>
     <CUpgrade id="ZergFlyerArmorsLevel3">
         <ScoreAmount value="0"/>
         <AffectedUnitArray value="OverseerSiegeMode"/>
         <AffectedUnitArray value="GuardianMP"/>
         <AffectedUnitArray value="Spotter"/>
+        <AffectedUnitArray value="ZagaraCorruptor"/>
         <EffectArray Reference="Unit,Spotter,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,Spotter,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,Spotter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level3.dds"/>
@@ -9139,6 +9185,9 @@
         <EffectArray Operation="Set" Reference="Actor,GuardianMP,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level3.dds"/>
         <EffectArray Reference="Unit,GuardianMP,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,GuardianMP,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,ZagaraCorruptor,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level3.dds"/>
+        <EffectArray Reference="Unit,ZagaraCorruptor,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ZagaraCorruptor,LifeArmor" Value="1"/>
     </CUpgrade>
     <CUpgrade id="ZergFlyerWeaponsLevel1">
         <ScoreAmount value="0"/>
@@ -9157,6 +9206,16 @@
         <EffectArray Reference="Effect,DevourerAoeDamage,AttributeBonus[Armored]" Value="1"/>
         <EffectArray Reference="Effect,DevourerDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,DevourerDamage,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraParasiteSpore,Icon" Value="Assets\Textures\btn-upgrade-zerg-airattacks-level1.dds"/>
+        <EffectArray Reference="Weapon,ZagaraParasiteSpore,Level" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraParasiteSporeDamage,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,ZagaraParasiteSporeDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraSuicideDamage,Amount" Value="11"/>
+        <EffectArray Operation="Set" Reference="Weapon,CoopGlaiveWurm,Icon" Value="Assets\Textures\btn-upgrade-zerg-airattacks-level1.dds"/>
+        <EffectArray Reference="Weapon,CoopGlaiveWurm,Level" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU1,Amount" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU2,Amount" Value="0.333"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU3,Amount" Value="0.111"/>
     </CUpgrade>
     <CUpgrade id="ZergFlyerWeaponsLevel2">
         <ScoreAmount value="0"/>
@@ -9175,6 +9234,16 @@
         <EffectArray Reference="Effect,DevourerAoeDamage,AttributeBonus[Armored]" Value="1"/>
         <EffectArray Reference="Effect,DevourerDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,DevourerDamage,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraParasiteSpore,Icon" Value="Assets\Textures\btn-upgrade-zerg-airattacks-level2.dds"/>
+        <EffectArray Reference="Weapon,ZagaraParasiteSpore,Level" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraParasiteSporeDamage,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,ZagaraParasiteSporeDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraSuicideDamage,Amount" Value="11"/>
+        <EffectArray Operation="Set" Reference="Weapon,CoopGlaiveWurm,Icon" Value="Assets\Textures\btn-upgrade-zerg-airattacks-level2.dds"/>
+        <EffectArray Reference="Weapon,CoopGlaiveWurm,Level" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU1,Amount" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU2,Amount" Value="0.333"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU3,Amount" Value="0.111"/>
     </CUpgrade>
     <CUpgrade id="ZergFlyerWeaponsLevel3">
         <ScoreAmount value="0"/>
@@ -9193,6 +9262,16 @@
         <EffectArray Reference="Effect,DevourerAoeDamage,AttributeBonus[Armored]" Value="1"/>
         <EffectArray Reference="Effect,DevourerDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,DevourerDamage,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraParasiteSpore,Icon" Value="Assets\Textures\btn-upgrade-zerg-airattacks-level3.dds"/>
+        <EffectArray Reference="Weapon,ZagaraParasiteSpore,Level" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraParasiteSporeDamage,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,ZagaraParasiteSporeDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraSuicideDamage,Amount" Value="11"/>
+        <EffectArray Operation="Set" Reference="Weapon,CoopGlaiveWurm,Icon" Value="Assets\Textures\btn-upgrade-zerg-airattacks-level3.dds"/>
+        <EffectArray Reference="Weapon,CoopGlaiveWurm,Level" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU1,Amount" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU2,Amount" Value="0.333"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU3,Amount" Value="0.111"/>
     </CUpgrade>
     <CUpgrade id="ZergGroundArmorsLevel1">
         <ScoreAmount value="0"/>
@@ -9419,14 +9498,16 @@
     <CUpgrade id="overlordspeed">
         <ScoreAmount value="0"/>
         <AffectedUnitArray value="SIOverlord"/>
-        <EffectArray Operation="Set" Reference="Unit,SIOverlord,Speed" Value="1.879000"/>
+        <EffectArray Operation="Set" Reference="Unit,SIOverlord,Speed" Value="3.380000"/>
+        <EffectArray Reference="Unit,Overlord,Speed" Value="1.501000"/>
+        <EffectArray Reference="Unit,Overlord,Acceleration" Value="1.062500"/>
     </CUpgrade>
     <CUpgrade id="overlordtransport">
         <ScoreAmount value="0"/>
     </CUpgrade>
     <CUpgrade id="zerglingattackspeed">
-        <EffectArray Reference="Weapon,HotSRaptorClaws,Period" Value="-0.2"/>
-        <EffectArray Reference="Weapon,HotSSwarmlingClaws,Period" Value="-0.2"/>
+        <EffectArray Reference="Weapon,HotSRaptorClaws,RateMultiplier" Value="0.4"/>
+        <EffectArray Reference="Weapon,HotSSwarmlingClaws,RateMultiplier" Value="0.4"/>
         <AffectedUnitArray value="HotSRaptor"/>
         <AffectedUnitArray value="HotSRaptorBurrowed"/>
         <AffectedUnitArray value="HotSSwarmling"/>
@@ -9529,6 +9610,10 @@
         <EffectArray Reference="Weapon,HellionBlackOps,Level" Value="1"/>
         <EffectArray Reference="Effect,HellionBlackOpsDamage,Amount" Value="2.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,HellionBlackOps,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,ATSLaserBatteryDummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,ATALaserBatteryDummy,Level" Value="1"/>
         <ScoreAmount value="0"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleAndShipWeaponsLevel2">
@@ -9609,6 +9694,10 @@
         <EffectArray Reference="Weapon,HellionBlackOps,Level" Value="1"/>
         <EffectArray Reference="Effect,HellionBlackOpsDamage,Amount" Value="2.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,HellionBlackOps,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,ATSLaserBatteryDummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,ATALaserBatteryDummy,Level" Value="1"/>
         <ScoreAmount value="0"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleAndShipWeaponsLevel3">
@@ -9689,6 +9778,10 @@
         <EffectArray Reference="Weapon,HellionBlackOps,Level" Value="1"/>
         <EffectArray Reference="Effect,HellionBlackOpsDamage,Amount" Value="2.000000"/>
         <EffectArray Operation="Set" Reference="Weapon,HellionBlackOps,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,ATSLaserBatteryDummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBatteryDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,ATALaserBatteryDummy,Level" Value="1"/>
         <ScoreAmount value="0"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleAndShipWeaponsLevel4" parent="TerranVehicleAndShipWeapons">
@@ -10924,30 +11017,37 @@
         <AffectedUnitArray value="HammerSecurity"/>
         <AffectedUnitArray value="DevilDog"/>
     </CUpgrade>
-    <CUpgrade id="RaynorCommanderTerranWeaponAttackSpeedTrigger">
-        <Race value="Terr"/>
-        <AffectedUnitArray value="GuassRifle"/>
-        <AffectedUnitArray value="PunisherGrenades"/>
-        <AffectedUnitArray value="Firebat"/>
-        <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
-        <LeaderAlias value=""/>
-    </CUpgrade>
     <CUpgrade id="RaynorCommanderTerranWeaponAttackSpeed">
         <Race value="Terr"/>
-        <AffectedUnitArray value="GuassRifle"/>
-        <AffectedUnitArray value="PunisherGrenades"/>
+        <EffectArray Reference="Weapon,GuassRifle,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,PunisherGrenades,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,Firebat,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,Vulture,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,90mmCannons,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,CrucioShockCannon,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,TwinGatlingCannon,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,LanzerTorpedoes,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,BacklashRockets,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,ATALaserBattery,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,ATSLaserBattery,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,ATALaserBatteryDummy,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,ATSLaserBatteryDummy,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,SwitchLaserBattery,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,DuskWingBanshee,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,HyperionVoidCoopAir,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,HyperionVoidCoopGround,RateMultiplier" Value="0.15"/>
+        <AffectedUnitArray value="Marine"/>
+        <AffectedUnitArray value="Marauder"/>
         <AffectedUnitArray value="Firebat"/>
         <AffectedUnitArray value="Vulture"/>
-        <AffectedUnitArray value="90mmCannons"/>
-        <AffectedUnitArray value="CrucioShockCannon"/>
-        <AffectedUnitArray value="TwinGatlingCannon"/>
-        <AffectedUnitArray value="LanzerTorpedoes"/>
-        <AffectedUnitArray value="BacklashRockets"/>
-        <AffectedUnitArray value="ATALaserBattery"/>
-        <AffectedUnitArray value="ATSLaserBattery"/>
-        <AffectedUnitArray value="DuskWingBanshee"/>
-        <AffectedUnitArray value="HyperionVoidCoopAir"/>
-        <AffectedUnitArray value="HyperionVoidCoopGround"/>
+        <AffectedUnitArray value="SiegeTank"/>
+        <AffectedUnitArray value="SiegeTankSieged"/>
+        <AffectedUnitArray value="VikingAssault"/>
+        <AffectedUnitArray value="VikingFighter"/>
+        <AffectedUnitArray value="Banshee"/>
+        <AffectedUnitArray value="Battlecruiser"/>
+        <AffectedUnitArray value="DuskWing"/>
+        <AffectedUnitArray value="HyperionVoidCoop"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value=""/>
     </CUpgrade>
@@ -11058,15 +11158,14 @@
         <Alert value="ResearchComplete"/>
         <Race value="Prot"/>
         <ScoreResult value="BuildOrder"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,PhotonCannon,Period" Value="0.2500"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,KhaydarinBeam,Period" Value="0.60000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,KhaydarinBeam1,Period" Value="0.60000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,KhaydarinBeam3,Period" Value="0.60000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,KhaydarinBeam1Upgraded,Period" Value="0.6000"/>
-        <EffectArray Operation="Subtract" Reference="Weapon,KhaydarinBeam3Upgraded,Period" Value="0.60000"/>
+        <EffectArray Reference="Weapon,PhotonCannon,RateMultiplier" Value="0.25"/>
+        <EffectArray Reference="Weapon,KhaydarinBeam,RateMultiplier" Value="0.25"/>
+        <EffectArray Reference="Weapon,KhaydarinBeam1,RateMultiplier" Value="0.25"/>
+        <EffectArray Reference="Weapon,KhaydarinBeam3,RateMultiplier" Value="0.25"/>
+        <EffectArray Reference="Weapon,KhaydarinBeam1Upgraded,RateMultiplier" Value="0.25"/>
+        <EffectArray Reference="Weapon,KhaydarinBeam3Upgraded,RateMultiplier" Value="0.25"/>
         <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
         <AffectedUnitArray value="PhotonCannon"/>
-        <AffectedUnitArray value="ShieldBattery"/>
         <AffectedUnitArray value="KhaydarinMonolith"/>
     </CUpgrade>
     <CUpgrade id="AresClassWeaponsSystem">
@@ -11929,8 +12028,8 @@
         <EffectArray Operation="Subtract" Reference="Abil,RepairDrakkenLaserDrillCoop,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="4.500000"/>
         <EffectArray Operation="Subtract" Reference="Unit,UnfinishedDrakkenLaserDrillCoop,RepairTime" Value="4.500000"/>
         <EffectArray Operation="Subtract" Reference="Unit,DamagedDrakkenLaserDrillCoop,RepairTime" Value="4.500000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research1].Time" Value="4.500000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research2].Time" Value="4.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research1].Time" Value="2.85"/>
+        <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research2].Time" Value="3.3"/>
         <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research1].Resource[Minerals]" Value="3"/>
         <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research1].Resource[Vespene]" Value="3"/>
         <EffectArray Operation="Subtract" Reference="Abil,DrakkenLaserDrillResearch,InfoArray[Research2].Resource[Minerals]" Value="5"/>
@@ -11977,15 +12076,30 @@
     <CUpgrade id="MasteryRaynorMechAttackSpeed">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
         <EffectArray Reference="Effect,MasteryRaynorMechAttackSpeedDisplayDummy,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,Vulture,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,90mmCannons,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,CrucioShockCannon,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,TwinGatlingCannon,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,LanzerTorpedoes,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,BacklashRockets,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,ATALaserBattery,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,ATSLaserBattery,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,ATALaserBatteryDummy,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,ATSLaserBatteryDummy,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,SwitchLaserBattery,RateMultiplier" Value="0.01"/>
+        <!--EffectArray Reference="Weapon,DuskWingBanshee,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,HyperionVoidCoopAir,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,HyperionVoidCoopGround,RateMultiplier" Value="0.01"/-->
         <Flags index="UpgradeCheat" value="0"/>
-        <AffectedUnitArray value="BacklashRockets"/>
-        <AffectedUnitArray value="TwinGatlingCannon"/>
-        <AffectedUnitArray value="LanzerTorpedoes"/>
-        <AffectedUnitArray value="CrucioShockCannon"/>
-        <AffectedUnitArray value="90mmCannons"/>
-        <AffectedUnitArray value="ATALaserBattery"/>
-        <AffectedUnitArray value="ATSLaserBattery"/>
         <AffectedUnitArray value="Vulture"/>
+        <AffectedUnitArray value="SiegeTank"/>
+        <AffectedUnitArray value="SiegeTankSieged"/>
+        <AffectedUnitArray value="VikingAssault"/>
+        <AffectedUnitArray value="VikingFighter"/>
+        <AffectedUnitArray value="Banshee"/>
+        <AffectedUnitArray value="Battlecruiser"/>
+        <!--AffectedUnitArray value="DuskWing"/>
+        <AffectedUnitArray value="HyperionVoidCoop"/-->
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="30"/>
         <LeaderAlias value=""/>
@@ -12304,6 +12418,12 @@
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research10].Time" Value="1.200000"/>
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research10].Resource[Minerals]" Value="3"/>
         <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research10].Resource[Vespene]" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research14].Time" Value="1.800000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research14].Resource[Minerals]" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research14].Resource[Vespene]" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research15].Time" Value="2.400000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research15].Resource[Minerals]" Value="4"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SpireResearch,InfoArray[Research15].Resource[Vespene]" Value="4"/>
         <!-- Ultralisk Cavern -->
         <EffectArray Operation="Subtract" Reference="Abil,UltraliskCavernResearch,InfoArray[Research3].Time" Value="1.200000"/>
         <EffectArray Operation="Subtract" Reference="Abil,UltraliskCavernResearch,InfoArray[Research3].Resource[Minerals]" Value="2"/>
@@ -12316,8 +12436,8 @@
         <EffectArray Operation="Subtract" Reference="Abil,UltraliskCavernResearch,InfoArray[Research5].Resource[Vespene]" Value="3"/>
         <!-- Hatchery/Lair/Hive -->
         <EffectArray Operation="Subtract" Reference="Abil,LairResearch,InfoArray[Research2].Time" Value="1.200000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,LairResearch,InfoArray[Research2].Resource[Minerals]" Value="2"/>
-        <EffectArray Operation="Subtract" Reference="Abil,LairResearch,InfoArray[Research2].Resource[Vespene]" Value="2"/>
+        <EffectArray Operation="Subtract" Reference="Abil,LairResearch,InfoArray[Research2].Resource[Minerals]" Value="1"/>
+        <EffectArray Operation="Subtract" Reference="Abil,LairResearch,InfoArray[Research2].Resource[Vespene]" Value="1"/>
         <EffectArray Operation="Subtract" Reference="Abil,LairResearch,InfoArray[Research3].Time" Value="1.200000"/>
         <EffectArray Operation="Subtract" Reference="Abil,LairResearch,InfoArray[Research3].Resource[Minerals]" Value="2"/>
         <EffectArray Operation="Subtract" Reference="Abil,LairResearch,InfoArray[Research3].Resource[Vespene]" Value="2"/>
@@ -12341,6 +12461,18 @@
         <MaxLevel value="30"/>
         <LeaderAlias value=""/>
     </CUpgrade>
+    <CUpgrade id="MasteryKerriganPrimarySpeedDamage">
+        <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
+        <EffectArray Reference="Effect,MasteryKerriganLeapingStrikeDamageDummy,Amount" Value="3"/>
+        <EffectArray Reference="Effect,MasteryKerriganPsiStrikeDamageDummy,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,K5Ranged,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Effect,PrimalSlash,Amount" Value="3"/>
+        <EffectArray Reference="Effect,PsiStrikeDamage,Amount" Value="1"/>
+        <Flags index="UpgradeCheat" value="0"/>
+        <EditorCategories value="Race:Protoss"/>
+        <MaxLevel value="30"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
     <CUpgrade id="MasteryZagaraBanelingsDamage">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
         <EffectArray Reference="Effect,MasteryZagaraBanelingsDamageDisplayDummy,Amount" Value="1"/>
@@ -12356,6 +12488,7 @@
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
         <EffectArray Reference="Effect,MasteryZagaraAutoAttackDamageDisplayDummy,Amount" Value="1"/>
         <EffectArray Reference="Effect,ZagaraVoidCoopRangedDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraVoidCoopRangedSecondaryDamage,Amount" Value="0.5"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Protoss"/>
         <MaxLevel value="30"/>
@@ -12464,8 +12597,9 @@
     </CUpgrade>
     <CUpgrade id="MasteryZagaraMassFrenzySpeedBoost">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasteryZagaraMassFrenzySpeedBoostDisplayDummy,Amount" Value="2"/>
-        <EffectArray Reference="Behavior,ZagaraVoidCoopMassFrenzyTarget,Duration" Value="0.300000"/>
+        <EffectArray Reference="Effect,MasteryZagaraMassFrenzySpeedBoostDisplayDummy,Amount" Value="1.5"/>
+        <EffectArray Reference="Behavior,ZagaraVoidCoopMassFrenzyTarget,Modification.AttackSpeedMultiplier" Value="0.015000"/>
+        <EffectArray Reference="Behavior,ZagaraVoidCoopMassFrenzyTarget,Modification.MoveSpeedMultiplier" Value="0.015000"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Protoss"/>
         <MaxLevel value="30"/>
@@ -12473,8 +12607,8 @@
     </CUpgrade>
     <CUpgrade id="MasteryZagaraZerglingDodgeChance">
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasteryZagaraZerglingDodgeChanceDisplayDummy,Amount" Value="0.5"/>
-        <EffectArray Reference="Behavior,MasteryZagaraZerglingDodgeChance,DamageResponse.Chance" Value="0.005"/>
+        <EffectArray Reference="Effect,MasteryZagaraZerglingDodgeChanceDisplayDummy,Amount" Value="1.5"/>
+        <EffectArray Reference="Behavior,MasteryZagaraZerglingDodgeChance,DamageResponse.Chance" Value="0.015"/>
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Protoss"/>
         <MaxLevel value="30"/>
@@ -12827,11 +12961,11 @@
     <CUpgrade id="MasteryNovaNukeAndHoloDecoyCooldown">
         <Flags index="UpgradeCheat" value="0"/>
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasteryNovaNukeAndHoloDecoyCooldownDisplayDummy,Amount" Value="1"/>
-        <EffectArray Operation="Subtract" Reference="Abil,NovaCoopCasterNuke,Cost[0].Charge.TimeUse" Value="1.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,NovaCoopDecoyTarget,Cost[0].Cooldown.TimeUse" Value="1"/>
-        <EffectArray Operation="Subtract" Reference="Abil,NovaCoopCasterNuke,Cost[0].Charge.TimeStart" Value="1.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,NovaCoopDecoyTarget,Cost[0].Cooldown.TimeStart" Value="1"/>
+        <EffectArray Reference="Effect,MasteryNovaNukeAndHoloDecoyCooldownDisplayDummy,Amount" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,NovaCoopCasterNuke,Cost[0].Charge.TimeUse" Value="3.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,NovaCoopDecoyTarget,Cost[0].Cooldown.TimeUse" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,NovaCoopCasterNuke,Cost[0].Charge.TimeStart" Value="3.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,NovaCoopDecoyTarget,Cost[0].Cooldown.TimeStart" Value="3"/>
         <EditorCategories value="Race:Terran"/>
         <MaxLevel value="30"/>
         <LeaderAlias value=""/>
@@ -12848,29 +12982,67 @@
     <CUpgrade id="MasteryNovaWeaponAttackSpeed">
         <Flags index="UpgradeCheat" value="0"/>
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
-        <EffectArray Reference="Effect,MasteryNovaWeaponAttackSpeedDisplayDummy,Amount" Value="1"/>
-        <!--EffectArray Reference="Behavior,NovaNukeCooldown,Modification.AttackSpeedMultiplier" Value="0.01"/-->
+        <EffectArray Reference="Effect,MasteryNovaWeaponAttackSpeedDisplayDummy,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,NovaWeaponHellfireShotgun,RateMultiplier" Value="0.02"/>
+        <EffectArray Reference="Weapon,NovaWeaponImprovedCanisterRifle,RateMultiplier" Value="0.02"/>
         <EditorCategories value="Race:Terran"/>
         <MaxLevel value="30"/>
-        <AffectedUnitArray value="NovaWeaponHellfireShotgun"/>
-        <AffectedUnitArray value="NovaWeaponImprovedCanisterRifle"/>
+        <AffectedUnitArray value="NovaCoop"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="MasteryNovaWeaponAttackDamage">
+        <Flags index="UpgradeCheat" value="0"/>
+        <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
+        <EffectArray Reference="Effect,MasteryNovaWeaponAttackDamageDisplayDummy,Amount" Value="1"/>
+        <EffectArray Reference="Effect,NovaWeaponImprovedCanisterRifleCloaked,Amount" Value="1"/>
+        <EffectArray Reference="Effect,NovaWeaponImprovedCanisterRifleUncloaked,Amount" Value="1"/>
+        <EffectArray Reference="Effect,NovaWeaponHellfireShotgunCloaked,Amount" Value="1"/>
+        <EffectArray Reference="Effect,NovaWeaponHellfireShotgunUncloaked,Amount" Value="1"/>
+        <EditorCategories value="Race:Terran"/>
+        <MaxLevel value="30"/>
+        <AffectedUnitArray value="NovaCoop"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="MasteryNovaPrimaryAbilityImprovement">
+        <Flags index="UpgradeCheat" value="0"/>
+        <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
+        <EffectArray Reference="Effect,MasteryNovaPrimaryAbilityImprovementDisplayDummy,Amount" Value="1.67"/>
+        <EffectArray Reference="Effect,NovaWeaponImprovedCanisterRifleSnipe,Amount" Value="3.3334"/>
+        <EffectArray Reference="Effect,NovaBoombotBoomDamage,Amount" Value="3.3334"/>
+        <EffectArray Reference="Effect,NovaBoombotBoomDamage,AttributeBonus[Structure]" Value="3.3334"/>
+        <EffectArray Reference="Effect,NovaWeaponHellfireShotgunBlastDamage,Amount" Value="0.835"/>
+        <EffectArray Reference="Effect,NovaWeaponHellfireShotgunBlastDamage,AttributeBonus[Light]" Value="0.835"/>
+        <EffectArray Reference="Behavior,NovaBlinkAbsorb,Modification.VitalMaxArray[Shields]" Value="3.334"/>
+        <EditorCategories value="Race:Terran"/>
+        <AffectedUnitArray value="NovaCoop"/>
+        <MaxLevel value="30"/>
         <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="MasteryNovaArmyAttackSpeed">
         <Flags index="UpgradeCheat" value="0"/>
         <EffectArray Reference="Effect,MasteryNovaArmyAttackSpeedDisplayDummy,Amount" Value="0.5"/>
+        <EffectArray Reference="Weapon,Banshee_BlackOps,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,Ghost_BlackOps,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,Goliath_BlackOpsGUpgraded,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,Goliath_BlackOpsG,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,Goliath_BlackOpsAUpgraded,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,Goliath_BlackOpsA,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,LiberatorAG_BlackOpsWeapon,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,Liberator_BlackOpsMissileLaunchers,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,Marauder_BlackOps,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,Marine_BlackOps,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,SiegeTank_BlackOps,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,SiegeTankSieged_BlackOps,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,HellionBlackOps,RateMultiplier" Value="0.005"/>
+        <EffectArray Reference="Weapon,HellbatBlackOps,RateMultiplier" Value="0.005"/>
         <!--EffectArray Reference="Behavior,NovaStunResistance,Modification.AttackSpeedMultiplier" Value="0.005"/-->
         <EditorCategories value="Race:Terran"/>
         <MaxLevel value="30"/>
         <!--AffectedUnitArray value="AutoTurret_BlackOps"/-->
         <AffectedUnitArray value="Banshee_BlackOps"/>
         <AffectedUnitArray value="Ghost_BlackOps"/>
-        <AffectedUnitArray value="Goliath_BlackOpsGUpgraded"/>
-        <AffectedUnitArray value="Goliath_BlackOpsG"/>
-        <AffectedUnitArray value="Goliath_BlackOpsAUpgraded"/>
-        <AffectedUnitArray value="Goliath_BlackOpsA"/>
-        <AffectedUnitArray value="LiberatorAG_BlackOpsWeapon"/>
-        <AffectedUnitArray value="Liberator_BlackOpsMissileLaunchers"/>
+        <AffectedUnitArray value="Goliath_BlackOps"/>
+        <AffectedUnitArray value="Liberator_BlackOps"/>
         <AffectedUnitArray value="Marauder_BlackOps"/>
         <AffectedUnitArray value="Marine_BlackOps"/>
         <AffectedUnitArray value="SiegeTank_BlackOps"/>
@@ -13210,13 +13382,12 @@
         <MaxLevel value="30"/>
         <LeaderAlias value=""/>
         <EffectArray Reference="Effect,MasteryFenixSuitAttackSpeedDisplayDummy,Amount" Value="2"/>
-        <!--EffectArray Operation="Multiply" Reference="Weapon,FenixSOAWeapon,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,ColarionDragoon,Period" Value="0.990000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,FenixArbiterWeapon,Period" Value="0.990000"/-->
-        <!-- this is a list of weapons for triggers -->
-        <AffectedUnitArray value="FenixSOAWeapon"/>
+        <EffectArray Reference="Weapon,FenixSOAWeapon,RateMultiplier" Value="0.02"/>
+        <EffectArray Reference="Weapon,FenixDragoon,RateMultiplier" Value="0.02"/>
+        <EffectArray Reference="Weapon,FenixArbiterWeapon,RateMultiplier" Value="0.02"/>
+        <AffectedUnitArray value="FenixSOA"/>
         <AffectedUnitArray value="FenixDragoon"/>
-        <AffectedUnitArray value="FenixArbiterWeapon"/>
+        <AffectedUnitArray value="FenixArbiter"/>
     </CUpgrade>
     <CUpgrade id="MasteryFenixSuitEnergyRegen">
         <Flags index="UpgradeCheat" value="0"/>
@@ -13236,19 +13407,27 @@
         <MaxLevel value="30"/>
         <LeaderAlias value=""/>
         <EffectArray Reference="Effect,MasteryFenixChampionAttackSpeedDisplayDummy,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,FenixKaldalisZealotPsiBlades,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,FenixTalisAdept,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,FenixMojoScoutAir,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,FenixMojoScoutGround,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,FenixTaldarinImmortalPhaseDisruptors,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,FenixWarbringerColossusThermalLance,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,FenixClolarionInterceptorBeam,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,FenixClolarionBomber,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,FenixClolarionInterceptorsDummy,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,FenixClolarionBombersDummy,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Weapon,FenixClolarionPrismaticBeamDummy,RateMultiplier" Value="0.01"/>
+        <EffectArray Reference="Effect,FenixClolarionChargeBeamWeaponCP,PeriodicEffectRateMultiplier" Value="0.01"/>
         <!-- this is a list of weapons for triggers -->
-        <AffectedUnitArray value="FenixKaldalisZealotPsiBlades"/>
+        <AffectedUnitArray value="FenixKaldalisZealot"/>
         <AffectedUnitArray value="FenixTalisAdept"/>
-        <AffectedUnitArray value="FenixMojoScoutAir"/>
-        <AffectedUnitArray value="FenixMojoScoutGround"/>
-        <AffectedUnitArray value="FenixTaldarinImmortalPhaseDisruptors"/>
-        <AffectedUnitArray value="FenixWarbringerColossusThermalLance"/>
-        <AffectedUnitArray value="FenixClolarionInterceptorBeam"/>
+        <AffectedUnitArray value="FenixMojoScout"/>
+        <AffectedUnitArray value="FenixTaldarinImmortal"/>
+        <AffectedUnitArray value="FenixWarbringerColossus"/>
+        <AffectedUnitArray value="FenixClolarionInterceptor"/>
         <AffectedUnitArray value="FenixClolarionBomber"/>
-        <AffectedUnitArray value="FenixClolarionInterceptorsDummy"/>
-        <AffectedUnitArray value="FenixClolarionBombersDummy"/>
-        <AffectedUnitArray value="FenixClolarionPrismaticBeamDummy"/>
-        <AffectedUnitArray value="Effect,FenixClolarionChargeBeamWeaponCP,PeriodicPeriodArray[0]"/>
+        <AffectedUnitArray value="FenixClolarionCarrier"/>
     </CUpgrade>
     <CUpgrade id="MasteryFenixChampionLifeShieldBuff">
         <Flags index="UpgradeCheat" value="0"/>
@@ -13395,7 +13574,7 @@
         <Flags index="UpgradeCheat" value="0"/>
         <!--This display dummy effect is used to display the Mastery Tooltip. Make sure to update this value if you change the upgrade-->
         <EffectArray Reference="Effect,MasteryDehakaAttackSpeedDisplayDummy,Amount" Value="1"/>
-        <!-- this is a list of weapons for triggers -->
+        <EffectArray Reference="Weapon,DehakaCoop,RateMultiplier" Value="0.01"/>
         <AffectedUnitArray value="DehakaCoop"/>
         <EditorCategories value="Race:PrimalZerg"/>
         <MaxLevel value="30"/>
@@ -14686,5 +14865,236 @@
         <LeaderAlias value=""/>
         <EffectArray Operation="Set" Reference="Button,HHSummonSpaceStation,Icon" Value="Assets\Textures\btn-progression-hornerhan-14-nukefortelefrag.dds"/>
         <EffectArray Operation="Set" Reference="Button,HHSummonSpaceStation,AlertIcon" Value="Assets\Textures\btn-progression-hornerhan-14-nukefortelefrag.dds"/>
+    </CUpgrade>
+    <CUpgrade id="KerriganViciousGlaive">
+        <Flags index="UpgradeCheat" value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-viciousglaive.dds"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmE1,AreaArray[0].Radius" Value="3"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmE2,AreaArray[0].Radius" Value="3"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmE3,AreaArray[0].Radius" Value="3"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmE4,AreaArray[0].Radius" Value="3"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmE5,AreaArray[0].Radius" Value="3"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <AffectedUnitArray value="MutaliskBroodlord"/>
+        <LeaderAlias value="HotSViciousGlaive"/>
+    </CUpgrade>
+    <CUpgrade id="KerriganSeveringGlave">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-explosiveglaive.dds"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU1,AttributeFactor[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU2,AttributeFactor[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU3,AttributeFactor[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU4,AttributeFactor[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU5,AttributeFactor[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU6,AttributeFactor[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU2,Amount" Value="5"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU3,Amount" Value="8"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU4,Amount" Value="9"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU5,Amount" Value="12"/>
+        <EffectArray Reference="Effect,CoopGlaiveWurmU6,Amount" Value="13"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="MutaliskBroodlord"/>
+    </CUpgrade>
+    <CUpgrade id="ZagaraGroundAttacksLevel1">
+        <Name value="Button/Name/ZergGroundAttacksLevel1"/>
+        <WebPriority value="0"/>
+        <Race value="Zerg"/>
+        <ScoreCount value="WeaponTechnologyCount"/>
+        <ScoreValue value="WeaponTechnologyValue"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Weapon,Claws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <EffectArray Reference="Weapon,Claws,Level" Value="1"/>
+        <EffectArray Reference="Effect,Claws,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HotSSwarmlingClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <EffectArray Reference="Weapon,HotSSwarmlingClaws,Level" Value="1"/>
+        <EffectArray Reference="Effect,HotSSwarmlingClawsDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraHunterKiller,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraHunterKillerMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,ZagaraHunterKillerMelee,Amount" Value="2.000000"/>
+        <EffectArray Reference="Effect,ZagaraHunterKillerU,Amount" Value="2.000000"/>
+        <EffectArray Reference="Weapon,ZagaraHunterKillerMelee,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ZagaraHunterKiller,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraAcidSaliva,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraRoachMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,ZagaraAcidSalivaU,Amount" Value="2.000000"/>
+        <EffectArray Reference="Effect,ZagaraRoachUMelee,Amount" Value="2.000000"/>
+        <EffectArray Reference="Weapon,ZagaraRoachMelee,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ZagaraAcidSaliva,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedAbomination,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <EffectArray Reference="Weapon,InfestedAbomination,Level" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraInfestedAbomination,Amount" Value="2"/>
+        <EffectArray Reference="Effect,ZagaraInfestedAbomination,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Weapon,HotSBanelingDummy,Level" Value="1"/>
+        <EffectArray Reference="Weapon,HotSBanelingDummySmall,Level" Value="1"/>
+        <EffectArray Reference="Weapon,VolatileBurstDummy,Level" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeDirect,Amount" Value="4"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeDirect,AttributeBonus[Structure]" Value="4"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeSearchDamage,Amount" Value="4"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeSearchDamage,AttributeBonus[Structure]" Value="4"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallSearchDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallSearchDamage,AttributeBonus[Structure]" Value="1"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallDirect,Amount" Value="1"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallDirect,AttributeBonus[Structure]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TalonsMissile,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Talons,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AcidSpines,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Weapon,TalonsMissile,Level" Value="1"/>
+        <EffectArray Reference="Weapon,Talons,Level" Value="1"/>
+        <EffectArray Reference="Weapon,AcidSpines,Level" Value="1"/>
+        <EffectArray Reference="Effect,TalonsMissileDamage,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,Talons,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,AcidSpines,Amount" Value="1.000000"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:AttackBonus"/>
+        <AffectedUnitArray value="Zergling"/>
+        <AffectedUnitArray value="ZerglingBurrowed"/>
+        <AffectedUnitArray value="HotSSwarmling"/>
+        <AffectedUnitArray value="HotSSwarmlingBurrowed"/>
+        <AffectedUnitArray value="Baneling"/>
+        <AffectedUnitArray value="BanelingBurrowed"/>
+        <AffectedUnitArray value="HotSSplitterlingBig"/>
+        <AffectedUnitArray value="HotSSplitterlingMedium"/>
+        <AffectedUnitArray value="HotSSplitterlingBigBurrowed"/>
+        <AffectedUnitArray value="HotSSplitterlingMediumBurrowed"/>
+        <AffectedUnitArray value="InfestedAbomination"/>
+        <AffectedUnitArray value="InfestedAbominationBurrowed"/>
+        <AffectedUnitArray value="HunterKiller"/>
+        <AffectedUnitArray value="HunterKillerBurrowed"/>
+        <AffectedUnitArray value="Roach"/>
+        <AffectedUnitArray value="RoachBurrowed"/>
+        <AffectedUnitArray value="QueenCoop"/>
+        <AffectedUnitArray value="QueenCoopBurrowed"/>
+    </CUpgrade>
+    <CUpgrade id="ZagaraGroundAttacksLevel2">
+        <Name value="Button/Name/ZergGroundAttacksLevel2"/>
+        <WebPriority value="0"/>
+        <Race value="Zerg"/>
+        <ScoreCount value="WeaponTechnologyCount"/>
+        <ScoreValue value="WeaponTechnologyValue"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Weapon,Claws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+        <EffectArray Reference="Weapon,Claws,Level" Value="1"/>
+        <EffectArray Reference="Effect,Claws,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HotSSwarmlingClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+        <EffectArray Reference="Weapon,HotSSwarmlingClaws,Level" Value="1"/>
+        <EffectArray Reference="Effect,HotSSwarmlingClawsDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraHunterKiller,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraHunterKillerMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,ZagaraHunterKillerMelee,Amount" Value="2.000000"/>
+        <EffectArray Reference="Effect,ZagaraHunterKillerU,Amount" Value="2.000000"/>
+        <EffectArray Reference="Weapon,ZagaraHunterKillerMelee,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ZagaraHunterKiller,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraAcidSaliva,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraRoachMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,ZagaraAcidSalivaU,Amount" Value="2.000000"/>
+        <EffectArray Reference="Effect,ZagaraRoachUMelee,Amount" Value="2.000000"/>
+        <EffectArray Reference="Weapon,ZagaraRoachMelee,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ZagaraAcidSaliva,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedAbomination,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+        <EffectArray Reference="Weapon,InfestedAbomination,Level" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraInfestedAbomination,Amount" Value="2"/>
+        <EffectArray Reference="Effect,ZagaraInfestedAbomination,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Weapon,HotSBanelingDummy,Level" Value="1"/>
+        <EffectArray Reference="Weapon,HotSBanelingDummySmall,Level" Value="1"/>
+        <EffectArray Reference="Weapon,VolatileBurstDummy,Level" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeDirect,Amount" Value="4"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeDirect,AttributeBonus[Structure]" Value="4"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeSearchDamage,Amount" Value="4"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeSearchDamage,AttributeBonus[Structure]" Value="4"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallSearchDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallSearchDamage,AttributeBonus[Structure]" Value="1"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallDirect,Amount" Value="1"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallDirect,AttributeBonus[Structure]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TalonsMissile,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Talons,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AcidSpines,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Weapon,TalonsMissile,Level" Value="1"/>
+        <EffectArray Reference="Weapon,Talons,Level" Value="1"/>
+        <EffectArray Reference="Weapon,AcidSpines,Level" Value="1"/>
+        <EffectArray Reference="Effect,TalonsMissileDamage,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,Talons,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,AcidSpines,Amount" Value="1.000000"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:AttackBonus"/>
+        <AffectedUnitArray value="Zergling"/>
+        <AffectedUnitArray value="ZerglingBurrowed"/>
+        <AffectedUnitArray value="HotSSwarmling"/>
+        <AffectedUnitArray value="HotSSwarmlingBurrowed"/>
+        <AffectedUnitArray value="Baneling"/>
+        <AffectedUnitArray value="BanelingBurrowed"/>
+        <AffectedUnitArray value="HotSSplitterlingBig"/>
+        <AffectedUnitArray value="HotSSplitterlingMedium"/>
+        <AffectedUnitArray value="HotSSplitterlingBigBurrowed"/>
+        <AffectedUnitArray value="HotSSplitterlingMediumBurrowed"/>
+        <AffectedUnitArray value="InfestedAbomination"/>
+        <AffectedUnitArray value="InfestedAbominationBurrowed"/>
+        <AffectedUnitArray value="HunterKiller"/>
+        <AffectedUnitArray value="HunterKillerBurrowed"/>
+        <AffectedUnitArray value="Roach"/>
+        <AffectedUnitArray value="RoachBurrowed"/>
+    </CUpgrade>
+    <CUpgrade id="ZagaraGroundAttacksLevel3">
+        <Name value="Button/Name/ZergGroundAttacksLevel3"/>
+        <WebPriority value="0"/>
+        <Race value="Zerg"/>
+        <ScoreCount value="WeaponTechnologyCount"/>
+        <ScoreValue value="WeaponTechnologyValue"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Weapon,Claws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <EffectArray Reference="Weapon,Claws,Level" Value="1"/>
+        <EffectArray Reference="Effect,Claws,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HotSSwarmlingClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <EffectArray Reference="Weapon,HotSSwarmlingClaws,Level" Value="1"/>
+        <EffectArray Reference="Effect,HotSSwarmlingClawsDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraHunterKiller,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraHunterKillerMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,ZagaraHunterKillerMelee,Amount" Value="2.000000"/>
+        <EffectArray Reference="Effect,ZagaraHunterKillerU,Amount" Value="2.000000"/>
+        <EffectArray Reference="Weapon,ZagaraHunterKillerMelee,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ZagaraHunterKiller,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraAcidSaliva,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ZagaraRoachMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,ZagaraAcidSalivaU,Amount" Value="2.000000"/>
+        <EffectArray Reference="Effect,ZagaraRoachUMelee,Amount" Value="2.000000"/>
+        <EffectArray Reference="Weapon,ZagaraRoachMelee,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ZagaraAcidSaliva,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedAbomination,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <EffectArray Reference="Weapon,InfestedAbomination,Level" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraInfestedAbomination,Amount" Value="2"/>
+        <EffectArray Reference="Effect,ZagaraInfestedAbomination,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Weapon,HotSBanelingDummy,Level" Value="1"/>
+        <EffectArray Reference="Weapon,HotSBanelingDummySmall,Level" Value="1"/>
+        <EffectArray Reference="Weapon,VolatileBurstDummy,Level" Value="1"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeDirect,Amount" Value="4"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeDirect,AttributeBonus[Structure]" Value="4"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeSearchDamage,Amount" Value="4"/>
+        <EffectArray Reference="Effect,ZagaraHotSBanelingExplodeLargeSearchDamage,AttributeBonus[Structure]" Value="4"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallSearchDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallSearchDamage,AttributeBonus[Structure]" Value="1"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallDirect,Amount" Value="1"/>
+        <EffectArray Reference="Effect,HotSBanelingExplodeSmallDirect,AttributeBonus[Structure]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TalonsMissile,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Talons,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AcidSpines,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Weapon,TalonsMissile,Level" Value="1"/>
+        <EffectArray Reference="Weapon,Talons,Level" Value="1"/>
+        <EffectArray Reference="Weapon,AcidSpines,Level" Value="1"/>
+        <EffectArray Reference="Effect,TalonsMissileDamage,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,Talons,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,AcidSpines,Amount" Value="1.000000"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:AttackBonus"/>
+        <AffectedUnitArray value="Zergling"/>
+        <AffectedUnitArray value="ZerglingBurrowed"/>
+        <AffectedUnitArray value="HotSSwarmling"/>
+        <AffectedUnitArray value="HotSSwarmlingBurrowed"/>
+        <AffectedUnitArray value="Baneling"/>
+        <AffectedUnitArray value="BanelingBurrowed"/>
+        <AffectedUnitArray value="HotSSplitterlingBig"/>
+        <AffectedUnitArray value="HotSSplitterlingMedium"/>
+        <AffectedUnitArray value="HotSSplitterlingBigBurrowed"/>
+        <AffectedUnitArray value="HotSSplitterlingMediumBurrowed"/>
+        <AffectedUnitArray value="InfestedAbomination"/>
+        <AffectedUnitArray value="InfestedAbominationBurrowed"/>
+        <AffectedUnitArray value="HunterKiller"/>
+        <AffectedUnitArray value="HunterKillerBurrowed"/>
+        <AffectedUnitArray value="Roach"/>
+        <AffectedUnitArray value="RoachBurrowed"/>
     </CUpgrade>
 </Catalog>

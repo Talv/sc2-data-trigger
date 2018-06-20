@@ -31,12 +31,6 @@
         <TileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Small_EnhancedSkins.dds"/>
         <ReleaseDate Month="4" Year="2016"/>
     </CBundle>
-    <CBundle id="TBAnnouncerBundle">
-        <ProductId value="23157"/>
-        <TileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Small_TotalBiscuit.dds"/>
-        <ReleaseDate Month="3" Year="2016"/>
-        <GameContentArray value="VoicePack,TotalBiscuit"/>
-    </CBundle>
     <CBundle id="CommanderBundle">
         <ProductId value="24979"/>
         <Flags index="ShowDynamicProductContent" value="1"/>
@@ -100,13 +94,21 @@
         <LearnMoreImage3 value="Assets\Textures\UI_Battlenet_Glue_Campaign_Purchase_Thumb_Nova_Standard_03.dds"/>
         <CinematicsImagePath value="Assets/Textures/UI_Battlenet_Glue_Campaign_Purchase_Thumb_Small_Nova_MP1.dds"/>
     </CBundle>
+    <!-- Featured Bundles -->
     <CBundle id="AbathurBundle">
         <ProductId value="22042"/>
+        <Flags index="IsFeatured" value="1"/>
         <TileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Small_Abathur_CommanderOnly.dds"/>
         <ReleaseDate Month="5" Year="2016"/>
         <GameContentArray value="Commander,Abathur"/>
     </CBundle>
-    <!-- Featured Bundles -->
+    <CBundle id="AlarakBundle">
+        <ProductId value="22244"/>
+        <Flags index="IsFeatured" value="1"/>
+        <TileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Small_Alarak_CommanderOnly.dds"/>
+        <ReleaseDate Month="9" Year="2016"/>
+        <GameContentArray value="Commander,Alarak"/>
+    </CBundle>
     <CBundle id="PremiumMapARKStar">
         <ProductId value="35755"/>
         <Flags index="IsFeatured" value="1"/>
@@ -127,7 +129,6 @@
         <ProductId value="32731"/>
         <Flags index="ShowDynamicProductContent" value="1"/>
         <Flags index="IsFeatured" value="1"/>
-        <Flags index="IsFeaturedLarge" value="1"/>
         <TileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_small_hanandhorner.dds"/>
         <MediumTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_medium_hanandhorner.dds"/>
         <LargeTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_large_hanandhorner.dds"/>
@@ -162,6 +163,7 @@
         <ProductId value="32192"/>
         <Flags index="ShowDynamicProductContent" value="1"/>
         <Flags index="IsFeatured" value="1"/>
+        <Flags index="IsFeaturedLarge" value="1"/>
         <ReleaseDate Month="11" Year="2017"/>
         <StoreTypeName value="UI/StoreTypeName/CompleteCollectionStandard"/>
         <TileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_small_completecollectionstandard.dds"/>
@@ -246,12 +248,27 @@
         <GameContentArray value="VoicePack,Raynor"/>
         <GameContentArray value="VoicePack,Swann"/>
     </CBundle>
+    <CBundle id="Alex007AnnouncerBundle">
+        <ProductId value="38950"/>
+        <Flags index="IsFeatured" value="1"/>
+        <TileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Small_Alex007.dds"/>
+        <MediumTileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Medium_Alex007.dds"/>
+        <LargeTileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Large_Alex007.dds"/>
+        <ReleaseDate Month="6" Year="2018"/>
+        <GameContentArray value="VoicePack,Alex007"/>
+    </CBundle>
+    <CBundle id="TBAnnouncerBundle">
+        <ProductId value="23157"/>
+        <Flags index="IsFeatured" value="1"/>
+        <TileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Small_TotalBiscuit.dds"/>
+        <ReleaseDate Month="3" Year="2016"/>
+        <GameContentArray value="VoicePack,TotalBiscuit"/>
+    </CBundle>
     <CBundle id="Day9AnnouncerBundle">
         <ProductId value="30799"/>
         <Flags index="IsFeatured" value="1"/>
         <TileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Small_Day9.dds"/>
         <MediumTileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Medium_Day9.dds"/>
-        <LargeTileTexture value="Assets\Textures\SC2_UI_Collection_Featured_TileItem_Large_Day9.dds"/>
         <ReleaseDate Month="9" Year="2017"/>
         <GameContentArray value="VoicePack,Day9"/>
     </CBundle>
@@ -308,7 +325,6 @@
         <ProductId value="36157"/>
         <Flags index="ShowDynamicProductContent" value="1"/>
         <Flags index="IsFeatured" value="1"/>
-        <Flags index="IsFeaturedLarge" value="0"/>
         <TileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_small_forgedskins.dds"/>
         <MediumTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_medium_forgedskins.dds"/>
         <LargeTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_large_forgedskins.dds"/>
@@ -318,7 +334,6 @@
         <ProductId value="36104"/>
         <Flags index="ShowDynamicProductContent" value="1"/>
         <Flags index="IsFeatured" value="1"/>
-        <Flags index="IsFeaturedLarge" value="0"/>
         <TileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_small_specialforcesskins.dds"/>
         <MediumTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_medium_specialforcesskins.dds"/>
         <LargeTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_large_specialforcesskins.dds"/>
@@ -328,11 +343,40 @@
         <ProductId value="36156"/>
         <Flags index="ShowDynamicProductContent" value="1"/>
         <Flags index="IsFeatured" value="1"/>
-        <Flags index="IsFeaturedLarge" value="0"/>
         <TileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_small_leviathanbroodskins.dds"/>
         <MediumTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_medium_leviathanbroodskins.dds"/>
         <LargeTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_large_leviathanbroodskins.dds"/>
         <ReleaseDate Month="2" Year="2018"/>
+    </CBundle>
+    <CBundle id="WarChestSeason2ProtossSkinsBundle">
+        <ProductId value="38043"/>
+        <Flags index="ShowDynamicProductContent" value="1"/>
+        <Flags index="IsFeatured" value="1"/>
+        <Flags index="IsFeaturedLarge" value="0"/>
+        <TileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_small_purifierskins.dds"/>
+        <MediumTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_medium_purifierskins.dds"/>
+        <LargeTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_large_purifierskins.dds"/>
+        <ReleaseDate Month="5" Year="2018"/>
+    </CBundle>
+    <CBundle id="WarChestSeason2TerranSkinsBundle">
+        <ProductId value="38045"/>
+        <Flags index="ShowDynamicProductContent" value="1"/>
+        <Flags index="IsFeatured" value="1"/>
+        <Flags index="IsFeaturedLarge" value="0"/>
+        <TileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_small_mirasmaraudersskins.dds"/>
+        <MediumTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_medium_mirasmaraudersskins.dds"/>
+        <LargeTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_large_mirasmaraudersskins.dds"/>
+        <ReleaseDate Month="5" Year="2018"/>
+    </CBundle>
+    <CBundle id="WarChestSeason2ZergSkinsBundle">
+        <ProductId value="38044"/>
+        <Flags index="ShowDynamicProductContent" value="1"/>
+        <Flags index="IsFeatured" value="1"/>
+        <Flags index="IsFeaturedLarge" value="0"/>
+        <TileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_small_primalskins.dds"/>
+        <MediumTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_medium_primalskins.dds"/>
+        <LargeTileTexture value="Assets\Textures\sc2_ui_collection_featured_tileitem_large_primalskins.dds"/>
+        <ReleaseDate Month="5" Year="2018"/>
     </CBundle>
     <!-- WarChest Season 1 Protoss Bundles -->
     <CBundle id="WarChestSeason1ProtossStarterBundle">

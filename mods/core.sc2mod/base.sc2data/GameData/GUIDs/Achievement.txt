@@ -1022,3 +1022,4 @@
 1022=CommanderHornerUltDamage
 1023=CommanderHornerBombDamage
 1024=CommanderHornerCommanderHorner
+1025=Combat_Spells_HealShield

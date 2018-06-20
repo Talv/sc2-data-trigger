@@ -343,7 +343,7 @@
             <Id value="NovaDLC3"/>
             <Name value="UI/NovaCampaign03"/>
             <Description value="UI/NovaCampaign03Description"/>
-            <ImagePath value="Assets/Textures/UI_Battlenet_Glue_Campaign_Purchase_Thumb_Nova_3.dds"/>
+            <ImagePath value="Assets/Textures/UI_Battlenet_Glue_Campaign_Purchase_Thumb_Nova_1.dds"/>
             <LaunchMap value="Campaign/Nova/Nova01.SC2Map"/>
             <ProgressLaunchMap value="Campaign/Nova/NStory01.SC2Map"/>
             <SaveName value="NovaCampaign01Save.SC2Save"/>
@@ -398,7 +398,7 @@
         <CampaignData>
             <Id value="NovaDLC1NoSkin"/>
             <Name value="UI/NovaCampaign03"/>
-            <ImagePath value="Assets/Textures/UI_Battlenet_Glue_Campaign_Purchase_Thumb_Nova_3.dds"/>
+            <ImagePath value="Assets/Textures/UI_Battlenet_Glue_Campaign_Purchase_Thumb_Nova_1.dds"/>
             <CinematicsImagePath value="Assets/Textures/UI_Battlenet_Glue_Campaign_Purchase_Thumb_Small_Nova_MP3.dds"/>
         </CampaignData>
         <StoreTypeName value="UI/StoreTypeName/MissionPack"/>
